@@ -9104,10 +9104,6 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021" figure="2021-q9.png">9. 在網上系統內，要求用戶輸入密碼兩次的目的是什麼?
-登記
-用戶名稱：
-密碼：
-重新輸入密碼：
 </QText>
 <Option>數據有效性檢驗</Option>
 <Option correct="1">數據驗證</Option>
@@ -9334,12 +9330,6 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021" figure="2021-q29.png">29. 下列算法的輸出是什麼?
-X ← 9
-Y ← 2
-重複
-	輸出(X/Y)的餘數
-	X ← (X/Y)的整數部分
-直至X = 0
 </QText>
 <Option>10</Option>
 <Option>110</Option>
