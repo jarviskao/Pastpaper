@@ -87,12 +87,6 @@ X=	Y=</QText>
 
 <Question>
 <QText examyear="HKCEE 2003" figure="2003-q9.png">9. 考慮下列試算表軟件包的工作表:
-	A	B	C	D
-1		中文	英文	數學
-2	小麗	78	72	84
-3	小明	66	86	98
-4	小強	89	54	60
-
 若存貯格B5存貯了公式MAX(B2:B4)，
 而此公式被複製到存貯格D5，存貯格D5的結果是什麼?</QText>
 <Option>60</Option>
@@ -103,7 +97,7 @@ X=	Y=</QText>
 
 <Question>
 <QText examyear="HKCEE 2003" figure="2003-q10.png">10. 下列哪一繪圖工具功能
-可將圖A 修訂成為圖B?</QText>
+可將圖A修訂成為圖B?</QText>
 <Option correct="1">旋轉</Option>
 <Option>垂直翻轉</Option>
 <Option>剪下</Option>
@@ -9385,13 +9379,6 @@ Y ← 2
 
 <Question>
 <QText examyear="HKDSE 2021" figure="2021-q32.png">32. 以陣列P的初始值運行，下列算法的輸出是什麼?
-P[1]	P[2]	P[3]	P[4]
-0	1	1	0
-Q ← 0
-設 i 由 1 至 4 執行
-	如果P[i]=1則
-		Q ← 1-Q
-	輸出Q
 </QText>
 <Option correct="1">0100</Option>
 <Option>0110</Option>
@@ -9401,13 +9388,6 @@ Q ← 0
 
 <Question>
 <QText examyear="HKDSE 2021" figure="2021-q33.png">33. 下列算法的輸出是什麼?
-sum ← 0
-j ← 12
-重複
-	sum ← sum+1
-	j ← j-2
-直至j &lt;= 2
-輸出sum
 </QText>
 <Option>7</Option>
 <Option>6</Option>
@@ -9417,14 +9397,6 @@ j ← 12
 
 <Question>
 <QText examyear="HKDSE 2021" figure="2021-q34.png">34. 下列算法的輸出是什麼?
-設 i 由 1 至 5 執行
-	A[i] ← i
-S ← 0
-i ← 1
-當 i&gt;S 執行
-	S ← S + A[i]*A[i+1]
-	i ← i + 1
-輸出 S
 </QText>
 <Option>40</Option>
 <Option>20</Option>
@@ -9434,15 +9406,6 @@ i ← 1
 
 <Question>
 <QText examyear="HKDSE 2021" figure="2021-q35.png">35. 下列算法的輸出是什麼?
-X ← 6
-Y ← 4
-H ← 2
-當 H &gt; 0 執行
-	X ← X + Y
-	Y ← X - Y
-	X ← X - Y
-	H ← H - 1
-輸出 Y
 </QText>
 <Option>10</Option>
 <Option>6</Option>
