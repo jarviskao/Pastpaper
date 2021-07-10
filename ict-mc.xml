@@ -9465,7 +9465,7 @@ Y ← 2
 <QText examyear="HKDSE 2021">40. 下列哪項是在網上系統中，驗證用戶身份的常見措施?
   (1)DNS
   (2)保安權標
-  (3)防火牆
+                 (3)防火牆
 </QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
