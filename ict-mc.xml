@@ -2,9 +2,7 @@
 <Quiz>
 
 <Question>
-<QText examyear="HKCEE 2003">1. 下列哪項「不是」在製造業
-使用機械人技術的充分理由?
-因為機械人可以 ...</QText>
+<QText examyear="HKCEE 2003">1. 下列哪項「不是」在製造業使用機械人技術的充分理由?因為機械人可以 ...</QText>
 <Option correct="1">取代所有僱員。</Option>
 <Option>在危險的環境下工作。</Option>
 <Option>依足生產程序工作。</Option>
@@ -12,8 +10,7 @@
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">2. 下列哪個(或哪些)項目
-可以在洗衣機找到?
+<QText examyear="HKCEE 2003">2. 下列哪個(或哪些)項目可以在洗衣機找到?
 (1)嵌入式系統
 (2)電腦輔助教學
 (3)人工智能</QText>
@@ -24,8 +21,7 @@
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">3. 下列哪一種媒體
-可以在無線通訊中使用?</QText>
+<QText examyear="HKCEE 2003">3. 下列哪一種媒體可以在無線通訊中使用?</QText>
 <Option>光導纖維</Option>
 <Option correct="1">微波</Option>
 <Option>同軸電纜</Option>
@@ -33,9 +29,7 @@
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">4. 下列哪一語句
-在描述數據檔中
-使用可變長度紀錄的優點?</QText>
+<QText examyear="HKCEE 2003">4. 下列哪一語句在描述數據檔中使用可變長度紀錄的優點?</QText>
 <Option>容易為紀錄排序。</Option>
 <Option>容易估計數據檔的大小。</Option>
 <Option correct="1">只需較小的存貯空間。</Option>
@@ -43,10 +37,7 @@
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">5. X 是一數據通訊網絡，
-用以連接大廈內的電腦和周邊的裝置，
-而 Y 亦是一數據通訊網絡，
-能涵蓋地域較大的覆蓋面。
+<QText examyear="HKCEE 2003">5. X 是一數據通訊網絡，用以連接大廈內的電腦和周邊的裝置，而 Y 亦是一數據通訊網絡，能涵蓋地域較大的覆蓋面。
 X和Y是什麼?
 X=	Y=</QText>
 <Option correct="1">LAN	WAN</Option>
@@ -56,9 +47,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">6. 在學生報告系統中，
-下列哪一欄「不可能」 利用範圍檢查
-來作有效性檢驗?</QText>
+<QText examyear="HKCEE 2003">6. 在學生報告系統中，下列哪一欄「不可能」 利用範圍檢查來作有效性檢驗?</QText>
 <Option>年齡</Option>
 <Option correct="1">學生姓名</Option>
 <Option>操行等級</Option>
@@ -66,8 +55,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">7. 下列哪一個「不是」
-交互式(互動式)系統的例子?</QText>
+<QText examyear="HKCEE 2003">7. 下列哪一個「不是」交互式(互動式)系統的例子?</QText>
 <Option>查詢校園地圖</Option>
 <Option>購買電影戲票</Option>
 <Option correct="1">批改多項選擇題</Option>
@@ -75,9 +63,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">8. 某百貨公司有多位數據輸入員
-在同一時間內將數據輸入系統，
-系統會在每週末處理該等數據。
+<QText examyear="HKCEE 2003">8. 某百貨公司有多位數據輸入員在同一時間內將數據輸入系統，系統會在每週末處理該等數據。
 下列哪項最能描述該系統?</QText>
 <Option>實時處理</Option>
 <Option correct="1">多用戶 和 成批處理</Option>
@@ -87,8 +73,7 @@ X=	Y=</QText>
 
 <Question>
 <QText examyear="HKCEE 2003" figure="2003-q9.png">9. 考慮下列試算表軟件包的工作表:
-若存貯格B5存貯了公式MAX(B2:B4)，
-而此公式被複製到存貯格D5，存貯格D5的結果是什麼?</QText>
+若存貯格B5存貯了公式MAX(B2:B4)，而此公式被複製到存貯格D5，存貯格D5的結果是什麼?</QText>
 <Option>60</Option>
 <Option>66</Option>
 <Option>89</Option>
@@ -96,8 +81,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003" figure="2003-q10.png">10. 下列哪一繪圖工具功能
-可將圖A修訂成為圖B?</QText>
+<QText examyear="HKCEE 2003" figure="2003-q10.png">10. 下列哪一繪圖工具功能可將圖A修訂成為圖B?</QText>
 <Option correct="1">旋轉</Option>
 <Option>垂直翻轉</Option>
 <Option>剪下</Option>
@@ -105,8 +89,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">11. 下列哪一軟件包
-最適宜用來 維護(管理)百貨公司的存貨紀錄?</QText>
+<QText examyear="HKCEE 2003">11. 下列哪一軟件包最適宜用來 維護(管理)百貨公司的存貨紀錄?</QText>
 <Option>試算表軟件包</Option>
 <Option>文字處理軟件包</Option>
 <Option correct="1">數據庫管理系統</Option>
@@ -114,8 +97,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">12. 在傳送電子郵件前，
-必須先完成下列哪一項行動?</QText>
+<QText examyear="HKCEE 2003">12. 在傳送電子郵件前，必須先完成下列哪一項行動?</QText>
 <Option correct="1">輸入收件者的電郵地址。</Option>
 <Option>貯存郵件。</Option>
 <Option>為郵件加上附件檔。</Option>
@@ -123,8 +105,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">13. 下列哪個(或哪些)項目
-可在圖形用戶介面中用圖示(icon)來表示
+<QText examyear="HKCEE 2003">13. 下列哪個(或哪些)項目可在圖形用戶介面中用圖示(icon)來表示
 (1)程序檔
 (2)試算表檔
 (3)視像檔</QText>
@@ -135,8 +116,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003" figure="2003-q14.png">14. 彼得利用了文字處理軟件的三個功能，
-來編輯下述文件:
+<QText examyear="HKCEE 2003" figure="2003-q14.png">14. 彼得利用了文字處理軟件的三個功能，來編輯下述文件:
 	...
 
 
@@ -150,8 +130,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">15. 在數據庫中，若___，
-數據是有可能遺失的。</QText>
+<QText examyear="HKCEE 2003">15. 在數據庫中，若___，數據是有可能遺失的。</QText>
 <Option>字段的類型，由數字改變為文字</Option>
 <Option>插入新字段</Option>
 <Option>縮短字段名</Option>
@@ -159,8 +138,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">16. 下列哪些是利用搜尋器
-來搜尋資料的正確方法?
+<QText examyear="HKCEE 2003">16. 下列哪些是利用搜尋器來搜尋資料的正確方法?
 (1)利用不同搜尋器，直至找到所需的資料。
 (2)輸入關鍵字，以便搜尋。
 (3)選擇由搜尋器 提供的目錄來搜尋。</QText>
@@ -171,8 +149,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">17. 下列哪一種電子通訊
-「不能」傳送音頻信息?</QText>
+<QText examyear="HKCEE 2003">17. 下列哪一種電子通訊「不能」傳送音頻信息?</QText>
 <Option>電子郵件</Option>
 <Option>視像會議</Option>
 <Option correct="1">傳真</Option>
@@ -188,8 +165,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">19. 當你買了一個普通應用軟件包時，
-基本上代表
+<QText examyear="HKCEE 2003">19. 當你買了一個普通應用軟件包時，基本上代表
 (1)你有權使用它。
 (2)你有權改寫它。
 (3)你有權將它複製給別人。</QText>
@@ -200,8 +176,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">20. 下列哪項(或哪些)行動
-可防止電腦為病毒所感染?
+<QText examyear="HKCEE 2003">20. 下列哪項(或哪些)行動可防止電腦為病毒所感染?
 (1)不要打開來歷不明的 電子郵件附件檔。
 (2)刪除電腦中 所有已閱讀的電子郵件。
 (3)卸除所有在互聯網上 下載而使用中的程序。</QText>
@@ -212,8 +187,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">21. 下列哪項
-與電腦處理速度 有最密切的聯繫?</QText>
+<QText examyear="HKCEE 2003">21. 下列哪項與電腦處理速度 有最密切的聯繫?</QText>
 <Option>連接CPU的周邊設備數目</Option>
 <Option>CPU實體的大小</Option>
 <Option>CPU內寄存器的數目</Option>
@@ -229,11 +203,8 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">23. 簡略地說，
-中文常用字大約有10,000個，
-非中文常用字約30,000個。
-要表示一個中文字，
-最少需要多少二進制位?</QText>
+<QText examyear="HKCEE 2003">23. 簡略地說，中文常用字大約有10,000個，非中文常用字約30,000個。
+要表示一個中文字，最少需要多少二進制位?</QText>
 <Option>13</Option>
 <Option>14</Option>
 <Option>15</Option>
@@ -241,9 +212,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">24. 王先生欲每天
-為整個檔案伺服器備份，
-他應使用下列哪一種存貯媒體?</QText>
+<QText examyear="HKCEE 2003">24. 王先生欲每天為整個檔案伺服器備份，他應使用下列哪一種存貯媒體?</QText>
 <Option>軟碟</Option>
 <Option>可寫一次光碟(CDR)</Option>
 <Option>硬副本</Option>
@@ -251,8 +220,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">25. 下列各項均與可重寫光碟(CD-RW)有關，
-哪項(或哪些)描述是正確的?
+<QText examyear="HKCEE 2003">25. 下列各項均與可重寫光碟(CD-RW)有關，哪項(或哪些)描述是正確的?
 (1)用戶不可更新內容。
 (2)它屬於易失性記憶器。
 (3)它可存貯大量圖形檔。</QText>
@@ -277,8 +245,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">27. 若整數以10位元二進制補碼表示法編碼，
-下列哪一運算 會導致溢出誤差?</QText>
+<QText examyear="HKCEE 2003">27. 若整數以10位元二進制補碼表示法編碼，下列哪一運算 會導致溢出誤差?</QText>
 <Option correct="1"> 400+112</Option>
 <Option>-400+112</Option>
 <Option> 400-112</Option>
@@ -286,8 +253,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">28. 當CPU執行一指令時，
-下列行動的執行次序為何?
+<QText examyear="HKCEE 2003">28. 當CPU執行一指令時，下列行動的執行次序為何?
 	(1)從主記憶器取出指令。
 	(2)執行指令。
 	(3)PC自動加1。
@@ -319,9 +285,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">31. 下列哪項
-「不是」使用模組方式
-來編寫程序的優點?</QText>
+<QText examyear="HKCEE 2003">31. 下列哪項「不是」使用模組方式來編寫程序的優點?</QText>
 <Option>程序的邏輯 較簡單。</Option>
 <Option>程序的設計 較清晰。</Option>
 <Option>程序的維護 較容易。</Option>
@@ -329,8 +293,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">32. 下列哪項工作
-通常「不是」在銷售點POS終端機進行?</QText>
+<QText examyear="HKCEE 2003">32. 下列哪項工作通常「不是」在銷售點POS終端機進行?</QText>
 <Option>現金付款</Option>
 <Option>顯示貨物資料</Option>
 <Option>打印賬單</Option>
@@ -338,9 +301,7 @@ X=	Y=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">33. 電腦通常使用
-浮點表示法(而非定點表示法) 來表示 數字數據
-原因是</QText>
+<QText examyear="HKCEE 2003">33. 電腦通常使用浮點表示法(而非定點表示法) 來表示數字數據原因是</QText>
 <Option correct="1">可以表示較大範圍的數目</Option>
 <Option>不會出現溢出誤差</Option>
 <Option>不會出現截尾誤差</Option>
@@ -374,8 +335,7 @@ X=	Y=	Z=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">36. 下列哪些項目
-可以控制檔案的存取?
+<QText examyear="HKCEE 2003">36. 下列哪些項目可以控制檔案的存取?
 (1)將檔案改成唯讀。
 (2)利用密碼系統，限制檔案存取。
 (3)將檔案備份，存放在安全的地方。</QText>
@@ -395,8 +355,6 @@ X=	Y=	Z=</QText>
 
 <Question>
 <QText examyear="HKCEE 2003" figure="2003-q38.png">38. 在編譯過程中，程序編寫語言A，被編譯成程序編寫語言B。
-
-
 下列哪些是編寫程序時，使用程序編寫語言A，而不用程序編寫語言B的原因?
 	(1)執行時間較短。
 	(2)需要編寫較少的程序語句。
@@ -420,9 +378,7 @@ X=	Y=	Z=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2003">40. 若某老師欲將一源文件內
-的學生考試分數輸入電腦、
-下列哪一句有關數據校驗是「不正確」的?
+<QText examyear="HKCEE 2003">40. 若某老師欲將一源文件內的學生考試分數輸入電腦、下列哪一句有關數據校驗是「不正確」的?
 該老師將那些分數 ...</QText>
 <Option>輸入兩次，檢查是否相同。</Option>
 <Option>輸入一次，另一位老師重複輸入，檢查是否相同。</Option>
@@ -440,8 +396,7 @@ X=	Y=	Z=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">2. 下列哪項是
-使用專家系統的主要原因?</QText>
+<QText examyear="HKCEE 2004">2. 下列哪項是使用專家系統的主要原因?</QText>
 <Option>培訓用戶成為專家</Option>
 <Option>減低專家的工作量</Option>
 <Option>取代專家</Option>
@@ -449,9 +404,7 @@ X=	Y=	Z=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">3. 下列哪項關於
-電子轉帳系統的描述
-是「不正確」的?</QText>
+<QText examyear="HKCEE 2004">3. 下列哪項關於電子轉帳系統的描述是「不正確」的?</QText>
 <Option correct="1">在交易中 需要較多文書工作。</Option>
 <Option>人們不需要 排隊等候繳交帳單。</Option>
 <Option>人們不需要 攜帶笨重的硬幣。</Option>
@@ -459,8 +412,7 @@ X=	Y=	Z=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">4. 小明發覺每當下雨、或有風暴，
-他在家中接達互聯網變得不穩定。
+<QText examyear="HKCEE 2004">4. 小明發覺每當下雨、或有風暴，他在家中接達互聯網變得不穩定。
 下列哪個通訊媒介 會產生這種問題呢?</QText>
 <Option>同軸電纜</Option>
 <Option>光導纖維</Option>
@@ -469,8 +421,7 @@ X=	Y=	Z=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">5. 李先生欲與他的海外生意伙伴
-討論一項計劃。
+<QText examyear="HKCEE 2004">5. 李先生欲與他的海外生意伙伴討論一項計劃。
 下列能幫助他與伙伴溝通呢?</QText>
 <Option>用戶視像擷取</Option>
 <Option>搜尋器</Option>
@@ -479,8 +430,7 @@ X=	Y=	Z=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">6. 下列哪項(或哪些)是直接存取
-勝於順序存取的優點?
+<QText examyear="HKCEE 2004">6. 下列哪項(或哪些)是直接存取勝於順序存取的優點?
 	(1)可存貯數據於磁碟內。
 	(2)可較有效率地建立大量備份。
 	(3)可較快搜尋數據。</QText>
@@ -509,8 +459,7 @@ X=	Y=	Z=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">8. 用戶利用一部電腦編寫一個文件檔，
-並同一時間從互聯網下載檔案。
+<QText examyear="HKCEE 2004">8. 用戶利用一部電腦編寫一個文件檔，並同一時間從互聯網下載檔案。
 這部電腦的操作模式是什麼?</QText>
 <Option>多用戶</Option>
 <Option>成批處理</Option>
@@ -519,8 +468,7 @@ X=	Y=	Z=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">9. 在某電腦系統內的一項應用
-由成批處理改變為實時處理後，會有什麼影響?
+<QText examyear="HKCEE 2004">9. 在某電腦系統內的一項應用由成批處理改變為實時處理後，會有什麼影響?
 (1)該應用的應答時間更快。
 (2)該系統的成本增加。
 (3)該應用更容易使用。</QText>
@@ -547,8 +495,7 @@ X=	Y=	Z=</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004" figure="2004-q11.png">11. 下列數據庫檔包含了兩個字段CODE和ITEM，
-以及五筆記錄。
+<QText examyear="HKCEE 2004" figure="2004-q11.png">11. 下列數據庫檔包含了兩個字段CODE和ITEM，以及五筆記錄。
 		CODE	ITEM
 	1	A	mouse
 	2	B	keypad
@@ -563,8 +510,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">12. 小明和小茵 利用搜尋器尋找相同的資料。
-最後他們獲得不同的搜尋結果，為什麼?
+<QText examyear="HKCEE 2004">12. 小明和小茵 利用搜尋器尋找相同的資料。最後他們獲得不同的搜尋結果，為什麼?
 (1)他們使用 不同的搜尋器。
 (2)他們使用 不同的ISP(互聯網服務供應商)。
 (3)他們在 不同時段搜尋資料。
@@ -576,9 +522,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">13. 吳先生寄了一封電郵給張小姐。
-稍後，他從系統管理員獲知一個訊息，
-電郵伺服器沒有把他的電郵寄出。
+<QText examyear="HKCEE 2004">13. 吳先生寄了一封電郵給張小姐。稍後，他從系統管理員獲知一個訊息，電郵伺服器沒有把他的電郵寄出。
 下列哪項(或哪些)是可能發生的原因?
 (1)附件檔太大。
 (2)該電郵地址是由其他人擁有。
@@ -603,8 +547,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">15. 某公司利用WAN(而不是LAN)
-來接駁電腦，因為</QText>
+<QText examyear="HKCEE 2004">15. 某公司利用WAN(而不是LAN)來接駁電腦，因為</QText>
 <Option>經常使用電腦間的數據通訊</Option>
 <Option>數據傳送速率，需高於每秒6M位元(6 Mbps)</Option>
 <Option correct="1">電腦分布於世界各地</Option>
@@ -612,8 +555,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">16. 某公司容許用戶免費下載
-它四個軟件程序P、Q、R、S。
+<QText examyear="HKCEE 2004">16. 某公司容許用戶免費下載它四個軟件程序P、Q、R、S。
 	它預計用戶以試驗性質使用P；
 	可使用Q至一個失效日期(例如：30天)；
 	以有限的程序功能使用R；
@@ -626,8 +568,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">17. 小發現執行下列行動後，
-他的電腦感染了病毒。
+<QText examyear="HKCEE 2004">17. 小發現執行下列行動後，他的電腦感染了病毒。
 以下哪些行動最可能引致這次感染?
 (1)存取了由同學提供的磁碟內檔案。
 (2)從互聯網下載及安裝一個遊戲軟件。
@@ -640,8 +581,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">18. 為登入電腦系統而設立的通行字系統，
-其主要目的是保護電腦，防止 ...</QText>
+<QText examyear="HKCEE 2004">18. 為登入電腦系統而設立的通行字系統，其主要目的是保護電腦，防止 ...</QText>
 <Option>系統失靈</Option>
 <Option>電腦病毒入侵</Option>
 <Option>接收來歷不明的電郵</Option>
@@ -649,8 +589,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">19. 為了保障互聯網上的個人資料，
-下列哪項行動是最合適的?</QText>
+<QText examyear="HKCEE 2004">19. 為了保障互聯網上的個人資料，下列哪項行動是最合適的?</QText>
 <Option>經常更新個人電腦內 的抗電腦病毒軟件。</Option>
 <Option correct="1">切勿傳送 沒有加密的個人資料。</Option>
 <Option>無論任何情況下，切勿在互聯網上使用真實姓名。</Option>
@@ -666,9 +605,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">21. ... 與用戶緊密工作，
-評估他們的需求，
-並為他們設計新的資訊系統。</QText>
+<QText examyear="HKCEE 2004">21. ... 與用戶緊密工作，評估他們的需求，並為他們設計新的資訊系統。</QText>
 <Option>程序編寫員</Option>
 <Option>網絡管理員</Option>
 <Option>電腦技術員</Option>
@@ -713,8 +650,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">26. 下列哪些是便用條形碼閱讀機
-輸入數據勝於使用鍵盤的優點?
+<QText examyear="HKCEE 2004">26. 下列哪些是便用條形碼閱讀機輸入數據勝於使用鍵盤的優點?
 (1)更加準確
 (2)速度更快
 (3)更加安全
@@ -726,8 +662,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004" figure="2004-q27.png">27. 某大學內有很多電腦網絡。
-每個網絡內的每個工作站，均獲配一個獨一無二的12位元代碼，如下所示
+<QText examyear="HKCEE 2004" figure="2004-q27.png">27. 某大學內有很多電腦網絡。每個網絡內的每個工作站，均獲配一個獨一無二的12位元代碼，如下所示
 
 這個代碼首5個位元，用作鑑定網絡身分，
 而另外7個位元，用作鑑定工作站身分。
@@ -741,10 +676,8 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">28. 假設利用n個位元
-以二進制補碼方法表達整數。
-若利用多一個位元(即n+1個位元)，
-下列哪項描述是正確的?</QText>
+<QText examyear="HKCEE 2004">28. 假設利用n個位元以二進制補碼方法表達整數。
+若利用多一個位元(即n+1個位元)，下列哪項描述是正確的?</QText>
 <Option>最大的正數 增加了1。</Option>
 <Option>最大的正數 變為2倍。</Option>
 <Option>最小的負數 減少了1。</Option>
@@ -752,8 +685,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">29. 在電腦內利用浮點表示法存貯數字，
-下列哪些錯誤可能出現?
+<QText examyear="HKCEE 2004">29. 在電腦內利用浮點表示法存貯數字，下列哪些錯誤可能出現?
 (1)語法錯誤
 (2)溢出誤差
 (3)邏輯錯誤
@@ -765,8 +697,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">30. 某操作員在一個姓名字段中
-	將'NG KA YI'輸入為'5 KA 2'。
+<QText examyear="HKCEE 2004">30. 某操作員在一個姓名字段中將'NG KA YI'輸入為'5 KA 2'。
 下列哪個方法可檢測這個錯誤?</QText>
 <Option correct="1">類型檢查</Option>
 <Option>存在檢查</Option>
@@ -775,9 +706,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">31. 一般來說，
-把下列17個字符存貯為純文字，
-需要多少字節?
+<QText examyear="HKCEE 2004">31. 一般來說，把下列17個字符存貯為純文字，需要多少字節?
 	電腦科+資訊科技=電腦與資訊科技科</QText>
 <Option>17</Option>
 <Option>19</Option>
@@ -786,9 +715,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">32. 下列哪項關於
-匯編程序、編譯程序 和解譯程序
-的描述是正確的?</QText>
+<QText examyear="HKCEE 2004">32. 下列哪項關於匯編程序、編譯程序 和解譯程序的描述是正確的?</QText>
 <Option>匯編程序 翻譯源程序為機器碼，而另外兩個卻不是。</Option>
 <Option>匯編程序 應用於舊式電腦，而另外兩個卻不是。</Option>
 <Option>解譯程序 翻譯每一行源程序 成為一句機器碼指令。</Option>
@@ -796,8 +723,8 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">33. 在正常情況下，當液晶(LCD)顯示器與顯像管(CRT)顯示器比較，
-下列哪些描述是正確的? LCD顯示器
+<QText examyear="HKCEE 2004">33. 在正常情況下，當液晶(LCD)顯示器與顯像管(CRT)顯示器比較，下列哪些描述是正確的? 
+LCD顯示器
 (1)較便宜。
 (2)重量較輕。
 (3)耗電量較低。
@@ -820,8 +747,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">35. 下列哪項(或哪些)是
-在檔案系統中建立不同目錄的原因?
+<QText examyear="HKCEE 2004">35. 下列哪項(或哪些)是在檔案系統中建立不同目錄的原因?
 (1)節省硬碟存貯空問。
 (2)協助用戶處理檔案。
 (3)增加CPU處理速度。</QText>
@@ -832,8 +758,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">36. 參照附錄(助記碼指令表)，
-執行指令ADD 1000時，
+<QText examyear="HKCEE 2004">36. 參照附錄(助記碼指令表)，執行指令ADD 1000時，
 下列哪項是最後涉及的寄存器?</QText>
 <Option correct="1">ACC</Option>
 <Option>MDR</Option>
@@ -842,10 +767,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">37. 某程序編寫員編寫了一個程序，
-用作運算及列印信用咭月結單。
-這位程序編寫員發現月結單上的總數
-與所有個別數額的總和不同。
+<QText examyear="HKCEE 2004">37. 某程序編寫員編寫了一個程序，用作運算及列印信用咭月結單。這位程序編寫員發現月結單上的總數與所有個別數額的總和不同。
 下列哪項(或哪些)錯誤出現?
 (1)邏輯錯誤
 (2)語法錯誤
@@ -857,9 +779,7 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">38. 下列哪項(或哪些)是
-操作系統內
-使用圖形用戶介面的原因?
+<QText examyear="HKCEE 2004">38. 下列哪項(或哪些)是操作系統內使用圖形用戶介面的原因?
 (1)方便用戶使用系統。
 (2)用戶毋須記看指令。
 (3)系統反應更快。</QText>
@@ -870,11 +790,8 @@ CODE「不能」用作關鍵字段，因為</QText>
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2004">39. 小麗開發了一個程序，
-並將其源碼和目標程序上載於她的網站內。
-她希望很多人能夠修改這個程序自用。
-下列哪類程序編寫語言和翻譯程序
-最適宜用作開發這個程序?</QText>
+<QText examyear="HKCEE 2004">39. 小麗開發了一個程序，並將其源碼和目標程序上載於她的網站內。她希望很多人能夠修改這個程序自用。
+下列哪類程序編寫語言和翻譯程序最適宜用作開發這個程序?</QText>
 <Option correct="1">高級語言 和 編譯程序</Option>
 <Option>高級語言 和 解譯程序</Option>
 <Option>低級語言 和 匯編程序</Option>
@@ -901,8 +818,7 @@ End do
 
 
 <Question>
-<QText examyear="HKCEE 2005">1.陳先生希望建立一張網頁，
-內含繁體和簡體中交字。
+<QText examyear="HKCEE 2005">1.陳先生希望建立一張網頁，內含繁體和簡體中交字。
 下列哪個(些)方法是可行的?
 	(1) 在網頁內採用Unicode。
 	(2) 在網頁內採用BIG5和GB。
@@ -914,8 +830,7 @@ End do
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2005">2.現行香港智能身分證
-「不能」應用於下列哪一項?</QText>
+<QText examyear="HKCEE 2005">2.現行香港智能身分證「不能」應用於下列哪一項?</QText>
 <Option correct="1">八達通卡</Option>
 <Option>電子證書(e-Cert)</Option>
 <Option>圖書證</Option>
@@ -923,8 +838,7 @@ End do
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2005">3.下列哪項
-「不是」硬件連接介面?</QText>
+<QText examyear="HKCEE 2005">3.下列哪項「不是」硬件連接介面?</QText>
 <Option correct="1">XML</Option>
 <Option>PCI</Option>
 <Option>AGP</Option>
@@ -8389,8 +8303,7 @@ A123456(3)	A213456(3)
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2020">4. 某公司有30000名僱員，
-每位僱員均有一個職員編號。
+<QText examyear="HKDSE 2020">4. 某公司有30000名僱員，每位僱員均有一個職員編號。
 表示職員編號最少需要多少個位元？</QText>
 <Option>5</Option>
 <Option>14</Option>
@@ -8431,8 +8344,7 @@ A123456(3)	A213456(3)
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2020">8. 莉莉傳送了附有一份文件的電郵，
-該文件是PDF格式，而不是DOC格式。
+<QText examyear="HKDSE 2020">8. 莉莉傳送了附有一份文件的電郵，該文件是PDF格式，而不是DOC格式。
 原因可能是什麼?
 (1)可加密此文件。
 (2)可保留此文件的頁面設計。
@@ -8444,9 +8356,7 @@ A123456(3)	A213456(3)
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2020">9. 李小姐計劃，以儲存在數據庫內的
-學生資料和考試分數，
-設計及製作學生的成績單。
+<QText examyear="HKDSE 2020">9. 李小姐計劃，以儲存在數據庫內的學生資料和考試分數，設計及製作學生的成績單。
 她應該做什麼?</QText>
 <Option correct="1">利用數據庫軟件，建立報告。</Option>
 <Option>利用文書處理軟件，建立連至此數據庫的超連結。</Option>
@@ -8455,8 +8365,7 @@ A123456(3)	A213456(3)
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2020">10. 應為下列哪項(些)任務
-建立試算表「假設」情境?
+<QText examyear="HKDSE 2020">10. 應為下列哪項(些)任務建立試算表「假設」情境?
 (1)尋找在數學考試，獲取90分或以上的學生。
 (2)估算由不同製造商，生產的產品成本。
 (3)建立月平均温度的圖表。</QText>
@@ -8481,8 +8390,7 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2020" figure="2020-q12.png">12. 某教師為演講建立了
-包括以下投影片的演示。
+<QText examyear="HKDSE 2020" figure="2020-q12.png">12. 某教師為演講建立了包括以下投影片的演示。
 回家途徑的調查數據
 •步行 •校巴 •MTR
 該教師應編輯投影片的哪項(些)元素，以建立更吸引的演示?
@@ -8504,8 +8412,7 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2020" figure="2020-q15.png">14. 參考下列電腦X、Y和Z的規格。
-所有電腦使用相同的操作系統。
+<QText examyear="HKDSE 2020" figure="2020-q15.png">14. 參考下列電腦X、Y和Z的規格。所有電腦使用相同的操作系統。
 哪台(些)電腦的計算能力最佳?</QText>
 <Option>X</Option>
 <Option>Y</Option>
@@ -8514,8 +8421,7 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2020" figure="2020-q15.png">15. 參考下列電腦X、Y和Z的規格。
-所有電腦使用相同的操作系統。
+<QText examyear="HKDSE 2020" figure="2020-q15.png">15. 參考下列電腦X、Y和Z的規格。所有電腦使用相同的操作系統。
 哪台(些)電腦的啟動時間最短?</QText>
 <Option>X</Option>
 <Option>Y</Option>
@@ -8551,9 +8457,7 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2020" figure="2020-q20.png">19. 參考以下的網絡圖，
-教師電腦，通常會為桌上電腦，
-提供什麼服務?
+<QText examyear="HKDSE 2020" figure="2020-q20.png">19. 參考以下的網絡圖，教師電腦，通常會為桌上電腦，提供什麼服務?
 (1)檔案共享
 (2)電郵
 (3)網頁瀏覽</QText>
@@ -8564,10 +8468,7 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2020" figure="2020-q20.png">20.  參考以下的網絡圖，
-為了讓所有桌上電腦，
-可連接該無線打印機，
-應執行以下哪項行動?</QText>
+<QText examyear="HKDSE 2020" figure="2020-q20.png">20.  參考以下的網絡圖，為了讓所有桌上電腦，可連接該無線打印機，應執行以下哪項行動?</QText>
 <Option>應把該安裝在交換器和教師電腦之間。</Option>
 <Option>教師電腦應當開啟。</Option>
 <Option>應以路由器取替交換器。</Option>
@@ -8586,8 +8487,7 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2020">22. 下列哪句關於，
-電腦內的部件的描述，是不正確的?</QText>
+<QText examyear="HKDSE 2020">22. 下列哪句關於，電腦內的部件的描述，是不正確的?</QText>
 <Option>算術及邏輯運算部件(ALU)，是用來執行算術運算。</Option>
 <Option>累加器是儲存算術及邏輯運算結果的寄存器。</Option>
 <Option>寄存器的數據傳輸率，高於主記憶體的數據傳輸率。</Option>
@@ -8645,9 +8545,7 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2020">28. 當小芬登入一網站時，
-她會從手提電話接收到SMS短訊，
-內含一個密碼。
+<QText examyear="HKDSE 2020">28. 當小芬登入一網站時，她會從手提電話接收到SMS短訊，內含一個密碼。
 此SMS短訊是關於什麼?</QText>
 <Option>奇偶檢測</Option>
 <Option>數碼水印</Option>
@@ -8878,9 +8776,7 @@ X已阻隔此程式的一些功能。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">8. 莉莉是市場部經理，她計劃向特選客戶發出邀請信。
-她將會從客戶數據庫提選取數據。
-她應進行什麼資訊處理進程?
+<QText examyear="HKDSE 2021">8. 莉莉是市場部經理，她計劃向特選客戶發出邀請信。她將會從客戶數據庫提選取數據。她應進行什麼資訊處理進程?
 (1)篩選
 (2)郵件合併
 (3)「假設」分析</QText>
@@ -8899,8 +8795,7 @@ X已阻隔此程式的一些功能。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">10. 志明打算利用物件連結，
-把X.jpg和Y.xlsx的內容加入至Z.docx內。
+<QText examyear="HKDSE 2021">10. 志明打算利用物件連結，把X.jpg和Y.xlsx的內容加入至Z.docx內。
 下列哪句關於物件連接與嵌入(OLE)的句子是正確的?</QText>
 <Option>OLE不能應用於X的檔案格式。</Option>
 <Option>在志明行動前，X的檔案大小應是小於Z的。</Option>
@@ -8963,8 +8858,7 @@ X已阻隔此程式的一些功能。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">16. 國華在家建構了一個電腦系統，
-讓他的朋友登入及一起玩網上足球遊戲。
+<QText examyear="HKDSE 2021">16. 國華在家建構了一個電腦系統，讓他的朋友登入及一起玩網上足球遊戲。
 這樣會涉及下列哪項處理模式？
 (1)網上互動處理
 (2)成批工件處理
@@ -9049,8 +8943,7 @@ X已阻隔此程式的一些功能。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">25. 莉莉在她的辦公室，可利用其流動電話
-來控制家中連接Wi-Fi網絡的電器。
+<QText examyear="HKDSE 2021">25. 莉莉在她的辦公室，可利用其流動電話來控制家中連接Wi-Fi網絡的電器。
 這樣會涉及下列哪項?
 (1)LAN
 (2)互聯網
@@ -9062,8 +8955,7 @@ X已阻隔此程式的一些功能。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">26. 李先生為他的辦公室內工作的員工
-租用網上檔案儲存服務，而不設立檔案伺服器。為什麼?
+<QText examyear="HKDSE 2021">26. 李先生為他的辦公室內工作的員工租用網上檔案儲存服務，而不設立檔案伺服器。為什麼?
 (1)辦公室的互聯網連接的頻寬不足。
 (2)辦公室內無需額外技術人員。
 (3)在增加儲存容量時較有彈性。</QText>
@@ -9085,8 +8977,7 @@ X已阻隔此程式的一些功能。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">28. 雖然學校操場上已安裝了一個有線網絡，
-但學校還是安裝了一個連接至此網絡的無線網絡接達點。為什麼?
+<QText examyear="HKDSE 2021">28. 雖然學校操場上已安裝了一個有線網絡，但學校還是安裝了一個連接至此網絡的無線網絡接達點。為什麼?
 (1)學生可在課堂上使用平板電腦。
 (2)網絡可每天24小時使用。
 (3)網絡連接的數據傳輸率較高。</QText>
