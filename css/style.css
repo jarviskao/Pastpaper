@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    background-color: #eee;
+    font-family: 'Poppins', sans-serif
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 10px auto
+}
+
+#upper-section,
+#lower-section {
+    padding: 30px;
+    border-radius: 10px;
+    min-height: 120px;
+    max-height: fit-content
+}
+
+h5,
+h6 {
+    margin: 0
+}
+
+pre{
+    display: inline;
+}
+
+select {
+    padding: 0 10px 5px;
+    border: none;
+    width: 98%;
+    font-size: 14px;
+    cursor: pointer
+}
+
+select:focus {
+    outline: none
+}
+
+#dropdown p,
+#account p {
+    margin: 0;
+    font-size: 12px;
+    padding: 0 12px;
+    height: 15px;
+    color: #888
+}
+
+#middle-section {
+    padding: 30px;
+    border-radius: 10px;
+    min-height: 120px;
+    max-height: fit-content
+}
+
+a {
+    color: #888;
+    font-size: 14px
+}
+
+a:hover {
+    text-decoration: none
+}
+
+#middle-section p {
+    width: 90%;
+    font-size: 14px
+}
+
+.options {
+    position: relative;
+    padding: 4px 5px 2.5px;
+    cursor: pointer
+}
+.option {
+    display: block;
+    height: auto;
+    background-color: #f4f4f4;
+    position: relative;
+    margin-bottom: 8px;
+    width: 100%
+}
+
+.option:hover {
+    background-color: #e8e8e8;
+    cursor: pointer
+}
+
+.option input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer
+}
+
+.checkmark,
+.crossmark {
+    position: absolute;
+    right: 10px;
+    height: 22px;
+    width: 22px;
+    background-color: transparent;
+    border-radius: 2px;
+    padding: 0
+}
+
+.option:hover input~.checkmark,
+.option:hover input~.crossmark {
+    background-color: #e8e8e8
+}
+
+.option input:checked~.checkmark {
+    background-color: #79d70f
+}
+
+.option input:checked~.crossmark {
+    background-color: #ec3838
+}
+
+.checkmark:after,
+.crossmark:after {
+    content: "\2714";
+    position: absolute;
+    background-color: #79d70f;
+    display: var(--ans, none);
+    color: #fff;
+    padding-left: 4px;
+    width: 22px;
+    font-size: 16px
+}
+
+.crossmark:after {
+    content: "\2715";
+    background-color: #ec3838
+}
+
+.option input:checked~.checkmark:after,
+.option input:checked~.crossmark:after {
+    display: block;
+    transition: 100ms ease-out 1s
+}
+
+.btn {
+    background: #fff;
+    color: #21bf73;
+    border: 1px solid #21bf73;
+    width: 85%;
+    padding: 12px
+}
+
+.btn:hover {
+    background-color: #21bf73;
+    color: #fff
+}
+
+p.text-muted {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px
+}
+
+.noselect {
+   cursor: default;
+   -webkit-user-select: none;
+   -webkit-touch-callout: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   -o-user-select: none;
+   user-select: none;
+}
+
+.noselect:focus {
+   outline: none;
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    .option {
+        padding-left: 30px
+    }
+}
+
+@media(min-width:576px)and (max-width:767px) {
+    .income {
+        width: 32%
+    }
+
+    #or {
+        display: block;
+        padding: 10px;
+        text-align: center
+    }
+
+    .btn {
+        width: 100%
+    }
+
+    .col {
+        width: 15%
+    }
+
+    .day .option {
+        padding-left: 30px
+    }
+
+    .day {
+        padding-right: 10px
+    }
+}
+
+@media(min-width:300px)and (max-width:575px) {
+    .income {
+        width: 60%
+    }
+
+    #or {
+        display: block;
+        padding-top: 5px;
+        text-align: center
+    }
+
+    .btn {
+        width: 100%
+    }
+
+    .day .option .checkmark {
+        width: 20px;
+        height: 20px;
+        top: 2px
+    }
+
+    .day .option .checkmark::after {
+        width: 8px;
+        height: 8px;
+        left: 53%;
+        top: 53%
+    }
+}
