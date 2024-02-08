@@ -8707,15 +8707,15 @@ X已阻隔此程式的一些功能。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">1. 下列哪項在文字處理軟件內，可有效地格式化一份文件?
-(1) 最常用的字型和字體大小設定成預設值
-(2) 題可使用預先設定的樣式
-(3) 用自動校正功能</QText>
+<QText examyear="HKDSE 2021">1. 下列哪項在文字處理軟件內可有效地格式化一份文件？
+(1) 以最常用的字型和字體大小設定成預設值
+(2) 標題可使用預先設定的樣式
+(3) 啓用自動校正功能</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
 <Option >(1)、(2)和(3)</Option>
-<explanation>
+<explanation>解釋: 答案A。
 (1) 通過設定最常用的字型和字體大小為預設值，可使整份文檔在視覺上保持一致，這是一種基礎的格式化方法。
 (2) 使用預先設定的樣式如標題、副標題等，能快速應用統一的格式於不同部分，提高工作效率同時也保持文檔一致性。
 (3) 自動校正功能雖然能在輸入時校正錯別字或格式問題，但這不是用來格式化文檔的主要工具。
@@ -8724,12 +8724,12 @@ X已阻隔此程式的一些功能。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">2. 下列哪個以8位元二進制補碼，表示數字的加法運算，會引至上溢錯誤?</QText>
+<QText examyear="HKDSE 2021">2. 下列哪個以 8 位元二進制補碼表示數字的加法運算，會引至上溢錯誤？</QText>
 <Option>0011 0110 + 0011 1100</Option>
 <Option>0100 0010 + 1000 0001</Option>
 <Option>1001 1100 + 1111 0110</Option>
 <Option correct="1">1011 1010 + 1100 0100</Option>
-<explanation>
+<explanation>解釋: 答案D。
 在二進制中，上溢錯誤發生於結果的數值超過了給定位數所能表示的最大範圍。對於8位二進制來說，最大正值為0111 1111，最小負值為1000 0000(以二補數形式表示)。
 (1) 這個選項的和小於0111 1111，並不會引起上溢。
 (2) 同樣，這個和也仍在範圍內，不會導致上溢。
@@ -8740,14 +8740,14 @@ X已阻隔此程式的一些功能。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">3. 字符「X」和「Z」的ASCII 編碼，以十六進制表示，分別為___和5A。</QText>
+<QText examyear="HKDSE 2021">3. 字符「X」和「Z」的 ASCII 編碼以十六進制表示，分別為 ___________ 和 5A 。</QText>
 <Option>3A</Option>
 <Option>3C</Option>
 <Option correct="1">58</Option>
 <Option>59</Option>
-<explanation>
+<explanation>解釋: 答案C。
 ASCII編碼系統中，每個字符都對應一個數值。字符‘X’和‘Z’在ASCII中的對應十進制數分別為88和90，並且其十六進制分別為58和5A。
-(1) 3A在十六進制中代表的是十進制的58，但這是字符‘:`的ASCII值。
+(1) 3A在十六進制中代表的是十進制的58，但這是字符‘:’的ASCII值。
 (2) 3C在十六進制中代表的是十進制的60，非‘X’的ASCII值。
 (3) 58是‘X’的正確ASCII十六進制值。
 (4) 59在十六進制中代表的是十進制的89，非‘X’的ASCII值。
@@ -8756,319 +8756,470 @@ ASCII編碼系統中，每個字符都對應一個數值。字符‘X’和‘Z�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">4. 在數據庫軟件內建構數據庫表時，用戶通常應設定什麼?
-(1) 個欄的數據類型
-(2) 多的記錄數目
-(3) 關鍵碼</QText>
+<QText examyear="HKDSE 2021">4. 在數據庫軟件內建構數據庫表時，用戶通常應設定什麼？
+(1) 每個欄的數據類型
+(2) 最多的記錄數目
+(3) 主關鍵碼</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
 <Option>(1)、(2)和(3)</Option>
-<explanation>
-(1) 個欄的數據類型：在建構數據庫表時，指定每個欄位的數據類型是非常重要的。這是因為數據類型決定了該欄位可以儲存的數據種類，例如整數、浮點數、字串或日期等。正確的數據類型能保證數據的有效性並優化存儲空間。
-(2) 多的記錄數目：此選項不是數據庫表建構時通常要設定的。數據庫表應該能夠動態地處理記錄數目的增減，而無需事先定義記錄的最大數目。
-(3) 關鍵碼：在數據庫表中，設定關鍵碼（Primary Key）是保證每條記錄唯一性的關鍵。關鍵碼是一個或一組欄位，其值能唯一地識別表中的每條記錄。這不僅有助於維護數據的完整性也是實現關聯數據庫中表之間關係的基礎。
+<explanation>解釋: 答案B。
+(1) 每個欄的數據類型：確定所儲存數據的類型（例如整數、文本、日期等），這對於數據的正確儲存與檢索是基本且必需的。
+(2) 最多的記錄數目：通常數據庫不需要事先設定一個表格可包含記錄的最大數目，數據庫設計時不必考慮此項。
+(3) 主關鍵碼：是數據庫設計的關鍵元素，用於唯一識別每條記錄，這對於維護新條記錄的唯一性以及表之間的關聯具有核心重要性。
 因此，正確答案是只有(1)和(3)。
 </explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">5. 小芬使用WAV格式，而非MP3格式，來錄製音樂表演。這樣有什麼好處?
+<QText examyear="HKDSE 2021">5. 小芬使用 WAV 格式而非 MP3 格式來錄製音樂表演。這樣有什麼好處？
 (1) 音效檔的檔案大小較大。
 (2) 音效質素更佳。
-(3) 有跨平台問題。</QText>
+(3) 沒有跨平台問題。</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option >只有(2)和(3)</Option>
-<explanation>
-(1) 音效檔的檔案大小較大：這不是一個優勢。WAV格式是未壓縮的音訊格式，導致文件大小通常較大，這可能會佔用更多存儲空間，並且傳輸速度較慢。
-(2) 音效質素更佳：這是使用WAV格式而非MP3格式的主要好處。由於WAV是未壓縮的音訊格式，因此能夠保留原始錄音的全部音訊信息，從而提供較高的音質。
-(3) 有跨平台問題：這並不是一個優勢。實際上，跨平台問題通常是指在不同操作系統或裝置之間移動文件時可能出現的兼容性問題，而這對於WAV和MP3格式來說並不構成問題，因為它們都廣泛支持於多種裝置。
-因此，正確答案是只有(2)。
+<explanation>解釋: 答案B。
+(1) 音效檔的檔案大小較大：WAV 是一種未壓縮的音頻格式，所以通常會有更大的文件大小，這在某些情況下可能會被視為缺點，因為它需要更多的儲存空間和更長的傳輸時間。
+(2) 音效質素更佳：WAV 格式由於是未壓縮的，能更完整地保存音效資料，這對追求音質的用戶來說是重要的優勢。它能提供更高的音效還原度，特別是在專業音樂製作或音效分析中。
+(3) 沒有跨平台問題：實際上，WAV 格式和 MP3 格式都是非常普及和兼容的，幾乎在所有平台上都可以播放，所以這個選項不是WAV格式相比於MP3格式的獨特優勢。
+正確答案："只有(2)"，因為音效質素更佳是使用 WAV 格式相對於 MP3 格式的主要好處。
 </explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021" figure="2021-q6.png">6. 子添使用文字處理軟件中的「目錄」功能，如下所示。
-當插入一個新章節時，</QText>
+<QText examyear="HKDSE 2021" figure="2021-q6.png">6. 子添使用文字處理軟件中的「目錄」功能，如下所示。當插入一個新章節時，______。
+/figure</QText>
 <Option>子添須輸入公式來計算頁碼</Option>
 <Option>子添須在目錄內輸入章節名稱</Option>
 <Option correct="1">頁碼可相應地更新</Option>
 <Option>新章節會被插入為最後的一章</Option>
-<explanation>
-選項中除了 "頁碼可相應地更新" 外，其他選項都不是文字處理軟件中「目錄」功能的正確使用方式。使用「目錄」功能時，應自動更新頁碼來反映文件中的實際頁面，而不需要手動輸入公式或章節名稱。也不會將新章節插入為最後一章，除非使用者特意進行這樣的操作。
-因此，正確答案是頁碼可相應地更新。
+<explanation>解釋: 答案C。
+子添須輸入公式來計算頁碼：這不是必要的，因為文字處理軟件的「目錄」功能會自動更新頁碼。
+子添須在目錄內輸入章節名稱：通常情況下，新章節的名稱會在插入時自動出現在目錄中，而不需要手動輸入。
+頁碼可相應地更新：這是正確答案，因為當文件內容發生變化時，例如插入新章節，使用「目錄」功能的頁碼會自動更新以反映目前的頁面配置。
+新章節會被插入為最後的一章：這不是「目錄」功能的特徵，新章節會被插入到用戶指定的位置。
+正確答案："頁碼可相應地更新"，因為它解釋了「目錄」功能會自動更新頁碼的能力。
 </explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">7. 志偉在演示檔內加入錄製旁白。下列哪句是正確的?
-(1) 示的檔案大小增加。
-(2) 示內的投影片數目增加。
-(3) 能把視像嵌人附有旁白的投影片。</QText>
+<QText examyear="HKDSE 2021">7. 志偉在演示檔內加入錄製旁白。下列哪句是正確的？
+(1) 演示的檔案大小增加。
+(2) 演示內的投影片數目增加。
+(3) 未能把視像嵌入附有旁白的投影片。</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
-<explanation>
-(1) 示的檔案大小增加：這是正確的。加入錄製的旁白會增加總體文件大小，因為旁白是額外的音訊資料。
-(2) 示內的投影片數目增加：這不是必然的。旁白是加到現存投影片上的音訊，而不需要增加新的投影片。
-(3) 能把視像嵌人附有旁白的投影片：此選項說法不清晰，因為加入旁白不等於嵌入視像。旁白是一種音訊元素，而非視訊元素。
-因此，正確答案是只有(1)。
+<explanation>解釋: 答案A。
+(1) 演示的檔案大小增加：當錄製旁白加入到演示文件中時，由於音訊的加入會增加文件的總體大小。
+(2) 演示內的投影片數目增加：旁白的加入不會影響投影片的數目，這與旁白功能無關。
+(3) 未能把視像嵌入附有旁白的投影片：這項描述並非準確，因為可以將視頻和旁白一起嵌入投影片中。
+正確答案："只有(1)"，因為增加錄製旁白會導致檔案大小的增大是正確的，其他選項與問題描述不符。
 </explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">8. 莉莉是市場部經理，她計劃向特選客戶發出邀請信。她將會從客戶數據庫提選取數據。她應進行什麼資訊處理進程?
-(1) 選
-(2) 件合併
-(3)「假設」分析</QText>
+<QText examyear="HKDSE 2021">8. 莉莉是市場部經理，她計劃向特選客戶發出邀請信。她將會從客戶數據庫提選取數據。她應進行什麼資訊處理進程？
+(1) 篩選
+(2) 郵件合併
+(3) 「假設」分析</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
 <Option>(1)、(2)和(3)</Option>
+<explanation>解釋: 答案A。
+(1) 篩選：這個過程涉及從大量數據中選取符合特定條件的數據集，這在郵件寄送流程中是必要的。
+(2) 郵件合併：這是一種自動化過程，它允許將數據庫中的數據與文檔模板結合，從而創建個性化的郵件或邀請信。
+(3) 「假設」分析：這通常用於進行數據分析，其中變量的不同「假設」會被用來看它們如何影響結果，這在準備郵件或邀請信的過程中並不常見。
+正確答案："只有(1)和(2)"，因為這兩個選項都描述了在發送郵件或邀請信之前拼合和篩選數據的過程。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021" figure="2021-q9.png">9. 在網上系統內，要求用戶輸入密碼兩次的目的是什麼?</QText>
+<QText examyear="HKDSE 2021" figure="2021-q9.png">9. 在網上系統內要求用戶輸入密碼兩次的目的是什麼？
+/figure</QText>
 <Option>數據有效性檢驗</Option>
 <Option correct="1">數據驗證</Option>
 <Option>數據組織</Option>
 <Option>數據預備</Option>
-<explanation>
-選項的正確答案是數據驗證，這是一種確保用戶在設定他們帳號的密碼時沒有打錯，通過要求兩次輸入來進行比對的安全措施。
+<explanation>解釋: 答案B。
+數據有效性檢驗：通常指的是檢查數據是否符合預定格式或範圍，而不是驗證兩次輸入是否一致。
+數據驗證：這是要求用戶輸入密碼兩次的正確原因。這樣做可以確保用戶在第一次輸入密碼時沒有打錯，且在系統中設定的密碼是準確無誤的。
+數據組織：這與要求用戶輸入密碼兩次無關，數據組織是指對數據按一定方式排列或分類。
+數據預備：這通常涉及對數據進行格式化、清潔和轉換，以便用於進一步處理或分析，與密碼的雙重輸入無關。
+正確答案為「數據驗證」，目的是為了確保用戶準確無誤地輸入了他們想要設定的密碼。
 </explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">10. 志明打算利用物件連結，把X.jpg和Y.xlsx的內容加入至Z.docx內。
-下列哪句關於物件連接與嵌入(OLE)的句子是正確的?</QText>
+<QText examyear="HKDSE 2021">10. 志明打算利用物件連結，把 X.jpg 和 Y.xlsx 的內容加入至 Z.docx 內。下列哪句關於物件連接與嵌入 (OLE) 的句子是正確的？</QText>
 <Option>OLE不能應用於X的檔案格式。</Option>
 <Option>在志明行動前，X的檔案大小應是小於Z的。</Option>
 <Option>志明完成其行動後，Z的檔案大小將會大於Y的。</Option>
 <Option correct="1">改變Y內的數據，可影響隨後Z的列印本。</Option>
-<explanation>
-選項的正確答案是改變Y內的數據，可影響隨後Z的列印本。這是因為在OLE中，源文件（Y.xlsx）的更新會反映在鏈接文件（Z.docx）中。這項技術允許從不同應用程序中創建的物件互相連結或嵌入。其他選項描述的情況與OLE的功能無關或是不正確的。
+<explanation>解釋: 答案D。
+OLE不能應用於X的檔案格式：這是不正確的，因為OLE技術支持多種文件格式之間的連接和嵌入，包括JPG和XLSX文件。
+在志明行動前，X的檔案大小應是小於Z的：檔案的大小與OLE功能的使用無直接關聯，檔案大小因素並不影響OLE的應用。
+志明完成其行動後，Z的檔案大小將會大於Y的：OLE操作可能會影響文檔的大小，但這個選項並沒有明確說明OLE的工作原理。
+改變Y內的數據，可影響隨後Z的列印本：這是正確的，因為在OLE技術中，來源文件Y.xlsx的改變會更新到連接的Z.docx文件中，從而影響Z的輸出。
+正確答案為「改變Y內的數據，可影響隨後Z的列印本」，因為OLE允許源文件的更新在鏈接文檔中顯示出來。
 </explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">11. 在數據庫軟件內，使用表格來輸入數據的主要優點是什麼?
-(1) 少輸入錯誤。
-(2) 短SQL語句的執行時間。
-(3) 要較少儲存空間。</QText>
+<QText examyear="HKDSE 2021">11. 在數據庫軟件內使用表格來輸入數據的主要優點是什麼？
+(1) 減少輸入錯誤。
+(2) 縮短 SQL 語句的執行時間。
+(3) 需要較少儲存空間。</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋: 答案A。
+(1) 減少輸入錯誤：通過准設定的數據格式和自動輸入功能來減少人為錯誤，是使用數據庫軟件輸入數據的一個重要優點。
+(2) 縮短 SQL 語句的執行時間：這並非直接相關，SQL執行時間與許多因素有關，包括查詢的複雜性和數據庫的性能等，而不僅僅是輸入數據的方式。
+(3) 需要較少儲存空間：使用表格輸入數據不一定意味著需要較少的儲存空間，儲存空間的需求與數據量和數據類型有關。
+正確答案為「只有(1)」，指使用表格輸入可以幫助減少輸入錯誤，從而提高數據準確性。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021" figure="2021-q12.png">12. 下圖顯示了「輸入─處理─輸出」周期的基本概念。X和Y是什麼?</QText>
+<QText examyear="HKDSE 2021" figure="2021-q12.png">12. 下圖顯示了「輸入—處理—輸出」周期的基本概念。X 和 Y 是什麼？
+/figure</QText>
 <Option>X=統一碼	Y=二進制數字</Option>
 <Option>X=互聯網	Y=網絡設備</Option>
 <Option correct="1">X=程式	Y=儲存器</Option>
 <Option>X=數據庫	Y=查詢</Option>
+<explanation>解釋: 答案C。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021" figure="2021-q13.png">13. 小芬使用試算表，來儲存數百筆，關於網上會議的記錄，如下所示：
-「參加者」應置於下列哪項?
-(1) 選
-(2) 
-(3) 
-(4) </QText>
+<QText examyear="HKDSE 2021" figure="2021-q13.png">13. 小芬使用試算表來儲存數百筆關於網上會議的記錄，如下所示：
+/figure
+「參加者」應置於下列哪項？
+(1) 篩選
+(2) 欄
+(3) 列
+(4) 值</QText>
 <Option>只有(1)</Option>
 <Option>只有(4)</Option>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(3)和(4)</Option>
+<explanation>解釋: 答案D。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">14. 下列哪項可以是掃描文件和照片的掃描器的規格?
-(1) 援802.11n
-(2) 4位色深
-(3) 置64MB RAM</QText>
+<QText examyear="HKDSE 2021">14. 下列哪項可以是掃描文件和照片的掃描器的規格？
+(1) 支援 802.11n
+(2) 24 位色深
+(3) 內置 64 MB RAM</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
 <Option correct="1">(1)、(2)和(3)</Option>
+<explanation>解釋: 答案D。
+(1) 支援 802.11n：這是一種無線網絡通訊標準，掃描器若支援該標準，便能無線連接到網絡上。
+(2) 24 位色深：這代表掃描器能掃描出高質素彩色圖像，24位能提供豐富色彩和細節。
+(3) 內置 64 MB RAM：內存對於掃描器操作性能很重要，可以提高掃描過程中的數據處理速度。
+正確答案是“(1)、(2)和(3)”，因為這三項規格都是可能出現在掃描器上的技術特點。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">15. 下列哪項需要驅動程式?
-(1) 輯文字處理文件
-(2) 接一個新打印機
-(3) 除一個軟件包</QText>
+<QText examyear="HKDSE 2021">15. 下下列哪項需要驅動程式？
+(1) 編輯文字處理文件
+(2) 連接一個新打印機
+(3) 移除一個軟件包</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋: 答案B。
+(1) 編輯文字處理文件：這項工作通常由文字處理軟件來完成，而不需要特定的驅動程式。
+(2) 連接一個新打印機：新的硬件設備如打印機在安裝時需要對應的驅動程式以便操作系統能識別和正常工作。
+(3) 移除一個軟件包：通常，刪除軟件不需要特定的驅動程式，這是由操作系統或特定的卸載程式來處理。
+正確答案是“只有(2)”，因為連接新打印機時需安裝驅動程式以正常使用。
+</explanation>
 </Question>
 
 <Question>
 <QText examyear="HKDSE 2021">16. 國華在家建構了一個電腦系統，讓他的朋友登入及一起玩網上足球遊戲。這樣會涉及下列哪項處理模式？
-(1) 上互動處理
-(2) 批工件處理
-(3) 時處理</QText>
+(1) 網上互動處理
+(2) 成批工件處理
+(3) 實時處理</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋: 答案C。
+(1) 網上互動處理：玩網上遊戲是一種互動式的活動，需要不斷的數據交換和處理，以便即時反映玩家的動作。
+(2) 成批工件處理：這種處理模式通常用於沒有即時互動需求的數據處理，例如大量數據的處理工作並非即時反映結果。
+(3) 實時處理：玩遊戲通常需要實時處理來保證遊戲體驗流暢，特別是線上多人對戰時。
+正確答案是“只有(1)和(3)”，因為網上遊戲涉及到即時互動和實時處理。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">17. 志偉有一台桌上電腦，內設一個500GB SSD和一個2TB硬碟機。為什麼操作系統會被安裝在SSD，而非硬碟機內?</QText>
+<QText examyear="HKDSE 2021">17. 志偉有一台桌上電腦，內設一個 500GB SSD 和一個 2TB 硬碟機。為什麼操作系統會被安裝在 SSD 而非硬碟機內？</QText>
 <Option>該操作系統並不是開放源碼軟件。</Option>
 <Option correct="1">該操作系統的檔案是經常使用的。</Option>
 <Option>該操作系統所需的儲存大小是少於500GB。</Option>
 <Option>數據檔需在硬碟機內儲存。</Option>
+<explanation>解釋: 答案B。
+該操作系統並不是開放源碼軟件：這和操作系統安裝的選擇沒有直接關係，開放源碼或非開放源碼都可以安裝在 SSD 或 HDD 上。
+該操作系統的檔案是經常使用的：這是安裝操作系統在 SSD 而不是 HDD 的主要原因。因為 SSD 提供更快的讀寫速度，更能滿足操作系統經常讀取和寫入檔案的需求。
+該操作系統所需的儲存大小是少於500GB：雖然這是一個事實，但並非安裝選擇的主要考慮因素。
+數據檔需在硬碟機內儲存：這可以是一種存儲策略，但也不是在 SSD 而非 HDD 安裝操作系統的主要原因。
+正確答案是“該操作系統的檔案是經常使用的”，因為這是選擇在 SSD 上安裝操作系統的技術優勢和合理理由。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">18. 下列哪項是CPU的近期發展?</QText>
+<QText examyear="HKDSE 2021">18. 下列哪項是 CPU 的近期發展？</QText>
 <Option>預裝操作系統</Option>
 <Option>減少處理部件數量</Option>
 <Option correct="1">增加時鐘頻率</Option>
 <Option>增加耗電量</Option>
+<explanation>解釋: 答案C。
+預裝操作系統：這通常是電腦製造商所做的事，與CPU的技術發展無關。
+減少處理部件數量：這不是近期發展的趨勢。事實上，為提高處理效能，當代的CPU設計更傾向於增加更多核心，而不是減少部件。
+增加時鐘頻率：這是CPU近期發展中的一部分，隨著製程技術的進步，CPU的時鐘頻率有所提高，這能使CPU在單位時間內執行更多操作。
+增加耗電量：這不是目標發展方向，製造商通常會努力降低CPU的電力消耗來提高效能與功耗比。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">19. 志明打算購買電腦，以便使用多媒體學習軟件包。下列哪項是最不重要的因素?</QText>
+<QText examyear="HKDSE 2021">19. 志明打算購買電腦，以便使用多媒體學習軟件包。下列哪項是最不重要的因素？</QText>
 <Option>SSD 的儲存大小</Option>
 <Option>RAM 的儲存大小</Option>
 <Option correct="1">ROM 的儲存大小</Option>
 <Option>CPU 的時鐘頻率</Option>
+<explanation>解釋: 答案C。
+SSD的儲存大小：對於必須儲存多媒體內容的用戶來說這是一個重要的考量因素。
+RAM的儲存大小：運行多媒體學習軟件包可能需要較大的記憶體，所以這也是重要的。
+ROM的儲存大小：在當代的電腦系統中，ROM主要用於儲存韌體，不會直接影響多媒體軟件包的使用，因此是最不重要的因素。
+CPU的時鐘頻率：這會影響到程式執行的速度，對於多媒體處理是一個重要的因素。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">20. 以電子書閱讀器(而非平板電腦)來閱讀電子書的好處是什麼?
-(1) 電量較低
-(2) 量較輕
-(3) 算能力較高</QText>
+<QText examyear="HKDSE 2021">20. 以電子書閱讀器而非平板電腦來閱讀電子書的好處是什麼？
+(1) 耗電量較低
+(2) 重量較輕
+(3) 計算能力較高</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
 <Option>(1)、(2)和(3)</Option>
+<explanation>解釋: 答案A。
+耗電量較低：這是電子書閱讀器的一大優點，因為它們通常使用電子墨水技術，這比背光屏幕耗能少。
+重量較輕：電子書閱讀器設計輕便，方便長時間閱讀。
+計算能力較高：這並不是電子書閱讀器的優勢，平板電腦通常具有更高的計算能力。
+正確答案是“只有(1)和(2)”。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021" figure="2021-q21.png">21. 在CPU內執行匯編語言指令「載入1000」時，下列哪項部件會將此指令解碼?</QText>
+<QText examyear="HKDSE 2021">21. 在 CPU 內執行匯編語言指令「載入 1000」時，下列哪項部件會將此指令解碼？</QText>
 <Option>匯流排</Option>
 <Option>寄存器</Option>
 <Option>ALU</Option>
 <Option correct="1">CU</Option>
+<explanation>解釋: 答案D。
+匯流排：它負責數據和指令在CPU各部件之間傳遞，不負責解碼。
+寄存器：用來儲存指令和數據，但不是解碼指令的部件。
+ALU（算術邏輯單元）：主要負責執行算術和邏輯操作，而非指令的解碼。
+CU（控制單元）：負責指令的提取、解碼和執行控制，因此CU會解碼指令。
+正確答案是“CU”。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">22. 下列哪項在連接兩個LAN時是常用的?</QText>
+<QText examyear="HKDSE 2021">22. 下列哪項在連接兩個 LAN 時是常用的？</QText>
 <Option>防火牆</Option>
 <Option>寬頻數據機</Option>
 <Option correct="1">路由器</Option>
 <Option>抗病毒軟件</Option>
+<explanation>解釋: 答案C。
+防火牆：主要用於網絡安全，阻擋不安全的數據流入網絡，而非連接網絡。
+寬頻數據機：主要用於將數位信號轉換為模擬信號，以進行通過電線的傳輸，而非連接局域網。
+路由器：就是用於連接不同網絡，如兩個局域網（LAN）的設備，可以轉發數據包到目的地。
+抗病毒軟件：用於檢測和防止病毒，和網絡連接沒有直接相關。
+正確答案是“路由器”。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">23. 下列哪項不是多媒體檔案格式?</QText>
+<QText examyear="HKDSE 2021">23. 下列哪項不是多媒體檔案格式？</QText>
 <Option correct="1">ZIP</Option>
 <Option>MP3</Option>
 <Option>MP4</Option>
 <Option>PNG</Option>
+<explanation>解釋: 答案A。
+ZIP: 這是一種壓縮檔案格式，主要用於檔案的壓縮和歸檔，不是用於直接存儲多媒體內容的格式。
+MP3: 這是一種音頻檔案格式，用於存儲音樂和其他音頻資料。
+MP4: 這是用於存儲視頻和音頻流的多媒體檔案格式。
+PNG: 這是一種圖像檔案格式，用於存儲網絡圖片。
+正確答案是“ZIP”，因為它不是用來存儲視頻、音頻或圖像的格式。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">24. 某超級市場將會提供一個網上平台，讓顧客購買食物。當設計其用戶界面時，應考慮下列哪項?
-(1) 型大小
-(2) 色
-(3) 言</QText>
+<QText examyear="HKDSE 2021">24. 某超級市場將會提供一個網上平台，讓顧客購買食物。當設計其用戶界面時，應考慮下列哪項？
+(1) 字型大小
+(2) 顏色
+(3) 語言</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
 <Option correct="1">(1)、(2)和(3)</Option>
+<explanation>解釋: 答案D。
+字型大小: 確保所有用戶都能輕鬆閱讀網站內容。
+顏色: 使用易於辨認且對色盲用戶友善的顏色組合，增進網站的可用性。
+語言: 提供多種語言選擇，滿足不同語言的用戶需求。
+正確答案是“(1)、(2)和(3)”，因為一個易於使用的用戶界面應該考慮這三個元素來提升用戶體驗。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">25. 莉莉在她的辦公室，可利用其流動電話來控制家中連接Wi-Fi網絡的電器。這樣會涉及下列哪項?
-(1) AN
-(2) 聯網
-(3) 線網絡接連點</QText>
+<QText examyear="HKDSE 2021">25. 莉莉在她的辦公室可利用其流動電話來控制家中連接 Wi-Fi 網絡的電器。這樣會涉及下列哪項？
+(1) LAN
+(2) 互聯網
+(3) 無線網絡接達點</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
 <Option correct="1">(1)、(2)和(3)</Option>
+<explanation>解釋: 答案D。
+LAN: 電器連接到的家庭局部區域網絡。
+互聯網: 顧客可能通過互聯網遠程與家中的設備連接。
+無線網絡接達點: 提供無線連接供家中設備和莉莉的手機連接。
+正確答案是“(1)、(2)和(3)”，因為這三種網絡技術都會被用來實現從遠端控制家中電器的功能。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">26. 李先生為他的辦公室內工作的員工租用網上檔案儲存服務，而不設立檔案伺服器。為什麼?
-(1) 公室的互聯網連接的頻寬不足。
-(2) 公室內無需額外技術人員。
-(3) 增加儲存容量時較有彈性。</QText>
+<QText examyear="HKDSE 2021">26. 李先生為他的辦公室內工作的員工租用網上檔案儲存服務，而不設立檔案伺服器。為什麼？
+(1) 辦公室的互聯網連接的頻寬不足。
+(2) 辦公室內無需額外技術人員。
+(3) 在增加儲存容量時較有彈性。</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
+<explanation>解釋: 答案D。
+辦公室的互聯網連接的頻寬不足: 若頻寬不足，並不會阻止建立檔案伺服器，但可能影響其效能。
+辦公室內無需額外技術人員: 使用網上檔案存儲服務可以節省雇用專業IT人員來管理和維護伺服器的費用。
+在增加儲存容量時較有彈性: 網上檔案存儲服務通常可以根據需要輕鬆擴展儲存空間，無需購買額外硬件。
+正確答案是“只有(2)和(3)”，因為這些因素提供了使用網上檔案儲存服務的主要好處。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">27. 下列哪項關於HTTP是正確的?
-(1) 是用來傳送超文本文件。
-(2) 是用來翻譯URL為IP位址。
-(3) 是用來儲存瀏覽歷史。</QText>
+<QText examyear="HKDSE 2021">27. 下列哪項關於 HTTP 是正確的？
+(1) 它是用來傳送超文本文件。
+(2) 它是用來翻譯 URL 為 IP 位址。
+(3) 它是用來儲存瀏覽歷史。</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋: 答案A。
+它是用來傳送超文本文件: HTTP是一種網絡協議，用於在世界廣網上傳送超文本，如網頁。
+它是用來翻譯 URL 為 IP 位址: 這是DNS（域名系統）的工作，不是HTTP的功能。
+它是用來儲存瀏覽歷史: 瀏覽歷史是瀏覽器的功能，與HTTP傳輸協議無關。
+正確答案是“只有(1)”，因為只有這一選項描述了HTTP的實際用途。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">28. 雖然學校操場上已安裝了一個有線網絡，但學校還是安裝了一個連接至此網絡的無線網絡接達點。為什麼?
-(1) 生可在課堂上使用平板電腦。
-(2) 絡可每天24小時使用。
-(3) 絡連接的數據傳輸率較高。</QText>
+<QText examyear="HKDSE 2021">28. 雖然學校操場上已安裝了一個有線網絡，但學校還是安裝了一個連接至此網絡的無線網絡接達點。為什麼？
+(1) 學生可在課堂上使用平板電腦。
+(2) 網絡可每天 24 小時使用。
+(3) 網絡連接的數據傳輸率較高。</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋: 答案A。
+它是用來傳送超文本文件: HTTP是一種網絡協議，用於在世界廣網上傳送超文本，如網頁。
+它是用來翻譯 URL 為 IP 位址: 這是DNS（域名系統）的工作，不是HTTP的功能。
+它是用來儲存瀏覽歷史: 瀏覽歷史是瀏覽器的功能，與HTTP傳輸協議無關。
+正確答案是“只有(1)”，因為只有這一選項描述了HTTP的實際用途。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021" figure="2021-q29.png">29. 下列算法的輸出是什麼?</QText>
+<QText examyear="HKDSE 2021">29. 下列算法的輸出是什麼？</QText>
+X ← 9
+Y ← 2
+重複
+	輸出 (X / Y) 的餘數
+	X ← (X / Y) 的整數部分
+直至 X = 0
 <Option>10</Option>
 <Option>110</Option>
 <Option>101</Option>
 <Option correct="1">1001</Option>
+<explanation>解釋: 答案D。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">30. 編寫了程式源碼後，根據解難程序，應執行下列哪項?
-(1) 述問題的輸入和輸出的要求。
-(2) 邊際個案來測試此程式。
-(3) 定問題範圍。</QText>
+<QText examyear="HKDSE 2021">30. 編寫了程式源碼後，根據解難程序，應執行下列哪項？
+(1) 概述問題的輸入和輸出的要求。
+(2) 以邊際個案來測試此程式。
+(3) 界定問題範圍。</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋: 答案B。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">31. 假設X=5, Y=6 和Z=7。下列哪項布爾算式的結果是「真」?</QText>
-<Option>((X &lt; 0) AND (Y &gt;= 6)) AND (Z &gt; 10)</Option>
-<Option>((X &lt; 0) OR  (Y &lt;= 6)) AND (Z &gt; 10)</Option>
-<Option>((X &lt; 0) OR  (Y &gt;= 6)) AND (Z &gt; 10)</Option>
-<Option correct="1">((X &lt; 0) OR  (Y &lt;= 6)) OR  (Z &gt; 10)</Option>
+<QText examyear="HKDSE 2021">31. 假設 X = 5, Y = 6 和 Z = 7 。下列哪項布爾算式的結果是「真」？</QText>
+<Option>( (X &lt; 0) AND (Y &gt;= 6) ) AND (Z &gt; 10)</Option>
+<Option>( (X &lt; 0) OR  (Y &lt;= 6) ) AND (Z &gt; 10)</Option>
+<Option>( (X &lt; 0) OR  (Y &gt;= 6) ) AND (Z &gt; 10)</Option>
+<Option correct="1">( (X &lt; 0) OR  (Y &lt;= 6) ) OR  (Z &gt; 10)</Option>
+<explanation>解釋: 答案D。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021" figure="2021-q32.png">32. 以陣列P的初始值運行，下列算法的輸出是什麼?</QText>
+<QText examyear="HKDSE 2021" >32. 以陣列 P 的初始值運行，下列算法的輸出是什麼？
+當P[1] = 0, P[2] = 1, P[3] = 1, P[4] = 0 時，
+Q ← 0
+設 i 由 1 至 4 執行
+	如果 P[i] = 1 則
+		Q ← 1 – Q
+	輸出 Q</QText>
 <Option correct="1">0100</Option>
 <Option>0110</Option>
 <Option>1000</Option>
 <Option>1001</Option>
+<explanation>解釋: 答案A。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021" figure="2021-q33.png">33. 下列算法的輸出是什麼?</QText>
+<QText examyear="HKDSE 2021">33. 下列算法的輸出是什麼？
+sum ← 0
+j ← 12
+重複
+	sum ← sum + 1
+	j ← j - 2
+直至 j &gt;= 2
+輸出 sum
+</QText>
 <Option>7</Option>
 <Option>6</Option>
 <Option correct="1">5</Option>
@@ -9076,7 +9227,15 @@ ASCII編碼系統中，每個字符都對應一個數值。字符‘X’和‘Z�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021" figure="2021-q34.png">34. 下列算法的輸出是什麼?</QText>
+<QText examyear="HKDSE 2021">34. 下列算法的輸出是什麼？
+設 i 由 1 至 5 執行
+	A[i] ← i
+S ← 0
+i ← 1
+當 i &gt; S 執行
+	S ← S + A[i]*A[i+1]
+	i ← i + 1
+輸出 S</QText>
 <Option>40</Option>
 <Option>20</Option>
 <Option>8</Option>
@@ -9084,7 +9243,17 @@ ASCII編碼系統中，每個字符都對應一個數值。字符‘X’和‘Z�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021" figure="2021-q35.png">35. 下列算法的輸出是什麼?</QText>
+<QText examyear="HKDSE 2021">35. 下列算法的輸出是什麼？
+X ← 6
+Y ← 4
+H ← 2
+當 H &gt; 0 執行
+	X ← X + Y
+	Y ← X - Y
+	X ← X - Y
+	H ← H - 1
+輸出 Y
+</QText>
 <Option>10</Option>
 <Option>6</Option>
 <Option correct="1">4</Option>
@@ -9092,10 +9261,10 @@ ASCII編碼系統中，每個字符都對應一個數值。字符‘X’和‘Z�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">36. 麗珊使用開放源碼軟件時可做什麼?
-\t (1)使用軟件前，向軟件開發商尋求批准。
-\t (2)修改源碼自用。
-\t (3)大幅修改源碼，並擁有整個軟件的版權。</QText>
+<QText examyear="HKDSE 2021">36. 麗珊使用開放源碼軟件時可做什麼？
+(1) 使用軟件前向軟件開發商尋求批准。
+(2) 修改源碼自用。
+(3) 大幅修改源碼，並擁有整個軟件的版權。</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -9103,10 +9272,10 @@ ASCII編碼系統中，每個字符都對應一個數值。字符‘X’和‘Z�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">37. 使用互聯網上的資訊，來編寫一份報告前，應考慮什麼?
-\t(1) 互聯網上有些資訊不可靠。
-\t(2) 互聯網上絕大部分資訊是免費的。
-\t(3) 很多黑客透過社交媒體盜取個人資料。</QText>
+<QText examyear="HKDSE 2021">37. 使用互聯網上的資訊來編寫一份報告前應考慮什麼？
+(1) 互聯網上有些資訊不可靠。
+(2) 互聯網上絕大部分資訊是免費的。
+(3) 很多黑客透過社交媒體盜取個人資料。</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -9114,10 +9283,10 @@ ASCII編碼系統中，每個字符都對應一個數值。字符‘X’和‘Z�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">38. 下列哪項可縮窄社會內的數碼隔閡?
-\t(1) 向學生提供電腦以供學習
-\t(2) 在餐廳內，提供自助點餐機
-\t(3) 在店舖內，以電子付款取代現金付款</QText>
+<QText examyear="HKDSE 2021">38. 下列哪項可縮窄社會內的數碼隔閡？
+(1) 向學生提供電腦以供學習
+(2) 在餐廳內提供自助點餐機
+(3) 在店舖內以電子付款取代現金付款</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -9125,10 +9294,10 @@ ASCII編碼系統中，每個字符都對應一個數值。字符‘X’和‘Z�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">39. 下列哪項互聯網活動，很可能侵犯了版權?
-\t(1) 從一張舊電影DVD擷取了視像，並把它上載至互聯網。
-\t(2) 繪畫一張圖畫，並以對等網絡(p2p)軟件與朋友分享。
-\t(3) 從互聯網下載新聞文章，以用作出版書籍。</QText>
+<QText examyear="HKDSE 2021">39. 下列哪項互聯網活動很可能侵犯了版權？
+(1) 從一張舊電影 DVD 擷取了視像，並把它上載至互聯網。
+(2) 繪畫一張圖畫，並以對等網絡（p2p）軟件與朋友分享。
+(3) 從互聯網下載新聞文章，以用作出版書籍。</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -9136,14 +9305,25 @@ ASCII編碼系統中，每個字符都對應一個數值。字符‘X’和‘Z�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">40. 下列哪項是在網上系統中，驗證用戶身份的常見措施?
-\t(1) DNS
-\t(2) 保安權標
-\t(3) 防火牆</QText>
+<QText examyear="HKDSE 2021">40. 下列哪項是在網上系統中驗證用戶身份的常見措施？
+(1) DNS
+(2) 保安權標
+(3) 防火牆</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2023">1. 下列哪些句子關於在儲存設備上直接存取是正確的?
+(1) 寫入檔案的數據是由儲存設備的開頭開始
+(2) 一般來說，搜尋檔案的尋找時問比順序存取的為快
+(3) 比順序存取更常用於硬碟</QText>
+<Option>只有(1)和(2)</Option>
+<Option correct="1">只有(1)和(3)</Option>
+<Option>只有(2)和(3)</Option>
+<Option>(1)、(2)和(3)</Option>
 </Question>
 
 </Quiz>
