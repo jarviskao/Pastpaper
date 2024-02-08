@@ -8711,10 +8711,10 @@ X已阻隔此程式的一些功能。
 (1) 最常用的字型和字體大小設定成預設值
 (2) 題可使用預先設定的樣式
 (3) 用自動校正功能</QText>
-<Option>只有(1)和(2)</Option>
+<Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
-<Option correct="1">(1)、(2)和(3)</Option>
+<Option >(1)、(2)和(3)</Option>
 </Question>
 
 <Question>
@@ -8750,9 +8750,9 @@ X已阻隔此程式的一些功能。
 (2) 效質素更佳。
 (3) 有跨平台問題。</QText>
 <Option>只有(1)</Option>
-<Option>只有(2)</Option>
+<Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
-<Option correct="1">只有(2)和(3)</Option>
+<Option >只有(2)和(3)</Option>
 </Question>
 
 <Question>
