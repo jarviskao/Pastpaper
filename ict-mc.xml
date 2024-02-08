@@ -11,9 +11,9 @@
 
 <Question>
 <QText examyear="HKCEE 2003">2. 下列哪個(或哪些)項目可以在洗衣機找到?
-(1)嵌入式系統
-(2)電腦輔助教學
-(3)人工智能</QText>
+(1) 入式系統
+(2) 腦輔助教學
+(3) 工智能</QText>
 <Option>只有(2)</Option>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
@@ -106,9 +106,9 @@ X=	Y=</QText>
 
 <Question>
 <QText examyear="HKCEE 2003">13. 下列哪個(或哪些)項目可在圖形用戶介面中用圖示(icon)來表示
-(1)程序檔
-(2)試算表檔
-(3)視像檔</QText>
+(1) 序檔
+(2) 算表檔
+(3) 像檔</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)和(3)</Option>
 <Option>只有(1)和(3)</Option>
@@ -139,9 +139,9 @@ X=	Y=</QText>
 
 <Question>
 <QText examyear="HKCEE 2003">16. 下列哪些是利用搜尋器來搜尋資料的正確方法?
-(1)利用不同搜尋器，直至找到所需的資料。
-(2)輸入關鍵字，以便搜尋。
-(3)選擇由搜尋器 提供的目錄來搜尋。</QText>
+(1) 用不同搜尋器，直至找到所需的資料。
+(2) 入關鍵字，以便搜尋。
+(3) 擇由搜尋器 提供的目錄來搜尋。</QText>
 <Option>只有(1)和(3)</Option>
 <Option>只有(1)和(2)</Option>
 <Option>只有(2)和(3)</Option>
@@ -166,9 +166,9 @@ X=	Y=</QText>
 
 <Question>
 <QText examyear="HKCEE 2003">19. 當你買了一個普通應用軟件包時，基本上代表
-(1)你有權使用它。
-(2)你有權改寫它。
-(3)你有權將它複製給別人。</QText>
+(1) 有權使用它。
+(2) 有權改寫它。
+(3) 有權將它複製給別人。</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(3)</Option>
@@ -177,9 +177,9 @@ X=	Y=</QText>
 
 <Question>
 <QText examyear="HKCEE 2003">20. 下列哪項(或哪些)行動可防止電腦為病毒所感染?
-(1)不要打開來歷不明的 電子郵件附件檔。
-(2)刪除電腦中 所有已閱讀的電子郵件。
-(3)卸除所有在互聯網上 下載而使用中的程序。</QText>
+(1) 要打開來歷不明的 電子郵件附件檔。
+(2) 除電腦中 所有已閱讀的電子郵件。
+(3) 除所有在互聯網上 下載而使用中的程序。</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -221,9 +221,9 @@ X=	Y=</QText>
 
 <Question>
 <QText examyear="HKCEE 2003">25. 下列各項均與可重寫光碟(CD-RW)有關，哪項(或哪些)描述是正確的?
-(1)用戶不可更新內容。
-(2)它屬於易失性記憶器。
-(3)它可存貯大量圖形檔。</QText>
+(1) 戶不可更新內容。
+(2) 屬於易失性記憶器。
+(3) 可存貯大量圖形檔。</QText>
 <Option>只有(2)</Option>
 <Option correct="1">只有(3)</Option>
 <Option>只有(1)和(2)</Option>
@@ -235,9 +235,9 @@ X=	Y=</QText>
 	782356197
 
 下列哪個(或哪些)裝置，可用來輸入上圖的數據?
-(1)光符閱讀機
-(2)光標閱讀機
-(3)條碼閱讀機</QText>
+(1) 符閱讀機
+(2) 標閱讀機
+(3) 碼閱讀機</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(3)</Option>
@@ -274,10 +274,10 @@ X=	Y=</QText>
 
 <Question>
 <QText examyear="HKCEE 2003">30. 下列哪些是高級語言?
-(1)Pascal
-(2)匯編語言
-(3)COBOL
-(4)機器語言</QText>
+(1) ascal
+(2) 編語言
+(3) OBOL
+(4) 器語言</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(4)</Option>
@@ -310,10 +310,10 @@ X=	Y=</QText>
 
 <Question>
 <QText examyear="HKCEE 2003">34. 下列哪些寄存器與主記憶器的關係密切?
-(1)IR
-(2)MAR
-(3)ACC
-(4)MDR</QText>
+(1) R
+(2) AR
+(3) CC
+(4) DR</QText>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(4)</Option>
 <Option>只有(1)、(2)和(3)</Option>
@@ -336,9 +336,9 @@ X=	Y=	Z=</QText>
 
 <Question>
 <QText examyear="HKCEE 2003">36. 下列哪些項目可以控制檔案的存取?
-(1)將檔案改成唯讀。
-(2)利用密碼系統，限制檔案存取。
-(3)將檔案備份，存放在安全的地方。</QText>
+(1) 檔案改成唯讀。
+(2) 用密碼系統，限制檔案存取。
+(3) 檔案備份，存放在安全的地方。</QText>
 <Option>只有(2)和(3)</Option>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)相(3)</Option>
@@ -368,9 +368,9 @@ X=	Y=	Z=</QText>
 
 <Question>
 <QText examyear="HKCEE 2003">39. 下列哪(些)句子 描述偽代碼是正確的?
-(1)CPU 能直接明白偽代碼。
-(2)偽代碼 能被改寫成 程序指令。
-(3)偽代碼 並沒有特定的語法規律。</QText>
+(1) PU 能直接明白偽代碼。
+(2) 代碼 能被改寫成 程序指令。
+(3) 代碼 並沒有特定的語法規律。</QText>
 <Option>只有(2)</Option>
 <Option correct="1">只有(2)相(3)</Option>
 <Option>只有(1)和(2)</Option>
@@ -469,9 +469,9 @@ X=	Y=	Z=</QText>
 
 <Question>
 <QText examyear="HKCEE 2004">9. 在某電腦系統內的一項應用由成批處理改變為實時處理後，會有什麼影響?
-(1)該應用的應答時間更快。
-(2)該系統的成本增加。
-(3)該應用更容易使用。</QText>
+(1) 應用的應答時間更快。
+(2) 系統的成本增加。
+(3) 應用更容易使用。</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -511,10 +511,10 @@ CODE「不能」用作關鍵字段，因為</QText>
 
 <Question>
 <QText examyear="HKCEE 2004">12. 小明和小茵 利用搜尋器尋找相同的資料。最後他們獲得不同的搜尋結果，為什麼?
-(1)他們使用 不同的搜尋器。
-(2)他們使用 不同的ISP(互聯網服務供應商)。
-(3)他們在 不同時段搜尋資料。
-(4)他們使用 不同的瀏覽器。</QText>
+(1) 們使用 不同的搜尋器。
+(2) 們使用 不同的ISP(互聯網服務供應商)。
+(3) 們在 不同時段搜尋資料。
+(4) 們使用 不同的瀏覽器。</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -524,9 +524,9 @@ CODE「不能」用作關鍵字段，因為</QText>
 <Question>
 <QText examyear="HKCEE 2004">13. 吳先生寄了一封電郵給張小姐。稍後，他從系統管理員獲知一個訊息，電郵伺服器沒有把他的電郵寄出。
 下列哪項(或哪些)是可能發生的原因?
-(1)附件檔太大。
-(2)該電郵地址是由其他人擁有。
-(3)只輸入了一個空白字符在電郵內。</QText>
+(1) 件檔太大。
+(2) 電郵地址是由其他人擁有。
+(3) 輸入了一個空白字符在電郵內。</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -570,10 +570,10 @@ CODE「不能」用作關鍵字段，因為</QText>
 <Question>
 <QText examyear="HKCEE 2004">17. 小發現執行下列行動後，他的電腦感染了病毒。
 以下哪些行動最可能引致這次感染?
-(1)存取了由同學提供的磁碟內檔案。
-(2)從互聯網下載及安裝一個遊戲軟件。
-(3)改變了屏幕的牆紙。
-(4)開啟了一個附著電郵的文字檔。</QText>
+(1) 取了由同學提供的磁碟內檔案。
+(2) 互聯網下載及安裝一個遊戲軟件。
+(3) 變了屏幕的牆紙。
+(4) 啟了一個附著電郵的文字檔。</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(2)和(3)</Option>
 <Option>只有(3)和(4)</Option>
@@ -622,10 +622,10 @@ CODE「不能」用作關鍵字段，因為</QText>
 
 <Question>
 <QText examyear="HKCEE 2004">23. 下列哪些是電腦分類的主要準則?
-(1)體積
-(2)運算速度
-(3)提升性能的可行性
-(4)RAM的大小</QText>
+(1) 積
+(2) 算速度
+(3) 升性能的可行性
+(4) AM的大小</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(4)</Option>
@@ -651,10 +651,10 @@ CODE「不能」用作關鍵字段，因為</QText>
 
 <Question>
 <QText examyear="HKCEE 2004">26. 下列哪些是便用條形碼閱讀機輸入數據勝於使用鍵盤的優點?
-(1)更加準確
-(2)速度更快
-(3)更加安全
-(4)硬件成本更低</QText>
+(1) 加準確
+(2) 度更快
+(3) 加安全
+(4) 件成本更低</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(4)</Option>
 <Option>只有(2)和(4)</Option>
@@ -686,10 +686,10 @@ CODE「不能」用作關鍵字段，因為</QText>
 
 <Question>
 <QText examyear="HKCEE 2004">29. 在電腦內利用浮點表示法存貯數字，下列哪些錯誤可能出現?
-(1)語法錯誤
-(2)溢出誤差
-(3)邏輯錯誤
-(4)截尾誤差</QText>
+(1) 法錯誤
+(2) 出誤差
+(3) 輯錯誤
+(4) 尾誤差</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(4)</Option>
@@ -725,10 +725,10 @@ CODE「不能」用作關鍵字段，因為</QText>
 <Question>
 <QText examyear="HKCEE 2004">33. 在正常情況下，當液晶(LCD)顯示器與顯像管(CRT)顯示器比較，下列哪些描述是正確的? 
 LCD顯示器
-(1)較便宜。
-(2)重量較輕。
-(3)耗電量較低。
-(4)顯示較多顏色。</QText>
+(1) 便宜。
+(2) 量較輕。
+(3) 電量較低。
+(4) 示較多顏色。</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(2)和(3)</Option>
 <Option>只有(2)和(4)</Option>
@@ -737,9 +737,9 @@ LCD顯示器
 
 <Question>
 <QText examyear="HKCEE 2004">34. 下列哪些是主要協助ALU運算的寄存器?
-(1)狀態寄存器
-(2)累加器
-(3)程序計數器</QText>
+(1) 態寄存器
+(2) 加器
+(3) 序計數器</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(2)和(3)</Option>
 <Option>只有(1)和(3)</Option>
@@ -748,9 +748,9 @@ LCD顯示器
 
 <Question>
 <QText examyear="HKCEE 2004">35. 下列哪項(或哪些)是在檔案系統中建立不同目錄的原因?
-(1)節省硬碟存貯空問。
-(2)協助用戶處理檔案。
-(3)增加CPU處理速度。</QText>
+(1) 省硬碟存貯空問。
+(2) 助用戶處理檔案。
+(3) 加CPU處理速度。</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(3)</Option>
@@ -769,9 +769,9 @@ LCD顯示器
 <Question>
 <QText examyear="HKCEE 2004">37. 某程序編寫員編寫了一個程序，用作運算及列印信用咭月結單。這位程序編寫員發現月結單上的總數與所有個別數額的總和不同。
 下列哪項(或哪些)錯誤出現?
-(1)邏輯錯誤
-(2)語法錯誤
-(3)運行時錯誤</QText>
+(1) 輯錯誤
+(2) 法錯誤
+(3) 行時錯誤</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(3)</Option>
@@ -780,9 +780,9 @@ LCD顯示器
 
 <Question>
 <QText examyear="HKCEE 2004">38. 下列哪項(或哪些)是操作系統內使用圖形用戶介面的原因?
-(1)方便用戶使用系統。
-(2)用戶毋須記看指令。
-(3)系統反應更快。</QText>
+(1) 便用戶使用系統。
+(2) 戶毋須記看指令。
+(3) 統反應更快。</QText>
 <Option>只有(1)</Option>
 <Option>只有(3)</Option>
 <Option correct="1">只有(1)和(2)</Option>
@@ -806,10 +806,10 @@ Do while not end of file
 	Print output result
 End do
 下列哪些關於這個偽代碼的描述是正確的?
-(1)這個偽代碼用以表達一個算法。
-(2)每一行改寫為一句程序語句。
-(3)第二、三、四行均縮排，以改善其可讀性。
-(4)偽代碼是一種高級程序語言，只可由編譯程序和解譯程序翻譯。</QText>
+(1) 個偽代碼用以表達一個算法。
+(2) 一行改寫為一句程序語句。
+(3) 二、三、四行均縮排，以改善其可讀性。
+(4) 代碼是一種高級程序語言，只可由編譯程序和解譯程序翻譯。</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(3)和(4)</Option>
@@ -5953,10 +5953,10 @@ C ← 0
 當員工進入公司辦公室時，員工只需把其智能卡放在卡片閱讀機上，
 在數據庫表格內便會產生並儲存一筆新的記錄。
 下列哪些欄位在新記錄中是必要的?
-(1)智能卡編號
-(2)員工姓名
-(3)員工所屬部門
-(4)進入辦公室的時間</QText>
+(1) 能卡編號
+(2) 工姓名
+(3) 工所屬部門
+(4) 入辦公室的時間</QText>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(1)和(4)</Option>
 <Option>只有(2)和(3)</Option>
@@ -6041,9 +6041,9 @@ C ← 0
 <Question>
 <QText examyear="HKDSE 2015">11. 在演示檔內投影片中插入一超連結時，
 下列哪項/些是可被連結的?
-(1)視像檔
-(2)網站
-(3)試算表檔</QText>
+(1) 像檔
+(2) 站
+(3) 算表檔</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -6102,10 +6102,10 @@ V1	18	70
 
 <Question>
 <QText examyear="HKDSE 2015">16. 操作系統通常包括下列哪些功能?
-(1)提供用戶界面
-(2)分析假設情境
-(3)分配記憶體
-(4)製作網頁</QText>
+(1) 供用戶界面
+(2) 析假設情境
+(3) 配記憶體
+(4) 作網頁</QText>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(1)和(4)</Option>
 <Option>只有(2)和(3)</Option>
@@ -6115,9 +6115,9 @@ V1	18	70
 <Question>
 <QText examyear="HKDSE 2015">17. 下列哪些關於中央處理器內
 快取記憶體的語句是正確的?
-(1)它在存取速度方面，比主記憶體優勝
-(2)它儲存 經常使用的數據 和 最近使用的數據
-(3)它是非易失性的</QText>
+(1) 在存取速度方面，比主記憶體優勝
+(2) 儲存 經常使用的數據 和 最近使用的數據
+(3) 是非易失性的</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -6138,9 +6138,9 @@ V1	18	70
 <Question>
 <QText examyear="HKDSE 2015">19. 小麗以HTML格式(而非文本格式)建構了一個檔案。
 為什麽?
-(1)文本格式不是跨平台的
-(2)這個檔案可儲存超連結
-(3)在開啟此檔案時可顯示視像</QText>
+(1) 本格式不是跨平台的
+(2) 個檔案可儲存超連結
+(3) 開啟此檔案時可顯示視像</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
@@ -6153,10 +6153,10 @@ V1	18	70
 可以利用智能手機 調節空調機的供暖及冷凍功能。
 
 20. 下列哪些最能描述此智能恆溫器的應用?
-(1)多戶作業系統
-(2)成批工件處理系統
-(3)分布式處理系統
-(4)實時系統</QText>
+(1) 戶作業系統
+(2) 批工件處理系統
+(3) 布式處理系統
+(4) 時系統</QText>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(1)和(4)</Option>
 <Option>只有(2)和(3)</Option>
@@ -6180,9 +6180,9 @@ V1	18	70
 <QText examyear="HKDSE 2015" figure="2015-q22.png">22. 在一網頁中，採用下拉列表(而非使用文本框)來輸入一些數據，
 如下圖所示。這樣的設計主要有哪些好處?
 	香港美術博物館 (九龍尖沙咀梳士巴利道10號) ▼
-(1)減少輸入時間
-(2)減低輸入錯誤
-(3)容許輸入更多文字</QText>
+(1) 少輸入時間
+(2) 低輸入錯誤
+(3) 許輸入更多文字</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -6194,9 +6194,9 @@ V1	18	70
 提及在電郵的附加檔案photos.exe内有一些她的相片。
 她嘗試執行該檔案，但相片沒有顯示出來。
 有什麼可能的原因?
-(1)小麗的電腦內，沒有安裝相片編輯軟件
-(2)該檔案包含惡意代碼，危害小麗的電腦
-(3)電郵伺服器不能執行此檔案</QText>
+(1) 麗的電腦內，沒有安裝相片編輯軟件
+(2) 檔案包含惡意代碼，危害小麗的電腦
+(3) 郵伺服器不能執行此檔案</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -6229,9 +6229,9 @@ V1	18	70
 他使用搜尋器並找到以下段落：
 	考評局於2077年成立...
 下列哪項/些行動是合適的?
-(1)把整段再次用搜尋器來搜尋類似的結果
-(2)瀏覽其他網站對此信息作複檢
-(3)複製段落至習作中</QText>
+(1) 整段再次用搜尋器來搜尋類似的結果
+(2) 覽其他網站對此信息作複檢
+(3) 製段落至習作中</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -6289,9 +6289,9 @@ A ← 1
 	A ← A+A
 	輸出 A
 下列哪項/些數值包含在輸出?
-(1)6
-(2)8
-(3)16</QText>
+(1) 
+(2) 
+(3) 6</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -6311,9 +6311,9 @@ A ← 1
 <QText examyear="HKDSE 2015">33. 小麗在解決項目中的問題時，
 需要準確地界定問題範圍，
 其主要原因是什麽?
-(1)她能有效地把問題，細分為子問題
-(2)她能使用真值表，闡明方案
-(3)她能在測試算法時，不理會邊際個案</QText>
+(1) 能有效地把問題，細分為子問題
+(2) 能使用真值表，闡明方案
+(3) 能在測試算法時，不理會邊際個案</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -6324,9 +6324,9 @@ A ← 1
 <QText examyear="HKDSE 2015">34. 小芬與朋友見面，並分享她的相片，
 她沒有將相片上載至其社交網絡戶口。
 因為小芬想...
-(1)擁有相片的版權
-(2)保護她的個人私隠
-(3)防止她的戶口被黑客人侵</QText>
+(1) 有相片的版權
+(2) 護她的個人私隠
+(3) 止她的戶口被黑客人侵</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -6351,9 +6351,9 @@ A ← 1
 <Question>
 <QText examyear="HKDSE 2015">36. 陳先生打算為8歲的女兒小珊購買平板電腦。
 下列哪個/些行動是合適的?
-(1)陳先生應買一部電池續航力長的平板電腦
-(2)小珊應該利用滑鼠使用平板電腦
-(3)小珊使用平板電腦30分鐘後，應該休息5分鐘</QText>
+(1) 先生應買一部電池續航力長的平板電腦
+(2) 珊應該利用滑鼠使用平板電腦
+(3) 珊使用平板電腦30分鐘後，應該休息5分鐘</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
@@ -6362,9 +6362,9 @@ A ← 1
 
 <Question>
 <QText examyear="HKDSE 2015">37. 下列哪項/些是人體工學設計?
-(1)無線路由器容許設定密碼，以防止未經授權用戶存取
-(2)顯示器的仰角/俯角是可以調整的
-(3)文書處理軟件所展示的文字可以放大</QText>
+(1) 線路由器容許設定密碼，以防止未經授權用戶存取
+(2) 示器的仰角/俯角是可以調整的
+(3) 書處理軟件所展示的文字可以放大</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(3)</Option>
@@ -6373,9 +6373,9 @@ A ← 1
 
 <Question>
 <QText examyear="HKDSE 2015">38. 下列哪項/些關於「仿冒詐騙電郵」的語句是正確?
-(1)仿冒詐騙電郵是 某公司向目標收件人發出宣傳的廣吿
-(2)仿冒詐騙電郵 通常透過電郵內偽冒的網站，套取目標收件人的個人資料
-(3)目標收件人受到仿冒詐騙電郵攻擊後，在數天內不能使用電腦</QText>
+(1) 冒詐騙電郵是 某公司向目標收件人發出宣傳的廣吿
+(2) 冒詐騙電郵 通常透過電郵內偽冒的網站，套取目標收件人的個人資料
+(3) 標收件人受到仿冒詐騙電郵攻擊後，在數天內不能使用電腦</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -6888,9 +6888,9 @@ N3
 <Question>
 <QText examyear="HKDSE 2017" figure="2017-q02.png">2. 有兩個在網頁上輸入日期的方法，如下展示
 使用方法1(而非方法2)的好處是什麼?
-(1)減少輸入錯誤
-(2)更方便用戶使用
-(3)以奇偶檢測來找出錯誤</QText>
+(1) 少輸入錯誤
+(2) 方便用戶使用
+(3) 奇偶檢測來找出錯誤</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -6900,9 +6900,9 @@ N3
 <Question>
 <QText examyear="HKDSE 2017">3. 下列哪些是在辦公室自動化軟件內
 採用物件連接與嵌入(OLE)的主要優點?
-(1)在單一檔案內，可包含來自不同應用程式的數據。
-(2)可維持同步更新，來自不同應用程式的數據
-(3)在相同資料夾內，可儲存來自不同應用程式的數據。</QText>
+(1) 單一檔案內，可包含來自不同應用程式的數據。
+(2) 維持同步更新，來自不同應用程式的數據
+(3) 相同資料夾內，可儲存來自不同應用程式的數據。</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -6922,9 +6922,9 @@ N3
 <QText examyear="HKDSE 2017">5. 當在相紙上列印一張數碼相片時，
 相紙的上部分和下部分均未被使用。
 有什麼可能的原因?
-(1)數碼相片和相紙的長闊比不相同
-(2)數碼相片的檔案大小太大
-(3)數碼相片的色深太低</QText>
+(1) 碼相片和相紙的長闊比不相同
+(2) 碼相片的檔案大小太大
+(3) 碼相片的色深太低</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -6935,9 +6935,9 @@ N3
 <QText examyear="HKDSE 2017" figure="2017-q06.png">6. 在某學院內，每張學生註冊表格，均有一個獨一的條碼。
 該學院將會把這些表格數碼化，並以PDF格式儲存。
 這樣處理表格有什麼主要好處?	 
-(1)可以在不同操作系統上，提取和使用這些表格
-(2)可以更快搜尋表格
-(3)可以在高質素的紙張上，列印這些表格</QText>
+(1) 以在不同操作系統上，提取和使用這些表格
+(2) 以更快搜尋表格
+(3) 以在高質素的紙張上，列印這些表格</QText>
 <Option>只有(2)</Option>
 <Option>只有(3)</Option>
 <Option correct="1">只有(1)和(2)</Option>
@@ -6957,9 +6957,9 @@ N3
 
 <Question>
 <QText examyear="HKDSE 2017">8. 下列哪些行動涉及轉換模擬數據至數碼數據?
-(1)利用軟件，將試算表檔案轉換為PDF檔
-(2)利用軟件，將語音轉換為文本
-(3)利用數碼相機，拍攝相片</QText>
+(1) 用軟件，將試算表檔案轉換為PDF檔
+(2) 用軟件，將語音轉換為文本
+(3) 用數碼相機，拍攝相片</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
@@ -6989,9 +6989,9 @@ N3
 <Question>
 <QText examyear="HKDSE 2017">11. 對於一間連鎖式便利店，在下列哪項/些例子中，
 應該使用試算表上的「假設」情境? whatif
-(1)改變不同參數，來估算每月支出
-(2)製作每月銷售分析
-(3)比較不同分店的銷售數據</QText>
+(1) 變不同參數，來估算每月支出
+(2) 作每月銷售分析
+(3) 較不同分店的銷售數據</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7034,9 +7034,9 @@ N3
 
 <Question>
 <QText examyear="HKDSE 2017">15. 下列哪項/些是系統軟件?
-(1)試算表軟件
-(2)操作系統
-(3)驅動程式</QText>
+(1) 算表軟件
+(2) 作系統
+(3) 動程式</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7045,10 +7045,10 @@ N3
 
 <Question>
 <QText examyear="HKDSE 2017">16. 考慮下列某指令，在機器周期內的步驟：
-(1)執行指令
-(2)把數據寫入記憶體內
-(3)將指令翻譯為：操作碼和操作數
-(4)從記憶體內，提取指令
+(1) 行指令
+(2) 數據寫入記憶體內
+(3) 指令翻譯為：操作碼和操作數
+(4) 記憶體內，提取指令
 這些步驟的正確次序是什麼?</QText>
 <Option>(3)→(1)→(2)→(4)</Option>
 <Option>(3)→(2)→(4)→(1)</Option>
@@ -7059,9 +7059,9 @@ N3
 <Question>
 <QText examyear="HKDSE 2017">17. 某電腦是用來編輯視像。
 下列哪些規格，對此電腦的表現，有顯著影響?
-(1)RAM的大小
-(2)USB埠的數目
-(3)CPU時鐘頻率</QText>
+(1) AM的大小
+(2) SB埠的數目
+(3) PU時鐘頻率</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7080,9 +7080,9 @@ N3
 <Question>
 <QText examyear="HKDSE 2017">19. 操作系統內的系統監察軟件，
 通常會提供什麼資訊?
-(1)現正執行處理的程序
-(2)記憶體使用情況
-(3)網絡流量</QText>
+(1) 正執行處理的程序
+(2) 憶體使用情況
+(3) 絡流量</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7092,9 +7092,9 @@ N3
 <Question>
 <QText examyear="HKDSE 2017">20. 下列哪項(些)是由GovHK，
 提供的政府電子化服務?
-(1)登記參加社區康樂體育活動
-(2)申請入讀香港的大學
-(3)續借公共圖書館書籍</QText>
+(1) 記參加社區康樂體育活動
+(2) 請入讀香港的大學
+(3) 借公共圖書館書籍</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
@@ -7104,9 +7104,9 @@ N3
 <Question>
 <QText examyear="HKDSE 2017">21. 莉莉打算為她的平板電腦購置一個鍵盤。
 下列哪個(些)連接通常適用於鍵盤?
-(1)光纖
-(2)USB電纜
-(3)藍牙</QText>
+(1) 纖
+(2) SB電纜
+(3) 牙</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7117,9 +7117,9 @@ N3
 <QText examyear="HKDSE 2017">22. 銀行客戶可透過自動櫃員機(ATM)，
 從戶口提取現金。
 下列哪個/些系統，最能描述此項操作?
-(1)互動系統
-(2)實時系統
-(3)成批工件處理系統</QText>
+(1) 動系統
+(2) 時系統
+(3) 批工件處理系統</QText>
 <Option>只有(2)</Option>
 <Option>只有(3)</Option>
 <Option correct="1">只有(1)和(2)</Option>
@@ -7137,9 +7137,9 @@ N3
 <Question>
 <QText examyear="HKDSE 2017">24. 下列哪項/些是建構無線網絡，
 來取代有線網絡的優點?
-(1)增加網絡速度
-(2)加強網絡保安
-(3)增加電腦的流動性</QText>
+(1) 加網絡速度
+(2) 強網絡保安
+(3) 加電腦的流動性</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(3)</Option>
 <Option>只有(1)和(2)</Option>
@@ -7149,9 +7149,9 @@ N3
 <Question>
 <QText examyear="HKDSE 2017">25. 芝芝打算購買彩色鐳射打印機，
 以作家中之用。她應考慮什麼規格?
-(1)光度(lm)
-(2)打印速度(ppm)
-(3)解像度(dpi)</QText>
+(1) 度(lm)
+(2) 印速度(ppm)
+(3) 像度(dpi)</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
@@ -7179,9 +7179,9 @@ web.goodcompany.com
 	1.香港 2.上海 3.北京 4.深圳 5.重慶 6.天津 7.廈門 8.澳門
 下列哪些修改，可讓用戶毋須使用右邊捲軸，
 便可清楚地看見所有分公司?
-(1)縮小字體大小
-(2)減少字符間距
-(3)使用有多欄的表格</QText>
+(1) 小字體大小
+(2) 少字符間距
+(3) 用有多欄的表格</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7193,9 +7193,9 @@ web.goodcompany.com
 除了圖像檔的名稱外，
 在此網頁的 HTML編碼內，
 將包含了其他什麼資料?
-(1)圖像檔的路徑
-(2)圖像檔的檔案大小
-(3)儲存此HTML檔的伺服器的IP位址</QText>
+(1) 像檔的路徑
+(2) 像檔的檔案大小
+(3) 存此HTML檔的伺服器的IP位址</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7215,10 +7215,10 @@ web.goodcompany.com
 <Question>
 <QText examyear="HKDSE 2017">30. 下列是開發電腦系統的解難程序。
 這些程序的正確次序是什麼?
-(1)測試系統
-(2)界定(定義)問題
-(3)設計算法
-(4)編寫程式碼</QText>
+(1) 試系統
+(2) 定(定義)問題
+(3) 計算法
+(4) 寫程式碼</QText>
 <Option>(2)→(4)→(3)→(1)</Option>
 <Option correct="1">(2)→(3)→(4)→(1)</Option>
 <Option>(3)→(2)→(4)→(1)</Option>
@@ -7268,9 +7268,9 @@ TRUE代表「真」，而 FALSE代表「假」。</QText>
 <Question>
 <QText examyear="HKDSE 2017">34. 下列哪項/些是為網上銀行，
 鑒定客戶身分的保安措施?
-(1)抗電腦病毒軟件
-(2)保安權標
-(3)數碼水印</QText>
+(1) 電腦病毒軟件
+(2) 安權標
+(3) 碼水印</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7279,9 +7279,9 @@ TRUE代表「真」，而 FALSE代表「假」。</QText>
 
 <Question>
 <QText examyear="HKDSE 2017">35. 下列哪些會有保安風險?
-(1)利用咖啡店內的公共電腦，登人網上銀行
-(2)使用商場提供的Wi-Fi網絡，查閱電郵
-(3)利用公共電腦，檢查某網頁的電子證書</QText>
+(1) 用咖啡店內的公共電腦，登人網上銀行
+(2) 用商場提供的Wi-Fi網絡，查閱電郵
+(3) 用公共電腦，檢查某網頁的電子證書</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7290,10 +7290,10 @@ TRUE代表「真」，而 FALSE代表「假」。</QText>
 
 <Question>
 <QText examyear="HKDSE 2017">36. 下列哪些行為，可能侵犯了知識產權?
-(1)將附有病毒的電子郵件，寄給朋友
-(2)非法進入一個網上銀行戶口
-(3)將掃描後的報紙，上載至一個個人網站
-(4)上載一個電視節目的視像至互聯網</QText>
+(1) 附有病毒的電子郵件，寄給朋友
+(2) 法進入一個網上銀行戶口
+(3) 掃描後的報紙，上載至一個個人網站
+(4) 載一個電視節目的視像至互聯網</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(4)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7302,9 +7302,9 @@ TRUE代表「真」，而 FALSE代表「假」。</QText>
 
 <Question>
 <QText examyear="HKDSE 2017">37. 資訊年代的出現，帶來哪些改變。
-(1)需要更多辦公室空間
-(2)新的資訊及通訊科技相關工作出現，並改變人力市場
-(3)有更多機會，獲得資訊和學習新事物</QText>
+(1) 要更多辦公室空間
+(2) 的資訊及通訊科技相關工作出現，並改變人力市場
+(3) 更多機會，獲得資訊和學習新事物</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
@@ -7316,9 +7316,9 @@ TRUE代表「真」，而 FALSE代表「假」。</QText>
 它將受害人的電腦檔案加密，
 然後要求贖款來還原這些檔案。
 如何可減低受到勒索軟件的影響?
-(1)定期建立電腦檔案備份
-(2)不要開啟不知名的，或仿冒詐騙的電子郵件
-(3)不要透過p2p軟件，下載盜版電腦軟件</QText>
+(1) 期建立電腦檔案備份
+(2) 要開啟不知名的，或仿冒詐騙的電子郵件
+(3) 要透過p2p軟件，下載盜版電腦軟件</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7328,9 +7328,9 @@ TRUE代表「真」，而 FALSE代表「假」。</QText>
 <Question>
 <QText examyear="HKDSE 2017">39. 在工作環境中的電腦，
 採用了人體工學設計原理，有什麼主要原因?
-(1)避免重複性肌肉勞損
-(2)節省電腦的設置成本
-(3)提供定制及可調節的設置，來滿足不同人士的需要</QText>
+(1) 免重複性肌肉勞損
+(2) 省電腦的設置成本
+(3) 供定制及可調節的設置，來滿足不同人士的需要</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7404,9 +7404,9 @@ testD.jpg	testD.zip</QText>
 <QText examyear="HKDSE 2018" figure="2018-q5.png">5. 下列為『韓文』文本例子：
 
 下列哪種字符編碼法，可用來表示韓文文本?
-(1)ASCII
-(2)統一碼
-(3)大五碼</QText>
+(1) SCII
+(2) 一碼
+(3) 五碼</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7415,9 +7415,9 @@ testD.jpg	testD.zip</QText>
 
 <Question>
 <QText examyear="HKDSE 2018" figure="2018-q6.png">6. 下列哪些適合用來表達『故事分鏡圖』storyboard?
-(1)投影片放映 slide show
-(2)多媒體文件 multimedia doc
-(3)資料庫檔案 database file</QText>
+(1) 影片放映 slide show
+(2) 媒體文件 multimedia doc
+(3) 料庫檔案 database file</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7461,9 +7461,9 @@ testD.jpg	testD.zip</QText>
 <QText examyear="HKDSE 2018">10. 莉莉在一個文件檔內，
 插入一個超連結，
 使用超連結可能會有什麼後果?
-(1)開啟一個視像檔
-(2)跳至此文件的另一頁
-(3)跳至另一個文件的某一頁</QText>
+(1) 啟一個視像檔
+(2) 至此文件的另一頁
+(3) 至另一個文件的某一頁</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7484,9 +7484,9 @@ testD.jpg	testD.zip</QText>
 
 <Question>
 <QText examyear="HKDSE 2018">12. 下列哪些元素，可以包括在pdf檔案內?
-(1)照片
-(2)視像
-(3)超連結</QText>
+(1) 片
+(2) 像
+(3) 連結</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7516,9 +7516,9 @@ X: Barcode, Y: QR code</QText>
 <QText examyear="HKDSE 2018">15. 『維基百科』
 是免費網上百科全書，含有大量文章。
 下列哪些關於這些網上百科全書的句子是正確的?
-(1)人們可以快速搜尋，某主題的相關文章
-(2)這些文章沒有版權
-(3)這些百科全書會經常更新</QText>
+(1) 們可以快速搜尋，某主題的相關文章
+(2) 些文章沒有版權
+(3) 些百科全書會經常更新</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7535,9 +7535,9 @@ X: Barcode, Y: QR code</QText>
 
 <Question>
 <QText examyear="HKDSE 2018">17. 以下哪些是操作系統的基本功能?
-(1)電郵管理
-(2)記憶體管理
-(3)輸入/輸出管理</QText>
+(1) 郵管理
+(2) 憶體管理
+(3) 入/輸出管理</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
@@ -7569,9 +7569,9 @@ X: Barcode, Y: QR code</QText>
 •1TB SSD
 •802.11ac Wi-Fi
 從這些配置可獲得什麼資訊?
-(1)顯示屏的可視尺寸
-(2)無線網絡的最大數據傳輸速率
-(3)啟動電腦時間</QText>
+(1) 示屏的可視尺寸
+(2) 線網絡的最大數據傳輸速率
+(3) 動電腦時間</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7580,9 +7580,9 @@ X: Barcode, Y: QR code</QText>
 
 <Question>
 <QText examyear="HKDSE 2018">21. 下列哪項是硬碟的最新發展趨勢?
-(1)耗電量較低
-(2)使用壽命較長
-(3)附有更多內置軟件</QText>
+(1) 電量較低
+(2) 用壽命較長
+(3) 有更多內置軟件</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7601,9 +7601,9 @@ X: Barcode, Y: QR code</QText>
 <Question>
 <QText examyear="HKDSE 2018">23. 在餐廳的銷售點系統中，
 下列哪項(些)是採用感熱式打印機，來印製收據的原因?
-(1)可保留收據列印本較長時間
-(2)打印時安靜
-(3)打印時間短</QText>
+(1) 保留收據列印本較長時間
+(2) 印時安靜
+(3) 印時間短</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7651,9 +7651,9 @@ X: Barcode, Y: QR code</QText>
 <Question>
 <QText examyear="HKDSE 2018">28. 觀賞採用串流傳輸技術streaming的網站內的視像。
 與下列哪些項目有關?
-(1)DNS
-(2)FTP
-(3)IP</QText>
+(1) NS
+(2) TP
+(3) P</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7665,9 +7665,9 @@ X: Barcode, Y: QR code</QText>
 市場上的水果
 橙、蘋果、香蕉、櫻桃、菠蘿、檸檬、西瓜、雪梨
 下列哪項(些)可以更便於導航?
-(1)表單
-(2)框
-(3)背景音樂</QText>
+(1) 單
+(2) 
+(3) 景音樂</QText>
 <Option>只有(2)</Option>
 <Option>只有(3)</Option>
 <Option correct="1">只有(1)和(2)</Option>
@@ -7726,10 +7726,10 @@ X: Barcode, Y: QR code</QText>
 <Question>
 <QText examyear="HKDSE 2018">34 於設計電腦解決方案時，
 使用模組的特徵是什麼?
-(1)模組通常是用來解決簡單的問題
-(2)模組可能是可重用的
-(3)開發成本較高
-(4)模組可以獨立開發</QText>
+(1) 組通常是用來解決簡單的問題
+(2) 組可能是可重用的
+(3) 發成本較高
+(4) 組可以獨立開發</QText>
 <Option>只有(1)和(3)</Option>
 <Option>只有(1)和(4)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7739,9 +7739,9 @@ X: Barcode, Y: QR code</QText>
 <Question>
 <QText examyear="HKDSE 2018">35. 在軟件設計中，從人體工學方面考慮，
 有什麼良好的做法? Good Ergonomic practices
-(1)固定字體大小
-(2)給用戶適當的系統訊息
-(3)一致的用戶界面</QText>
+(1) 定字體大小
+(2) 用戶適當的系統訊息
+(3) 致的用戶界面</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
@@ -7753,9 +7753,9 @@ X: Barcode, Y: QR code</QText>
 張先生於未經李小姐同意下，
 從她的網站下載大量版權照片，並在其補習社使用。
 這樣可引致什麼法律後果? 張先生 ___
-(1)需要向李小姐作出賠償
-(2)犯了刑事罪行
-(3)需要結束他的補習社</QText>
+(1) 要向李小姐作出賠償
+(2) 了刑事罪行
+(3) 要結束他的補習社</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7775,9 +7775,9 @@ X: Barcode, Y: QR code</QText>
 <QText examyear="HKDSE 2018">38. 在通過互聯網傳輸機密資料時，
 使用『數據加密』的主要好處是什麼?
 黑客不能輕易
-(1)收集加密數據
-(2)讀取機密資料
-(3)刪除機密資料</QText>
+(1) 集加密數據
+(2) 取機密資料
+(3) 除機密資料</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7787,9 +7787,9 @@ X: Barcode, Y: QR code</QText>
 <Question>
 <QText examyear="HKDSE 2018">39. 在互聯網上所發佈的照片，
 有什麼適當措施可保護其知識產權?
-(1)數碼簽署
-(2)數碼水印
-(3)防火牆</QText>
+(1) 碼簽署
+(2) 碼水印
+(3) 火牆</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7799,9 +7799,9 @@ X: Barcode, Y: QR code</QText>
 <Question>
 <QText examyear="HKDSE 2018">40. 在電腦系統的認證中，
 使用『指紋』比較使用『密碼』有何好處?
-(1)一般來說，輸入時間較短
-(2)系統開發的成本更低
-(3)用清潔手指可減少錯誤</QText>
+(1) 般來說，輸入時間較短
+(2) 統開發的成本更低
+(3) 清潔手指可減少錯誤</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7822,9 +7822,9 @@ X: Barcode, Y: QR code</QText>
 <Question>
 <QText examyear="HKDSE 2019">2. 志明建立了一份學校通訊，並把它上載至網頁。
 該通訊的格式為可攜式文件格式(PDF)，而不是Word文件格式，這是因為
-(1)它可包含超連結
-(2)這通訊將在任何裝置上，展示得完全相同
-(3)通訊內的圖像，會有較高的解像度</QText>
+(1) 可包含超連結
+(2) 通訊將在任何裝置上，展示得完全相同
+(3) 訊內的圖像，會有較高的解像度</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7845,9 +7845,9 @@ X: Barcode, Y: QR code</QText>
 「世上無難事」
 並儲存為文字檔，檔案大小為10個字節。
 下列哪項(些)關於該文字檔的句子是正確的?
-(1)每個中文字符，佔2個字節
-(2)用了ASCII碼來表示字符
-(3)此文字檔不支援大五碼</QText>
+(1) 個中文字符，佔2個字節
+(2) 了ASCII碼來表示字符
+(3) 文字檔不支援大五碼</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7874,7 +7874,7 @@ SID	CLASS	NAME
 06308	2A	Greg Li
 :
 STUDENT 中的 SID 可能是什麼數據類型?
-(1)整數	(2)字符	(3)布爾</QText>
+(1) 數	(2)字符	(3)布爾</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7901,10 +7901,10 @@ SELECT CLASS, COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 <Question>
 <QText examyear="HKDSE 2019">8. 小芬建立了200頁的報告。
 下列哪些文書處理的操作，可減少所用的頁數?
-(1)更改文本內的行距
-(2)更改文本的對齊規則
-(3)更改頁面的邊距
-(4)建立含超連結的目錄</QText>
+(1) 改文本內的行距
+(2) 改文本的對齊規則
+(3) 改頁面的邊距
+(4) 立含超連結的目錄</QText>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(1)和(4)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7940,9 +7940,9 @@ SELECT CLASS, COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 	輸入密碼：_____(最少8個字符)
 	再次輸入密碼：_____
 此網上登記會涉及下列哪(些)項目?
-(1)數據驗證
-(2)數據壓縮
-(3)數據有效性檢驗</QText>
+(1) 據驗證
+(2) 據壓縮
+(3) 據有效性檢驗</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
@@ -7998,9 +7998,9 @@ SELECT CLASS, COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 <Question>
 <QText examyear="HKDSE 2019" figure="2019-q17.png">17. 志偉有一張音樂會電子入場券，如下所示：
 下列哪項(些)關於電子入場券上的條碼的句子是正確的?
-(1)即使條碼的一部分損毀， 條碼上的資料仍可被解碼
-(2)每次只能把一種數據類型編碼，例如數字數據
-(3)條碼最多可在三個方向成功掃描</QText>
+(1) 使條碼的一部分損毀， 條碼上的資料仍可被解碼
+(2) 次只能把一種數據類型編碼，例如數字數據
+(3) 碼最多可在三個方向成功掃描</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8017,9 +8017,9 @@ SELECT CLASS, COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 
 <Question>
 <QText examyear="HKDSE 2019">19. 把下列各項按數據傳輸速率，以遞增方式排列。
-(1)固態硬碟(SSD)
-(2)快取記憶體
-(3)RAM</QText>
+(1) 態硬碟(SSD)
+(2) 取記憶體
+(3) AM</QText>
 <Option correct="1">(1),(3),(2)</Option>
 <Option>(1),(2),(3)</Option>
 <Option>(3),(2),(1)</Option>
@@ -8028,9 +8028,9 @@ SELECT CLASS, COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 
 <Question>
 <QText examyear="HKDSE 2019">20. 下列哪些是典型電腦操作系統的主要網絡功能?
-(1)允許電腦之間的通訊
-(2)控制兩台電腦之間連接的網絡頻寬
-(3)提供一些網絡安全措施，以保護電腦免被未經授權存取</QText>
+(1) 許電腦之間的通訊
+(2) 制兩台電腦之間連接的網絡頻寬
+(3) 供一些網絡安全措施，以保護電腦免被未經授權存取</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -8048,9 +8048,9 @@ X和Y是什麼?</QText>
 
 <Question>
 <QText examyear="HKDSE 2019">22. 下列哪些是LAN 勝於WAN的優點?
-(1)數據傳輸速率較高
-(2)網絡覆蓋較大
-(3)設置成本較低</QText>
+(1) 據傳輸速率較高
+(2) 絡覆蓋較大
+(3) 置成本較低</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -8061,9 +8061,9 @@ X和Y是什麼?</QText>
 <QText examyear="HKDSE 2019">23. 以下兩個URL均可用來接達同一個網站：
 'http://202.8.88.24' 和 'http://www.hkedcity.net'
 下列哪項(些)關於這兩個URL的句子是正確的?
-(1)DNS 伺服器可能把 'www.hkedcity.net' 譯為 '202.8.88.24'
-(2)URL 必須包含HTTP
-(3)經IP位址接連的網頁較為安全</QText>
+(1) NS 伺服器可能把 'www.hkedcity.net' 譯為 '202.8.88.24'
+(2) RL 必須包含HTTP
+(3) IP位址接連的網頁較為安全</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8072,9 +8072,9 @@ X和Y是什麼?</QText>
 
 <Question>
 <QText examyear="HKDSE 2019">24. 以專線(而非寬頻)用作網絡連接的優點是什麼?
-(1)連接更可靠
-(2)成本較低
-(3)頻寬有保證</QText>
+(1) 接更可靠
+(2) 本較低
+(3) 寬有保證</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
@@ -8083,10 +8083,10 @@ X和Y是什麼?</QText>
 
 <Question>
 <QText examyear="HKDSE 2019">25. 在HTML中，下列哪些是表(TABLE)的屬性。
-(1)儲存格內容的URL
-(2)儲存格之間的間距
-(3)儲存格內容的媒體類型
-(4)背景顏色</QText>
+(1) 存格內容的URL
+(2) 存格之間的間距
+(3) 存格內容的媒體類型
+(4) 景顏色</QText>
 <Option>只有(1)和(3)</Option>
 <Option>只有(1)和(4)</Option>
 <Option>只有(2)和(3)</Option>
@@ -8103,9 +8103,9 @@ X和Y是什麼?</QText>
 
 <Question>
 <QText examyear="HKDSE 2019">27. 下列哪項(些)關於「串流技術」的句子是正確的?
-(1)可以觀看音樂表演直播
-(2)不能使用HTTP
-(3)網上非法發放電影可受控制</QText>
+(1) 以觀看音樂表演直播
+(2) 能使用HTTP
+(3) 上非法發放電影可受控制</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8119,7 +8119,7 @@ X和Y是什麼?</QText>
 	則　 B ← 10
 	否則 B ← 20
 輸出 A,B
-(1)5	(2)6	(3)10	(4)20</QText>
+(1) 	(2)6	(3)10	(4)20</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(3)和(4)</Option>
 <Option>只有(2)、(3)和(4)</Option>
@@ -8229,9 +8229,9 @@ Y[1] ← 4
 
 <Question>
 <QText examyear="HKDSE 2019">37. 下列哪項(些)將有助克服，在城市裏出現的數碼隔閡?
-(1)在學校實行以自攜電子設備(BYOD)的措施，以取代桌上電腦
-(2)提供更多免費WiFi熱點
-(3)為每名市民提供多於一個免費電郵戶口</QText>
+(1) 學校實行以自攜電子設備(BYOD)的措施，以取代桌上電腦
+(2) 供更多免費WiFi熱點
+(3) 每名市民提供多於一個免費電郵戶口</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8241,9 +8241,9 @@ Y[1] ← 4
 <Question>
 <QText examyear="HKDSE 2019">38. 李小姐發現公司的檔案伺服器，被勒索軟件感染。
 一些重要文件檔案，均已被加密而無法開啟，她應如何處理?
-(1)嘗試把加密檔案，放置於另一個檔案伺服器內開啟
-(2)就此事向警方報案
-(3)交付贖金以取得密碼</QText>
+(1) 試把加密檔案，放置於另一個檔案伺服器內開啟
+(2) 此事向警方報案
+(3) 付贖金以取得密碼</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8252,9 +8252,9 @@ Y[1] ← 4
 
 <Question>
 <QText examyear="HKDSE 2019">39. 為什麼有人開發「開放源碼」軟件?
-(1)他們想出售軟件，賺取更多金錢
-(2)他們想更多人使用他們的軟件
-(3)他們想擁有軟件的版權</QText>
+(1) 們想出售軟件，賺取更多金錢
+(2) 們想更多人使用他們的軟件
+(3) 們想擁有軟件的版權</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8274,9 +8274,9 @@ Y[1] ← 4
 原本的號碼	錯誤的輸入
 A123456(3)	A213456(3)
 下列哪些可幫助找出此錯誤？
-(1)範圍檢查
-(2)輸入數據兩次
-(3)檢查數位</QText>
+(1) 圍檢查
+(2) 入數據兩次
+(3) 查數位</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
@@ -8293,9 +8293,9 @@ A123456(3)	A213456(3)
 
 <Question>
 <QText examyear="HKDSE 2020">3. 芝芝掃描照片時，使用JPG格式而不是BMP格式。原因可能是什麽？
-(1)縮減照片檔案的大小。
-(2)增加每張照片的像素數量。
-(3)增加已顯示的顔色數量。</QText>
+(1) 減照片檔案的大小。
+(2) 加每張照片的像素數量。
+(3) 加已顯示的顔色數量。</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8323,9 +8323,9 @@ A123456(3)	A213456(3)
 <Question>
 <QText examyear="HKDSE 2020">6. 下列哪個(些)字符集，
 可表示簡體中文字符、繁體中文字符和英文字符?
-(1)ASCII
-(2)統一碼
-(3)GB碼</QText>
+(1) SCII
+(2) 一碼
+(3) B碼</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8334,9 +8334,9 @@ A123456(3)	A213456(3)
 
 <Question>
 <QText examyear="HKDSE 2020">7. 下列哪項(些)是電子政府的好處?
-(1)政府資訊可讓公眾容易以數碼格式存取。
-(2)增強政府資訊的數據保安。
-(3)可縮窄社會的數碼隔閡。</QText>
+(1) 府資訊可讓公眾容易以數碼格式存取。
+(2) 強政府資訊的數據保安。
+(3) 縮窄社會的數碼隔閡。</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8346,9 +8346,9 @@ A123456(3)	A213456(3)
 <Question>
 <QText examyear="HKDSE 2020">8. 莉莉傳送了附有一份文件的電郵，該文件是PDF格式，而不是DOC格式。
 原因可能是什麼?
-(1)可加密此文件。
-(2)可保留此文件的頁面設計。
-(3)可包含多媒體元素。</QText>
+(1) 加密此文件。
+(2) 保留此文件的頁面設計。
+(3) 包含多媒體元素。</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8366,9 +8366,9 @@ A123456(3)	A213456(3)
 
 <Question>
 <QText examyear="HKDSE 2020">10. 應為下列哪項(些)任務建立試算表「假設」情境?
-(1)尋找在數學考試，獲取90分或以上的學生。
-(2)估算由不同製造商，生產的產品成本。
-(3)建立月平均温度的圖表。</QText>
+(1) 找在數學考試，獲取90分或以上的學生。
+(2) 算由不同製造商，生產的產品成本。
+(3) 立月平均温度的圖表。</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8379,10 +8379,10 @@ A123456(3)	A213456(3)
 <QText examyear="HKDSE 2020" figure="2020-q11.png">11. 某數據庫表 PET 內有6筆記錄如下：
 以下的SQL語句的輸出會包括什麼數值?
 SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
-(1)109
-(2)15
-(3)34
-(4)60</QText>
+(1) 09
+(2) 5
+(3) 4
+(4) 0</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(3)和(4)</Option>
@@ -8394,9 +8394,9 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 回家途徑的調查數據
 •步行 •校巴 •MTR
 該教師應編輯投影片的哪項(些)元素，以建立更吸引的演示?
-(1)SQL
-(2)字型
-(3)圖表</QText>
+(1) QL
+(2) 型
+(3) 表</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8458,9 +8458,9 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 
 <Question>
 <QText examyear="HKDSE 2020" figure="2020-q20.png">19. 參考以下的網絡圖，教師電腦，通常會為桌上電腦，提供什麼服務?
-(1)檔案共享
-(2)電郵
-(3)網頁瀏覽</QText>
+(1) 案共享
+(2) 郵
+(3) 頁瀏覽</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8477,9 +8477,9 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 
 <Question>
 <QText examyear="HKDSE 2020">21. 下列哪項(些)只支援順序存取?
-(1)DVD-RW
-(2)磁帶
-(3)快閃記憶體</QText>
+(1) VD-RW
+(2) 帶
+(3) 閃記憶體</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8504,9 +8504,9 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 
 <Question>
 <QText examyear="HKDSE 2020">24. 下列哪項(些)可改善視像會議的質素?
-(1)較高解像度的攝影機
-(2)較大的儲存容量
-(3)較高的網絡頻寬</QText>
+(1) 高解像度的攝影機
+(2) 大的儲存容量
+(3) 高的網絡頻寬</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
@@ -8516,9 +8516,9 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Question>
 <QText examyear="HKDSE 2020">25. 瀏覽https://www.gov.hk時，
 涉及下列哪項(些)協定?
-(1)FTP
-(2)IP
-(3)DNS</QText>
+(1) TP
+(2) P
+(3) NS</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8527,9 +8527,9 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 
 <Question>
 <QText examyear="HKDSE 2020">26. 下列哪項(些)可用來辨別互聯網上的主機?
-(1)電郵地址
-(2)IP位址
-(3)電腦名稱</QText>
+(1) 郵地址
+(2) P位址
+(3) 腦名稱</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8635,9 +8635,9 @@ Q ← 2
 <Question>
 <QText examyear="HKDSE 2020">35. 一名學生沉迷於網上遊戲，每天玩超過8小時。
 他將會面對哪些健康問題?
-(1)睡眠問題
-(2)視力問題
-(3)情緒問題</QText>
+(1) 眠問題
+(2) 力問題
+(3) 緒問題</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -8647,9 +8647,9 @@ Q ← 2
 <Question>
 <QText examyear="HKDSE 2020">36. 在電腦網絡中，下列哪項(些)
 可保障個人私隱，免被黑客攻擊?
-(1)建立數據備份
-(2)更新操作系統
-(3)安裝防火牆</QText>
+(1) 立數據備份
+(2) 新操作系統
+(3) 裝防火牆</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
@@ -8658,9 +8658,9 @@ Q ← 2
 
 <Question>
 <QText examyear="HKDSE 2020">37. 開放源碼軟件的主要特徵是什麼?
-(1)開發商可自訂售價
-(2)用戶可修改源碼
-(3)試用期內，可使用所有軟件功能</QText>
+(1) 發商可自訂售價
+(2) 戶可修改源碼
+(3) 用期內，可使用所有軟件功能</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8670,9 +8670,9 @@ Q ← 2
 <Question>
 <QText examyear="HKDSE 2020">38. 某網上商店收集會員的個人資料。
 下列哪項(些)行動，未經會員同意下進行是不恰當的?
-(1)該店把所有個人資料加密，並上載至雲端儲存。
-(2)該店傳送所有個人資料，予其他網上商店，以便向會員提供其他服務。
-(3)當一名會員註銷其會籍時，該店會永久保存他/她的個人資料，以便將來重新註冊之用。</QText>
+(1) 店把所有個人資料加密，並上載至雲端儲存。
+(2) 店傳送所有個人資料，予其他網上商店，以便向會員提供其他服務。
+(3) 一名會員註銷其會籍時，該店會永久保存他/她的個人資料，以便將來重新註冊之用。</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8697,9 +8697,9 @@ X已阻隔此程式的一些功能。
 <Question>
 <QText examyear="HKDSE 2020" figure="2020-q40.png">40. 下圖展示使用電腦的人體工學的良好用法。
 下列哪些設定是必需的?
-(1)位於P的手托的角度，應可調校。
-(2)位於Q的顯示器的角度，應可調校。
-(3)位於R的桌子的高度，應可調校。</QText>
+(1) 於P的手托的角度，應可調校。
+(2) 於Q的顯示器的角度，應可調校。
+(3) 於R的桌子的高度，應可調校。</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
@@ -8708,9 +8708,9 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">1. 下列哪項在文字處理軟件內，可有效地格式化一份文件?
-(1)以最常用的字型和字體大小設定成預設值
-(2)標題可使用預先設定的樣式
-(3)啟用自動校正功能</QText>
+(1) 最常用的字型和字體大小設定成預設值
+(2) 題可使用預先設定的樣式
+(3) 用自動校正功能</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -8735,9 +8735,9 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">4. 在數據庫軟件內建構數據庫表時，用戶通常應設定什麼?
-(1)每個欄的數據類型
-(2)最多的記錄數目
-(3)主關鍵碼</QText>
+(1) 個欄的數據類型
+(2) 多的記錄數目
+(3) 關鍵碼</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -8746,9 +8746,9 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">5. 小芬使用WAV格式，而非MP3格式，來錄製音樂表演。這樣有什麼好處?
-(1)音效檔的檔案大小較大。
-(2)音效質素更佳。
-(3)沒有跨平台問題。</QText>
+(1) 效檔的檔案大小較大。
+(2) 效質素更佳。
+(3) 有跨平台問題。</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8766,9 +8766,9 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">7. 志偉在演示檔內加入錄製旁白。下列哪句是正確的?
-(1)演示的檔案大小增加。
-(2)演示內的投影片數目增加。
-(3)未能把視像嵌人附有旁白的投影片。</QText>
+(1) 示的檔案大小增加。
+(2) 示內的投影片數目增加。
+(3) 能把視像嵌人附有旁白的投影片。</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8777,8 +8777,8 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">8. 莉莉是市場部經理，她計劃向特選客戶發出邀請信。她將會從客戶數據庫提選取數據。她應進行什麼資訊處理進程?
-(1)篩選
-(2)郵件合併
+(1) 選
+(2) 件合併
 (3)「假設」分析</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8805,9 +8805,9 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">11. 在數據庫軟件內，使用表格來輸入數據的主要優點是什麼?
-(1)減少輸入錯誤。
-(2)縮短SQL語句的執行時間。
-(3)需要較少儲存空間。</QText>
+(1) 少輸入錯誤。
+(2) 短SQL語句的執行時間。
+(3) 要較少儲存空間。</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8825,10 +8825,10 @@ X已阻隔此程式的一些功能。
 <Question>
 <QText examyear="HKDSE 2021" figure="2021-q13.png">13. 小芬使用試算表，來儲存數百筆，關於網上會議的記錄，如下所示：
 「參加者」應置於下列哪項?
-(1)篩選
-(2)欄
-(3)列
-(4)值</QText>
+(1) 選
+(2) 
+(3) 
+(4) </QText>
 <Option>只有(1)</Option>
 <Option>只有(4)</Option>
 <Option>只有(1)和(2)</Option>
@@ -8837,9 +8837,9 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">14. 下列哪項可以是掃描文件和照片的掃描器的規格?
-(1)支援802.11n
-(2)24位色深
-(3)內置64MB RAM</QText>
+(1) 援802.11n
+(2) 4位色深
+(3) 置64MB RAM</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -8848,9 +8848,9 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">15. 下列哪項需要驅動程式?
-(1)編輯文字處理文件
-(2)連接一個新打印機
-(3)移除一個軟件包</QText>
+(1) 輯文字處理文件
+(2) 接一個新打印機
+(3) 除一個軟件包</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8858,11 +8858,10 @@ X已阻隔此程式的一些功能。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">16. 國華在家建構了一個電腦系統，讓他的朋友登入及一起玩網上足球遊戲。
-這樣會涉及下列哪項處理模式？
-(1)網上互動處理
-(2)成批工件處理
-(3)實時處理</QText>
+<QText examyear="HKDSE 2021">16. 國華在家建構了一個電腦系統，讓他的朋友登入及一起玩網上足球遊戲。這樣會涉及下列哪項處理模式？
+(1) 上互動處理
+(2) 批工件處理
+(3) 時處理</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
@@ -8870,8 +8869,7 @@ X已阻隔此程式的一些功能。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">17. 志偉有一台桌上電腦，內設一個500GB SSD和一個2TB硬碟機。
-為什麼操作系統會被安裝在SSD，而非硬碟機內?</QText>
+<QText examyear="HKDSE 2021">17. 志偉有一台桌上電腦，內設一個500GB SSD和一個2TB硬碟機。為什麼操作系統會被安裝在SSD，而非硬碟機內?</QText>
 <Option>該操作系統並不是開放源碼軟件。</Option>
 <Option correct="1">該操作系統的檔案是經常使用的。</Option>
 <Option>該操作系統所需的儲存大小是少於500GB。</Option>
@@ -8887,8 +8885,7 @@ X已阻隔此程式的一些功能。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">19. 志明打算購買電腦，以便使用多媒體學習軟件包。
-下列哪項是最不重要的因素?</QText>
+<QText examyear="HKDSE 2021">19. 志明打算購買電腦，以便使用多媒體學習軟件包。下列哪項是最不重要的因素?</QText>
 <Option>SSD 的儲存大小</Option>
 <Option>RAM 的儲存大小</Option>
 <Option correct="1">ROM 的儲存大小</Option>
@@ -8897,9 +8894,9 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">20. 以電子書閱讀器(而非平板電腦)來閱讀電子書的好處是什麼?
-(1)耗電量較低
-(2)重量較輕
-(3)計算能力較高</QText>
+(1) 電量較低
+(2) 量較輕
+(3) 算能力較高</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -8931,11 +8928,10 @@ X已阻隔此程式的一些功能。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">24. 某超級市場將會提供一個網上平台，讓顧客購買食物。
-當設計其用戶界面時，應考慮下列哪項?
-(1)字型大小
-(2)顏色
-(3)語言</QText>
+<QText examyear="HKDSE 2021">24. 某超級市場將會提供一個網上平台，讓顧客購買食物。當設計其用戶界面時，應考慮下列哪項?
+(1) 型大小
+(2) 色
+(3) 言</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -8943,11 +8939,10 @@ X已阻隔此程式的一些功能。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">25. 莉莉在她的辦公室，可利用其流動電話來控制家中連接Wi-Fi網絡的電器。
-這樣會涉及下列哪項?
-(1)LAN
-(2)互聯網
-(3)無線網絡接連點</QText>
+<QText examyear="HKDSE 2021">25. 莉莉在她的辦公室，可利用其流動電話來控制家中連接Wi-Fi網絡的電器。這樣會涉及下列哪項?
+(1) AN
+(2) 聯網
+(3) 線網絡接連點</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -8956,9 +8951,9 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">26. 李先生為他的辦公室內工作的員工租用網上檔案儲存服務，而不設立檔案伺服器。為什麼?
-(1)辦公室的互聯網連接的頻寬不足。
-(2)辦公室內無需額外技術人員。
-(3)在增加儲存容量時較有彈性。</QText>
+(1) 公室的互聯網連接的頻寬不足。
+(2) 公室內無需額外技術人員。
+(3) 增加儲存容量時較有彈性。</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8967,9 +8962,9 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">27. 下列哪項關於HTTP是正確的?
-(1)它是用來傳送超文本文件。
-(2)它是用來翻譯URL為IP位址。
-(3)它是用來儲存瀏覽歷史。</QText>
+(1) 是用來傳送超文本文件。
+(2) 是用來翻譯URL為IP位址。
+(3) 是用來儲存瀏覽歷史。</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8978,9 +8973,9 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">28. 雖然學校操場上已安裝了一個有線網絡，但學校還是安裝了一個連接至此網絡的無線網絡接達點。為什麼?
-(1)學生可在課堂上使用平板電腦。
-(2)網絡可每天24小時使用。
-(3)網絡連接的數據傳輸率較高。</QText>
+(1) 生可在課堂上使用平板電腦。
+(2) 絡可每天24小時使用。
+(3) 絡連接的數據傳輸率較高。</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8997,9 +8992,9 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">30. 編寫了程式源碼後，根據解難程序，應執行下列哪項?
-(1)概述問題的輸入和輸出的要求。
-(2)以邊際個案來測試此程式。
-(3)界定問題範圍。</QText>
+(1) 述問題的輸入和輸出的要求。
+(2) 邊際個案來測試此程式。
+(3) 定問題範圍。</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -9048,9 +9043,9 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">36. 麗珊使用開放源碼軟件時可做什麼?
-(1)使用軟件前，向軟件開發商尋求批准。
-(2)修改源碼自用。
-(3)大幅修改源碼，並擁有整個軟件的版權。</QText>
+\t (1)使用軟件前，向軟件開發商尋求批准。
+\t (2)修改源碼自用。
+\t (3)大幅修改源碼，並擁有整個軟件的版權。</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -9059,9 +9054,9 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">37. 使用互聯網上的資訊，來編寫一份報告前，應考慮什麼?
-(1)互聯網上有些資訊不可靠。
-(2)互聯網上絕大部分資訊是免費的。
-(3)很多黑客透過社交媒體盜取個人資料。</QText>
+\t(1) 互聯網上有些資訊不可靠。
+\t(2) 互聯網上絕大部分資訊是免費的。
+\t(3) 很多黑客透過社交媒體盜取個人資料。</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -9070,9 +9065,9 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">38. 下列哪項可縮窄社會內的數碼隔閡?
-(1)向學生提供電腦以供學習
-(2)在餐廳內，提供自助點餐機
-(3)在店舖內，以電子付款取代現金付款</QText>
+\t(1) 向學生提供電腦以供學習
+\t(2) 在餐廳內，提供自助點餐機
+\t(3) 在店舖內，以電子付款取代現金付款</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -9081,9 +9076,9 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">39. 下列哪項互聯網活動，很可能侵犯了版權?
-(1)從一張舊電影DVD擷取了視像，並把它上載至互聯網。
-(2)繪畫一張圖畫，並以對等網絡(p2p)軟件與朋友分享。
-(3)從互聯網下載新聞文章，以用作出版書籍。</QText>
+\t(1) 從一張舊電影DVD擷取了視像，並把它上載至互聯網。
+\t(2) 繪畫一張圖畫，並以對等網絡(p2p)軟件與朋友分享。
+\t(3) 從互聯網下載新聞文章，以用作出版書籍。</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -9092,9 +9087,9 @@ X已阻隔此程式的一些功能。
 
 <Question>
 <QText examyear="HKDSE 2021">40. 下列哪項是在網上系統中，驗證用戶身份的常見措施?
-(1)DNS
-(2)保安權標
-(3)防火牆</QText>
+\t(1) DNS
+\t(2) 保安權標
+\t(3) 防火牆</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
