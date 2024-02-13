@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+    <title>HKDSE ICT MCQs 試題</title>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f4f7f6;
+            /* 調整為稍微帶一點綠色的灰色，以緩和眼睛疲勞 */
+            color: #333;
+            line-height: 1.6;
+            max-width: 1500px;
+            margin: 10px auto
+        }
+
+        .title {
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: 15px;
+            /* 圓角設計讓元素更加柔和 */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            /* 輕微的陰影設計給予層次感 */
+        }
+
+        .title p {
+            margin: 0;
+        }
+
+        .title h1 {
+            margin: 0;
+        }
+
+        .question-container {
+            /* display: flex;*/
+            flex-wrap: wrap;
+            /* 如容器太窄則換行 */
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: 15px;
+            /* 圓角設計讓元素更加柔和 */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            /* 輕微的陰影設計給予層次感 */
+        }
+
+        .left-side {
+            /*flex: 1;*/
+            margin-right: 10px;
+        }
+
+        .right-side {
+            /*flex: 1;*/
+            padding-left: 10px;
+        }
+
+        .question {
+            font-size: 20px;
+            /* 放大題目字體以突出重要性 */
+            font-weight: 500;
+            /* 給題目加一點字重 */
+            margin-bottom: 20px;
+            color: #2c3e50;
+            /* 深色字體幫助專注 */
+        }
+
+        .formatted-text {
+            white-space: pre-wrap;
+        }
+
+        .answers {
+            list-style: none;
+            padding: 0;
+        }
+
+        .answers li:not(:last-child) {
+            margin-bottom: 10px;
+            /* 只為非最後一個選項添加底部邊距 */
+        }
+
+        .answer {
+            display: block;
+            border: 2px solid #ddd;
+            padding: 10px 15px;
+            background-color: #fafafa;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.3s;
+            /* 平滑的背景顏色過渡效果 */
+            border-radius: 5px;
+            /* 答案按鈕圓角 */
+            font-size: 18px;
+            /* 增加答案文字大小 */
+        }
+
+        .answer:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+            /* 滑鼠懸停時上移效果 */
+        }
+
+        .correct {
+            border-color: green;
+            background-color: #d4edda;
+            color: green;
+            /* 選中的答案使用白色文字以提高可讀性 */
+        }
+
+        .selected {
+            border-color: rgb(61, 61, 61);
+            */
+            /*background-color: #e7f0fe;*/
+        }
+
+        .explanation {
+            display: none;
+            /* 默認隱藏解釋 */
+            padding: 15px 20px;
+            border-radius: 5px;
+            /* 解釋區塊圓角 
+            font-style: italic;*/
+            background-color: #e9ecef;
+            color: #495057;
+            font-size: 18px;
+        }
+        
+        select{
+            width: 98%;
+            border: none;
+            padding: 0 12px;
+        }
+
+        #dropdown p{
+            margin: 0;
+            padding: 0 12px;
+        }
+
+        .hidden{
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <h1>HKDSE ICT MCQs 試題</h1>
+        <p class="text-muted" id = "modifydate"></p>
+        <div class="row pt-3">
+            <div class="col-sm-6">
+                <div class="bg-light rounded border" id="dropdown">
+                    <p class="text-muted">年份</p>
+                    <select class="bg-light" id="examyear" name="examyear" onchange="loadpage();"></select>
+                </div>
+            </div>
+            <div class="col-sm-6 mt-sm-0 mt-3">
+                <div class="bg-light rounded border" id="dropdown">
+                    <p class="text-muted">模式</p>
+                    <select class="bg-light" id="mode" name="mode" onchange="loadpage();">
+                        <option value="mode1">模擬練習</option>
+                        <option value="mode2">全部答案</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- 
+    <div class="question-container row">
+        <div class="left-side col-md col-lg col-xl">
+            <div class="question formatted-text">1. 下列哪項在文字處理軟件內，可有效地格式化一份文件?
+#figure
+(1)以最常用的字型和字體大小設定成預設值
+(2)標題可使用預先設定的樣式
+(3)啟用自動校正功能</div>
+            <ul class="answers">
+                <li><button class="answer" data-correct="false">A. 選項一 <i class="text-danger fas fa-times hidden"></i></i></button></li>
+                <li><button class="answer" data-correct="false">B. 選項二 <i class="text-danger fas fa-times hidden"></i></i></button></li>
+                <li><button class="answer" data-correct="true">C. 正确答案 <i class="text-danger fas fa-times hidden"></i></i></button></li>
+                <li><button class="answer" data-correct="false">D. 選項四 <i class="text-danger fas fa-times hidden"></i></button></i></li>
+            </ul>
+        </div>
+        <div class="right-side col-md col-lg col-xl">
+            <div class="explanation">解釋: HKDSE試題1的選擇C的解釋。</div>
+        </div>
+    </div>
+ -->
+    <div id="result">
+    </div>
+
+
+    <script>
+        function refresh() {
+            document.querySelectorAll('.question-container').forEach(container => {
+                let answers = container.querySelector('.left-side').querySelectorAll('.answer');
+                let explanation = container.querySelector('.right-side .explanation');
+                let icon = container.querySelector('.answers').querySelectorAll('.hidden');
+                  
+                answers.forEach(answerBtn => {
+                    answerBtn.addEventListener('click', () => {
+                        // 清除其他所选的样式
+                        answers.forEach(btn => {
+                            btn.classList.remove('selected');
+                        });
+                        // 顯示被點選的答案的樣式
+                        answerBtn.classList.add('selected');
+
+                        // 打開當前問題的解釋
+                        explanation.style.display = 'block';
+
+                        // 設置答案按鈕狀態
+                        answers.forEach(btn => {
+                            btn.disabled = true; // 禁用所有答案按鈕
+                            if (btn.dataset.correct === "true") {
+                                btn.classList.add('correct'); // 顯示正確答案
+                                btn.classList.remove('selected');
+                            }
+                        });
+
+                        icon.forEach(iconBtn => {
+                            iconBtn.classList.remove('hidden')
+                        });
+
+                    });
+                });
+            });
+        }
+
+
+        /* 載入最後更新日期 */
+        var getDate = new XMLHttpRequest();
+        getDate.onreadystatechange = function() {
+            if(this.readyState == 4 && this.status == 200){
+                var commits = JSON.parse(this.responseText);
+                var lastCommitDate = commits[0].commit.committer.date;
+                // 轉換日期至指定格式
+                var date = new Date(lastCommitDate);
+                var year = date.getFullYear();
+                var month = ("0" + (date.getMonth() + 1)).slice(-2);
+                var day = ("0" + date.getDate()).slice(-2);
+                var formattedDate = year + '年' + month + '月' + day + '日';
+                document.getElementById("modifydate").innerHTML = "最後更新日期：" + formattedDate;
+            }
+        };
+        getDate.open('GET', 'https://api.github.com/repos/jarviskao/Pastpaper/commits?path=ict-mc.xml', true);
+        getDate.send();
+
+        /* 載入模擬試題 */
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if(this.readyState == 4 && this.status == 200){
+                xmldata = xmlhttp.responseXML
+                /* 載入全部年份的選擇題 */
+                ALL_MCQS = xmldata.getElementsByTagName("Question")
+                console.log("Total MCQs: ", ALL_MCQS.length);
+                /* 把模擬試題年份加到選單 */
+                var yearOptions = document.getElementById('examyear');
+                // Initialize a new Set to store unique years
+                var uniqueYears = new Set();
+                for (var i = ALL_MCQS.length - 1; i >= 0 ; i--) {
+                    var examYear = ALL_MCQS[i].getElementsByTagName("QText")[0].getAttribute("examyear");
+                    // Add the exam year to the Set
+                    uniqueYears.add(examYear);
+                }
+                // Now create option elements using the unique values in the Set
+                uniqueYears.forEach(function(examYear) {
+                    // Create new option element
+                    var optElement = document.createElement('option');
+                    // Set the value and text of the option element
+                    optElement.value = examYear;
+                    optElement.textContent = examYear; 
+                    // Append the new option element to yearOptions
+                    yearOptions.appendChild(optElement);
+                });
+                loadpage()
+            }
+        };
+        //xmlhttp.open("GET", "ict-mc.xml", true);
+        xmlhttp.open("GET", "https://cdn.jsdelivr.net/gh/jarviskao/Pastpaper@main/ict-mc.xml", true);
+        xmlhttp.send();
+
+        function loadpage() {
+            /* 顯示指定年份的選擇題 */
+            var year = document.getElementById("examyear").value;
+            /* 打印年份 */
+            console.log(year);
+            /* 載入定年份的選擇題 */
+            var MCQs_content = ''
+
+            for (var i = 0; i < ALL_MCQS.length; i++) {
+                /* 過濾年份不符合年份的選擇題*/
+                if (ALL_MCQS[i].getElementsByTagName("QText")[0].getAttribute("examyear") != document.getElementById('examyear').value) continue;
+                /* 打印選擇題 */
+                MCQS_pre = '<div class="question-container row"> <div class="left-side col-md col-lg col-xl"> <div class="question formatted-text">'
+                if (ALL_MCQS[i].getElementsByTagName("QText")[0].getAttribute("figure")) {
+                    imgUrl = ALL_MCQS[i].getElementsByTagName("QText")[0].getAttribute("figure")
+                    console.log(imgUrl)
+                    MCQs_question = ALL_MCQS[i].getElementsByTagName("QText")[0].childNodes[0].nodeValue.replace('#figure', '<img src="' + imgUrl + '" class="img-fluid">')
+                }
+                else {
+                    MCQs_question = ALL_MCQS[i].getElementsByTagName("QText")[0].childNodes[0].nodeValue.replace(/\\t/g,"      ")
+                }
+                MCQs_post = '</div> <ul class="answers">'
+                MCQs_content = MCQs_content + MCQS_pre + MCQs_question + MCQs_post
+                /* 打印選擇題的選項 */
+                for(j=0;j<4;j++){
+                    /* 記錄選擇題的正確答案 */
+                    corret = ALL_MCQS[i].getElementsByTagName("Option")[j].getAttribute("correct")
+                    if (corret) { corret = "true"; icon = "text-success fas fa-check";  } else { corret = "false"; icon = "text-danger fas fa-times";  }
+                    /* 記錄選擇題的選項內容 A. B. C. D.*/
+                    let char = String.fromCharCode('A'.charCodeAt(0) + j);
+                    
+
+                    if (ALL_MCQS[i].getElementsByTagName("Option")[j].getAttribute("figure")) {
+                        imgUrl = ALL_MCQS[i].getElementsByTagName("Option")[j].getAttribute("figure")
+                        console.log(imgUrl)
+                        option_content = '<li><button class="answer" data-correct=' + corret +'>' + char + '. ' + ALL_MCQS[i].getElementsByTagName("Option")[j].childNodes[0].nodeValue.replace('#figure', '<img src="' + imgUrl + '" class="img-fluid">') + ' <i class="' + icon + ' hidden"></i></button></li>'
+                    }
+                    else {
+                        option_content = '<li><button class="answer" data-correct=' + corret +'>' + char + '. ' + ALL_MCQS[i].getElementsByTagName("Option")[j].childNodes[0].nodeValue + ' <i class="' + icon + ' hidden"></i> </button></li>'
+                    }
+                    MCQs_content = MCQs_content + option_content
+                }
+                /* 打印選擇題的解釋 */
+                MCQs_explanation = '無解釋'
+                if (ALL_MCQS[i].getElementsByTagName("explanation")[0]){  
+                    MCQs_explanation = ALL_MCQS[i].getElementsByTagName("explanation")[0].childNodes[0].nodeValue
+                }
+                MCQs_content = MCQs_content + '</ul> </div> <div class="right-side col-md col-lg col-xl"> <div class="explanation formatted-text">'+ MCQs_explanation +'</div> </div> </div>'
+            }
+
+            document.getElementById("result").innerHTML = MCQs_content
+
+            refresh()
+        }
+    </script>
+    
+</body>
+
+</html>
