@@ -229,6 +229,24 @@
                     });
                 });
             });
+            var sel = document.getElementById("mode");
+            var text= sel.options[sel.selectedIndex].text;
+            console.log(document.getElementById('examyear').value, 'Paper Loaded - ', text)
+            if (document.getElementById("mode").value == 'mode2') {
+                document.querySelectorAll('.hidden').forEach(icon => {
+                    icon.classList.remove('hidden')
+                });
+                document.querySelectorAll('.explanation').forEach(explanation => {
+                    explanation.style.display = 'block';
+                });
+                document.querySelectorAll('.answer').forEach(answerbtn => {
+                    answerbtn.disabled = true; // 禁用所有答案按鈕
+                    if (answerbtn.dataset.correct === "true") {
+                        answerbtn.classList.add('correct'); // 顯示正確答案
+                    }
+                });
+
+            }
         }
 
 
@@ -257,7 +275,7 @@
                 xmldata = xmlhttp.responseXML
                 /* 載入全部年份的選擇題 */
                 ALL_MCQS = xmldata.getElementsByTagName("Question")
-                console.log("Total MCQs: ", ALL_MCQS.length);
+                //console.log("Total MCQs: ", ALL_MCQS.length);
                 /* 把模擬試題年份加到選單 */
                 var yearOptions = document.getElementById('examyear');
                 // Initialize a new Set to store unique years
@@ -280,15 +298,15 @@
                 loadpage()
             }
         };
-        //xmlhttp.open("GET", "ict-mc.xml", true);
-        xmlhttp.open("GET", "https://cdn.jsdelivr.net/gh/jarviskao/Pastpaper@main/ict-mc.xml", true);
+        xmlhttp.open("GET", "ict-mc.xml", true);
+        //xmlhttp.open("GET", "https://cdn.jsdelivr.net/gh/jarviskao/Pastpaper@main/ict-mc.xml", true);
         xmlhttp.send();
 
         function loadpage() {
             /* 顯示指定年份的選擇題 */
             var year = document.getElementById("examyear").value;
             /* 打印年份 */
-            console.log(year);
+            //console.log(year);
             /* 載入定年份的選擇題 */
             var MCQs_content = ''
 
