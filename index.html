@@ -316,7 +316,7 @@
                 /* 打印選擇題 */
                 MCQS_pre = '<div class="question-container row"> <div class="left-side col-md col-lg col-xl"> <div class="question formatted-text">'
                 if (ALL_MCQS[i].getElementsByTagName("QText")[0].getAttribute("figure")) {
-                    imgUrl = ALL_MCQS[i].getElementsByTagName("QText")[0].getAttribute("figure")
+                    imgUrl = 'images/' + ALL_MCQS[i].getElementsByTagName("QText")[0].getAttribute("figure")
                     console.log(imgUrl)
                     MCQs_question = ALL_MCQS[i].getElementsByTagName("QText")[0].childNodes[0].nodeValue.replace('#figure', '<img src="' + imgUrl + '" class="img-fluid">')
                 }
@@ -335,8 +335,8 @@
                     
 
                     if (ALL_MCQS[i].getElementsByTagName("Option")[j].getAttribute("figure")) {
-                        imgUrl = ALL_MCQS[i].getElementsByTagName("Option")[j].getAttribute("figure")
-                        console.log(imgUrl)
+                        imgUrl = 'images/' + ALL_MCQS[i].getElementsByTagName("Option")[j].getAttribute("figure")
+                        //console.log(imgUrl)
                         option_content = '<li><button class="answer" data-correct=' + corret +'>' + char + '. ' + ALL_MCQS[i].getElementsByTagName("Option")[j].childNodes[0].nodeValue.replace('#figure', '<img src="' + imgUrl + '" class="img-fluid">') + ' <i class="' + icon + ' hidden"></i></button></li>'
                     }
                     else {

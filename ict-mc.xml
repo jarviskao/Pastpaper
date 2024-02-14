@@ -8785,8 +8785,7 @@ ASCII編碼系統中，每個字符都對應一個數值。字符‘X’和‘Z�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021" figure="2021-q6.png">6.
-子添使用文字處理軟件中的「目錄」功能，如下所示。當插入一個新章節時，______。
+<QText examyear="HKDSE 2021" figure="2021_q_06_0.png">6. 子添使用文字處理軟件中的「目錄」功能，如下所示。當插入一個新章節時，______。
 #figure</QText>
 <Option>子添須輸入公式來計算頁碼</Option>
 <Option>子添須在目錄內輸入章節名稱</Option>
@@ -8836,7 +8835,7 @@ ASCII編碼系統中，每個字符都對應一個數值。字符‘X’和‘Z�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021" figure="2021-q9.png">9. 在網上系統內要求用戶輸入密碼兩次的目的是什麼？
+<QText examyear="HKDSE 2021" figure="2021_q_09_0.png">9. 在網上系統內要求用戶輸入密碼兩次的目的是什麼？
 #figure</QText>
 <Option>數據有效性檢驗</Option>
 <Option correct="1">數據驗證</Option>
@@ -8885,7 +8884,7 @@ OLE不能應用於X的檔案格式：這是不正確的，因為OLE技術支持�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021" figure="2021-q12.png">12. 下圖顯示了「輸入—處理—輸出」周期的基本概念。X 和 Y 是什麼？
+<QText examyear="HKDSE 2021" figure="2021_q_12_0.png">12. 下圖顯示了「輸入—處理—輸出」周期的基本概念。X 和 Y 是什麼？
 #figure</QText>
 <Option>X=統一碼 Y=二進制數字</Option>
 <Option>X=互聯網 Y=網絡設備</Option>
@@ -8896,7 +8895,7 @@ OLE不能應用於X的檔案格式：這是不正確的，因為OLE技術支持�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021" figure="2021-q13.png">13. 小芬使用試算表來儲存數百筆關於網上會議的記錄，如下所示：
+<QText examyear="HKDSE 2021" figure="2021_q_13_0.png">13. 小芬使用試算表來儲存數百筆關於網上會議的記錄，如下所示：
 #figure
 「參加者」應置於下列哪項？
 (1) 篩選
@@ -9154,8 +9153,10 @@ LAN： 電器連接到的家庭局部區域網絡。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">29. 下列算法的輸出是什麼？</QText> X ← 9 Y ← 2 重複 輸出 (X / Y) 的餘數 X ← (X /
-Y) 的整數部分 直至 X = 0 <Option>10</Option>
+<QText examyear="HKDSE 2021" figure="2021_q_29_0.png">29. 下列算法的輸出是什麼？
+#figure
+</QText>
+<Option>10</Option>
 <Option>110</Option>
 <Option>101</Option>
 <Option
@@ -9188,13 +9189,9 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">32. 以陣列 P 的初始值運行，下列算法的輸出是什麼？
-當P[1] = 0， P[2] = 1， P[3] = 1， P[4] = 0 時，
-Q ← 0
-設 i 由 1 至 4 執行
-如果 P[i] = 1 則
-Q ← 1 – Q
-輸出 Q</QText>
+<QText examyear="HKDSE 2021" figure="2021_q_32_0.png">32. 以陣列 P 的初始值運行，下列算法的輸出是什麼？
+#figure
+</QText>
 <Option correct="1">0100</Option>
 <Option>0110</Option>
 <Option>1000</Option>
@@ -9204,14 +9201,8 @@ Q ← 1 – Q
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">33. 下列算法的輸出是什麼？
-sum ← 0
-j ← 12
-重複
-sum ← sum + 1
-j ← j - 2
-直至 j &gt;= 2
-輸出 sum
+<QText examyear="HKDSE 2021" figure="2021_q_33_0.png">33. 下列算法的輸出是什麼？
+#figure
 </QText>
 <Option>7</Option>
 <Option>6</Option>
@@ -9220,15 +9211,9 @@ j ← j - 2
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">34. 下列算法的輸出是什麼？
-設 i 由 1 至 5 執行
-A[i] ← i
-S ← 0
-i ← 1
-當 i &gt; S 執行
-S ← S + A[i]*A[i+1]
-i ← i + 1
-輸出 S</QText>
+<QText examyear="HKDSE 2021" figure="2021_q_34_0.png">34. 下列算法的輸出是什麼？
+#figure
+</QText>
 <Option>40</Option>
 <Option>20</Option>
 <Option>8</Option>
@@ -9236,16 +9221,8 @@ i ← i + 1
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2021">35. 下列算法的輸出是什麼？
-X ← 6
-Y ← 4
-H ← 2
-當 H &gt; 0 執行
-X ← X + Y
-Y ← X - Y
-X ← X - Y
-H ← H - 1
-輸出 Y
+<QText examyear="HKDSE 2021" figure="2021_q_35_0.png">35. 下列算法的輸出是什麼？
+#figure
 </QText>
 <Option>10</Option>
 <Option>6</Option>
@@ -9309,6 +9286,127 @@ H ← H - 1
 </Question>
 
 <Question>
+<QText examyear="HKDSE 2022">1. 某電腦接收了三組數據序列如下,每組序列包含一個奇偶檢驗位,發現其中兩組序列在傳送時損壞了。
+第一組：0101 0111
+第二組：1101 0101
+第三組：1110 1011
+以下哪項最能描述此情況?
+</QText>
+<Option correct="1">損壞的數據序列：第一組和第二組，奇偶檢驗：偶數</Option>
+<Option>損壞的數據序列：第二組和第三組，奇偶檢驗：偶數</Option>
+<Option>損壞的數據序列：第一組和第二組，奇偶檢驗：奇數</Option>
+<Option>損壞的數據序列：第二組和第三組，奇偶檢驗：奇數</Option>
+<explanation>解釋： 答案 A。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022" figure="2022_q_02_0.png">2. 某超級市場使用數據厙表 FRUIT 儲存水果名稱 FNAME 和相應的庫存量 QTY。下列哪項最能描述以下查詢的結果?
+#figure
+</QText>
+<Option>水果按名稱依降序列出</Option>
+<Option>水果按庫存量依升序列出</Option>
+<Option>庫存量少的水果按名稱依升序列出</Option>
+<Option correct="1">水果按庫存量依降序列出</Option>
+<explanation>解釋： 答案 D。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022" figure="2022_q_03_0.png">3. 輸人日期時,使用以下日曆框勝於文字框。其優點是什麼?
+#figure
+(2) 避免無效日期
+(2) 確保輸人無誤
+(2) 提供一個用戶友善的界面
+</QText>
+<Option>只有(1)和(2)</Option>
+<Option correct="1">只有(1)和(3)</Option>
+<Option>只有(2)和(3)</Option>
+<Option >(1)、(2)和(3)</Option>
+<explanation>解釋： 答案 B。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022">4. 下列哪項以二進制補碼表示的 4 位元數字的加法運算,會引至上溢錯誤?</QText>
+<Option>0011 + 1001</Option>
+<Option>1111 + 1111</Option>
+<Option correct="1">1100 + 1011</Option>
+<Option>1010 + 0100 + 0001</Option>
+<explanation>解釋： 答案 C。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022">5. 需要多少位元才能表示一幅 8 × 8 的黑白像素圖像?</QText>
+<Option correct="1">64</Option>
+<Option>64²</Option>
+<Option>8⁸</Option>
+<Option>2⁶⁴</Option>
+<explanation>解釋： 答案 A。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022">6. 下列哪項是正確的?</QText>
+<Option>資訊處理：數據收集，例子：製作統計圖表</Option>
+<Option correct="1">資訊處理：數據預備，例子：輸人前核實問卷資料</Option>
+<Option>資訊處理：數據處理，例子：把問卷排序以便輸人數據</Option>
+<Option>資訊處理：數據組織，例子：設計線上問卷</Option>
+<explanation>解釋： 答案 B。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022">7. 某照片的 BMP 圖像的檔案大小較其 JPG 圖像的更大,原因是_______。
+(2)  BMP 圖像是未經壓縮的
+(2)  BMP 表示點陣圖像
+(2)  BMP 圖像不能瀏覽器上顯示</QText>
+<Option correct="1">只有(1)</Option>
+<Option>只有(2)</Option>
+<Option>只有(1)和(3)</Option>
+<Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 A。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022">8. 下列哪些關於郵件合併是正確的?
+(2) 數據庫檔可以用作郵件合併的數據來源
+(2) 主文件和數據來源可合併後生成一份合併文件
+(2) 當合併完成後,合併欄位的內容會在合併文件內插人</QText>
+<Option>只有(1)和(2)</Option>
+<Option>只有(1)和(3)</Option>
+<Option>只有(2)和(3)</Option>
+<Option correct="1">(1)、(2)和(3)</Option>
+<explanation>解釋： 答案 D。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022">9. 下列哪項關於演示軟件中,設有多張投影片並輔以旁白的演示是正確的?</QText>
+<Option>該演示應是一個網上演示</Option>
+<Option>該演示應是如 MP4 的視像檔案格式</Option>
+<Option correct="1">旁白可以個別地於每張投影片錄製</Option>
+<Option>每張投影片內旁白的播放時間是相同的</Option>
+<explanation>解釋： 答案 C。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022" figure="2022_q_10_0.png">10. 在以下試算表的 B6 内,輸人了一條基於 B2:B4 來計算班會費的公式。同學希望可以縮減遊學團預算來限制班會費為 $1,000
+#figure
+當使用「目標搜尋」功能來作「假設」分析時,需要採用下列娜一組數據?
+</QText>
+<Option figure="2022_q_10_1.png">#figure</Option>
+<Option figure="2022_q_10_2.png">#figure</Option>
+<Option correct="1" figure="2022_q_10_3.png">#figure</Option>
+<Option figure="2022_q_10_4.png">#figure</Option>
+<explanation>解釋： 答案 C。
+</explanation>
+</Question>
+									
+<Question>
 <QText examyear="HKDSE 2023">1. 下列哪些句子關於在儲存設備上直接存取是正確的？
 (1) 寫入檔案的數據是由儲存設備的開頭開始
 (2) 一般來說，搜尋檔案的尋找時問比順序存取的為快
@@ -9325,7 +9423,7 @@ H ← H - 1
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2023" figure="2023-q2.png">2. 下列「七劃管」用途廣泛，每一劃是一枝可以獨立開關的 LED 燈。除了所有劃都關掉之外，這七劃管可以產生多少個不同的圖案？
+<QText examyear="HKDSE 2023" figure="2023_q_02_0.png">2. 下列「七劃管」用途廣泛，每一劃是一枝可以獨立開關的 LED 燈。除了所有劃都關掉之外，這七劃管可以產生多少個不同的圖案？
 #figure
 </QText>
 <Option>10</Option>
@@ -9382,7 +9480,7 @@ H ← H - 1
 
 <Question>
 <QText examyear="HKDSE 2023">6. 考慮以下用以檢查普通學校考試成續的偽代碼：
-如果 (MARKS &gt;= 50 )則
+如果 ( MARKS &gt;= 50 )則
 	輸出 'PASS'
 否則
 	輸出 'FAIL'
@@ -9536,9 +9634,9 @@ D. 這個公式正確地移除字符串兩邊的空格，返回 "ICT"。
 
 <Question>
 <QText examyear="HKDSE 2023">16. 下列哪些是操作系統的功能？
-(1)調配硬件資源
-(2)把工作排程
-(3)永久地儲存用戶的程式</QText>
+(1) 調配硬件資源
+(2) 把工作排程
+(3) 永久地儲存用戶的程式</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -9565,11 +9663,11 @@ D. 這個公式正確地移除字符串兩邊的空格，返回 "ICT"。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2023">18.某電腦於個別任務的表現如下：
+<QText examyear="HKDSE 2023" figure="2023_q_18_0.png">18.某電腦於個別任務的表現如下：
 #figure
 應將下列哪些部件升級？
-(1)網絡介面卡
-(2)顯示卡
+(1) 網絡介面卡
+(2) 顯示卡
 (3) CPU</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -9608,12 +9706,12 @@ D. 這個公式正確地移除字符串兩邊的空格，返回 "ICT"。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2023">21. 志明瀏覽一個新網站時，看見了下列訊息：
+<QText examyear="HKDSE 2023" figure="2023_q_21_0.png">21. 志明瀏覽一個新網站時，看見了下列訊息：
 #figure
 當按下「接受」按鈕後、會有下列哪個/些後果？
-(1)個人資訊可能會被收集
-(2)網絡的頻寬可能會被降低
-(3)他的電郵賬戶中的地址簿可能會被泄露
+(1) 個人資訊可能會被收集
+(2) 網絡的頻寬可能會被降低
+(3) 他的電郵賬戶中的地址簿可能會被泄露
 </QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
@@ -9637,7 +9735,7 @@ D. 這個公式正確地移除字符串兩邊的空格，返回 "ICT"。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2023" figure="2023_q23.png">23. 在以下網絡圖中，電惱可接達互聯網。 x 和 Y 是什麼？
+<QText examyear="HKDSE 2023" figure="2023_q_23_0.png">23. 在以下網絡圖中，電惱可接達互聯網。 x 和 Y 是什麼？
 #figure</QText>
 <Option correct="1">X：  交換器 ， Y：  路由器</Option>
 <Option>X：  防火牆 ， Y：  交換器</Option>
@@ -9664,7 +9762,7 @@ D. 這個公式正確地移除字符串兩邊的空格，返回 "ICT"。
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2023">25. 下列哪項是網域名稱系統( DNS )伺服器的常見輸入和輸出？</QText>
+<QText examyear="HKDSE 2023">25. 下列哪項是網域名稱系統（DNS）伺服器的常見輸入和輸出？</QText>
 <Option>輸入： HTML ， 輸出： IP 位址</Option>
 <Option>輸入： IP 位址 ， 輸出： MAC 位址</Option>
 <Option>輸入： 網域名稱 ， 輸出： MAC 位址</Option>
@@ -9686,7 +9784,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2023">27. 空運行下列算法。會有多少個「*」輸出？
+<QText examyear="HKDSE 2023" figure="2023_q_27_0.png">27. 空運行下列算法。會有多少個「*」輸出？
 #figure
 </QText>
 <Option>0</Option>
@@ -9698,7 +9796,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2023">28. 參考下列算法，回答問題。
+<QText examyear="HKDSE 2023" figure="2023_q_28_0.png">28. 參考下列算法，回答問題。
 #figure
 假設陣列 N 內所有數值都是 2，算法 1 的輸出是什麼？
 </QText>
@@ -9711,7 +9809,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2023">29. 參考下列算法，回答問題。
+<QText examyear="HKDSE 2023" figure="2023_q_29_0.png">29. 參考下列算法，回答問題。
 #figure
 算法 1 和算法 2 的目的應該相同。算法 2 缺少了哪些語句？
 (1) i ← 0
@@ -9728,7 +9826,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2023">30. 以下算法的輸出是什麼？
+<QText examyear="HKDSE 2023" figure="2023_q_30_0.png">30. 以下算法的輸出是什麼？
 #figure
 </QText>
 <Option>16</Option>
@@ -9740,7 +9838,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2023">31. 以下算法的輸入是 'Y'， 'N'， 'Y'， 'N'， 'Y'，其輸出是什麼？
+<QText examyear="HKDSE 2023" figure="2023_q_31_0.png">31. 以下算法的輸入是 'Y'， 'N'， 'Y'， 'N'， 'Y'，其輸出是什麼？
 #figure
 </QText>
 <Option>1#2E3</Option>
@@ -9752,7 +9850,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2023">32. NUM 是一個有 N 個數值的整數陣列，以下算法有什麼目的？
+<QText examyear="HKDSE 2023" figure="2023_q_32_0.png">32. NUM 是一個有 N 個數值的整數陣列，以下算法有什麼目的？
 #figure
 </QText>
 <Option>數算 NUM 內數值的數目</Option>
