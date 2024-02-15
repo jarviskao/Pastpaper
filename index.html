@@ -220,6 +220,7 @@
 
 
     <script>
+        
         function refresh() {
             document.querySelectorAll('.question-container').forEach(container => {
                 let answers = container.querySelector('.left-side').querySelectorAll('.answer');
@@ -255,9 +256,11 @@
                 });
             });
             var sel = document.getElementById("mode");
+            // Set cookies for year and mode
+            setCookie("mode", sel.value, 7); // stores the value for 1 week
             var text= sel.options[sel.selectedIndex].text;
             console.log(document.getElementById('examyear').value, 'Paper Loaded - ', text)
-            if (document.getElementById("mode").value == 'mode2') {
+            if (sel.value == 'mode2') {
                 document.querySelectorAll('.hidden').forEach(icon => {
                     icon.classList.remove('hidden')
                 });
@@ -320,6 +323,15 @@
                     // Append the new option element to yearOptions
                     yearOptions.appendChild(optElement);
                 });
+                // Load cookies
+                if (getCookie("year")){
+                    document.getElementById("examyear").value = getCookie("year");
+                    console.log('Cookie loaded. Year:', getCookie("year"));
+                }
+                if (getCookie("year")){
+                    document.getElementById("mode").value = getCookie("mode");
+                    console.log('Cookie loaded. Mode:', getCookie("mode"));
+                }
                 loadpage()
             }
         };
@@ -334,6 +346,10 @@
             //console.log(year);
             /* 載入定年份的選擇題 */
             var MCQs_content = ''
+
+            // Set cookies for year and mode
+            setCookie("year", year, 7);
+            console.log('Cookie saved. Year:', getCookie("year"));
 
             for (var i = 0; i < ALL_MCQS.length; i++) {
                 /* 過濾年份不符合年份的選擇題*/
@@ -387,6 +403,30 @@
             }
             refresh()
         }
+
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            // Ensure you encode the cookie's value, as it might contain characters that need encoding
+            document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/; SameSite=Lax" + (location.protocol === "https:" ? "; Secure" : "");
+        }
+
+        function getCookie(name) {
+            // Escape special characters in cookie name to prepare it for regex pattern
+            var nameEscaped = name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1'); 
+
+            // Use a regular expression to find the cookie in the document.cookie string
+            var regex = new RegExp('(?:^|; )' + nameEscaped + '=([^;]*)');
+            var match = document.cookie.match(regex);
+
+            // Return the value, decoded from URI encoding, or return null if not found
+            return match ? decodeURIComponent(match[1]) : null;
+        }
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
