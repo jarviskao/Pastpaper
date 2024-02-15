@@ -8418,7 +8418,7 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option>只有(2)</Option>
 <Option>只有(3)和(4)</Option>
 <Option correct="1">只有(2)、(3)和(4)</Option>
-<explanation>解釋： 答案 A。</explanation>
+<explanation>解釋： 答案 D。</explanation>
 </Question>
 
 <Question>
@@ -8432,7 +8432,7 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
-<explanation>解釋： 答案 B。</explanation>
+<explanation>解釋： 答案 D。</explanation>
 </Question>
 
 <Question>
@@ -8531,7 +8531,7 @@ D. 監視RAM的使用量：這通常是操作系統的任務管理或監控工�
 <Option>教師電腦應當開啟。</Option>
 <Option>應以路由器取替交換器。</Option>
 <Option correct="1">無線打印機應連接至AP</Option>
-<explanation>解釋： 答案 C。</explanation>
+<explanation>解釋： 答案 D。</explanation>
 </Question>
 
 <Question>
@@ -8637,6 +8637,9 @@ B. 在網上論壇，搜尋套裝軟件的安裝密碼。通常這類行為涉�
 <Option correct="1">讓電腦透過網絡進行通訊。</Option>
 <Option>提升通訊連結的保安水平。</Option>
 <Option>支援衛星通訊。</Option>
+<explanation>解釋： 答案 B。
+網絡界面卡（NIC）的主要功能是讓電腦可以透過網絡與其他設備進行數據通訊。因此，正確的答案是 **B. 讓電腦透過網絡進行通訊**。
+</explanation>
 </Question>
 
 <Question>
@@ -8645,6 +8648,9 @@ B. 在網上論壇，搜尋套裝軟件的安裝密碼。通常這類行為涉�
 <Option>數碼水印</Option>
 <Option>數碼簽署</Option>
 <Option correct="1">身分鑑定</Option>
+<explanation>解釋： 答案 D。
+小芬從手提電話收到SMS短訊，其中包含一個密碼，这通常用于身份验证。這類短訊是一次性密碼（One-Time Password, OTP），用於在登錄網站時提供额外的安全層。因此，正确的答案是 D. 身分鑑定。
+</explanation>
 </Question>
 
 <Question>
@@ -8656,6 +8662,8 @@ i 的輸出值是什麼？
 <Option>3</Option>
 <Option correct="1">4</Option>
 <Option>5</Option>
+<explanation>解釋： 答案 C。
+</explanation>
 </Question>
 
 <Question>
@@ -8667,6 +8675,8 @@ n 的輸出值是什麼？
 <Option>2</Option>
 <Option>3</Option>
 <Option>4</Option>
+<explanation>解釋： 答案 A。
+</explanation>
 </Question>
 
 <Question>
@@ -8676,6 +8686,8 @@ n 的輸出值是什麼？
 <Option>33</Option>
 <Option correct="1">46</Option>
 <Option>60</Option>
+<explanation>解釋： 答案 C。
+</explanation>
 </Question>
 
 <Question>
@@ -8685,6 +8697,8 @@ n 的輸出值是什麼？
 <Option correct="1">1 1 2 3 5</Option>
 <Option>1 2 3 4 5</Option>
 <Option>1 2 4 8 16</Option>
+<explanation>解釋： 答案 B。
+</explanation>
 </Question>
 
 <Question>
@@ -8694,6 +8708,8 @@ n 的輸出值是什麼？
 <Option>5</Option>
 <Option>16</Option>
 <Option correct="1">32</Option>
+<explanation>解釋： 答案 D。
+</explanation>
 </Question>
 
 <Question>
@@ -8706,6 +8722,9 @@ n 的輸出值是什麼？
 <Option>100， 200， 300， 500， 1000， 30000</Option>
 <Option correct="1">100， 200， 600， 950， 10000， 11000</Option>
 <Option>100， 1000， 15000， 20000， 25000， 30000</Option>
+<explanation>解釋： 答案 C。
+在選擇測試數據以測試新限制時，我們應考慮測試邊界條件和無效條件，以確保系統能夠正確處理各種輸入。
+</explanation>
 </Question>
 
 <Question>
@@ -8717,6 +8736,12 @@ n 的輸出值是什麼？
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
 <Option correct="1">(1)、(2)和(3)</Option>
+<explanation>解釋： 答案 D。
+(1) 睡眠問題：長時間對著螢幕會影響褪黑激素的分泌，從而擾亂正常的睡眠模式。
+(2) 視力問題：長時間盯著電腦或手機屏幕可能造成視力疲勞，長期可能會對視力造成損害。
+(3) 情緒問題：網絡遊戲成癮可能導致情緒波動和社交隔離，從而對情緒健康造成影響。
+因此，長時間玩遊戲的學生可能會面對上述所有的健康問題。適當的答案是 D. (1)、(2)和(3)。
+</explanation>
 </Question>
 
 <Question>
@@ -8728,6 +8753,9 @@ n 的輸出值是什麼？
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
 <Option>(1)、(2)和(3)</Option>
+<explanation>解釋： 答案 C。
+更新操作系統和安裝防火牆確實可以直接幫助保護個人私隱並防範黑客攻擊，而建立數據備份則是在數據遺失後恢復資料，並不直接預防攻擊。
+</explanation>
 </Question>
 
 <Question>
@@ -8739,6 +8767,12 @@ n 的輸出值是什麼？
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 B。
+開放源碼軟件的一個關鍵特徵是其源碼是公開的，這意味著用戶可以檢視、修改甚至重新分發軟件的代碼。這促進了社區參與和協作，允許開發者和用戶共同改進軟件。
+開放源碼軟件不一定是免費的；開發商有時可能會為他們的軟件設定一個價格，這與軟件是否開源無關。
+開放源碼軟件通常沒有試用限制，因為這是商業軟件常見的營銷策略，其中全部或部分功能在試用期過後才需付費以繼續使用。
+根據這些信息，開放源碼軟件的主要特徵是用戶可以修改源碼。因此，答案是 B. 只有(2)。
+</explanation>
 </Question>
 
 <Question>
@@ -8750,6 +8784,12 @@ n 的輸出值是什麼？
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
+<explanation>解釋： 答案 D。
+(1) 雖然資料加密是個良好的安全措施，但將資料上載至雲端本身並不算是不恰當的行為，只要遵守相關的隱私保護法規並通知會員。
+(2) 將個人資料傳送給其他商店而未經會員同意是違反許多地方的數據保護法律，尤其是當此行為是在沒有會員明確同意的情況下進行的。
+(3) 在會員註銷會籍之後仍然保留其個人資料，而不是按照數據保護原則要求的在合理時間內刪除，同樣也被視為不適當的行為。
+因此，不恰當的行為是把會員資料用於未經同意的其他用途（如分享給其他商店）和在不需要時仍保留個人資料。答案是 D. 只有(2)和(3)。
+</explanation>
 </Question>
 
 <Question>
@@ -8760,6 +8800,8 @@ n 的輸出值是什麼？
 <Option>瀏覽器</Option>
 <Option>檔案管理員應用程式</Option>
 <Option>裝置管理員應用程式</Option>
+<explanation>解釋： 答案 A。
+</explanation>
 </Question>
 
 <Question>
@@ -8773,6 +8815,11 @@ n 的輸出值是什麼？
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
 <Option>(1)、(2)和(3)</Option>
+<explanation>解釋： 答案 C。
+(1) 位於 P 的手托的角度應為90度，這樣才是使用電腦的人體工學的良好用法。所以，手托的角度不應調校。
+(2) 顯示器的角度應可調校，讓用戶可以調整到最適合的視角，減少眼睛疲勞和頸部壓力。
+(3) 桌子的高度應可調校，使得使用者坐姿正直，兩腳可平放於地面，手臂可以自然地放在桌面上。
+</explanation>
 </Question>
 
 <Question>
