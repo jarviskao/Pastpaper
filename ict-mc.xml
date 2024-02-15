@@ -9315,9 +9315,9 @@ correct="1">1001</Option>
 <Question>
 <QText examyear="HKDSE 2022" figure="2022_q_03_0.png">3. 輸人日期時,使用以下日曆框勝於文字框。其優點是什麼?
 #figure
-(2) 避免無效日期
+(1) 避免無效日期
 (2) 確保輸人無誤
-(2) 提供一個用戶友善的界面
+(3) 提供一個用戶友善的界面
 </QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
@@ -9359,9 +9359,9 @@ correct="1">1001</Option>
 
 <Question>
 <QText examyear="HKDSE 2022">7. 某照片的 BMP 圖像的檔案大小較其 JPG 圖像的更大,原因是_______。
-(2)  BMP 圖像是未經壓縮的
-(2)  BMP 表示點陣圖像
-(2)  BMP 圖像不能瀏覽器上顯示</QText>
+(1) BMP 圖像是未經壓縮的
+(2) BMP 表示點陣圖像
+(3) BMP 圖像不能瀏覽器上顯示</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -9372,9 +9372,9 @@ correct="1">1001</Option>
 
 <Question>
 <QText examyear="HKDSE 2022">8. 下列哪些關於郵件合併是正確的?
-(2) 數據庫檔可以用作郵件合併的數據來源
+(1) 數據庫檔可以用作郵件合併的數據來源
 (2) 主文件和數據來源可合併後生成一份合併文件
-(2) 當合併完成後,合併欄位的內容會在合併文件內插人</QText>
+(3) 當合併完成後,合併欄位的內容會在合併文件內插人</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>

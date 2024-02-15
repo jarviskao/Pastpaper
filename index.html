@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+
     <title>HKDSE ICT MCQs 試題</title>
     <style>
+        
         body {
             font-family: 'Noto Sans TC', sans-serif;
             background-color: #f4f7f6;
@@ -48,6 +50,15 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             /* 輕微的陰影設計給予層次感 */
         }
+
+        .notification {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
 
         .left-side {
             /*flex: 1;*/
@@ -167,6 +178,18 @@
                     </select>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="notification hidden" id="notification">
+        <div class="col-md col-lg col-xl">
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                </symbol>
+              </svg>
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+            <span id = "notificationtext" ></span>
         </div>
     </div>
 
@@ -317,7 +340,7 @@
                 MCQS_pre = '<div class="question-container row"> <div class="left-side col-md col-lg col-xl"> <div class="question formatted-text">'
                 if (ALL_MCQS[i].getElementsByTagName("QText")[0].getAttribute("figure")) {
                     imgUrl = 'images/' + ALL_MCQS[i].getElementsByTagName("QText")[0].getAttribute("figure")
-                    console.log(imgUrl)
+                    //console.log(imgUrl)
                     MCQs_question = ALL_MCQS[i].getElementsByTagName("QText")[0].childNodes[0].nodeValue.replace('#figure', '<img src="' + imgUrl + '" class="img-fluid">')
                 }
                 else {
@@ -354,10 +377,16 @@
 
             document.getElementById("result").innerHTML = MCQs_content
 
+            if (year.includes("HKDSE")) {
+                document.getElementById("notificationtext").innerHTML = '<span id = "notificationtext" > 您可以在Youtube上搜尋 ' + year + ' 題解。<a href="https://www.youtube.com/results?search_query=' + year +' ICT MC" target="_blank">查看</a></span>'
+                document.getElementById("notification").classList.remove('hidden')
+            }else{
+                document.getElementById("notification").classList.add('hidden')
+            }
             refresh()
         }
     </script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
