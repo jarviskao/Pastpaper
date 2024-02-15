@@ -9290,7 +9290,7 @@ correct="1">1001</Option>
 第一組：0101 0111
 第二組：1101 0101
 第三組：1110 1011
-以下哪項最能描述此情況?
+以下哪項最能描述此情況？
 </QText>
 <Option correct="1">損壞的數據序列：第一組和第二組，奇偶檢驗：偶數</Option>
 <Option>損壞的數據序列：第二組和第三組，奇偶檢驗：偶數</Option>
@@ -9307,7 +9307,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022" figure="2022_q_02_0.png">2. 某超級市場使用數據厙表 FRUIT 儲存水果名稱 FNAME 和相應的庫存量 QTY。下列哪項最能描述以下查詢的結果?
+<QText examyear="HKDSE 2022" figure="2022_q_02_0.png">2. 某超級市場使用數據厙表 FRUIT 儲存水果名稱 FNAME 和相應的庫存量 QTY。下列哪項最能描述以下查詢的結果？
 #figure
 </QText>
 <Option>水果按名稱依降序列出</Option>
@@ -9319,7 +9319,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022" figure="2022_q_03_0.png">3. 輸人日期時，使用以下日曆框勝於文字框。其優點是什麼?
+<QText examyear="HKDSE 2022" figure="2022_q_03_0.png">3. 輸人日期時，使用以下日曆框勝於文字框。其優點是什麼？
 #figure
 (1) 避免無效日期
 (2) 確保輸人無誤
@@ -9334,7 +9334,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">4. 下列哪項以二進制補碼表示的 4 位元數字的加法運算，會引至上溢錯誤?</QText>
+<QText examyear="HKDSE 2022">4. 下列哪項以二進制補碼表示的 4 位元數字的加法運算，會引至上溢錯誤？</QText>
 <Option>0011 + 1001</Option>
 <Option>1111 + 1111</Option>
 <Option correct="1">1100 + 1011</Option>
@@ -9344,7 +9344,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">5. 需要多少位元才能表示一幅 8 × 8 的黑白像素圖像?</QText>
+<QText examyear="HKDSE 2022">5. 需要多少位元才能表示一幅 8 × 8 的黑白像素圖像？</QText>
 <Option correct="1">64</Option>
 <Option>64²</Option>
 <Option>8⁸</Option>
@@ -9354,7 +9354,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">6. 下列哪項是正確的?</QText>
+<QText examyear="HKDSE 2022">6. 下列哪項是正確的？</QText>
 <Option>資訊處理：數據收集，例子：製作統計圖表</Option>
 <Option correct="1">資訊處理：數據預備，例子：輸人前核實問卷資料</Option>
 <Option>資訊處理：數據處理，例子：把問卷排序以便輸人數據</Option>
@@ -9377,7 +9377,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">8. 下列哪些關於郵件合併是正確的?
+<QText examyear="HKDSE 2022">8. 下列哪些關於郵件合併是正確的？
 (1) 數據庫檔可以用作郵件合併的數據來源
 (2) 主文件和數據來源可合併後生成一份合併文件
 (3) 當合併完成後，合併欄位的內容會在合併文件內插人</QText>
@@ -9390,7 +9390,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">9. 下列哪項關於演示軟件中，設有多張投影片並輔以旁白的演示是正確的?</QText>
+<QText examyear="HKDSE 2022">9. 下列哪項關於演示軟件中，設有多張投影片並輔以旁白的演示是正確的？</QText>
 <Option>該演示應是一個網上演示</Option>
 <Option>該演示應是如 MP4 的視像檔案格式</Option>
 <Option correct="1">旁白可以個別地於每張投影片錄製</Option>
@@ -9400,9 +9400,9 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022" figure="2022_q_10_0.png">10. 在以下試算表的 B6 内，輸人了一條基於 B2:B4 來計算班會費的公式。同學希望可以縮減遊學團預算來限制班會費為 $1,000
+<QText examyear="HKDSE 2022" figure="2022_q_10_0.png">10. 在以下試算表的 B6 内，輸人了一條基於 B2：B4 來計算班會費的公式。同學希望可以縮減遊學團預算來限制班會費為 $1，000
 #figure
-當使用「目標搜尋」功能來作「假設」分析時，需要採用下列娜一組數據?
+當使用「目標搜尋」功能來作「假設」分析時，需要採用下列娜一組數據？
 </QText>
 <Option figure="2022_q_10_1.png">#figure</Option>
 <Option figure="2022_q_10_2.png">#figure</Option>
@@ -9413,7 +9413,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">11. 為什麼字符在電腦內需要以一些例如 ASCII 的字符集來表示?
+<QText examyear="HKDSE 2022">11. 為什麼字符在電腦內需要以一些例如 ASCII 的字符集來表示？
 (1) 標準化數據的表示
 (2) 加強數據加密
 (3) 電腦內的數據是以二進制數字來儲存的</QText>
@@ -9426,7 +9426,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">12. 為什麼資訊素養在知識型社會是重要的?
+<QText examyear="HKDSE 2022">12. 為什麼資訊素養在知識型社會是重要的？
 (1) 人們應該能夠分辨網上的假資訊和惡作劇
 (2) 人們應該能夠編寫人工智能 (AI) 程式
 (3) 人們應該明白有些網上資訊缺乏可靠性</QText>
@@ -9439,7 +9439,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">13. 當開發一個資訊管理系統時，下列哪項應是首要考慮?</QText>
+<QText examyear="HKDSE 2022">13. 當開發一個資訊管理系統時，下列哪項應是首要考慮？</QText>
 <Option>涉及的技術</Option>
 <Option>涉及的人員</Option>
 <Option>系統的成本</Option>
@@ -9449,7 +9449,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">14. 下列哪項/些是家用打印機的常見規格?
+<QText examyear="HKDSE 2022">14. 下列哪項/些是家用打印機的常見規格？
 (1) 802.11n
 (2) 並行埠
 (3) 1200 dpi</QText>
@@ -9462,7 +9462,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">15. 一台獨立的電腦進行數據庫軟件工作時運行緩慢。下列哪個/些硬件部件需要升級?
+<QText examyear="HKDSE 2022">15. 一台獨立的電腦進行數據庫軟件工作時運行緩慢。下列哪個/些硬件部件需要升級？
 (1) RAM
 (2) ROM
 (3) 網絡界面卡</QText>
@@ -9475,7 +9475,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">16. 為什麼快餐店收銀處安裝感熱式打印機而不是鐳射打印機來印製收據?
+<QText examyear="HKDSE 2022">16. 為什麼快餐店收銀處安裝感熱式打印機而不是鐳射打印機來印製收據？
 (1) 列印本是黑白的
 (2) 打印機的體積較細
 (3) 列印本上的文字會較快褪色</QText>
@@ -9488,7 +9488,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">17. 有一天，莉莉發覺她不能透過家中電腦接達互聯網以下哪項是可能的成因?</QText>
+<QText examyear="HKDSE 2022">17. 有一天，莉莉發覺她不能透過家中電腦接達互聯網以下哪項是可能的成因？</QText>
 <Option>ROM 的容量</Option>
 <Option>小硬碟的數據傳輸率低</Option>
 <Option>顯示卡出現故障</Option>
@@ -9498,7 +9498,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">18. 為什麼需要定時更新軟件?
+<QText examyear="HKDSE 2022">18. 為什麼需要定時更新軟件？
 (1) 修復程式的錯誤
 (2) 新增功能
 (3) 改善軟件效能</QText>
@@ -9521,7 +9521,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">20. 有一百個 300GB 的監控視像檔案。在沒有任何檔案重組和壓縮下，需要多少個 2TB 硬碟來儲存所有視像檔案呢?</QText>
+<QText examyear="HKDSE 2022">20. 有一百個 300GB 的監控視像檔案。在沒有任何檔案重組和壓縮下，需要多少個 2TB 硬碟來儲存所有視像檔案呢？</QText>
 <Option>15</Option>
 <Option>16</Option>
 <Option correct="1">17</Option>
@@ -9537,7 +9537,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">21. 在一般情況下, P 、 Q 和 R 會是什麼?
+<QText examyear="HKDSE 2022" figure="2022_q_21_0.png">21. 在一般情況下， P 、 Q 和 R 會是什麼？
 #figure
 </QText>
 <Option>P：操作系統，Q：硬件，R：應用軟件</Option>
@@ -9549,7 +9549,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">22. 下列哪項/些是描述: https://www.abc.edu.hk/en/ 這個 URL?
+<QText examyear="HKDSE 2022">22. 下列哪項/些是描述： https：//www.abc.edu.hk/en/ 這個 URL？
 (1) 是網頁伺服器中的路徑
 (2) 此域名是 abc
 (3) 此網站在香港以教育機構身分註冊
@@ -9563,7 +9563,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">23.下列哪些是電子學習的潛在效益?
+<QText examyear="HKDSE 2022">23.下列哪些是電子學習的潛在效益？
 (1) 它能追蹤個別的學習進度
 (2) 它減少電腦硬件資源
 (3) 它提供彈性學習日程</QText>
@@ -9576,7 +9576,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">24.在設計網頁時,下列哪些需要考慮?
+<QText examyear="HKDSE 2022">24.在設計網頁時，下列哪些需要考慮？
 (1) 載人網頁的時間
 (2) 瀏覽時的用戶友善程度
 (3) 色彩的組合</QText>
@@ -9589,7 +9589,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">25. 在電腦網絡上使用光纖,原因是_______。
+<QText examyear="HKDSE 2022">25. 在電腦網絡上使用光纖，原因是_______。
 (1) 它同時支援有線和無線連接
 (2) 它的數據傳輸率很高
 (3) 它支援長距離的連接</QText>
@@ -9602,7 +9602,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">26. 在電腦網絡中使用互聯網協定(),原因是_______。</QText>
+<QText examyear="HKDSE 2022">26. 在電腦網絡中使用互聯網協定()，原因是_______。</QText>
 <Option correct="1">數據能夠在相同的通訊規則下傳送</Option>
 <Option>網絡上的電腦安裝了相同的操作系統</Option>
 <Option>電惱之間的最高數據傳輸率是相同的</Option>
@@ -9612,7 +9612,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">27. 芝芝利用電腦觀看串流視像。她應考慮下列哪個/些項目?
+<QText examyear="HKDSE 2022">27. 芝芝利用電腦觀看串流視像。她應考慮下列哪個/些項目？
 (1) 網絡頻寬
 (2) 抗電腦病毒軟件
 (3) 硬碟容量</QText>
@@ -9625,9 +9625,9 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">28. 在以下兩個算法中, X 和 Y 的最終值是相同的:
+<QText examyear="HKDSE 2022" figure="2022_q_28_0.png">28. 在以下兩個算法中， X 和 Y 的最終值是相同的：
 #figure
-算法 2 中欠缺部分是什麼?
+算法 2 中欠缺部分是什麼？
 </QText>
 <Option>(X = 20) AND (Y &gt; 15)</Option>
 <Option>(X = 20) OR (Y &gt; 15)</Option>
@@ -9638,7 +9638,7 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">29. 在下列算法中,輸人什麼值輸出「完成!」?
+<QText examyear="HKDSE 2022" figure="2022_q_29_0.png">29. 在下列算法中，輸人什麼值輸出「完成！」？
 #figure
 </QText>
 <Option>1</Option>
@@ -9650,15 +9650,145 @@ correct="1">1001</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022">30. 參考下列算法,回答問題。
+<QText examyear="HKDSE 2022" figure="2022_q_30_0.png">30. 參考下列算法，回答問題。
 #figure
-這個算法的目的是什麼?
+這個算法的目的是什麼？
 </QText>
 <Option>數算輸入數值的次數</Option>
 <Option>找出最大的輸人數值</Option>
 <Option correct="1">計算輸入數值的總和</Option>
 <Option>計算輸人數值的平均值</Option>
 <explanation>解釋： 答案 C。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022">31. 參考下列算法，回答問題。
+#figure
+數值「 888 」有什麼作用？
+</QText>
+<Option correct="1">終止輸人</Option>
+<Option>檢測輸人的正數</Option>
+<Option>限制輸人數值的範圍</Option>
+<Option>把輸人數值加人 j 內</Option>
+<explanation>解釋： 答案 A。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022">32. 問題定義在解決問題時有什麼重要性？
+</QText>
+<Option>可以確立設計和工作範圍</Option>
+<Option>可以繞過問題分析</Option>
+<Option>不需要定義子問題</Option>
+<Option>會開發一個沒有錯誤的算法</Option>
+<explanation>解釋： 答案 C。
+</explanation>
+</Question>
+	
+<Question>
+<QText examyear="HKDSE 2022">33. 在程式編寫時，下列哪項/些是模組化的優點？
+(1) 用戶手冊較簡單
+(2) 較易追蹤程式
+(3) 透過團隊合作促進程式編寫
+</QText>
+<Option>只有(1)</Option>
+<Option>只有(2)</Option>
+<Option>只有(1)和(3)</Option>
+<Option correct="1">只有(2)和(3)</Option>
+<explanation>解釋： 答案 D。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022">34. 為什麼要預備合適的測試數據？
+(1) 偵測算法中的錯誤
+(2) 測試是否能夠處理異常的輸入數據
+(3) 驗證特定輸入數據的預期結果
+</QText>
+<Option>只有(1)和(2)</Option>
+<Option>只有(1)和(3)</Option>
+<Option>只有(2)和(3)</Option>
+<Option correct="1">(1)、(2)和(3)</Option>
+<explanation>解釋： 答案 D。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022">35. 志明剛發現他的辦公室內一台電腦受到勒索軟件攻擊，有些重要檔案因此不能開啟他需要立刻做什麼？
+</QText>
+<Option>把硬碟格式化</Option>
+<Option correct="1">中斷網絡連接</Option>
+<Option>更新抗電腦病毒軟件</Option>
+<Option>啟用防火牆</Option>
+<explanation>解釋： 答案 B。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022">36. 某購物商場計劃為顧客開發一個流動應用程式，登記他們的購物記錄，並賺取獎賞積分來換取禮品。下列哪個考慮事項應該不重要？
+</QText>
+<Option>網絡安全</Option>
+<Option>個人數據私隱</Option>
+<Option>操作系統</Option>
+<Option correct="1">應用程式的檔案大小</Option>
+<explanation>解釋： 答案 D。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022">37. 志偉無時無刻玩互聯網遊戲和使用社交媒體。下列哪些可能是沉迷這些網上活動的後果？
+(1) 有更高機會患上焦慮和專注力的毛病
+(2) 在互聯網活動中侵犯版權
+(3) 體能下降
+</QText>
+<Option>只有(1)和(2)</Option>
+<Option correct="1">只有(1)和(3)</Option>
+<Option>只有(2)和(3)</Option>
+<Option>(1)、(2)和(3)</Option>
+<explanation>解釋： 答案B。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022">38. 使用社交媒體應用程式時，下列哪些是恰當的？
+(1) 明白應用程式的使用條款
+(2) 只提供必須的個人資料
+(3) 盡快把別人傳送來的資訊轉發給朋友
+</QText>
+<Option correct="1">只有(1)和(2)</Option>
+<Option>只有(1)和(3)</Option>
+<Option>只有(2)和(3)</Option>
+<Option>(1)、(2)和(3)</Option>
+<explanation>解釋： 答案 A。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022">39. 志明在他的電腦上安裝了一個钦件套件，同時把它安裝在另一部電腦上。他並沒有侵犯版權，原因是______。
+(1) 此軟件套件授權容許這樣安裝
+(2) 這兩部電腦位於不同國家
+(3) 這兩部電腦使用不同的操作系統
+</QText>
+<Option correct="1">只有(1)</Option>
+<Option>只有(2)</Option>
+<Option>只有(1)和(3)</Option>
+<Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 A。
+</explanation>
+</Question>
+
+<Question>
+<QText examyear="HKDSE 2022">40. 下列哪些關於使用機械人是正確的？
+(1) 機械人能夠準確地跟從工作程序
+(2) 機械人能夠代替所有僱員去工作
+(3) 機械人能夠接手厭惡和危險的工作
+</QText>
+<Option>只有(1)和(2)</Option>
+<Option correct="1">只有(1)和(3)</Option>
+<Option>只有(2)和(3)</Option>
+<Option>(1)、(2)和(3)</Option>
+<explanation>解釋： 答案 B。
 </explanation>
 </Question>
 
@@ -9672,9 +9802,9 @@ correct="1">1001</Option>
 <Option correct="1">只有(2)和(3)</Option>
 <Option>(1)、(2)和(3)</Option>
 <explanation>解釋： 答案 C。
-(1) 寫入檔案的數據是由儲存設備的開頭開始: 這個說法是不正確的，因為「直接存取」不需要從開頭開始，可以直接跳到數據所在的位置。
-(2) 一般來說，搜尋檔案的尋找時間比順序存取的為快: 這是正確的，直接存取比起順序存取，尋找文件時間上較為快速。
-(3) 比順序存取更常用於硬碟: 這也是正確的，硬碟通常使用直接存取的方式來處理數據。
+(1) 寫入檔案的數據是由儲存設備的開頭開始： 這個說法是不正確的，因為「直接存取」不需要從開頭開始，可以直接跳到數據所在的位置。
+(2) 一般來說，搜尋檔案的尋找時間比順序存取的為快： 這是正確的，直接存取比起順序存取，尋找文件時間上較為快速。
+(3) 比順序存取更常用於硬碟： 這也是正確的，硬碟通常使用直接存取的方式來處理數據。
 </explanation>
 </Question>
 
@@ -9701,9 +9831,9 @@ correct="1">1001</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
 <explanation>解釋： 答案 D。
-(1) 分布式處理系統: 這需要多台互相連接的電腦，因此莉莉的情況不適宜。
-(2) 實時系統: 這是指能夠即時響應輸入信號的系統，可以在沒有連接網絡的情況下運行。
-(3) 成批工作處理系統: 可以預先設定一系列工作，來在系統有空閒時自動執行，不需要網絡連接。
+(1) 分布式處理系統： 這需要多台互相連接的電腦，因此莉莉的情況不適宜。
+(2) 實時系統： 這是指能夠即時響應輸入信號的系統，可以在沒有連接網絡的情況下運行。
+(3) 成批工作處理系統： 可以預先設定一系列工作，來在系統有空閒時自動執行，不需要網絡連接。
 </explanation>
 </Question>
 
@@ -9717,9 +9847,9 @@ correct="1">1001</Option>
 <Option>只有(2)和(3)</Option>
 <Option correct="1">(1)、(2)和(3)</Option>
 <explanation>解釋： 答案 D。
-(1) 符號及值: 這種表示法中，最左邊的位元（最高位）表示數字的正負號，剩餘的位元則表示數字的大小。
-(2) 一補碼: 這種表示法下，負數是通過取每一位的補碼（即反轉）來表示的。對於正數，一補碼的表示和符號及值表示是一樣的。
-(3) 二補碼: 這是目前最常用的表示法，負數是通過取反加一來表示的。對於正數，二補碼的表示和符號及值表示是一樣的。
+(1) 符號及值： 這種表示法中，最左邊的位元（最高位）表示數字的正負號，剩餘的位元則表示數字的大小。
+(2) 一補碼： 這種表示法下，負數是通過取每一位的補碼（即反轉）來表示的。對於正數，一補碼的表示和符號及值表示是一樣的。
+(3) 二補碼： 這是目前最常用的表示法，負數是通過取反加一來表示的。對於正數，二補碼的表示和符號及值表示是一樣的。
 </explanation>
 </Question>
 
