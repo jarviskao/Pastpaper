@@ -8274,6 +8274,7 @@ ABC咖啡店
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
 <Option>(1)、(2)和(3)</Option>
+<explanation>解釋： 答案 C。</explanation>
 </Question>
 
 <Question>
@@ -8282,6 +8283,7 @@ ABC咖啡店
 <Option>-33</Option>
 <Option>95</Option>
 <Option correct="1">-95</Option>
+<explanation>解釋： 答案 D。</explanation>
 </Question>
 
 <Question>
@@ -8293,6 +8295,14 @@ ABC咖啡店
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 A。
+(1) 縮減照片檔案的大小。
+JPG格式通過有損壓縮來減小文件大小，這使得文件在保存時佔用較少的存儲空間，並且更易於通過電子郵件分享或在網上發佈。
+(2) 增加每張照片的像素數量。
+格式不會直接影響照片的像素數量。像素數量由掃描分辨率決定，與文件格式無關。
+(3) 增加已顯示的顔色數量。
+BMP和JPG都可以顯示大量的顏色（BMP通常為24位真彩色，JPG也支持高色深），格式選擇並不直接影響顯示的色彩數量。
+</explanation>
 </Question>
 
 <Question>
@@ -8301,6 +8311,9 @@ ABC咖啡店
 <Option>14</Option>
 <Option correct="1">15</Option>
 <Option>32</Option>
+<explanation>解釋： 答案 C。
+2的14次冪不足以表示30,000個唯一值，但2的15次冪足以表示這些值。因此，表示30,000個不同的職員編號至少需要15個位元。
+</explanation>
 </Question>
 
 <Question>
@@ -8309,6 +8322,7 @@ ABC咖啡店
 <Option>((X &lt; Y) AND (Y &gt; 4)) OR (1 &gt; X)</Option>
 <Option>(X &gt; Y) AND ((Y &lt; 4) OR (1 &lt; X))</Option>
 <Option correct="1">(X &lt; Y) AND ((Y &lt; 4) OR (1 &lt; X))</Option>
+<explanation>解釋： 答案 D。</explanation>
 </Question>
 
 <Question>
@@ -8320,6 +8334,14 @@ ABC咖啡店
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 B。
+(1) ASCII
+ASCII字符集主要用於表示英文字符和一些其他符號，並不支持簡體或繁體中文字符。
+(2) 統一碼
+統一碼（Unicode）是一個全球性的字符標準，它可以表示包括簡體中文、繁體中文和英文在內的多種語言的字符。
+(3) GB碼
+GB碼，特別是GB2312和其後繼者GB18030，是中國大陸用來表示簡體中文字符的標準。它也包含了ASCII所覆蓋的英文字母和符號。然而，傳統的GB碼標準不包含繁體中文字符；只有GB18030是向後兼容的，可以表示繁體中文字符。
+</explanation>
 </Question>
 
 <Question>
@@ -8331,6 +8353,15 @@ ABC咖啡店
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 A。
+(1) 政府資訊可讓公眾容易以數碼格式存取。
+這確實是電子政府的直接好處，因為它提供了更容易的存取途徑。
+(2) 增強政府資訊的數據保安。
+電子政府通過使用加密和其他數據保護措施，有潛力提高政府持有的數據的安全性。然而，這需要得到適當的實施和維護。這不是電子政府的直接好處，因為單純提供電子政府服務並不保證資訊保安會增強，但它是電子政府能夠提供的潛在好處。
+(3) 可縮窄社會的數碼隔閡。
+理論上，通過增加數碼存取的便利性和教育，電子政府可以幫助縮窄數碼隔閡。然而，這取決於所有人都能夠存取和使用這些服務，如果沒有必要的設施和支持，數碼隔閡可能仍然存在。
+</explanation>
+
 </Question>
 
 <Question>
@@ -8342,6 +8373,7 @@ ABC咖啡店
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 B。</explanation>
 </Question>
 
 <Question>
@@ -8350,6 +8382,11 @@ ABC咖啡店
 <Option>利用文書處理軟件，建立連至此數據庫的超連結。</Option>
 <Option>利用試算表軟件，建立SQL指令。</Option>
 <Option>利用試算表軟件，匯入數據，並建立樞紐分析表。</Option>
+<explanation>解釋： 答案 A。
+A. 利用數據庫軟件，建立報告。
+數據庫軟件如Microsoft Access或其他數據庫管理系統，通常具有建立報告的功能。這些報告工具可以直接使用數據庫中的數據，讓用戶可以設計和生成格式化的文件，如成績單。這種方式更直接且簡便，因為它無需依賴外部應用程序即可處理和展示數據。
+其他選項，如B、C和D，不是專門設計來從數據庫生成報告的。試算表軟件和文書處理軟件可以和數據庫配合使用，但在製作涉及大量數據且需要嚴謹格式的成績單時，會比直接使用數據庫軟件更為複雜。因此，選項A是最合適的選擇。
+</explanation>
 </Question>
 
 <Question>
@@ -8361,6 +8398,11 @@ ABC咖啡店
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 B。
+(1) 尋找在數學考試，獲取90分或以上的學生。這是一個篩選數據的任務，不涉及建立預測模型或進行假設分析。
+(2) 估算由不同製造商，生產的產品成本。這個任務適合使用「假設」情境，因為可以通過改變成本、售價或其他變量來分析對最終產品成本的影響。
+(3) 建立月平均温度的圖表。這是一個涉及數據視覺化的任務，與「假設」情境無關，其重點在於展示已有數據而不是進行預測或估算。
+</explanation>
 </Question>
 
 <Question>
@@ -8376,6 +8418,7 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option>只有(2)</Option>
 <Option>只有(3)和(4)</Option>
 <Option correct="1">只有(2)、(3)和(4)</Option>
+<explanation>解釋： 答案 A。</explanation>
 </Question>
 
 <Question>
@@ -8389,6 +8432,7 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
+<explanation>解釋： 答案 B。</explanation>
 </Question>
 
 <Question>
@@ -8397,6 +8441,10 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option>插入銀行卡至自動櫃員機。</Option>
 <Option>把相片放置在掃描器上掃描。</Option>
 <Option>把寫在分紙上的測驗分數，輸入至試算表。</Option>
+<explanation>解釋： 答案 A。
+數據收集是指收集原始資訊或數據以做進一步的處理和分析。
+選項A，它直接涉及到從一個來源（煤氣表）收集量化資訊（讀數）。
+</explanation>
 </Question>
 
 <Question>
@@ -8407,6 +8455,7 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option>Y</Option>
 <Option>Z</Option>
 <Option>Y和Z</Option>
+<explanation>解釋： 答案 A。</explanation>
 </Question>
 
 <Question>
@@ -8417,6 +8466,7 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option>Y</Option>
 <Option correct="1">Z</Option>
 <Option>Y和Z</Option>
+<explanation>解釋： 答案 C。</explanation>
 </Question>
 
 <Question>
@@ -8425,6 +8475,12 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option>產生較少熱量。</Option>
 <Option correct="1">支援隨機存取。</Option>
 <Option>提供較高存取速度。</Option>
+<explanation>解釋： 答案 C。
+A. 消耗較少電力：SSD沒有機械運動部件，因此相對於HDD消耗更少的電力。
+B. 產生較少熱量：因為SSD中沒有旋轉的碟盤和移動的讀寫頭，所以在運作時產生的熱量較少。
+C. 支援隨機存取：SSD和HDD都支援隨機存取，這不是SSD相對於HDD的優點。
+D. 提供較高存取速度：SSD有著比HDD快得多的數據讀寫速度，這是其一個顯著的優勢。
+</explanation>
 </Question>
 
 <Question>
@@ -8432,7 +8488,14 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option>讓操作系統能管理檔案。</Option>
 <Option correct="1">讓操作系統能控制掃描器。</Option>
 <Option>監視病毒偵測的狀況。</Option>
-<Option>監視RAM的使用量 </Option>
+<Option>監視RAM的使用量。</Option>
+<explanation>解釋： 答案 B。
+A. 讓操作系統能管理檔案：這是操作系統的基本功能，不需要特定的驅動程式來處理。
+B. 讓操作系統能控制掃描器：這是正確的。驅動程式允許操作系統識別和控制硬件，像是掃描器。
+C. 監視病毒偵測的狀況：這是防毒軟件的功能，與驅動程式無關。
+D. 監視RAM的使用量：這通常是操作系統的任務管理或監控工具的工作，而不是驅動程式的功能。
+因此，正確答案是B：讓操作系統能控制掃描器。
+</explanation>
 </Question>
 
 <Question>
@@ -8443,6 +8506,7 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option>從主記憶體位址 1111 獲取指令。</Option>
 <Option>獲取累加器的內容。</Option>
 <Option>利用控制部件(CU)計算下一個指令的位址。</Option>
+<explanation>解釋： 答案 A。</explanation>
 </Question>
 
 <Question>
@@ -8456,6 +8520,7 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 A。</explanation>
 </Question>
 
 <Question>
@@ -8466,6 +8531,7 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option>教師電腦應當開啟。</Option>
 <Option>應以路由器取替交換器。</Option>
 <Option correct="1">無線打印機應連接至AP</Option>
+<explanation>解釋： 答案 C。</explanation>
 </Question>
 
 <Question>
@@ -8477,6 +8543,12 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 B。
+(1) DVD-RW 是一種光碟，它支援直接存取，因為可以在光碟上任何位置讀寫數據。
+(2) 磁帶是一種使用順序存取的儲存媒介，因為它必須按順序讀取數據，不能隨機跳到某個位置。
+(3) 快閃記憶體如同在固態硬碟(SSD)或USB快閃驅動器中所使用的那種，支援直接存取，可以在任意位址讀寫數據。
+由此可見，只有磁帶（選項2）是只支援順序存取的。答案是B. 只有(2)。
+</explanation>
 </Question>
 
 <Question>
@@ -8485,6 +8557,13 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option>累加器是儲存算術及邏輯運算結果的寄存器。</Option>
 <Option>寄存器的數據傳輸率，高於主記憶體的數據傳輸率。</Option>
 <Option correct="1">數據匯流排，是用於在主機板和輸入/輸出設備之間，傳送控制訊號。</Option>
+<explanation>解釋： 答案D。
+A. 算術及邏輯運算部件(ALU)，是用來執行算術運算。這句話是正確的，ALU確實負責進行算術運算和邏輯運算。
+B. 累加器是儲存算術及邏輯運算結果的寄存器。這也是正確的，累加器常用於儲存運算的中間結果或最終結果。
+C. 寄存器的數據傳輸率，高於主記憶體的數據傳輸率。這也是正確的，寄存器位於CPU內部，所以其數據傳輸速度要比主記憶體快得多。
+D. 數據匯流排，是用於在主機板和輸入/輸出設備之間，傳送控制訊號。這句話是不正確的。數據匯流排用於傳輸數據，而不是控制訊號。控制訊號是透過控制匯流排（Control Bus）傳送的。
+因此，答案是D：數據匯流排，是用於在主機板和輸入/輸出設備之間，傳送控制訊號。這句描述是不正確的。
+</explanation>
 </Question>
 
 <Question>
@@ -8493,6 +8572,13 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option correct="1">在網上論壇，搜尋套裝軟件的安裝密碼。</Option>
 <Option>閱讀學校內聯網的學校通訊。</Option>
 <Option>經互聯網，找尋電腦的歷史。</Option>
+<explanation>解釋： 答案 B。
+A. 網上觀看，關於海洋的紀錄片。這是一種教育性活動，可以增加學生對某一主題的知識和了解。
+C. 閱讀學校內聯網的學校通訊。這是學校官方發布的信息，合適且安全。
+D. 經互聯網，找尋電腦的歷史。這是一種學習活動，有助於學生了解電腦科技的發展。
+B. 在網上論壇，搜尋套裝軟件的安裝密碼。通常這類行為涉及尋找未經授權的軟件啟動密鑰或者破解方法，這是違反著作權法的行為，不應鼓勵學生進行。
+因此，對於提升學生資訊素養來說，不適合的是B：在網上論壇，搜尋套裝軟件的安裝密碼。
+</explanation>
 </Question>
 
 <Question>
@@ -8504,6 +8590,12 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option>只有(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 C。
+(1) 高解像度的攝影機可提供更清晰的視像質量，使會議更加專業。
+(2) 大的儲存容量與視像會議的即時質量無直接關係，但對於錄製以後的儲存有幫助。
+(3) 高的網絡頻寬能確保數據傳輸更快，減少延遲和中斷，從而提升視像會議的流暢度和穩定性。
+由此得知，答案為 C. 只有(1)和(3)。
+</explanation>
 </Question>
 
 <Question>
@@ -8515,6 +8607,12 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
+<explanation>解釋： 答案 D。
+(1) FTP (File Transfer Protocol) 通常用於檔案傳輸，而非網頁瀏覽。
+(2) IP (Internet Protocol) 負責將數據包從一個點傳送到另一個點，網頁瀏覽時都會用到。
+(3) DNS (Domain Name System) 將網域名稱如www.gov.hk 轉換為IP地址，以便瀏覽器可以連接到服務器。
+故答案是 D. 只有(2)和(3)。
+</explanation>
 </Question>
 
 <Question>
@@ -8526,6 +8624,11 @@ SELECT SUM(WEIGHT) FROM PET GROUP BY PTYPE
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 B。
+在互聯網上辨別主機，最直接的方法是使用IP位址。IP位址 (即Internet Protocol Address) 是分配給網絡上每一台連接設備的唯一標識符，無論是服務器、路由器，還是個人計算機。
+而電郵地址通常與特定的用戶或郵件服務相關聯，而不是用於直接識別主機。雖然電腦名稱或主機名稱可以用來參考某台特定的電腦，但它們沒有IP位址那樣直接用於在網路之間進行數據傳輸或設備識別。
+所以，正確答案是 B. 只有(2)。
+</explanation>
 </Question>
 
 <Question>
