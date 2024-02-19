@@ -7814,11 +7814,10 @@ y = y-2
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">2. 志明建立了一份學校通訊，並把它上載至網頁。
-該通訊的格式為可攜式文件格式(PDF)，而不是Word文件格式，這是因為
-(1) 可包含超連結
-(2) 通訊將在任何裝置上，展示得完全相同
-(3) 訊內的圖像，會有較高的解像度</QText>
+<QText examyear="HKDSE 2019">2. 志明建立了一份學校通訊，並把它上載至網頁。該通訊的格式為可攜式文件格式(PDF)，而不是Word文件格式，這是因為
+(1) 它可包含超連結
+(2) 這通訊將在任何裝置上，展示得完全相同
+(3) 通訊內的圖像，會有較高的解像度</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7826,8 +7825,7 @@ y = y-2
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">3. 工廠經理正檢視生產鉛筆的時間和成本限制，
-以決定需要購入多少台機器。他應使用哪項試算表功能？</QText>
+<QText examyear="HKDSE 2019">3. 工廠經理正檢視生產鉛筆的時間和成本限制，以決定需要購入多少台機器。他應使用哪項試算表功能？</QText>
 <Option>樞紐分析表</Option>
 <Option>多個工作表</Option>
 <Option correct="1">「假設」分析</Option>
@@ -7835,13 +7833,12 @@ y = y-2
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">4. 莉莉使用文本編輯器，輸入以下5個繁體中文字符，
-「世上無難事」
-並儲存為文字檔，檔案大小為10個字節。
+<QText examyear="HKDSE 2019" figure="2019_q_04_0.png">4. 莉莉使用文本編輯器，輸入以下5個繁體中文字符，並儲存為文字檔，檔案大小為10個字節。
+#figure
 下列哪項(些)關於該文字檔的句子是正確的？
-(1) 個中文字符，佔2個字節
-(2) 了ASCII碼來表示字符
-(3) 文字檔不支援大五碼</QText>
+(1) 每個中文字符，佔2個字節
+(2) 用了ASCII碼來表示字符
+(3) 此文字檔不支援大五碼</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7849,26 +7846,20 @@ y = y-2
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">5. 下列的原始檔案大小均為10MB，在一般情況下把它們轉換，
-哪一個轉換後的檔案大小是最小的？
-原始檔案 轉換後的檔案
-：</QText>
-<Option>testA.MP4 testA.AVI</Option>
-<Option>testB.MP3 testB.WAV</Option>
-<Option correct="1">testC.BMP testC.JPG</Option>
-<Option>testD.GIF testD.BMP</Option>
+<QText examyear="HKDSE 2019">5. 下列的原始檔案大小均為10MB，在一般情況下把它們轉換，哪一個轉換後的檔案大小是最小的？</QText>
+<Option>原始檔案：testA.MP4，轉換後的檔案：testA.AVI</Option>
+<Option>原始檔案：testB.MP3，轉換後的檔案：testB.WAV</Option>
+<Option correct="1">原始檔案：testC.BMP，轉換後的檔案：testC.JPG</Option>
+<Option>原始檔案：testD.GIF，轉換後的檔案：testD.BMP</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">6. 以下是數據庫表 STUDENT
-SID CLASS NAME
-18110 1A John Ho
-09544 2C Mary Li
-17623 3B Peter Wong
-06308 2A Greg Li
-：
+<QText examyear="HKDSE 2019" figure="2019_q_06_0.png">6. 參考以下數據庫表 STUDENT。
+#figure
 STUDENT 中的 SID 可能是什麼數據類型？
-(1) 數 (2)字符 (3)布爾</QText>
+(1) 整數
+(2) 字符 
+(3) 布爾</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7876,16 +7867,10 @@ STUDENT 中的 SID 可能是什麼數據類型？
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019" figure="2019-q7.png">7. 以下是數據庫表 STUDENT
-SID CLASS NAME
-18110 1A John Ho
-09544 2C Mary Li
-17623 3B Peter Wong
-06308 2A Greg Li
-：
-將STUDENT 匯出至試算表。哪項試算表功能
-可產生與在DBMS工具下執行下列SQL指令後的輸出相似？
-SELECT CLASS， COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
+<QText examyear="HKDSE 2019" figure="2019-q7.png">7. 參考以下數據庫表 STUDENT。
+#figure
+將 STUDENT 匯出至試算表。哪項試算表功能可產生與在 DBMS 工具下執行下列 SQL 指令後的輸出相似？
+SELECT CLASS, COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 <Option>排序</Option>
 <Option>在公式內，使用儲存格參照</Option>
 <Option>物件連接與嵌入(OLE)</Option>
@@ -7893,12 +7878,11 @@ SELECT CLASS， COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">8. 小芬建立了200頁的報告。
-下列哪些文書處理的操作，可減少所用的頁數？
-(1) 改文本內的行距
-(2) 改文本的對齊規則
-(3) 改頁面的邊距
-(4) 立含超連結的目錄</QText>
+<QText examyear="HKDSE 2019">8. 小芬建立了200頁的報告。下列哪些文書處理的操作，可減少所用的頁數？
+(1) 更改文本內的行距
+(2) 更改文本的對齊規則
+(3) 更改頁面的邊距
+(4) 建立含超連結的目錄</QText>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(1)和(4)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7906,11 +7890,7 @@ SELECT CLASS， COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">9. 辦公室的門上，裝置了射頻識別(RFID)讀取機，
-芝芝的職員證內有RFID標籤，其儲存容量為2KB。
-她的個人資料佔200個字節。她每次出入辦公室時，
-一筆40個字節的記錄便會建立，並儲存在她的職員證內。
-該職員證可儲存多少筆紀錄？</QText>
+<QText examyear="HKDSE 2019">9. 辦公室的門上裝置了射頻識別 (RFID) 讀取機，芝芝的職員證內有 RFID 標籤，其儲存容量為 2 KB。她的個人資料佔 200 個字節。她每次出入辦公室時，一筆 40 個字節的記錄便會建立並儲存在她的職員證內。該職員證可儲存多少筆記錄？</QText>
 <Option>44</Option>
 <Option correct="1">46</Option>
 <Option>48</Option>
@@ -7918,10 +7898,7 @@ SELECT CLASS， COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">10. 某裝置在網絡內發送8位元的數據，
-而最後的一個位元為奇偶檢驗位。
-下列已接收的數據中，其中一個有錯誤。
-它是哪一個呢？</QText>
+<QText examyear="HKDSE 2019">10. 某裝置在網絡內發送 8 位元的數據，而最後的一個位元為奇偶檢驗位。下列已接收的數據中，其中一個有錯誤。它是哪一個呢？</QText>
 <Option>0010 0010</Option>
 <Option>1111 0000</Option>
 <Option>0011 0011</Option>
@@ -7929,14 +7906,12 @@ SELECT CLASS， COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019" figure="2019-q11.png">11. 細看以下網上登記表格：
-用戶名稱：_____
-輸入密碼：_____(最少8個字符)
-再次輸入密碼：_____
-此網上登記會涉及下列哪(些)項目？
-(1) 據驗證
-(2) 據壓縮
-(3) 據有效性檢驗</QText>
+<QText examyear="HKDSE 2019" figure="2019_q_11_0.png">11. 細看以下網上登記表格：
+#figure
+此網上登記會涉及下列哪（些）項目？
+(1) 數據驗證
+(2) 數據壓縮
+(3) 數據有效性檢驗</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
@@ -7944,11 +7919,9 @@ SELECT CLASS， COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">12. 一個IP位址(IPv6)包括8組
-以冒號分隔的4位十六進制數字，
-如以下例子所示：
+<QText examyear="HKDSE 2019">12. 一個 IP 位址 (IPv6) 包括 8 組以冒號分隔的 4 位十六進制數字，如以下例子所示：
 2001：08AB：2347：AFF0：1234：CC23：98D2：1A45
-此IP編址可有多少個位址？</QText>
+此 IP 編址可有多少個位址？</QText>
 <Option>2^32</Option>
 <Option correct="1">16^32</Option>
 <Option>32^2</Option>
@@ -7956,7 +7929,7 @@ SELECT CLASS， COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">13. 下列哪項是製作自動放映演示時，最不重要的？</QText>
+<QText examyear="HKDSE 2019">13. 下列哪項是製作自動放映演示時最不重要的？</QText>
 <Option>範本</Option>
 <Option>版面配置</Option>
 <Option>插入圖片</Option>
@@ -7964,8 +7937,7 @@ SELECT CLASS， COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">14. 小珊打算購買一台新電腦，作視像編輯之用。
-一般而言，下列哪項是她考慮時，最不重要的因素？</QText>
+<QText examyear="HKDSE 2019">14. 小珊打算購買一台新電腦，作視像編輯之用。一般而言，下列哪項是她考慮時，最不重要的因素？</QText>
 <Option>計算能力</Option>
 <Option>RAM 大小</Option>
 <Option correct="1">USB 埠的數目</Option>
@@ -7990,11 +7962,12 @@ SELECT CLASS， COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019" figure="2019-q17.png">17. 志偉有一張音樂會電子入場券，如下所示：
+<QText examyear="HKDSE 2019" figure="2019_q_17_0.png">17. 志偉有一張音樂會電子入場券，如下所示：
+#figure
 下列哪項(些)關於電子入場券上的條碼的句子是正確的？
-(1) 使條碼的一部分損毀， 條碼上的資料仍可被解碼
-(2) 次只能把一種數據類型編碼，例如數字數據
-(3) 碼最多可在三個方向成功掃描</QText>
+(1) 即使條碼的一部分損毀， 條碼上的資料仍可被解碼
+(2) 每次只能把一種數據類型編碼，例如數字數據
+(3) 條碼最多可在三個方向成功掃描</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8002,7 +7975,7 @@ SELECT CLASS， COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">18. 下列哪個系統，依賴網絡連接？</QText>
+<QText examyear="HKDSE 2019">18. 下列哪個系統依賴網絡連接？</QText>
 <Option>實時系統</Option>
 <Option>單戶作業系統</Option>
 <Option>成批工作處理系統</Option>
@@ -8010,10 +7983,10 @@ SELECT CLASS， COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">19. 把下列各項按數據傳輸速率，以遞增方式排列。
-(1) 態硬碟(SSD)
-(2) 取記憶體
-(3) AM</QText>
+<QText examyear="HKDSE 2019">19. 把下列各項按數據傳輸速率以遞增方式排列。
+(1) 固態硬碟(SSD)
+(2) 快取記憶體
+(3) RAM</QText>
 <Option correct="1">(1)，(3)，(2)</Option>
 <Option>(1)，(2)，(3)</Option>
 <Option>(3)，(2)，(1)</Option>
@@ -8022,9 +7995,9 @@ SELECT CLASS， COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 
 <Question>
 <QText examyear="HKDSE 2019">20. 下列哪些是典型電腦操作系統的主要網絡功能？
-(1) 許電腦之間的通訊
-(2) 制兩台電腦之間連接的網絡頻寬
-(3) 供一些網絡安全措施，以保護電腦免被未經授權存取</QText>
+(1) 允許電腦之間的通訊
+(2) 控制兩台電腦之間連接的網絡頻寬
+(3) 提供一些網絡安全措施，以保護電腦免被未經授權存取</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -8032,19 +8005,20 @@ SELECT CLASS， COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019" figure="2019-q21.png">21. 以下是某校園的典型電腦網絡：
-X和Y是什麼？</QText>
-<Option>X=交換器；Y=網絡界面卡</Option>
-<Option>X=無線網絡接達點(AP)；Y=網絡界面卡</Option>
-<Option>X=路由器；Y=無線網絡接達點(AP)</Option>
-<Option correct="1">X=交換器；Y=路由器</Option>
+<QText examyear="HKDSE 2019" figure="2019_q_21_0.png">21. 以下是某校園的典型電腦網絡：
+#figure
+X 和 Y 是什麼？</QText>
+<Option>X：交換器；Y：網絡界面卡</Option>
+<Option>X：無線網絡接達點(AP)；Y：網絡界面卡</Option>
+<Option>X：路由器；Y：無線網絡接達點(AP)</Option>
+<Option correct="1">X：交換器；Y：路由器</Option>
 </Question>
 
 <Question>
 <QText examyear="HKDSE 2019">22. 下列哪些是LAN 勝於WAN的優點？
-(1) 據傳輸速率較高
-(2) 絡覆蓋較大
-(3) 置成本較低</QText>
+(1) 數據傳輸速率較高
+(2) 網絡覆蓋較大
+(3) 設置成本較低</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -8055,9 +8029,9 @@ X和Y是什麼？</QText>
 <QText examyear="HKDSE 2019">23. 以下兩個URL均可用來接達同一個網站：
 'http：//202.8.88.24' 和 'http：//www.hkedcity.net'
 下列哪項(些)關於這兩個URL的句子是正確的？
-(1) NS 伺服器可能把 'www.hkedcity.net' 譯為 '202.8.88.24'
-(2) RL 必須包含HTTP
-(3) IP位址接連的網頁較為安全</QText>
+(1) DNS 伺服器可能把 'www.hkedcity.net' 譯為 '202.8.88.24'
+(2) URL 必須包含HTTP
+(3) 經 IP 位址接連的網頁較為安全</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8066,9 +8040,9 @@ X和Y是什麼？</QText>
 
 <Question>
 <QText examyear="HKDSE 2019">24. 以專線(而非寬頻)用作網絡連接的優點是什麼？
-(1) 接更可靠
-(2) 本較低
-(3) 寬有保證</QText>
+(1) 連接更可靠
+(2) 成本較低
+(3) 頻寬有保證</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
@@ -8076,11 +8050,11 @@ X和Y是什麼？</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">25. 在HTML中，下列哪些是表(TABLE)的屬性。
-(1) 存格內容的URL
-(2) 存格之間的間距
-(3) 存格內容的媒體類型
-(4) 景顏色</QText>
+<QText examyear="HKDSE 2019">25. 在HTML中，下列哪些是表 (TABLE) 的屬性。
+(1) 儲存格內容的URL
+(2) 儲存格之間的間距
+(3) 儲存格內容的媒體類型
+(4) 背景顏色</QText>
 <Option>只有(1)和(3)</Option>
 <Option>只有(1)和(4)</Option>
 <Option>只有(2)和(3)</Option>
@@ -8097,9 +8071,9 @@ X和Y是什麼？</QText>
 
 <Question>
 <QText examyear="HKDSE 2019">27. 下列哪項(些)關於「串流技術」的句子是正確的？
-(1) 以觀看音樂表演直播
-(2) 能使用HTTP
-(3) 上非法發放電影可受控制</QText>
+(1) 可以觀看音樂表演直播
+(2) 不能使用HTTP
+(3) 網上非法發放電影可受控制</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -8108,12 +8082,11 @@ X和Y是什麼？</QText>
 
 <Question>
 <QText examyear="HKDSE 2019">28. 測試下列算法段的「邊際個案」是什麼？
-輸入A
-如果 A>5
-則 B ← 10
-否則 B ← 20
-輸出 A，B
-(1) (2)6 (3)10 (4)20</QText>
+#figure
+(1) 5
+(2) 6 
+(3) 10 
+(4) 20</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(3)和(4)</Option>
 <Option>只有(2)、(3)和(4)</Option>
@@ -8121,11 +8094,10 @@ X和Y是什麼？</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">29. age 是整數變量，而 IsStudent 是布爾變量。
-下列哪些布爾算式，會產生相同結果？
+<QText examyear="HKDSE 2019">29. age 是整數變量，而 IsStudent 是布爾變量。下列哪些布爾算式會產生相同結果？
 (1) (age &lt; 25) AND (IsStudent = TRUE)
-(2) NOT((age >= 25) OR (IsStudent = FALSE))
-(3) (age > 25) OR (IsStudent = TRUE)</QText>
+(2) NOT((age &gt;= 25) OR (IsStudent = FALSE))
+(3) (age &gt; 25) OR (IsStudent = TRUE)</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -8134,11 +8106,11 @@ X和Y是什麼？</QText>
 
 <Question>
 <QText examyear="HKDSE 2019">30. 以下算法的輸出是什麼？
-L ← 6
-H ← 5
-AREA ← L * H
-L ← 4
-H ← 3
+LENGTH ← 6
+HEIGHT ← 5
+AREA ← LENGTH * HEIGHT
+LENGTH ← 4
+HEIGHT ← 3
 輸出 AREA</QText>
 <Option>12</Option>
 <Option>20</Option>
@@ -8147,14 +8119,9 @@ H ← 3
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019" figure="2019-q31.png">31. N 是一個陣列，而N[1]、N[2]、N[3]和N[4]
-分別儲存了 1，3，5，7。下列算法的輸出是什麼？
-K ← 6， i ← 4
-當 (i > 0 AND N[i-1] > K) 執行
-N[i] ← N[i-1]
-i ← i-1
-N[i] ← K
-輸出 N[4]</QText>
+<QText examyear="HKDSE 2019" figure="2019-q31.png">31. N 是一個陣列，而 N[1]、 N[2]、 N[3] 和 N[4] 分別儲存了 1、 3、 5 和 7。 下列算法的輸出是什麼？
+#figure
+</QText>
 <Option>4</Option>
 <Option>5</Option>
 <Option correct="1">6</Option>
@@ -8163,13 +8130,7 @@ N[i] ← K
 
 <Question>
 <QText examyear="HKDSE 2019" figure="2019-q32.png">32. 細看以下算法：
-A ← 1， B ← 1
-重複
-輸出 B
-C ← A + B
-A ← B
-B ← C
-直至(B > 10)
+#figure
 「輸出B」會被執行多少次？</QText>
 <Option>4</Option>
 <Option correct="1">5</Option>
@@ -8179,10 +8140,7 @@ B ← C
 
 <Question>
 <QText examyear="HKDSE 2019">33. Y 是一個陣列。下列算法的輸出是什麼？
-Y[1] ← 4
-設 k 由 1 至 5 執行
-Y[k+1] ← Y[k] + k
-輸出 Y[6]</QText>
+#figure</QText>
 <Option>10</Option>
 <Option>14</Option>
 <Option>15</Option>
@@ -8191,6 +8149,7 @@ Y[k+1] ← Y[k] + k
 
 <Question>
 <QText examyear="HKDSE 2019" figure="2019-q34.png">34. 細看以下流程圖的一部分：
+#figure
 有多少個「A」會被輸出？</QText>
 <Option>0</Option>
 <Option>2</Option>
@@ -8200,11 +8159,7 @@ Y[k+1] ← Y[k] + k
 
 <Question>
 <QText examyear="HKDSE 2019" figure="2019-q35.png">35. ABC 咖啡店為顧客提供免費WiFi，詳情如下：
-ABC咖啡店
-- 30分鐘一節的免費 WiFi 服務
-- SSID：abc； 密碼：YW$1818abc
-- 非加密連接
-- 最高頻寬128 Kbps
+#figure
 顧客不應使用此WiFi 連接進行網上銀行服務，原因是</QText>
 <Option>免費時段太短</Option>
 <Option>SSID 太短而易於被猜到</Option>
@@ -8213,8 +8168,7 @@ ABC咖啡店
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">36. 攝影師把他的照片上載至社交媒體網站，讓公眾入士瀏覽。
-為保障他的知識產權，可在照片上應用下列哪項？</QText>
+<QText examyear="HKDSE 2019">36. 攝影師把他的照片上載至社交媒體網站，讓公眾入士瀏覽。為保障他的知識產權，可在照片上應用下列哪項？</QText>
 <Option>香港公開密碼匙基礎建設(PKI)</Option>
 <Option>保密插口層(SSL)</Option>
 <Option>數碼證書</Option>
@@ -8233,8 +8187,7 @@ ABC咖啡店
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">38. 李小姐發現公司的檔案伺服器，被勒索軟件感染。
-一些重要文件檔案，均已被加密而無法開啟，她應如何處理？
+<QText examyear="HKDSE 2019">38. 李小姐發現公司的檔案伺服器，被勒索軟件感染。一些重要文件檔案，均已被加密而無法開啟，她應如何處理？
 (1) 試把加密檔案，放置於另一個檔案伺服器內開啟
 (2) 此事向警方報案
 (3) 付贖金以取得密碼</QText>
@@ -8246,9 +8199,9 @@ ABC咖啡店
 
 <Question>
 <QText examyear="HKDSE 2019">39. 為什麼有人開發「開放源碼」軟件？
-(1) 們想出售軟件，賺取更多金錢
-(2) 們想更多人使用他們的軟件
-(3) 們想擁有軟件的版權</QText>
+(1) 他們想出售軟件，賺取更多金錢
+(2) 他們想更多人使用他們的軟件
+(3) 他們想擁有軟件的版權</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
