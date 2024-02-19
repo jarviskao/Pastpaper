@@ -7871,7 +7871,7 @@ D. 使用多個條件將數據排序有助於組織數據，但不適用於決�
 <Option>原始檔案：testB.MP3，轉換後的檔案：testB.WAV</Option>
 <Option correct="1">原始檔案：testC.BMP，轉換後的檔案：testC.JPG</Option>
 <Option>原始檔案：testD.GIF，轉換後的檔案：testD.BMP</Option>
-<explanation> 解釋： 答案 C。
+<explanation>解釋： 答案 C。
 MP4和AVI都是視頻格式，但通常MP4有更好的壓縮率。
 MP3是壓縮的音頻格式，而WAV通常是未壓縮的，所以轉換後檔案會變大。
 BMP是未壓縮的圖像格式，而JPG是壓縮的，轉換後檔案會顯著減小。
@@ -7889,7 +7889,7 @@ STUDENT 中的 SID 可能是什麼數據類型？
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
-<explanation> 解釋： 答案 B。
+<explanation>解釋： 答案 B。
 </explanation>
 </Question>
 
@@ -7902,7 +7902,7 @@ SELECT CLASS, COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 <Option>在公式內，使用儲存格參照</Option>
 <Option>物件連接與嵌入(OLE)</Option>
 <Option correct="1">樞紐分析表</Option>
-<explanation> 解釋： 答案 D。
+<explanation>解釋： 答案 D。
 SQL指令 "SELECT CLASS, COUNT(*) FROM STUDENT GROUP BY CLASS" 是用來計算每個CLASS中學生的數量。
 在試算表中，樞紐分析表(Pivot Table)可以用來組織和匯總數據，包括計數和分組。
 排序只改變數據的順序，使用儲存格參照和物件連接與嵌入(OLE)不適用於執行此類數據匯總和分組。
@@ -7919,7 +7919,7 @@ SQL指令 "SELECT CLASS, COUNT(*) FROM STUDENT GROUP BY CLASS" 是用來計算�
 <Option>只有(1)和(4)</Option>
 <Option>只有(2)和(3)</Option>
 <Option>只有(2)和(4)</Option>
-<explanation> 解釋： 答案 A。
+<explanation>解釋： 答案 A。
 (1) 更改文本內的行距會直接影響每頁能夠容納多少行文字。減小行距可以減少所需頁數。
 (2) 更改文本的對齊規則通常不會對總頁數產生顯著影響。
 (3) 更改頁面的邊距可以增加每頁的可用空間，減少整體所需的頁數。
@@ -7933,7 +7933,7 @@ SQL指令 "SELECT CLASS, COUNT(*) FROM STUDENT GROUP BY CLASS" 是用來計算�
 <Option correct="1">46</Option>
 <Option>48</Option>
 <Option>50</Option>
-<explanation> 解釋： 答案 B。
+<explanation>解釋： 答案 B。
 芝芝的RFID標籤總儲存容量為2048字節（2KB）。
 個人資料已使用了200字節。
 因此，剩餘的儲存空間為 2048字節 - 200字節 = 1848字節。
@@ -7947,7 +7947,7 @@ SQL指令 "SELECT CLASS, COUNT(*) FROM STUDENT GROUP BY CLASS" 是用來計算�
 <Option>1111 0000</Option>
 <Option>0011 0011</Option>
 <Option correct="1">1010 0111</Option>
-<explanation> 解釋： 答案 D。
+<explanation>解釋： 答案 D。
 A. 0010 0010：1的總數為2，是偶數。
 B. 1111 0000：1的總數為4，是偶數。
 C. 0011 0011：1的總數為4，是偶數。
@@ -7977,6 +7977,10 @@ D. 1010 0111：1的總數為5，是奇數。
 <Option correct="1">16³²</Option>
 <Option>32²</Option>
 <Option>32¹⁶</Option>
+<explanation>解釋： 答案 B。
+IPv6地址是一種網絡層次的地址用於互聯網中，它包含了128位二進制數。IPv6地址通常以8組4個十六進制數表示，每個十六進制數代表二進制的4位，因此每一組代表16位二進制，合共8組就是128位。
+由於每一位二進制數都可以是0或1，所以總共可能的IPv6地址數量就是2的128次方。
+</explanation>
 </Question>
 
 <Question>
@@ -7985,6 +7989,12 @@ D. 1010 0111：1的總數為5，是奇數。
 <Option>版面配置</Option>
 <Option>插入圖片</Option>
 <Option correct="1">索引</Option>
+<explanation>解釋： 答案 D。
+A. 範本提供了演示的整體設計和顏色方案，這對於整體外觀是重要的。
+B. 版面配置定義了在演示中每張幻燈片的內容如何排布，也同樣重要。
+C. 插入圖片能讓信息更容易理解，並能吸引觀眾的注意，因此也是重要元素。
+D. 索引是用來查找節點位置的工具，但在一場自動播放的演示中，觀眾通常不需要自己查找特定幻燈片，因為演示是連續進行的。因此索引在自動放映演示中是最不重要的。
+</explanation>
 </Question>
 
 <Question>
@@ -7993,6 +8003,12 @@ D. 1010 0111：1的總數為5，是奇數。
 <Option>RAM 大小</Option>
 <Option correct="1">USB 埠的數目</Option>
 <Option>硬碟儲存容量</Option>
+<explanation>解釋： 答案 C。
+A. 計算能力影響了處理視頻時的速度和效率。
+B. RAM大小會影響到能同時打開和處理多大的文件。
+D. 硬碟儲存容量是儲存大量視頻檔案所必需的。
+而C 選項中提到的 USB 埠的數量，對於連接外部設備（如輸入設備或儲存設備）來說雖然方便，但並非視頻編輯過程中最為關鍵的部分。
+</explanation>
 </Question>
 
 <Question>
@@ -8001,15 +8017,23 @@ D. 1010 0111：1的總數為5，是奇數。
 <Option>它被控制部件(CU)用作暫存記憶體位址</Option>
 <Option>它儲存「下一個執行指令」的記憶體位址</Option>
 <Option>它控制在匯流排的數據流動</Option>
+<explanation>解釋： 答案 A。
+A. 累加器主要用於ALU（算術邏輯單元）進行數學或邏輯操作時暫存數據。例如，在兩個數字的加法操作中，第一個數字會儲存在累加器中，等待第二個數字到來時執行加法。
+B. 控制單元（CU）是用來管控CPU的運作，不直接使用累加器來暫存記憶體地址。
+C. 累加器不儲存'下一個執行指令'的記憶體地址，這通常由程序計數器來儲存。
+D. 累加器也不控制匯流排上的數據流動，匯流排是用於CPU和其他系統組件之間傳輸數據的通道。
+</explanation>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2019">16. 降低在桌上電腦內CPU 的時鐘比率，
-會有什麼可能的結果？</QText>
+<QText examyear="HKDSE 2019">16. 降低在桌上電腦內CPU 的時鐘比率，會有什麼可能的結果？</QText>
 <Option correct="1">耗用較少電量</Option>
 <Option>增加運算的準確度</Option>
 <Option>增強 WiFi 連接的性能</Option>
 <Option>加強對電腦遭黑客入侵的防護</Option>
+<explanation>解釋： 答案 A。
+降低CPU的時脈頻率會降低處理器的工作能力，這同時會導致它的能耗下降。這通常是省電的一種方式，可以延長筆記本電腦的電池壽命或減少桌面電腦的能耗。它並不會直接影響運算的準確度，運算準確度更多的是由算法和數據類型的溢出等因素決定的。同樣，降低時脈頻率並不會改善WiFi連接的性能，WiFi性能主要取決於網路接口卡、路由器以及網絡環境。降低時脈頻率也不會直接加強對電腦遭黑客入侵的防護，防護措施通常與軟件安全性和用戶的安全實踐相關。
+</explanation>
 </Question>
 
 <Question>
@@ -8023,6 +8047,12 @@ D. 1010 0111：1的總數為5，是奇數。
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 A。
+(1) 現代的條碼有許多內建的容錯和校正機制，可以在條碼受到一定程度損害的情況下仍然被解碼，因此這個陳述是正確的。
+(2) 不正確。條碼可以編碼多種數據類型，包括數字、字母和其他符號，取決於條碼的標準和編碼規則。
+(3) 這取決於條碼的類型。有些條碼（如一維條碼）只能在一個方向上掃描，但其他條碼（如二維條碼）可以在多個方向掃描。
+因此，只有第(1)項陳述正確。
+</explanation>
 </Question>
 
 <Question>
@@ -8031,6 +8061,12 @@ D. 1010 0111：1的總數為5，是奇數。
 <Option>單戶作業系統</Option>
 <Option>成批工作處理系統</Option>
 <Option correct="1">分布式處理系統</Option>
+<explanation>解釋： 答案 D。
+A. 實時系統處理的是立即發生的數據，並不一定依賴於網絡。
+B. 單戶作業系統是為單一用戶設計的，不依賴於網絡。
+C. 成批工作處理系統與批量處理數據有關，也不必然依賴網路連接。
+D. 分布式處理系統是由多台計算機組成的系統，這些計算機在網絡上分布，彼此通過網絡協調工作，因此它依賴於網絡連接。 
+</explanation>
 </Question>
 
 <Question>
@@ -8042,6 +8078,11 @@ D. 1010 0111：1的總數為5，是奇數。
 <Option>(1)，(2)，(3)</Option>
 <Option>(3)，(2)，(1)</Option>
 <Option>(3)，(1)，(2)</Option>
+<explanation>解釋： 答案 A。
+數據傳輸速度，按照從慢到快的順序排列：
+固態硬碟(SSD)通常比傳統機械硬盤快，但通常比RAM和快取記憶體慢。
+RAM的速度快於SSD。快取記憶體速度最快，因為它直接建立在處理器內部，發揮了數據存取的最高效率。
+</explanation>
 </Question>
 
 <Question>
@@ -8053,6 +8094,13 @@ D. 1010 0111：1的總數為5，是奇數。
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
 <Option>(1)、(2)和(3)</Option>
+<explanation>解釋： 答案 B。
+操作系統(OS)是電腦硬件和用戶之間的軟件界面，它管理和協調電腦的活動。在網絡方面，OS的主要功能包括：
+(1) 允許電腦之間的通訊，OS提供了支援不同網絡通訊協定的通訊服務，使不同的設備能夠相互交換資料。
+(3) 提供網絡安全措施，OS也有責任提供基本的網絡安全功能，比如防火牆和訪問控制，以保護電腦不受未授權訪問。
+而關於(2) 控制兩台電腦之間連接的網絡頻寬，通常是网络硬件和管理軟件負責的，不是典型操作系統的主要職責。
+答案是：B. 只有(1)和(3)
+</explanation>
 </Question>
 
 <Question>
@@ -8063,6 +8111,8 @@ X 和 Y 是什麼？</QText>
 <Option>X：無線網絡接達點(AP)；Y：網絡界面卡</Option>
 <Option>X：路由器；Y：無線網絡接達點(AP)</Option>
 <Option correct="1">X：交換器；Y：路由器</Option>
+<explanation>解釋： 答案 D。
+</explanation>
 </Question>
 
 <Question>
@@ -8074,6 +8124,11 @@ X 和 Y 是什麼？</QText>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
 <Option>(1)、(2)和(3)</Option>
+<explanation>解釋： 答案 B。
+(1) 數據傳輸速率較高，LAN提供的速率一般比WAN高，因為LAN涉及的距離較短，數據包的傳輸延遲和損耗較小。
+(2) 網絡覆蓋較大這一點實際上是WAN的優點，而不是LAN的，因為WAN設計用來覆蓋更廣的地理區域。
+(3) 設置成本較低，LAN因為覆蓋範圍小，所需設備和維護成本也相對較低。
+</explanation>
 </Question>
 
 <Question>
@@ -8087,6 +8142,11 @@ X 和 Y 是什麼？</QText>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 A。
+(1) DNS（域名系統）的功能是將域名轉換成IP位址，所以 'www.hkedcity.net' 很可能會被翻譯成 '202.8.88.24'。
+(2) URL（統一資源定位符）不一定必須包含HTTP，它也可以包含HTTPS、FTP等協定。
+(3) 通過IP位址或域名訪問網站的安全性取決於多個因素，單純使用IP位址訪問網站並不一定比使用域名更安全。
+</explanation>
 </Question>
 
 <Question>
@@ -8098,6 +8158,11 @@ X 和 Y 是什麼？</QText>
 <Option>只有(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 C。
+(1) 連接更可靠，因為專線不與其他用戶共享，因此可避免網路擁擠的問題，提供更穩定的連接。
+(3) 頻寬有保證，專線提供固定的帶寬，這樣就確保了其頻寬的可用性和服務質量。
+專線連接提供商通常要高於寬帶連接，所以(2)的成本較低不屬於專線的優點。
+</explanation>
 </Question>
 
 <Question>
@@ -8110,6 +8175,12 @@ X 和 Y 是什麼？</QText>
 <Option>只有(1)和(4)</Option>
 <Option>只有(2)和(3)</Option>
 <Option correct="1">只有(2)和(4)</Option>
+<explanation>解釋： 答案 D。
+(2) 儲存格之間的間距可以通過"cellspacing"属性來設定。
+(4) 背景顏色可以通過使用"bgcolor"属性來設定背景顏色。
+故事儲存格內容的URL和媒體類型並不是標準的HTML表屬性。儲存格內容的URL更多的是通過&lt;a&gt;標籤（超連結）或在&lt;td&gt;內嵌入&lt;img&gt;來實現。
+儲存格內容的媒體類型則是通過其他方式，如CSS或者&lt;script&gt;標籤來設定，而不是表格的屬性。
+</explanation>
 </Question>
 
 <Question>
@@ -8118,6 +8189,13 @@ X 和 Y 是什麼？</QText>
 <Option>利用網上工具上載及轉換 10MB 圖像為 JPG 格式</Option>
 <Option correct="1">更新10KB網頁，內含超連結指向一個 2GB 檔案</Option>
 <Option>利用串流技術網上，觀看 500MB 的60分鐘視像</Option>
+<explanation>解釋： 答案 C。
+A. 送出一封包含2MB聲音檔案的郵件給50位收件人，儘管郵件本身的大小只有10KB，但2MB的附件將會發送給每一位收件人，因此總數據量會很大。
+B. 上載並轉換10MB圖像至JPG格式，這個過程會涉及將整個文件上傳到網上工具，然後再下載轉換後的文件，這會涉及相當於至少10MB的數據傳輸，可能更多。
+C. 更新含有指向2GB文件超連結的10KB網頁，僅需要傳輸10KB的網頁數據，除非超連結被點擊，否則不會傳輸2GB文件。
+D. 利用串流技術觀看500MB的60分鐘視頻將會傳輸所有視頻數據，因此總數據量很大。
+在這些選項中，傳輸最少數據的選項是C - 因為它只涉及更新網頁本身的數據，而不涉及超連結指向的大文件的傳輸，除非用戶選擇下載。
+</explanation>
 </Question>
 
 <Question>
@@ -8129,6 +8207,11 @@ X 和 Y 是什麼？</QText>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 A。
+(1) 正確。串流技術允許實時地從網絡上傳送和接收音頻和視頻數據。
+(2) 不正確。串流技術可以使用多種協定，包括HTTP。
+(3) 不正確。雖然可以通過各種措施嘗試控制非法傳播，但實際上仍然面臨著執行上的挑戰。
+</explanation>
 </Question>
 
 <Question>
@@ -8142,6 +8225,8 @@ X 和 Y 是什麼？</QText>
 <Option>只有(3)和(4)</Option>
 <Option>只有(2)、(3)和(4)</Option>
 <Option>(1)、(2)、(3)和(4)</Option>
+<explanation>解釋： 答案 A。
+</explanation>
 </Question>
 
 <Question>
@@ -8153,6 +8238,8 @@ X 和 Y 是什麼？</QText>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
 <Option>(1)、(2)和(3)</Option>
+<explanation>解釋： 答案 A。
+</explanation>
 </Question>
 
 <Question>
@@ -8167,6 +8254,8 @@ HEIGHT ← 3
 <Option>20</Option>
 <Option>24</Option>
 <Option correct="1">30</Option>
+<explanation>解釋： 答案 D。
+</explanation>
 </Question>
 
 <Question>
@@ -8177,6 +8266,8 @@ HEIGHT ← 3
 <Option>5</Option>
 <Option correct="1">6</Option>
 <Option>7</Option>
+<explanation>解釋： 答案 C。
+</explanation>
 </Question>
 
 <Question>
@@ -8187,6 +8278,8 @@ HEIGHT ← 3
 <Option correct="1">5</Option>
 <Option>6</Option>
 <Option>7</Option>
+<explanation>解釋： 答案 B。
+</explanation>
 </Question>
 
 <Question>
@@ -8196,6 +8289,8 @@ HEIGHT ← 3
 <Option>14</Option>
 <Option>15</Option>
 <Option correct="1">19</Option>
+<explanation>解釋： 答案 D。
+</explanation>
 </Question>
 
 <Question>
@@ -8206,6 +8301,8 @@ HEIGHT ← 3
 <Option>2</Option>
 <Option correct="1">4</Option>
 <Option>5</Option>
+<explanation>解釋： 答案 C。
+</explanation>
 </Question>
 
 <Question>
@@ -8216,6 +8313,8 @@ HEIGHT ← 3
 <Option>SSID 太短而易於被猜到</Option>
 <Option correct="1">通過此連接傳輸的數據沒有加密</Option>
 <Option>最高的頻寬還是太低</Option>
+<explanation>解釋： 答案 C。
+</explanation>
 </Question>
 
 <Question>
@@ -8224,6 +8323,13 @@ HEIGHT ← 3
 <Option>保密插口層(SSL)</Option>
 <Option>數碼證書</Option>
 <Option correct="1">數碼水印</Option>
+<explanation>解釋： 答案 D。
+A. PKI（公開密碼基礎建設）是一種用於安全電子傳輸的加密和數字簽名框架。
+B. SSL（安全套接層）是一種安全協議，用於瀏覽器和伺服器之間的資料傳輸。
+C. 數碼證書是用於驗證身份的。
+D. 數碼水印是一種防止數碼內容被非法複製的技術。它能以不易被察覺的方式在照片上標記版權信息。
+對於保護照片的知識產權，最合適的方法是在照片上加入數字水印，以此來追蹤和確認照片的版權所有者。
+</explanation>
 </Question>
 
 <Question>
@@ -8235,6 +8341,12 @@ HEIGHT ← 3
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 B。
+(1) 學校實行自攜電子設備(BYOD)的措施可以鼓勵學生在家中也能使用自己的裝置來完成學業，從而提高他們的數位素養。
+(2) 提供更多免費的WiFi熱點可以增加市民在公共場所使用互聯網的機會，從而降低經濟障礙。
+(3) 為每個市民提供多個免費電郵帳戶不直接對抗數碼隔閡問題，因為即使有多個帳戶，如果沒有設備或互聯網訪問，這些帳戶也無法使用。
+所以幫助克服數字鴻溝的措施是: B. 只有(2)
+</explanation>
 </Question>
 
 <Question>
@@ -8246,6 +8358,11 @@ HEIGHT ← 3
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 B。
+(1) 嘗試將加密文件放到另一台檔案伺服器上通常是無效的，因為加密是在文件本身上，而不是基於伺服器的。
+(2) 向警方報案是個好主意，因為這可能涉及到犯罪活動。
+(3) 付贖金取得密碼是非常不建議的，因為這可能鼓勵勒索軟件的創作者繼續進行其犯罪活動。
+</explanation>
 </Question>
 
 <Question>
@@ -8257,6 +8374,12 @@ HEIGHT ← 3
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 B。
+(1) 開放源碼軟件的開發者一般不是出於賣軟件來賺錢，因為開放源碼意味著任何人都可以免費使用、分發和修改代碼。
+(2) 開放源碼軟件的發展是希望能有更多的人來使用和貢獻代碼，增加軟件的可用性與多樣性。
+(3) 開發開放源碼軟件的主要目標通常是為了分享知識和工具，而不是為了擁有版權來限制其他人使用。
+所以開發開放源碼軟件的原因是:B. 只有(2)
+</explanation>
 </Question>
 
 <Question>
@@ -8265,6 +8388,12 @@ HEIGHT ← 3
 <Option>透過社交媒體網站，發放街景直播</Option>
 <Option correct="1">上載電視節目至個人網站，並與朋友共享</Option>
 <Option>利用點對點檔案分享軟件，搜尋聲音檔案</Option>
+<explanation>解釋： 答案 C。
+A. 使用點對點檔案分享軟件分享個人視頻，在不侵犯版權的情況下分享個人創作的視頻是合法的。
+B. 透過社交媒體網站發放街景直播，在直播沒有涉及侵權內容的前提下通常是合法的。
+C. 上傳電視節目到個人網站並與朋友分享，如果沒有取得版權所有者的許可，則很有可能構成版權侵權。
+D. 使用點對點檔案分享軟件搜尋聲音文件，僅搜尋並非侵權行為，除非下載或分享受版權保護的文件。
+</explanation>
 </Question>
 
 <Question>
