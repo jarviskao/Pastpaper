@@ -7971,12 +7971,12 @@ D. 1010 0111：1的總數為5，是奇數。
 
 <Question>
 <QText examyear="HKDSE 2019">12. 一個 IP 位址 (IPv6) 包括 8 組以冒號分隔的 4 位十六進制數字，如以下例子所示：
-2001：08AB：2347：AFF0：1234：CC23：98D2：1A45
+2001:08AB:2347:AFF0:1234:CC23:98D2:1A45
 此 IP 編址可有多少個位址？</QText>
-<Option>2^32</Option>
-<Option correct="1">16^32</Option>
-<Option>32^2</Option>
-<Option>32^16</Option>
+<Option>2³²</Option>
+<Option correct="1">16³²</Option>
+<Option>32²</Option>
+<Option>32¹⁶</Option>
 </Question>
 
 <Question>
