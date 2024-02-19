@@ -7811,6 +7811,11 @@ y = y-2
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 B。
+(1) 算術運算中，可以出現溢出誤差，特別是當兩個同符號的極限值相加時，所以這個選項是錯的。
+(2) 在8位元二進制補碼表示法中，最大的正數是 0111 1111，這是正確的。
+(3) 8位元數字的最小值在二進制補碼中表示為1000 0000，這個值代表-128（如果使用二補碼表示法），所以這個選項是錯的。
+</explanation>
 </Question>
 
 <Question>
@@ -7822,6 +7827,11 @@ y = y-2
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation>解釋： 答案 B。
+(1) PDF檔案可以包含超連結，並且這是Word檔案也能做到的，所以這不是選擇PDF的獨特原因。
+(2) PDF格式的一個關鍵特性是保持內容在不同裝置上的一致性，這意味著無論在哪種裝置或操作系統上，PDF文件的外觀都將保持不變，這是正確的。
+(3) PDF格式可以保持高質量的圖像解析度，但這並不是PDF相較於Word格式的特有優勢。
+</explanation>
 </Question>
 
 <Question>
@@ -7830,6 +7840,11 @@ y = y-2
 <Option>多個工作表</Option>
 <Option correct="1">「假設」分析</Option>
 <Option>使用多個條件，將數據排序</Option>
+<explantion>解釋： 答案 C。
+A. 樞紐分析表適用於摘要和分析大量數據，可能不適用於這種情況。
+B. 多個工作表用於管理多方面的數據，但不直接提供對成本限制進行決策分析的功能。
+C. 「假設」分析（又稱為辦公室中的"模擬"功能）可以讓管理者觀察不同變量（如時間和成本）變動時對結果的影響，是這種情況下一個非常有用的工具。
+D. 使用多個條件將數據排序有助於組織數據，但不適用於決策分析。</explantion>
 </Question>
 
 <Question>
@@ -7843,6 +7858,11 @@ y = y-2
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explantion>解釋： 答案 A。
+(1) 傳統上，每個繁體中文字符在大多數主流編碼系統（如UTF-8或大五碼）中佔用2個字節，這是正確的。
+(2) ASCII碼是用於表示英語字符的編碼系統，它使用7位或8位來表示每個字符，不能用於繁體中文字符，所以這是錯的。
+(3) 文本文件是否支援大五碼取決於文本編輯器和操作系統，而不僅僅是文件本身，所以這是錯的。
+</explantion>
 </Question>
 
 <Question>
@@ -7851,6 +7871,11 @@ y = y-2
 <Option>原始檔案：testB.MP3，轉換後的檔案：testB.WAV</Option>
 <Option correct="1">原始檔案：testC.BMP，轉換後的檔案：testC.JPG</Option>
 <Option>原始檔案：testD.GIF，轉換後的檔案：testD.BMP</Option>
+<explanation> 解釋： 答案 C。
+MP4和AVI都是視頻格式，但通常MP4有更好的壓縮率。
+MP3是壓縮的音頻格式，而WAV通常是未壓縮的，所以轉換後檔案會變大。
+BMP是未壓縮的圖像格式，而JPG是壓縮的，轉換後檔案會顯著減小。
+GIF是用於圖像的格式，通常包含壓縮，而轉換為BMP後檔案會變大，因為BMP是未壓縮的格式。</explanation>
 </Question>
 
 <Question>
@@ -7864,6 +7889,8 @@ STUDENT 中的 SID 可能是什麼數據類型？
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
+<explanation> 解釋： 答案 B。
+</explanation>
 </Question>
 
 <Question>
@@ -7875,6 +7902,11 @@ SELECT CLASS, COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 <Option>在公式內，使用儲存格參照</Option>
 <Option>物件連接與嵌入(OLE)</Option>
 <Option correct="1">樞紐分析表</Option>
+<explanation> 解釋： 答案 D。
+SQL指令 "SELECT CLASS, COUNT(*) FROM STUDENT GROUP BY CLASS" 是用來計算每個CLASS中學生的數量。
+在試算表中，樞紐分析表(Pivot Table)可以用來組織和匯總數據，包括計數和分組。
+排序只改變數據的順序，使用儲存格參照和物件連接與嵌入(OLE)不適用於執行此類數據匯總和分組。
+</explanation>
 </Question>
 
 <Question>
@@ -7887,6 +7919,12 @@ SELECT CLASS, COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 <Option>只有(1)和(4)</Option>
 <Option>只有(2)和(3)</Option>
 <Option>只有(2)和(4)</Option>
+<explanation> 解釋： 答案 A。
+(1) 更改文本內的行距會直接影響每頁能夠容納多少行文字。減小行距可以減少所需頁數。
+(2) 更改文本的對齊規則通常不會對總頁數產生顯著影響。
+(3) 更改頁面的邊距可以增加每頁的可用空間，減少整體所需的頁數。
+(4) 建立含超連結的目錄不會直接影響頁數的多寡。
+</explanation>
 </Question>
 
 <Question>
@@ -7895,6 +7933,12 @@ SELECT CLASS, COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 <Option correct="1">46</Option>
 <Option>48</Option>
 <Option>50</Option>
+<explanation> 解釋： 答案 B。
+芝芝的RFID標籤總儲存容量為2048字節（2KB）。
+個人資料已使用了200字節。
+因此，剩餘的儲存空間為 2048字節 - 200字節 = 1848字節。
+每筆出入記錄使用40字節。
+1848/40 = 46.2筆記錄</explanation>
 </Question>
 
 <Question>
@@ -7903,6 +7947,13 @@ SELECT CLASS, COUNT(*) FROM STUDENT GROUP BY CLASS</QText>
 <Option>1111 0000</Option>
 <Option>0011 0011</Option>
 <Option correct="1">1010 0111</Option>
+<explanation> 解釋： 答案 D。
+A. 0010 0010：1的總數為2，是偶數。
+B. 1111 0000：1的總數為4，是偶數。
+C. 0011 0011：1的總數為4，是偶數。
+D. 1010 0111：1的總數為5，是奇數。
+假設使用的是偶校驗位，則包含錯誤的數據選項是D. 1010 0111。
+</explanation>
 </Question>
 
 <Question>
