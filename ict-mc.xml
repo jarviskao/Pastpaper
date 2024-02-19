@@ -1057,10 +1057,10 @@ End do
 <Question>
 <QText examyear="HKCEE 2005">22.下列哪項是個
 無效的劃一資源定位器 URL？</QText>
-<Option>http：//147.8.145.50</Option>
-<Option>http：//abc.hkeaa.com</Option>
-<Option correct="1">http：//hk.gov.hkpl</Option>
-<Option>http：//www.eaa.hk.com</Option>
+<Option>http://147.8.145.50</Option>
+<Option>http://abc.hkeaa.com</Option>
+<Option correct="1">http://hk.gov.hkpl</Option>
+<Option>http://www.eaa.hk.com</Option>
 </Question>
 
 <Question>
@@ -1508,7 +1508,7 @@ CPU 123MHz
 
 <Question>
 <QText examyear="HKCEE 2006">21.在學校瀏覽器
-輸入"http：//www.hkeaa.edu.hk" 時，
+輸入"http://www.hkeaa.edu.hk" 時，
 很可能會涉及下列哪些伺服器？
 (1) 網域名稱伺服器
 (2) SQL伺服器
@@ -1995,10 +1995,10 @@ enquiry@abcschool.edu.hk</QText>
 <Question>
 <QText examyear="HKCEE 2007">23.美美擁有『amycomp.com』這個網域名稱。
 下列那個URL「不是」她擁有的？</QText>
-<Option correct="1">http：//www.amycomp.com.hk/main.htm</Option>
-<Option>http：//mail.amycomp.com/register.htm</Option>
-<Option>http：//www.AmyComp.com/index.html</Option>
-<Option>http：//www.amycomp.com/next_level/index.html</Option>
+<Option correct="1">http://www.amycomp.com.hk/main.htm</Option>
+<Option>http://mail.amycomp.com/register.htm</Option>
+<Option>http://www.AmyComp.com/index.html</Option>
+<Option>http://www.amycomp.com/next_level/index.html</Option>
 </Question>
 
 <Question>
@@ -2483,7 +2483,7 @@ Peter Queenie Thatcher</QText>
 <Question>
 <QText examyear="HKCEE 2008" figure="2008-q27.png">27.下列展示一個仿冒詐騙電郵的例子。
 親愛的客戶：
-請瀏覽http：//www.hkbank.co.uk，並登入你的戶口，更新你的個人資料。
+請瀏覽http://www.hkbank.co.uk，並登入你的戶口，更新你的個人資料。
 陳經理 (HK銀行)
 
 下列哪一項(些)行動可減少此類仿冒詐騙電郵的攻擊？
@@ -3409,15 +3409,15 @@ A B C D
 </Question>
 
 <Question>
-<QText examyear="HKCEE 2010">25.網頁 http：//www.hkeaa.edu.hk/index.html
+<QText examyear="HKCEE 2010">25.網頁 http://www.hkeaa.edu.hk/index.html
 包含了下列超連結 ：
 ＜A HREF="/FAQ/"＞ 常見問題 ＜/A＞
 按下此超連結後，
 可能會顯示哪一個網頁 ？</QText>
-<Option correct="1">http：//www.hkeaa.edu.hk/FAQ/index.html</Option>
-<Option>http：//www.hkeaa.edu.hk/FAQ.html</Option>
-<Option>http：//www.hkeaa.edu.hk/index.html/FAQ</Option>
-<Option>http：//www.hkeaa.edu.hk/index/FAQ.html</Option>
+<Option correct="1">http://www.hkeaa.edu.hk/FAQ/index.html</Option>
+<Option>http://www.hkeaa.edu.hk/FAQ.html</Option>
+<Option>http://www.hkeaa.edu.hk/index.html/FAQ</Option>
+<Option>http://www.hkeaa.edu.hk/index/FAQ.html</Option>
 </Question>
 
 <Question>
@@ -3817,7 +3817,7 @@ I ← I+1</QText>
 
 <Question>
 <QText examyear="HKCEE 2011">22.下列句子中，
-哪一句關於 http：//www.gov.hk 及 http：//edb.gov.hk
+哪一句關於 http://www.gov.hk 及 http://edb.gov.hk
 這兩個劃一資料定位(URL)是正確的。</QText>
 <Option>它們擁有不同的頂級域</Option>
 <Option correct="1">它們均是附屬於相同的網域名稱註冊</Option>
@@ -4565,7 +4565,7 @@ S ← S+A
 <QText examyear="HKDSE 2012">6.下列哪一句子
 關於點擊演示檔內的超連結是正確的？</QText>
 <Option>此超連結需涉及HTTP</Option>
-<Option>當此超連結是 http：//hkeaa.edu.hk/abc.doc，瀏覽器普通常不會自動開啟。</Option>
+<Option>當此超連結是 http://hkeaa.edu.hk/abc.doc，瀏覽器普通常不會自動開啟。</Option>
 <Option correct="1">當此超連 結連結至 PDF 檔案時，PDF 閱讀器通常會自動開啟。</Option>
 <Option>若此超連結是 連結至另一個演示檔，原來的演示檔會自動關閉。</Option>
 </Question>
@@ -4800,9 +4800,9 @@ S ← S+A
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2012">27.小芬在家中輸入 http：//www.hkeaa.edu.hk 後
+<QText examyear="HKDSE 2012">27.小芬在家中輸入 http://www.hkeaa.edu.hk 後
 「不能」接達 HKEAA 之網站，
-但輸入 http：//210.0.205.228 後卻能做到。
+但輸入 http://210.0.205.228 後卻能做到。
 為什麼？</QText>
 <Option correct="1">網域名稱伺服器未能提供服務。</Option>
 <Option>萬維網伺服器未能提供服務。</Option>
@@ -6788,7 +6788,7 @@ N3
 如下所示。她點擊電郵中的超連結，某個惡意網站便顯示。
 九龍銀行
 你的密碼已逾期。請點擊以下連結更新你的密碼。
-https：//KLNbanks.ru
+https://KLNbanks.ru
 
 35. 這事件主要涉及下列哪項/些保安議題？
 (1) 竊聽 (2) 入侵 (3) 仿冒詐騙</QText>
@@ -6803,7 +6803,7 @@ https：//KLNbanks.ru
 如下所示。她點擊電郵中的超連結，某個惡意網站便顯示。
 九龍銀行
 你的密碼已逾期。請點擊以下連結更新你的密碼。
-https：//KLNbanks.ru
+https://KLNbanks.ru
 
 36. 下列哪些做法能幫助嘉碧，確保瀏覽一個可信的網站？</QText>
 <Option>確保網域名稱不包含「ru」</Option>
@@ -7619,10 +7619,10 @@ X： Barcode， Y： QR code</QText>
 <Question>
 <QText examyear="HKDSE 2018" figure="2018-q25.png">25. 下圖是 www.abc.edu.hk 的部分文件夾結構：
 下列哪個URL是無效的？</QText>
-<Option>http：//www.abc.edu.hk/chi/p1.jpg</Option>
-<Option correct="1">http：//www.abc.edu.hk/info/chi/p1.jpg</Option>
-<Option>http：//www.abc.edu.hk/eng/p1.jpg</Option>
-<Option>http：//www.abc.edu.hk/index.html</Option>
+<Option>http://www.abc.edu.hk/chi/p1.jpg</Option>
+<Option correct="1">http://www.abc.edu.hk/info/chi/p1.jpg</Option>
+<Option>http://www.abc.edu.hk/eng/p1.jpg</Option>
+<Option>http://www.abc.edu.hk/index.html</Option>
 </Question>
 
 <Question>
@@ -8078,7 +8078,7 @@ X 和 Y 是什麼？</QText>
 
 <Question>
 <QText examyear="HKDSE 2019">23. 以下兩個URL均可用來接達同一個網站：
-'http：//202.8.88.24' 和 'http：//www.hkedcity.net'
+'http://202.8.88.24' 和 'http://www.hkedcity.net'
 下列哪項(些)關於這兩個URL的句子是正確的？
 (1) DNS 伺服器可能把 'www.hkedcity.net' 譯為 '202.8.88.24'
 (2) URL 必須包含HTTP
