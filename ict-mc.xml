@@ -7343,27 +7343,21 @@ N ← N-1</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018" figure="2018-q1.png">1. 志明在試算表檔內，建立了圖表1，
-他想修改圖表1，使它成為圖表2。
-他須修改哪項圖表設定？</QText>
-<Option>圖例 Legend</Option>
-<Option>資料來源 Data Source</Option>
-<Option correct="1">座標軸 Axis</Option>
-<Option>圖表類型 Chart Type</Option>
+<QText examyear="HKDSE 2018" figure="2018_q_01_0.png">1. 志明在試算表檔內，建立了圖表1，他想修改圖表1，使它成為圖表2。他須修改哪項圖表設定？
+#figure
+</QText>
+<Option>圖例</Option>
+<Option>資料來源</Option>
+<Option correct="1">座標軸</Option>
+<Option>圖表類型</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018" figure="2018-q2.png">2. 數據庫表PROD包含七筆記錄，如下展示：
+<QText examyear="HKDSE 2018" figure="2018_q_02_0.png">2. 數據庫表PROD包含七筆記錄，如下展示：
+#figure
 執行下列SQL指令會輸出什麼？
-SELECT MAX(WEIGHT) FROM PROD WHERE PSTAT &lt;> 'S'
-PNAME WEIGHT PSTAT
-SALT 1 A
-SUGAR 1 P
-SHAMPOO 1 P
-PASTE 3 P
-ORANGE 4 S
-CHARCOA 5 P
-NOODLES 6 S</QText>
+SELECT MAX(WEIGHT) FROM PROD WHERE PSTAT &lt;&gt; 'S'
+</QText>
 <Option>1</Option>
 <Option correct="1">5</Option>
 <Option>6</Option>
@@ -7371,8 +7365,7 @@ NOODLES 6 S</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">3. 要改變學校內聯網帳戶密碼時，
-下列哪項是數據驗證data verification例子？</QText>
+<QText examyear="HKDSE 2018">3. 要改變學校內聯網帳戶密碼時，下列哪項是數據驗證data verification例子？</QText>
 <Option correct="1">輸入新密碼兩次</Option>
 <Option>輸入新密碼和流動電話號碼</Option>
 <Option>輸入最少包合一個特別自負的新密碼</Option>
@@ -7380,27 +7373,20 @@ NOODLES 6 S</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">4. 下列所有原始檔的檔案大小均為1MB。
-在正常情況下，壓縮這些檔案後，
-哪個壓縮檔的大小是最大的？
-原始檔 壓縮檔
-testA.htm testA.zip
-testB.doc testB.zip
-testC.txt testC.zip
-testD.jpg testD.zip</QText>
-<Option>testA.htm testA.zip</Option>
-<Option>testB.doc testB.zip</Option>
-<Option>testC.txt testC.zip</Option>
-<Option correct="1">testD.jpg testD.zip</Option>
+<QText examyear="HKDSE 2018">4. 下列所有原始檔的檔案大小均為1MB。在正常情況下，壓縮這些檔案後，哪個壓縮檔的大小是最大的？</QText>
+<Option>原始檔：testA.htm 　壓縮檔：testA.zip</Option>
+<Option>原始檔：testB.doc 　壓縮檔：testB.zip</Option>
+<Option>原始檔：testC.txt 　壓縮檔：testC.zip</Option>
+<Option correct="1">原始檔：testD.jpg 　壓縮檔：testD.zip</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018" figure="2018-q5.png">5. 下列為『韓文』文本例子：
-
-下列哪種字符編碼法，可用來表示韓文文本？
-(1) SCII
-(2) 一碼
-(3) 五碼</QText>
+<QText examyear="HKDSE 2018" figure="2018_q_05_0.png">5. 下列為韓文文本例：
+#figure
+下列哪種字符編碼法可用來表示韓文文本？
+(1) ASCII
+(2) 統一碼
+(3) 大五碼</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7408,10 +7394,10 @@ testD.jpg testD.zip</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018" figure="2018-q6.png">6. 下列哪些適合用來表達『故事分鏡圖』storyboard？
-(1) 影片放映 slide show
-(2) 媒體文件 multimedia doc
-(3) 料庫檔案 database file</QText>
+<QText examyear="HKDSE 2018">6. 下列哪些適合用來表達故事分鏡圖？
+(1) 投影片放映
+(2) 多媒體文件
+(3) 資料庫檔案</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7419,12 +7405,7 @@ testD.jpg testD.zip</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">7. 某公司設計了一個
-處理員工記錄的流動應用程式。
-每筆記錄中，
-以10個位元來儲存員工號碼
-和12個字節來儲存中文姓名。
-這個流動應用程式可支援多少筆員工記錄？</QText>
+<QText examyear="HKDSE 2018">7. 某公司設計了一個處理員工記錄的流動應用程式。每筆記錄中，以10個位元來儲存員工號碼和12個字節來儲存中文姓名。這個流動應用程式可支援多少筆員工記錄？</QText>
 <Option correct="1">2^10</Option>
 <Option>2^12</Option>
 <Option>2^22</Option>
@@ -7432,19 +7413,16 @@ testD.jpg testD.zip</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">8. 志偉編寫了一個程式來處理學生資料，
-其中包括：學生姓名、平均分、和修讀科目數目。
-志偉利用哪些數據類型，來儲存相關的學生資料？
-學生姓名 平均分 修讀科目數目</QText>
-<Option>布爾 整數 實數</Option>
-<Option>布爾 實數 整數</Option>
-<Option>字符 整數 實數</Option>
-<Option correct="1">字符 實數 整數</Option>
+<QText examyear="HKDSE 2018">8. 志偉編寫了一個程式來處理學生資料，其中包括：學生姓名、平均分、和修讀科目數目。志偉利用哪些數據類型，來儲存相關的學生資料？
+X：學生姓名  Y：平均分  Z：修讀科目數目</QText>
+<Option>X：布爾  Y：整數  Z：實數</Option>
+<Option>X：布爾  Y：實數  Z：整數</Option>
+<Option>X：字符  Y：整數  Z：實數</Option>
+<Option correct="1">X：字符  Y：實數  Z：整數</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">9. 使用8位元二進制補碼，
-下列哪個表示數值-8(十進制)？</QText>
+<QText examyear="HKDSE 2018">9. 下列哪個是以 8 位元二進制補碼表示的十進制數值 -8 ？</QText>
 <Option>1000 1000</Option>
 <Option correct="1">1111 1000</Option>
 <Option>1000 0000</Option>
@@ -7452,12 +7430,10 @@ testD.jpg testD.zip</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">10. 莉莉在一個文件檔內，
-插入一個超連結，
-使用超連結可能會有什麼後果？
-(1) 啟一個視像檔
-(2) 至此文件的另一頁
-(3) 至另一個文件的某一頁</QText>
+<QText examyear="HKDSE 2018">10. 莉莉在一個文件檔內，插入一個超連結，使用超連結可能會有什麼後果？
+(1) 開啟一個視像檔
+(2) 跳至此文件的另一頁
+(3) 跳至另一個文件的某一頁</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7465,10 +7441,8 @@ testD.jpg testD.zip</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">11. 某文字檔包含字符串『*IT*』。
-志明利用一個程式，去檢視該字符串，
-以十六進制表示的ascii編碼，如下展示：
-2A 49 54 2A
+<QText examyear="HKDSE 2018" figure="2018_q_11_0.png">11. 某文字檔包含字符串『*IT*』。志明利用一個程式，去檢視該字符串，以十六進制表示的ascii編碼，如下展示：
+#figure
 儲存該字符串，需要多少個位元？</QText>
 <Option>8</Option>
 <Option>16</Option>
@@ -7478,9 +7452,9 @@ testD.jpg testD.zip</QText>
 
 <Question>
 <QText examyear="HKDSE 2018">12. 下列哪些元素，可以包括在pdf檔案內？
-(1) 片
-(2) 像
-(3) 連結</QText>
+(1) 照片
+(2) 視像
+(3) 超7連結</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7488,9 +7462,7 @@ testD.jpg testD.zip</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018" figure="2018-q13.png">13. 下列兩個條碼X和Y，
-分別見於汽水罐和廣告海報中。
-它們主要的差別是什麼？
+<QText examyear="HKDSE 2018">13. 下列兩個條碼X和Y，分別見於汽水罐和廣告海報中。它們主要的差別是什麼？
 X： Barcode， Y： QR code</QText>
 <Option>X的面積必須大於Y的</Option>
 <Option>只有Y能被智能手機閱讀</Option>
@@ -7499,7 +7471,7 @@ X： Barcode， Y： QR code</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">14. 下列哪句關於郵件合併mail-merge是正確的？</QText>
+<QText examyear="HKDSE 2018">14. 下列哪句關於郵件合併是正確的？</QText>
 <Option>每次郵件合併時，只需一個檔案</Option>
 <Option>郵件合併，主要用於發送電郵</Option>
 <Option correct="1">可將數據排序和篩選，以作郵件合併</Option>
@@ -7507,12 +7479,10 @@ X： Barcode， Y： QR code</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">15. 『維基百科』
-是免費網上百科全書，含有大量文章。
-下列哪些關於這些網上百科全書的句子是正確的？
-(1) 們可以快速搜尋，某主題的相關文章
-(2) 些文章沒有版權
-(3) 些百科全書會經常更新</QText>
+<QText examyear="HKDSE 2018">15. 「維基百科」是免費網上百科全書，含有大量文章。下列哪些關於這些網上百科全書的句子是正確的？
+(1) 人們可以快速搜尋，某主題的相關文章
+(2) 這些文章沒有版權
+(3) 這些百科全書會經常更新</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7539,8 +7509,7 @@ X： Barcode， Y： QR code</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">18. 為什麼在許多流動設備中，
-普遍使用固態硬碟(SSD)而不使用硬碟？</QText>
+<QText examyear="HKDSE 2018">18. 為什麼在許多流動設備中，普遍使用固態硬碟(SSD)而不使用硬碟？</QText>
 <Option correct="1">SSD的體積較小</Option>
 <Option>SSD的儲存容量較小</Option>
 <Option>SSD的數據存取速度較慢</Option>
@@ -7548,8 +7517,7 @@ X： Barcode， Y： QR code</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">19. 以下哪項可以幫助
-縮短存取硬碟內文件所需的時間？</QText>
+<QText examyear="HKDSE 2018">19. 以下哪項可以幫助縮短存取硬碟內文件所需的時間？</QText>
 <Option>冗餘磁碟組(RAID)</Option>
 <Option>虛擬私有網絡(VPN)</Option>
 <Option>驅動程式</Option>
@@ -7558,14 +7526,14 @@ X： Barcode， Y： QR code</QText>
 
 <Question>
 <QText examyear="HKDSE 2018">20. 細看下列桌上電腦的配置：
-•Intel Core i7 CPU
-•16GB DDR4 RAM
-•1TB SSD
-•802.11ac Wi-Fi
+• Intel Core i7 CPU
+• 16GB DDR4 RAM
+• 1TB SSD
+• 802.11ac Wi-Fi
 從這些配置可獲得什麼資訊？
-(1) 示屏的可視尺寸
-(2) 線網絡的最大數據傳輸速率
-(3) 動電腦時間</QText>
+(1) 顥示屏的可視尺寸
+(2) 無線網絡的最大數據傳輸速率
+(3) 啟動電腦時間</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7575,8 +7543,8 @@ X： Barcode， Y： QR code</QText>
 <Question>
 <QText examyear="HKDSE 2018">21. 下列哪項是硬碟的最新發展趨勢？
 (1) 電量較低
-(2) 用壽命較長
-(3) 有更多內置軟件</QText>
+(2) 耗壽命較長
+(3) 附有更多內置軟件</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7584,8 +7552,7 @@ X： Barcode， Y： QR code</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">22. 下列哪句關於CPU內
-『提取→譯碼→執行』周期是正確的？</QText>
+<QText examyear="HKDSE 2018">22. 下列哪句關於CPU內『提取→譯碼→執行』周期是正確的？</QText>
 <Option correct="1">在這週期中使用了寄存器</Option>
 <Option>這週期是一個匯編語言程式</Option>
 <Option>這週期內指定的順序，主要取決於CPU的時鐘頻率</Option>
@@ -7593,11 +7560,10 @@ X： Barcode， Y： QR code</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">23. 在餐廳的銷售點系統中，
-下列哪項(些)是採用感熱式打印機，來印製收據的原因？
-(1) 保留收據列印本較長時間
-(2) 印時安靜
-(3) 印時間短</QText>
+<QText examyear="HKDSE 2018">23. 在餐廳的銷售點系統中，下列哪項(些)是採用感熱式打印機，來印製收據的原因？
+(1) 可保留收據列印本較長時間
+(2) 打印時安靜
+(3) 打印時間短</QText>
 <Option>只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7605,10 +7571,8 @@ X： Barcode， Y： QR code</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018" figure="2018-q24.png">24. 莉莉在家中登入其公司內的電腦，
-並進行一些文字處理工作。
-家中電腦 → 遠程登入 → 公司電腦
-
+<QText examyear="HKDSE 2018" figure="2018_q_24_0.png">24. 莉莉在家中登入其公司內的電腦，並進行一些文字處理工作。
+#figure
 以下哪句關於此遠程登入是正確的？</QText>
 <Option>兩部電腦均須設有 相同的文字處理軟件</Option>
 <Option>兩部電腦均須設有 相同的防火牆</Option>
@@ -7617,7 +7581,8 @@ X： Barcode， Y： QR code</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018" figure="2018-q25.png">25. 下圖是 www.abc.edu.hk 的部分文件夾結構：
+<QText examyear="HKDSE 2018" figure="2018_q_25_0.png">25. 下圖是 www.abc.edu.hk 的部分文件夾結構：
+#figure
 下列哪個URL是無效的？</QText>
 <Option>http://www.abc.edu.hk/chi/p1.jpg</Option>
 <Option correct="1">http://www.abc.edu.hk/info/chi/p1.jpg</Option>
@@ -7634,8 +7599,7 @@ X： Barcode， Y： QR code</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">27. 芝芝可藉ABC學校網站的IP位址瀏覽該網站，
-但不能以它的URL瀏覽，原因可能是什麼？</QText>
+<QText examyear="HKDSE 2018">27. 芝芝可藉ABC學校網站的IP位址瀏覽該網站，但不能以它的URL瀏覽，原因可能是什麼？</QText>
 <Option>還未上載相關網頁至該網頁伺服器內</Option>
 <Option correct="1">該網域名稱系統(DNS)伺服器暫時停止服務</Option>
 <Option>所使用的瀏覽器不是最新版本</Option>
@@ -7645,9 +7609,9 @@ X： Barcode， Y： QR code</QText>
 <Question>
 <QText examyear="HKDSE 2018">28. 觀賞採用串流傳輸技術streaming的網站內的視像。
 與下列哪些項目有關？
-(1) NS
-(2) TP
-(3) P</QText>
+(1) DNS
+(2) FTP
+(3) IP</QText>
 <Option>只有(1)和(2)</Option>
 <Option correct="1">只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7655,13 +7619,12 @@ X： Barcode， Y： QR code</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018" figure="2018-q29.png">29. 細看下列網頁：
-市場上的水果
-橙、蘋果、香蕉、櫻桃、菠蘿、檸檬、西瓜、雪梨
+<QText examyear="HKDSE 2018" figure="2018_q_29_0.png">29. 細看下列網頁：
+#figure
 下列哪項(些)可以更便於導航？
-(1) 單
-(2)
-(3) 景音樂</QText>
+(1) 表單
+(2) 框
+(3) 背景音樂</QText>
 <Option>只有(2)</Option>
 <Option>只有(3)</Option>
 <Option correct="1">只有(1)和(2)</Option>
@@ -7670,28 +7633,17 @@ X： Barcode， Y： QR code</QText>
 
 <Question>
 <QText examyear="HKDSE 2018">30. 下列算法是用作計算 1²+2²+3²+...+N² 的值？
-輸入N
-S ← 0
-當 (N_________)
-S ← S +N×N
-N ← N-1
-輸出 S
-括弧(_________)內應是什麼？</QText>
-<Option correct="1">N>0</Option>
-<Option>N>1</Option>
-<Option>N&lt;0</Option>
-<Option>N&lt;1</Option>
+#figure
+方格內應是什麼？</QText>
+<Option correct="1">N &gt; 0</Option>
+<Option>N &gt; 1</Option>
+<Option>N &lt; 0</Option>
+<Option>N &lt; 1</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018" figure="2018-q31.png">31. 細看以下算法：
-輸入n
-如果 n&lt;-6 則
-y = y+2
-否則
-如果 n>9 則
-y = y-2
-否則 y = y×2
+<QText examyear="HKDSE 2018" figure="2018_q_31_0.png">31. 細看以下算法：
+#figure
 下列哪組輸入數據，最適合用作測試此算法？</QText>
 <Option>-6， 0， 9</Option>
 <Option>-2， 0， 1， 2</Option>
@@ -7700,7 +7652,8 @@ y = y-2
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018" figure="2018-q32.png">32. 細看以下流程圖的一部分：
+<QText examyear="HKDSE 2018" figure="2018_q_32_0.png">32. 細看以下流程圖的一部分：
+#figure
 假設x和y的初始值，分別為14和4。輸出是什麼？</QText>
 <Option>0</Option>
 <Option>1</Option>
@@ -7709,21 +7662,19 @@ y = y-2
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">33. 假設x=1，y=2 和 z=3，
-下列那條布爾算式是『真』TRUE？</QText>
-<Option>( (x=1) and (y>-2) ) and (z>3)</Option>
-<Option correct="1">( (x=1) and (y>-2) ) or (z>3)</Option>
-<Option>( (x=1) or (y>-2) ) and (z>3)</Option>
-<Option>(x=1) and ( (y>-2) and (z>3) )</Option>
+<QText examyear="HKDSE 2018">33. 假設 x = 1， y = 2 和 z = 3，下列那條布爾算式是『真』TRUE？</QText>
+<Option>( (x = 1) and (y &gt; -2) ) and (z &gt; 3)</Option>
+<Option correct="1">( (x = 1) and (y &gt; -2) ) or (z &gt; 3)</Option>
+<Option>( (x = 1) or (y &gt; -2) ) and (z &gt; 3)</Option>
+<Option>(x = 1) and ( (y &gt; -2) and (z &gt; 3) )</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">34 於設計電腦解決方案時，
-使用模組的特徵是什麼？
-(1) 組通常是用來解決簡單的問題
-(2) 組可能是可重用的
-(3) 發成本較高
-(4) 組可以獨立開發</QText>
+<QText examyear="HKDSE 2018">34. 於設計電腦解決方案時使用模組的特徵是什麼？
+(1) 模組通常是用來解決簡單的問題
+(2) 模組可能是可重用的
+(3) 開發成本較高
+(4) 模組可以獨立開發</QText>
 <Option>只有(1)和(3)</Option>
 <Option>只有(1)和(4)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7731,11 +7682,10 @@ y = y-2
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">35. 在軟件設計中，從人體工學方面考慮，
-有什麼良好的做法？ Good Ergonomic practices
-(1) 定字體大小
-(2) 用戶適當的系統訊息
-(3) 致的用戶界面</QText>
+<QText examyear="HKDSE 2018" figure= "2018_q_35_0.png">35. 在軟件設計中，從人體工學方面考慮，有什麼良好的做法？
+(1) 固定字體大小
+(2) 給用戶適當的系統訊息
+(3) 一致的用戶界面</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
@@ -7743,13 +7693,10 @@ y = y-2
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">36. 李小姐是一名攝影師。
-張先生於未經李小姐同意下，
-從她的網站下載大量版權照片，並在其補習社使用。
-這樣可引致什麼法律後果？ 張先生 ___
-(1) 要向李小姐作出賠償
-(2) 了刑事罪行
-(3) 要結束他的補習社</QText>
+<QText examyear="HKDSE 2018">36. 李小姐是一名攝影師。張先生於未經李小姐同意下，從她的網站下載大量版權照片，並在其補習社使用。這樣可引致什麼法律後果？
+(1) 張先生需要向李小姐作出賠償
+(2) 張先生犯了刑事罪行
+(3) 張先生需要結束他的補習社</QText>
 <Option correct="1">只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7757,8 +7704,7 @@ y = y-2
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">37. 在互聯網上，
-為什麼我們需要保密插口層(SSL)？</QText>
+<QText examyear="HKDSE 2018">37. 在互聯網上，為什麼我們需要保密插口層(SSL)？</QText>
 <Option>IP位址最少包含了四個數值</Option>
 <Option>可保護電源插口</Option>
 <Option>數據傳輸速度可更快</Option>
@@ -7766,12 +7712,11 @@ y = y-2
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">38. 在通過互聯網傳輸機密資料時，
-使用『數據加密』的主要好處是什麼？
-黑客不能輕易
-(1) 集加密數據
-(2) 取機密資料
-(3) 除機密資料</QText>
+<QText examyear="HKDSE 2018">38. 在通過互聯網傳輸機密資料時，使用『數據加密』的主要好處是什麼？
+(1) 黑客不能輕易收集加密數據
+(2) 黑客不能輕易讀取機密資料
+(3) 黑客不能輕易刪除機密資料
+</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7779,11 +7724,10 @@ y = y-2
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">39. 在互聯網上所發佈的照片，
-有什麼適當措施可保護其知識產權？
-(1) 碼簽署
-(2) 碼水印
-(3) 火牆</QText>
+<QText examyear="HKDSE 2018">39. 在互聯網上所發佈的照片，有什麼適當措施可保護其知識產權？
+(1) 數碼簽署
+(2) 數碼水印
+(3) 防火牆</QText>
 <Option>只有(1)</Option>
 <Option correct="1">只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -7791,11 +7735,10 @@ y = y-2
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">40. 在電腦系統的認證中，
-使用『指紋』比較使用『密碼』有何好處？
-(1) 般來說，輸入時間較短
-(2) 統開發的成本更低
-(3) 清潔手指可減少錯誤</QText>
+<QText examyear="HKDSE 2018">40. 在電腦系統的認證中，使用『指紋』比較使用『密碼』有何好處？
+(1) 一般來說，輸入時間較短
+(2) 系統開發的成本更低
+(3) 用清潔手指可減少錯誤</QText>
 <Option correct="1">只有(1)</Option>
 <Option>只有(2)</Option>
 <Option>只有(1)和(3)</Option>
