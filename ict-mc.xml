@@ -10753,10 +10753,10 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 
 <Question>
 <QText examyear="HKDSE 2024" figure="2024-q1.png" topic="bin">1. 8位元二進制補碼的範圍是什麼? </QText>
-<Option>-2<sup>7</sup> 至 2<sup>7</sup></Option>
-<Option correct="1">-2<sup>7</sup> 至 2<sup>7</sup>-1</Option>
-<Option>-2<sup>7</sup>+1 至 2<sup>7</sup></Option>
-<Option>-2<sup>7</sup>+1 至 2<sup>7</sup>-1</Option>
+<Option>-27 至 27</Option>
+<Option correct="1">-27 至 27-1</Option>
+<Option>-27+1 至 27</Option>
+<Option>-27+1 至 27-1</Option>
 </Question>
 
 <Question>
@@ -10793,10 +10793,10 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 
 <Question>
 <QText examyear="HKDSE 2024" figure="2024-q6.png" topic="net">6. 某網絡卡有一個由6組 2個位的十六進制數字組成的MAC位址，如下列例子所示: 00:0A:95:9D:67:16 此格式可以表示多少個可能的位址? </QText>
-<Option>2<sup>6</sup></Option>
-<Option>2<sup>12</sup></Option>
-<Option>2<sup>24</sup></Option>
-<Option correct="1">2<sup>48</sup></Option>
+<Option>26</Option>
+<Option>212</Option>
+<Option>224</Option>
+<Option correct="1">248</Option>
 </Question>
 
 <Question>
@@ -10840,7 +10840,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" figure="2024-q11.png" topic="db">12. 參考以下試算表，回答第 11 和 12 題。 A B 1 Choice Point 2 P 3 3 P 3 4 Q 3 5 Q 0 6 P 0 7 Q 0 此試算表轉換成數據庫表 ABC。以下哪些 SQL 語句產生相同的結果? (1) SELECT COUNT(*) FROM ABC WHERE Choice <> 'Q' GROUP BY Choice (2) SELECT SUM(Point) FROM ABC WHERE Choice <> 'Q' (3) SELECT COUNT(*) FROM ABC WHERE Choice = 'P' </QText>
+<QText examyear="HKDSE 2024" figure="2024-q11.png" topic="db">12. 參考以下試算表，回答第 11 和 12 題。 A B 1 Choice Point 2 P 3 3 P 3 4 Q 3 5 Q 0 6 P 0 7 Q 0 此試算表轉換成數據庫表 ABC。以下哪些 SQL 語句產生相同的結果? (1) SELECT COUNT(*) FROM ABC WHERE Choice  'Q' GROUP BY Choice (2) SELECT SUM(Point) FROM ABC WHERE Choice  'Q' (3) SELECT COUNT(*) FROM ABC WHERE Choice = 'P' </QText>
 <Option>只有 (1) 和 (2)</Option>
 <Option correct="1">只有 (1) 和 (3)</Option>
 <Option>只有 (2) 和 (3)</Option>
@@ -10976,7 +10976,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="pgm">29. 以下算法的輸出是什麼? M ← 1 重複 M ← M + 1 直至 NOT (M <> 3) 輸出 M </QText>
+<QText examyear="HKDSE 2024" topic="pgm">29. 以下算法的輸出是什麼? M ← 1 重複 M ← M + 1 直至 NOT (M  3) 輸出 M </QText>
 <Option>2</Option>
 <Option correct="1">3</Option>
 <Option>4</Option>
@@ -10992,7 +10992,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="pgm">31. 參考下列從陣列 A 中搜尋一個數值的算法，回答第31和32題。 i ← 1 FLAG = FALSE 輸入 N 當(i <= 10) __遺漏部分__ FLAG 執行 如果 A[i] = N 則 FLAG = TRUE 否則 i ← i+1 如果 FLAG 則 輸出 i 否則 輸出 '沒有出現' 上列遺漏部分是什麼? </QText>
+<QText examyear="HKDSE 2024" topic="pgm">31. 參考下列從陣列 A 中搜尋一個數值的算法，回答第31和32題。 i ← 1 FLAG = FALSE 輸入 N 當(i = 10) __遺漏部分__ FLAG 執行 如果 A[i] = N 則 FLAG = TRUE 否則 i ← i+1 如果 FLAG 則 輸出 i 否則 輸出 '沒有出現' 上列遺漏部分是什麼? </QText>
 <Option>OR</Option>
 <Option>AND</Option>
 <Option>OR NOT</Option>
@@ -11000,7 +11000,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="pgm">32. 參考下列從陣列 A 中搜尋一個數值的算法，回答第31和32題。 i ← 1 FLAG = FALSE 輸入 N 當(i <= 10) __遺漏部分__ FLAG 執行 如果 A[i] = N 則 FLAG = TRUE 否則 i ← i+1 如果 FLAG 則 輸出 i 否則 輸出 '沒有出現' 使用變量 FLAG 的目的是什麼? </QText>
+<QText examyear="HKDSE 2024" topic="pgm">32. 參考下列從陣列 A 中搜尋一個數值的算法，回答第31和32題。 i ← 1 FLAG = FALSE 輸入 N 當(i = 10) __遺漏部分__ FLAG 執行 如果 A[i] = N 則 FLAG = TRUE 否則 i ← i+1 如果 FLAG 則 輸出 i 否則 輸出 '沒有出現' 使用變量 FLAG 的目的是什麼? </QText>
 <Option>儲存找到的數值的位置</Option>
 <Option>儲存配對次數</Option>
 <Option>作為一個索引</Option>
@@ -11062,8 +11062,8 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 <Option>用較細小的桌子</Option>
 <Option correct="1">在座椅上安裝手托</Option>
 </Question>
-<Question>
 
+<Question>
 <QText examyear="HKDSE 2024" topic="int">40. 以下哪些是 PKI 的主要功用? (1) 確保在互聯網上傳輸的數據完整性 (2) 支援較長的密碼 (3) 支援數據加密 </QText>
 <Option>只有 (1) 和 (2)</Option>
 <Option correct="1">只有 (1) 和 (3)</Option>
