@@ -7364,7 +7364,7 @@ SELECT MAX(WEIGHT) FROM PROD WHERE PSTAT &lt;&gt; 'S'
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">3. 要改變學校內聯網帳戶密碼時，下列哪項是數據驗證例子？</QText>
+<QText examyear="HKDSE 2018">3. 要改變學校內聯網帳戶密碼時，下列哪項是數據驗證data verification例子？</QText>
 <Option correct="1">輸入新密碼兩次</Option>
 <Option>輸入新密碼和流動電話號碼</Option>
 <Option>輸入最少包合一個特別自負的新密碼</Option>
@@ -7405,10 +7405,10 @@ SELECT MAX(WEIGHT) FROM PROD WHERE PSTAT &lt;&gt; 'S'
 
 <Question>
 <QText examyear="HKDSE 2018">7. 某公司設計了一個處理員工記錄的流動應用程式。每筆記錄中，以10個位元來儲存員工號碼和12個字節來儲存中文姓名。這個流動應用程式可支援多少筆員工記錄？</QText>
-<Option correct="1">2<sup>10</sup></Option>
-<Option>2<sup>12</sup></Option>
-<Option>2<sup>22</sup></Option>
-<Option>2<sup>96</sup></Option>
+<Option correct="1">2^10</Option>
+<Option>2^12</Option>
+<Option>2^22</Option>
+<Option>2^96</Option>
 </Question>
 
 <Question>
@@ -7440,7 +7440,7 @@ X：學生姓名  Y：平均分  Z：修讀科目數目</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018" figure="2018_q_11_0.png">11. 某文字檔包含字符串『*IT*』。志明利用一個程式，去檢視該字符串，以十六進制表示的ASCII編碼，如下展示：
+<QText examyear="HKDSE 2018" figure="2018_q_11_0.png">11. 某文字檔包含字符串『*IT*』。志明利用一個程式，去檢視該字符串，以十六進制表示的ascii編碼，如下展示：
 #figure
 儲存該字符串，需要多少個位元？</QText>
 <Option>8</Option>
@@ -7450,10 +7450,10 @@ X：學生姓名  Y：平均分  Z：修讀科目數目</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018">12. 下列哪些元素，可以包括在PDF檔案內？
+<QText examyear="HKDSE 2018">12. 下列哪些元素，可以包括在pdf檔案內？
 (1) 照片
 (2) 視像
-(3) 超連結</QText>
+(3) 超7連結</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option>只有(2)和(3)</Option>
@@ -7461,8 +7461,8 @@ X：學生姓名  Y：平均分  Z：修讀科目數目</QText>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2018" figure="2018_q_13_0.png">13. 下列兩個條碼X和Y，分別見於汽水罐和廣告海報中。它們主要的差別是什麼？
-#figure</QText>
+<QText examyear="HKDSE 2018">13. 下列兩個條碼X和Y，分別見於汽水罐和廣告海報中。它們主要的差別是什麼？
+X： Barcode， Y： QR code</QText>
 <Option>X的面積必須大於Y的</Option>
 <Option>只有Y能被智能手機閱讀</Option>
 <Option correct="1">Y能夠表示更多數據</Option>
@@ -7498,9 +7498,9 @@ X：學生姓名  Y：平均分  Z：修讀科目數目</QText>
 
 <Question>
 <QText examyear="HKDSE 2018">17. 以下哪些是操作系統的基本功能？
-(1) 電郵管理
-(2) 記憶體管理
-(3) 輸入/輸出管理</QText>
+(1) 郵管理
+(2) 憶體管理
+(3) 入/輸出管理</QText>
 <Option>只有(1)和(2)</Option>
 <Option>只有(1)和(3)</Option>
 <Option correct="1">只有(2)和(3)</Option>
@@ -10753,10 +10753,10 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 
 <Question>
 <QText examyear="HKDSE 2024" figure="2024-q1.png" topic="bin">1. 8位元二進制補碼的範圍是什麼? </QText>
-<Option>-2<sup>7</sup> 至 2<sup>7</sup></Option>
-<Option correct="1">-2<sup>7</sup> 至 2<sup>7</sup>-1</Option>
-<Option>-2<sup>7</sup>+1 至 2<sup>7</sup></Option>
-<Option>-2<sup>7</sup>+1 至 2<sup>7</sup>-1</Option>
+<Option>-27 至 27</Option>
+<Option correct="1">-27 至 27-1</Option>
+<Option>-27+1 至 27</Option>
+<Option>-27+1 至 27-1</Option>
 </Question>
 
 <Question>
@@ -10793,10 +10793,10 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 
 <Question>
 <QText examyear="HKDSE 2024" figure="2024-q6.png" topic="net">6. 某網絡卡有一個由6組 2個位的十六進制數字組成的MAC位址，如下列例子所示: 00:0A:95:9D:67:16 此格式可以表示多少個可能的位址? </QText>
-<Option>2<sup>6</sup></Option>
-<Option>2<sup>12</sup></Option>
-<Option>2<sup>24</sup></Option>
-<Option correct="1">2<sup>48</sup></Option>
+<Option>26</Option>
+<Option>212</Option>
+<Option>224</Option>
+<Option correct="1">248</Option>
 </Question>
 
 <Question>
@@ -10840,7 +10840,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" figure="2024-q11.png" topic="db">12. 參考以下試算表，回答第 11 和 12 題。 A B 1 Choice Point 2 P 3 3 P 3 4 Q 3 5 Q 0 6 P 0 7 Q 0 此試算表轉換成數據庫表 ABC。以下哪些 SQL 語句產生相同的結果? (1) SELECT COUNT(*) FROM ABC WHERE Choice <> 'Q' GROUP BY Choice (2) SELECT SUM(Point) FROM ABC WHERE Choice <> 'Q' (3) SELECT COUNT(*) FROM ABC WHERE Choice = 'P' </QText>
+<QText examyear="HKDSE 2024" figure="2024-q11.png" topic="db">12. 參考以下試算表，回答第 11 和 12 題。 A B 1 Choice Point 2 P 3 3 P 3 4 Q 3 5 Q 0 6 P 0 7 Q 0 此試算表轉換成數據庫表 ABC。以下哪些 SQL 語句產生相同的結果? (1) SELECT COUNT(*) FROM ABC WHERE Choice  'Q' GROUP BY Choice (2) SELECT SUM(Point) FROM ABC WHERE Choice  'Q' (3) SELECT COUNT(*) FROM ABC WHERE Choice = 'P' </QText>
 <Option>只有 (1) 和 (2)</Option>
 <Option correct="1">只有 (1) 和 (3)</Option>
 <Option>只有 (2) 和 (3)</Option>
@@ -10976,7 +10976,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="pgm">29. 以下算法的輸出是什麼? M ← 1 重複 M ← M + 1 直至 NOT (M <> 3) 輸出 M </QText>
+<QText examyear="HKDSE 2024" topic="pgm">29. 以下算法的輸出是什麼? M ← 1 重複 M ← M + 1 直至 NOT (M  3) 輸出 M </QText>
 <Option>2</Option>
 <Option correct="1">3</Option>
 <Option>4</Option>
@@ -10992,7 +10992,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="pgm">31. 參考下列從陣列 A 中搜尋一個數值的算法，回答第31和32題。 i ← 1 FLAG = FALSE 輸入 N 當(i <= 10) __遺漏部分__ FLAG 執行 如果 A[i] = N 則 FLAG = TRUE 否則 i ← i+1 如果 FLAG 則 輸出 i 否則 輸出 '沒有出現' 上列遺漏部分是什麼? </QText>
+<QText examyear="HKDSE 2024" topic="pgm">31. 參考下列從陣列 A 中搜尋一個數值的算法，回答第31和32題。 i ← 1 FLAG = FALSE 輸入 N 當(i = 10) __遺漏部分__ FLAG 執行 如果 A[i] = N 則 FLAG = TRUE 否則 i ← i+1 如果 FLAG 則 輸出 i 否則 輸出 '沒有出現' 上列遺漏部分是什麼? </QText>
 <Option>OR</Option>
 <Option>AND</Option>
 <Option>OR NOT</Option>
@@ -11000,7 +11000,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="pgm">32. 參考下列從陣列 A 中搜尋一個數值的算法，回答第31和32題。 i ← 1 FLAG = FALSE 輸入 N 當(i <= 10) __遺漏部分__ FLAG 執行 如果 A[i] = N 則 FLAG = TRUE 否則 i ← i+1 如果 FLAG 則 輸出 i 否則 輸出 '沒有出現' 使用變量 FLAG 的目的是什麼? </QText>
+<QText examyear="HKDSE 2024" topic="pgm">32. 參考下列從陣列 A 中搜尋一個數值的算法，回答第31和32題。 i ← 1 FLAG = FALSE 輸入 N 當(i = 10) __遺漏部分__ FLAG 執行 如果 A[i] = N 則 FLAG = TRUE 否則 i ← i+1 如果 FLAG 則 輸出 i 否則 輸出 '沒有出現' 使用變量 FLAG 的目的是什麼? </QText>
 <Option>儲存找到的數值的位置</Option>
 <Option>儲存配對次數</Option>
 <Option>作為一個索引</Option>
@@ -11062,8 +11062,8 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 <Option>用較細小的桌子</Option>
 <Option correct="1">在座椅上安裝手托</Option>
 </Question>
-<Question>
 
+<Question>
 <QText examyear="HKDSE 2024" topic="int">40. 以下哪些是 PKI 的主要功用? (1) 確保在互聯網上傳輸的數據完整性 (2) 支援較長的密碼 (3) 支援數據加密 </QText>
 <Option>只有 (1) 和 (2)</Option>
 <Option correct="1">只有 (1) 和 (3)</Option>
