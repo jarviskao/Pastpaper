@@ -393,10 +393,10 @@
                     if (mcq.getElementsByTagName("Option")[j].getAttribute("figure")) {
                         let imgUrl = './images/' + mcq.getElementsByTagName("Option")[j].getAttribute("figure")
                         //console.log(imgUrl)
-                        option_content = '<li><button class="answer" data-correct=' + corret + '>' + char + '. ' + ALL_MCQS[i].getElementsByTagName("Option")[j].childNodes[0].nodeValue.replace('#figure', '<img src="' + imgUrl + '" class="img-fluid">') + ' <i class="' + icon + ' hidden"></i></button></li>'
+                        option_content = '<li><button class="answer" data-correct=' + corret + '>' + char + '. ' + mcq.getElementsByTagName("Option")[j].childNodes[0].nodeValue.replace('#figure', '<img src="' + imgUrl + '" class="img-fluid">') + ' <i class="' + icon + ' hidden"></i></button></li>'
                     }
                     else {
-                        option_content = '<li><button class="answer" data-correct=' + corret + '>' + char + '. ' + ALL_MCQS[i].getElementsByTagName("Option")[j].childNodes[0].nodeValue + ' <i class="' + icon + ' hidden"></i> </button></li>'
+                        option_content = '<li><button class="answer" data-correct=' + corret + '>' + char + '. ' + mcq.getElementsByTagName("Option")[j].childNodes[0].nodeValue + ' <i class="' + icon + ' hidden"></i> </button></li>'
                     }
                     MCQs_content = MCQs_content + option_content
                 }
