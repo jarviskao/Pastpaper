@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"
+        crossorigin="anonymous">
 
     <title>HKDSE ICT MCQs 試題</title>
     <style>
-        
         body {
             font-family: 'Noto Sans TC', sans-serif;
             background-color: #f4f7f6;
@@ -139,37 +140,37 @@
             color: #495057;
             font-size: 18px;
         }
-        
-        select{
+
+        select {
             width: 98%;
             border: none;
             padding: 0 12px;
         }
 
-        #dropdown p{
+        #dropdown p {
             margin: 0;
             padding: 0 12px;
         }
 
-        .hidden{
+        .hidden {
             display: none;
         }
-
     </style>
 </head>
 
 <body>
     <div class="title">
         <h1>HKDSE ICT MCQs 試題</h1>
-        <p class="text-muted" id = "modifydate"></p>
+        <p class="text-muted" id="modifydate"></p>
         <div class="row pt-3">
-            <div class="col-sm-6">
+
+            <div class="col-sm-4">
                 <div class="bg-light rounded border" id="dropdown">
                     <p class="text-muted">年份</p>
                     <select class="bg-light" id="examyear" name="examyear" onchange="loadpage();"></select>
                 </div>
             </div>
-            <div class="col-sm-6 mt-sm-0 mt-3">
+            <div class="col-sm-4 mt-sm-0 mt-3">
                 <div class="bg-light rounded border" id="dropdown">
                     <p class="text-muted">模式</p>
                     <select class="bg-light" id="mode" name="mode" onchange="loadpage();">
@@ -178,6 +179,18 @@
                     </select>
                 </div>
             </div>
+
+            <div class="col-sm-4 mt-sm-0 mt-3">
+                <div class="bg-light rounded border" id="dropdown">
+                    <p class="text-muted">排序</p>
+                    <select class="bg-light" id="sort" name="sort" onchange="loadpage();">
+                        <option value="sort1">順序</option>
+                        <option value="sort2">倒序</option>
+                        <option value="sort3">隨機</option>
+                    </select>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -185,48 +198,31 @@
         <div class="col-md col-lg col-xl">
             <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
                 <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                    <path
+                        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
                 </symbol>
-              </svg>
-            <div id = "msg" class="d-flex align-items-center">
-                <svg class="bi flex-shrink-0 me-2" width="20" height="20" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
-                <span id = "notificationtext"></span>
+            </svg>
+            <div id="msg" class="d-flex align-items-center">
+                <svg class="bi flex-shrink-0 me-2" width="20" height="20" role="img" aria-label="Info:">
+                    <use xlink:href="#info-fill" />
+                </svg>
+                <span id="notificationtext"></span>
             </div>
         </div>
     </div>
 
-<!-- 
-    <div class="question-container row">
-        <div class="left-side col-md col-lg col-xl">
-            <div class="question formatted-text">1. 下列哪項在文字處理軟件內，可有效地格式化一份文件?
-#figure
-(1)以最常用的字型和字體大小設定成預設值
-(2)標題可使用預先設定的樣式
-(3)啟用自動校正功能</div>
-            <ul class="answers">
-                <li><button class="answer" data-correct="false">A. 選項一 <i class="text-danger fas fa-times hidden"></i></i></button></li>
-                <li><button class="answer" data-correct="false">B. 選項二 <i class="text-danger fas fa-times hidden"></i></i></button></li>
-                <li><button class="answer" data-correct="true">C. 正确答案 <i class="text-danger fas fa-times hidden"></i></i></button></li>
-                <li><button class="answer" data-correct="false">D. 選項四 <i class="text-danger fas fa-times hidden"></i></button></i></li>
-            </ul>
-        </div>
-        <div class="right-side col-md col-lg col-xl">
-            <div class="explanation">解釋: HKDSE試題1的選擇C的解釋。</div>
-        </div>
-    </div>
- -->
     <div id="result">
     </div>
 
 
     <script>
-        
+
         function refresh() {
             document.querySelectorAll('.question-container').forEach(container => {
                 let answers = container.querySelector('.left-side').querySelectorAll('.answer');
                 let explanation = container.querySelector('.right-side .explanation');
                 let icon = container.querySelector('.answers').querySelectorAll('.hidden');
-                  
+
                 answers.forEach(answerBtn => {
                     answerBtn.addEventListener('click', () => {
                         // 清除其他所选的样式
@@ -258,7 +254,7 @@
             var sel = document.getElementById("mode");
             // Set cookies for year and mode
             setCookie("mode", sel.value, 7); // stores the value for 1 week
-            var text= sel.options[sel.selectedIndex].text;
+            var text = sel.options[sel.selectedIndex].text;
             console.log(document.getElementById('examyear').value, 'Paper Loaded - ', text)
             if (sel.value == 'mode2') {
                 document.querySelectorAll('.hidden').forEach(icon => {
@@ -280,8 +276,8 @@
 
         /* 載入最後更新日期 */
         var getDate = new XMLHttpRequest();
-        getDate.onreadystatechange = function() {
-            if(this.readyState == 4 && this.status == 200){
+        getDate.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
                 var commits = JSON.parse(this.responseText);
                 var lastCommitDate = commits[0].commit.committer.date;
                 // 轉換日期至指定格式
@@ -298,8 +294,8 @@
 
         /* 載入模擬試題 */
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if(this.readyState == 4 && this.status == 200){
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
                 xmldata = xmlhttp.responseXML
                 /* 載入全部年份的選擇題 */
                 ALL_MCQS = xmldata.getElementsByTagName("Question")
@@ -308,29 +304,29 @@
                 var yearOptions = document.getElementById('examyear');
                 // Initialize a new Set to store unique years
                 var uniqueYears = new Set();
-                for (var i = ALL_MCQS.length - 1; i >= 0 ; i--) {
+                for (var i = ALL_MCQS.length - 1; i >= 0; i--) {
                     var examYear = ALL_MCQS[i].getElementsByTagName("QText")[0].getAttribute("examyear");
                     // Add the exam year to the Set
-                    if (examYear.includes("HKDSE")){
+                    if (examYear.includes("HKDSE")) {
                         uniqueYears.add(examYear);
                     }
                 }
                 // Now create option elements using the unique values in the Set
-                uniqueYears.forEach(function(examYear) {
+                uniqueYears.forEach(function (examYear) {
                     // Create new option element
                     var optElement = document.createElement('option');
                     // Set the value and text of the option element
                     optElement.value = examYear;
-                    optElement.textContent = examYear; 
+                    optElement.textContent = examYear;
                     // Append the new option element to yearOptions
                     yearOptions.appendChild(optElement);
                 });
                 // Load cookies
-                if (getCookie("year")){
+                if (getCookie("year")) {
                     document.getElementById("examyear").value = getCookie("year");
                     console.log('Cookie loaded. Year:', getCookie("year"));
                 }
-                if (getCookie("year")){
+                if (getCookie("year")) {
                     document.getElementById("mode").value = getCookie("mode");
                     console.log('Cookie loaded. Mode:', getCookie("mode"));
                 }
@@ -353,54 +349,71 @@
             setCookie("year", year, 7);
             console.log('Cookie saved. Year:', getCookie("year"));
 
-            for (var i = 0; i < ALL_MCQS.length; i++) {
-                /* 過濾年份不符合年份的選擇題*/
-                if (ALL_MCQS[i].getElementsByTagName("QText")[0].getAttribute("examyear") != document.getElementById('examyear').value) continue;
+            let filteredMCQs = Array.from(ALL_MCQS).filter(mcq => mcq.getElementsByTagName("QText")[0].getAttribute("examyear") == year);
+
+            let sortedMCQs = [...filteredMCQs]; // Create a copy for sorting
+
+            let sortOrder = document.getElementById("sort").value;
+
+            switch (sortOrder) {
+                case "sort2": // 倒序
+                    sortedMCQs.reverse();
+                    break;
+                case "sort3": // 隨機
+                    sortedMCQs.sort(() => Math.random() - 0.5);
+                    break;
+                // default:  "sort1" (順序) - no action needed as XML is already sorted
+            }
+
+            for (var i = 0; i < sortedMCQs.length; i++) {
+                let mcq = sortedMCQs[i];
+
                 /* 打印選擇題 */
-                MCQS_pre = '<div class="question-container row"> <div class="left-side col-md col-lg col-xl"> <div class="question formatted-text">'
-                if (ALL_MCQS[i].getElementsByTagName("QText")[0].getAttribute("figure")) {
-                    imgUrl = './images/' + ALL_MCQS[i].getElementsByTagName("QText")[0].getAttribute("figure")
+                let MCQS_pre = '<div class="question-container row"> <div class="left-side col-md col-lg col-xl"> <div class="question formatted-text">'
+                let MCQs_question;
+                if (mcq.getElementsByTagName("QText")[0].getAttribute("figure")) {
+                    let imgUrl = './images/' + mcq.getElementsByTagName("QText")[0].getAttribute("figure")
                     //console.log(imgUrl)
-                    MCQs_question = ALL_MCQS[i].getElementsByTagName("QText")[0].childNodes[0].nodeValue.replace('#figure', '<img src="' + imgUrl + '" class="img-fluid">')
+                    MCQs_question = mcq.getElementsByTagName("QText")[0].childNodes[0].nodeValue.replace('#figure', '<img src="' + imgUrl + '" class="img-fluid">')
                 }
                 else {
-                    MCQs_question = ALL_MCQS[i].getElementsByTagName("QText")[0].childNodes[0].nodeValue.replace(/\\t/g,"      ")
+                    MCQs_question = mcq.getElementsByTagName("QText")[0].childNodes[0].nodeValue.replace(/\\t/g, "      ")
                 }
-                MCQs_post = '</div> <ul class="answers">'
+                let MCQs_post = '</div> <ul class="answers">'
                 MCQs_content = MCQs_content + MCQS_pre + MCQs_question + MCQs_post
                 /* 打印選擇題的選項 */
-                for(j=0;j<4;j++){
+                for (j = 0; j < 4; j++) {
                     /* 記錄選擇題的正確答案 */
-                    corret = ALL_MCQS[i].getElementsByTagName("Option")[j].getAttribute("correct")
-                    if (corret) { corret = "true"; icon = "text-success fas fa-check";  } else { corret = "false"; icon = "text-danger fas fa-times";  }
+                    let corret = mcq.getElementsByTagName("Option")[j].getAttribute("correct")
+                    if (corret) { corret = "true"; icon = "text-success fas fa-check"; } else { corret = "false"; icon = "text-danger fas fa-times"; }
                     /* 記錄選擇題的選項內容 A. B. C. D.*/
                     let char = String.fromCharCode('A'.charCodeAt(0) + j);
-                    
+                    let option_content;
 
-                    if (ALL_MCQS[i].getElementsByTagName("Option")[j].getAttribute("figure")) {
-                        imgUrl = './images/' + ALL_MCQS[i].getElementsByTagName("Option")[j].getAttribute("figure")
+                    if (mcq.getElementsByTagName("Option")[j].getAttribute("figure")) {
+                        let imgUrl = './images/' + mcq.getElementsByTagName("Option")[j].getAttribute("figure")
                         //console.log(imgUrl)
-                        option_content = '<li><button class="answer" data-correct=' + corret +'>' + char + '. ' + ALL_MCQS[i].getElementsByTagName("Option")[j].childNodes[0].nodeValue.replace('#figure', '<img src="' + imgUrl + '" class="img-fluid">') + ' <i class="' + icon + ' hidden"></i></button></li>'
+                        option_content = '<li><button class="answer" data-correct=' + corret + '>' + char + '. ' + ALL_MCQS[i].getElementsByTagName("Option")[j].childNodes[0].nodeValue.replace('#figure', '<img src="' + imgUrl + '" class="img-fluid">') + ' <i class="' + icon + ' hidden"></i></button></li>'
                     }
                     else {
-                        option_content = '<li><button class="answer" data-correct=' + corret +'>' + char + '. ' + ALL_MCQS[i].getElementsByTagName("Option")[j].childNodes[0].nodeValue + ' <i class="' + icon + ' hidden"></i> </button></li>'
+                        option_content = '<li><button class="answer" data-correct=' + corret + '>' + char + '. ' + ALL_MCQS[i].getElementsByTagName("Option")[j].childNodes[0].nodeValue + ' <i class="' + icon + ' hidden"></i> </button></li>'
                     }
                     MCQs_content = MCQs_content + option_content
                 }
                 /* 打印選擇題的解釋 */
                 MCQs_explanation = '無解釋'
-                if (ALL_MCQS[i].getElementsByTagName("explanation")[0]){  
-                    MCQs_explanation = ALL_MCQS[i].getElementsByTagName("explanation")[0].childNodes[0].nodeValue
+                if (mcq.getElementsByTagName("explanation")[0]) {
+                    MCQs_explanation = mcq.getElementsByTagName("explanation")[0].childNodes[0].nodeValue
                 }
-                MCQs_content = MCQs_content + '</ul> </div> <div class="right-side col-md col-lg col-xl"> <div class="explanation formatted-text">'+ MCQs_explanation +'</div> </div> </div>'
+                MCQs_content = MCQs_content + '</ul> </div> <div class="right-side col-md col-lg col-xl"> <div class="explanation formatted-text">' + MCQs_explanation + '</div> </div> </div>'
             }
 
             document.getElementById("result").innerHTML = MCQs_content
 
             if (year.includes("HKDSE")) {
-                document.getElementById("notificationtext").innerHTML = '<span id = "notificationtext"> 您可以在Youtube上搜尋 「<a href="https://www.youtube.com/results?search_query=' + year +' ICT MC" target="_blank">' + year + ' MC」</a> 題解。</span><span> 遇上困難時，您可以在POE上找到<a href="https://poe.com/HKDSE_ICT_Solver" target="_blank">「ICT 解題大師」</a></span>'
+                document.getElementById("notificationtext").innerHTML = '<span id = "notificationtext"> 您可以在Youtube上搜尋 「<a href="https://www.youtube.com/results?search_query=' + year + ' ICT MC" target="_blank">' + year + ' MC」</a> 題解。</span><span> 遇上困難時，您可以在POE上找到<a href="https://poe.com/HKDSE_ICT_Solver" target="_blank">「ICT 解題大師」</a></span>'
                 document.getElementById("notification").classList.remove('hidden')
-            }else{
+            } else {
                 document.getElementById("notification").classList.add('hidden')
             }
             refresh()
@@ -419,7 +432,7 @@
 
         function getCookie(name) {
             // Escape special characters in cookie name to prepare it for regex pattern
-            var nameEscaped = name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1'); 
+            var nameEscaped = name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1');
 
             // Use a regular expression to find the cookie in the document.cookie string
             var regex = new RegExp('(?:^|; )' + nameEscaped + '=([^;]*)');
@@ -430,7 +443,9 @@
         }
 
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
