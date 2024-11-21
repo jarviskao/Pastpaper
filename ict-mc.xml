@@ -10910,7 +10910,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" figure="2024-q1.png" topic="bin">1. 8位元二進制補碼的範圍是什麼？ </QText>
+<QText examyear="HKDSE 2024" topic="bin">1. 8位元二進制補碼的範圍是什麼？ </QText>
 <Option>-2⁷ 至 2⁷</Option>
 <Option correct="1">-2⁷ 至 2⁷-1</Option>
 <Option>-2⁷+1 至 2⁷</Option>
@@ -10918,7 +10918,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="doc">2. 某教師傳送給學生的筆記是 PDF 格式， 而不是 DOCX 格式。為什麼？ 
+<QText examyear="HKDSE 2024" topic="doc">2. 某教師傳送給學生的筆記是 PDF 格式，而不是 DOCX 格式。為什麼？ 
 (1) 筆記的版面在不同操作系統閱覽也是相同 
 (2) DOCX 檔案可能帶有病毒 
 (3) 可包含網頁的超連結 </QText>
@@ -10929,10 +10929,10 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" figure="2024-q3.png" topic="jpg">3. 以下哪個/些是圖像檔案格式？ 
-(1) mov 
-(2) png 
-(3) ai </QText>
+<QText examyear="HKDSE 2024" topic="jpg">3. 以下哪個/些是圖像檔案格式？ 
+(1) MOV 
+(2) PNG 
+(3) AI </QText>
 <Option>只有 (1)</Option>
 <Option correct="1">只有 (2)</Option>
 <Option>只有 (1) 和 (3)</Option>
@@ -10940,7 +10940,9 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" figure="2024-q4.png" topic="xls">4. 以下試算表記錄了學校的設備。 A B C D 1 型號 類型 數量 位置 2 打印機 A 打印機 5 101號房 3 掃描器型號 1 掃描器 2 106 號房 4 3D 打印機 X 打印機 1 電腦室 5 打印機 A 打印機 1 401號房 6 PC 型號 Q 電腦 40 電腦室 : 以下哪項可幫助顯示同一類型裝置的總數？ </QText>
+<QText examyear="HKDSE 2024" figure="2024_q_04_0.png" topic="xls">4. 以下試算表記錄了學校的設備。
+#figure
+以下哪項可幫助顯示同一類型裝置的總數？</QText>
 <Option>多工作紙</Option>
 <Option>排序</Option>
 <Option correct="1">樞紐分析表</Option>
@@ -10948,7 +10950,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="data">5. 某文字檔包含英文、繁體中文和簡體中文字符。 應使用以下哪個/些字符集？ 
+<QText examyear="HKDSE 2024" topic="data">5. 某文字檔包含英文、繁體中文和簡體中文字符。應使用以下哪個/些字符集？ 
 (1) UTF-8 
 (2) ASCII 
 (3) GB 碼 </QText>
@@ -10959,7 +10961,8 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" figure="2024-q6.png" topic="net">6. 某網絡卡有一個由6組 2個位的十六進制數字組成的MAC位址，如下列例子所示: 00:0A:95:9D:67:16 此格式可以表示多少個可能的位址？ </QText>
+<QText examyear="HKDSE 2024" figure="2024-q6.png" topic="net">6. 某網絡卡有一個由6組 2個位的十六進制數字組成的MAC位址，如下列例子所示: 00:0A:95:9D:67:16 
+此格式可以表示多少個可能的位址？ </QText>
 <Option>26</Option>
 <Option>212</Option>
 <Option>224</Option>
@@ -11005,7 +11008,11 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" figure="2024-q11.png" topic="xls">11. 參考以下試算表，回答第 11 和 12 題。 A B 1 Choice Point 2 P 3 3 P 3 4 Q 3 5 Q 0 6 P 0 7 Q 0 以下兩條公式的結果是什麼？ =COUNT(B2:B7) =RANK(3, B2:B7) </QText>
+<QText examyear="HKDSE 2024" figure="2024_q_11_0.png" topic="xls">11. 參考以下試算表。
+#figure
+以下兩條公式的結果是什麼？ 
+=COUNT(B2:B7) 
+=RANK(3, B2:B7)</QText>
 <Option>3 1</Option>
 <Option>3 2</Option>
 <Option correct="1">6 1</Option>
@@ -11013,7 +11020,9 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" figure="2024-q11.png" topic="db">12. 參考以下試算表，回答第 11 和 12 題。 A B 1 Choice Point 2 P 3 3 P 3 4 Q 3 5 Q 0 6 P 0 7 Q 0 此試算表轉換成數據庫表 ABC。以下哪些 SQL 語句產生相同的結果？ 
+<QText examyear="HKDSE 2024" figure="2024_q_12_0.png" topic="db">12. 參考以下試算表。 
+#figure
+此試算表轉換成數據庫表 ABC。以下哪些 SQL 語句產生相同的結果？ 
 (1) SELECT COUNT(*) FROM ABC WHERE Choice  'Q' GROUP BY Choice 
 (2) SELECT SUM(Point) FROM ABC WHERE Choice  'Q' 
 (3) SELECT COUNT(*) FROM ABC WHERE Choice = 'P' </QText>
@@ -11138,7 +11147,9 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" figure="2024-q25.png" topic="net">25. 在以下網絡圖內 X 的主要功能是什麼？ </QText>
+<QText examyear="HKDSE 2024" figure="2024_q_25_0.png" topic="net">25. 在以下網絡圖內 X 的主要功能是什麼？ 
+#figure
+</QText>
 <Option>把伺服器連接至多部工作站</Option>
 <Option>控制已連接的裝置的存取權限</Option>
 <Option>把多部電腦連接起來</Option>
@@ -11146,7 +11157,10 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="int">26. 國明建立一個讓朋友瀏覽的網站，以下哪些是他應該關注的事項？ (1) 所採用多媒體元素的檔案大小 (2) 朋友電腦的儲存容量 (3) 網頁方便用戶的程度 </QText>
+<QText examyear="HKDSE 2024" topic="int">26. 國明建立一個讓朋友瀏覽的網站，以下哪些是他應該關注的事項？ 
+(1) 所採用多媒體元素的檔案大小 
+(2) 朋友電腦的儲存容量 
+(3) 網頁方便用戶的程度 </QText>
 <Option>只有 (1) 和 (2)</Option>
 <Option correct="1">只有 (1) 和 (3)</Option>
 <Option>只有 (2) 和 (3)</Option>
@@ -11154,7 +11168,11 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="pgm">27. 在以下算法，S的最終值大於 15。 N 的最小可能輸入值是什麼？ 輸入 N S ← 0 設 i 由 3 至 N 執行 S ← S + i </QText>
+<QText examyear="HKDSE 2024" topic="pgm">27. 在以下算法，S的最終值大於 15。 N 的最小可能輸入值是什麼？ 
+輸入 N 
+S ← 0 
+設 i 由 3 至 N 執行 
+    S ← S + i </QText>
 <Option>5</Option>
 <Option correct="1">6</Option>
 <Option>7</Option>
@@ -11162,7 +11180,21 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="pgm">28. 以下算法的輸出是什麼？ P ← 9 Q ← 7 R ← 4 如果 P > Q+R 則 如果 Q > 2*R則 x ← 10 否則 x ← 20 否則 如果 Q > 2*R 則 x ← 30 否則 x ← 40 輸出 x </QText>
+<QText examyear="HKDSE 2024" topic="pgm">28. 以下算法的輸出是什麼？ 
+P ← 9 
+Q ← 7 
+R ← 4 
+如果 P &gt; Q+R 則 
+    如果 Q &gt; 2*R 則 
+        x ← 10 
+    否則 
+        x ← 20 
+否則 
+    如果 Q &gt; 2*R 則 
+        x ← 30 
+    否則 
+        x ← 40 
+輸出 x </QText>
 <Option>10</Option>
 <Option>20</Option>
 <Option>30</Option>
@@ -11170,7 +11202,12 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="pgm">29. 以下算法的輸出是什麼？ M ← 1 重複 M ← M + 1 直至 NOT (M  3) 輸出 M </QText>
+<QText examyear="HKDSE 2024" topic="pgm">29. 以下算法的輸出是什麼？ 
+M ← 1 
+重複 
+    M ← M + 1 
+直至 NOT (M &lt;&gt; 3) 
+輸出 M </QText>
 <Option>2</Option>
 <Option correct="1">3</Option>
 <Option>4</Option>
@@ -11178,7 +11215,14 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="pgm">30. 以下算法的輸出是什麼？ S = 0 N = 1 重複 S = S + N N = N + 2 直至 N > 6 輸出 S </QText>
+<QText examyear="HKDSE 2024" topic="pgm">30. 以下算法的輸出是什麼？ 
+S = 0 
+N = 1 
+重複 
+    S = S + N 
+    N = N + 2 
+直至 N &gt; 6 
+輸出 S </QText>
 <Option>3</Option>
 <Option>4</Option>
 <Option correct="1">9</Option>
@@ -11186,7 +11230,20 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="pgm">31. 參考下列從陣列 A 中搜尋一個數值的算法，回答第31和32題。 i ← 1 FLAG = FALSE 輸入 N 當(i = 10) __遺漏部分__ FLAG 執行 如果 A[i] = N 則 FLAG = TRUE 否則 i ← i+1 如果 FLAG 則 輸出 i 否則 輸出 '沒有出現' 上列遺漏部分是什麼？ </QText>
+<QText examyear="HKDSE 2024" topic="pgm">31. 參考下列從陣列 A 中搜尋一個數值的算法，回答第31和32題。 
+i ← 1 
+FLAG = FALSE 
+輸入 N 
+當(i = 10) __遺漏部分__ FLAG 執行 
+    如果 A[i] = N 則 
+        FLAG = TRUE 
+    否則 
+        i ← i+1 
+如果 FLAG 則 
+    輸出 i 
+否則 
+    輸出 '沒有出現' 
+上列遺漏部分是什麼？ </QText>
 <Option>OR</Option>
 <Option>AND</Option>
 <Option>OR NOT</Option>
@@ -11194,7 +11251,20 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="pgm">32. 參考下列從陣列 A 中搜尋一個數值的算法，回答第31和32題。 i ← 1 FLAG = FALSE 輸入 N 當(i = 10) __遺漏部分__ FLAG 執行 如果 A[i] = N 則 FLAG = TRUE 否則 i ← i+1 如果 FLAG 則 輸出 i 否則 輸出 '沒有出現' 使用變量 FLAG 的目的是什麼？ </QText>
+<QText examyear="HKDSE 2024" topic="pgm">32. 參考下列從陣列 A 中搜尋一個數值的算法，回答第31和32題。 
+i ← 1 
+FLAG = FALSE 
+輸入 N 
+當(i = 10) __遺漏部分__ FLAG 執行 
+    如果 A[i] = N 則 
+        FLAG = TRUE 
+    否則 
+        i ← i+1 
+如果 FLAG 則 
+    輸出 i 
+否則 
+    輸出 '沒有出現' 
+使用變量 FLAG 的目的是什麼？ </QText>
 <Option>儲存找到的數值的位置</Option>
 <Option>儲存配對次數</Option>
 <Option>作為一個索引</Option>
@@ -11221,7 +11291,9 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" figure="2024-q35.png" topic="int">35. 下列在登入網上商店的畫面中所展示的任務有什麼目的？ 拖放滑標杆以完成拼圖 
+<QText examyear="HKDSE 2024" figure="2024_q_35_0.png" topic="int">35. 下列在登入網上商店的畫面中所展示的任務有什麼目的？ 
+拖放滑標杆以完成拼圖 
+#figure
 (1) 檢驗登入資料是正確無誤 
 (2) 核實登入是由真人執行 
 (3) 確保登入裝置裝配了觸式屏幕 </QText>
@@ -11265,7 +11337,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" figure="2024-q39.png" topic="ergo">39. 使用以下電腦需要作出什麼符合人體工學的改良？ </QText>
+<QText examyear="HKDSE 2024" figure="2024-q39.png" topic="ergo">39. 使用以下電腦需要作出什麼符合人體工學的改良？</QText>
 <Option>安裝軌跡球</Option>
 <Option>安裝觸式屏幕</Option>
 <Option>用較細小的桌子</Option>
