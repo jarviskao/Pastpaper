@@ -1890,7 +1890,7 @@ P，Q，R和S分別是
 <Question>
 <QText examyear="HKCEE 2007" figure="2007-q13.png">13.下列哪項裝置
 「不」應在以下網絡中的x上安裝？
-x -- 交換器 -- x </QText>
+x -- 交換器 -- x</QText>
 <Option>打印機</Option>
 <Option>伺服器</Option>
 <Option correct="1">鍵盤</Option>
@@ -3595,7 +3595,7 @@ I ← I+1</QText>
 <QText examyear="HKCEE 2011">1.某電腦使用者輸入月份時，
 錯誤地將12鍵入成7。
 應實施以下哪項工作，才能偵察出此錯誤？
-出生日期： 23 / 7 / 1988 </QText>
+出生日期： 23 / 7 / 1988</QText>
 <Option>範圍檢查</Option>
 <Option>奇數校驗</Option>
 <Option>偶數校驗</Option>
@@ -4214,7 +4214,7 @@ TV 3 8
 <Question>
 <QText examyear="HKDSE 2011">15.某項設備安裝在車上，
 透過攝錄機攝錄交通情況。
-此項設備應採用哪種檔案格式及儲存媒體？ </QText> 檔案格式：儲存媒體 <Option>AVI 複寫式DVD 光碟</Option>
+此項設備應採用哪種檔案格式及儲存媒體？</QText> 檔案格式：儲存媒體 <Option>AVI 複寫式DVD 光碟</Option>
 <Option>AVI 快閃記憶卡</Option>
 <Option>WMA
 複寫式DVD 光碟</Option>
@@ -4969,7 +4969,7 @@ ABC商店經價格抬得很高，我非常忿怒!
 <QText examyear="HKDSE 2013" figure="2013-q1.png">1.某數據庫設計員
 在「數據庫管理系統」DBMS內
 設計了一張表格form，給文員輸入數據。
-為什麼他選擇設計此表格？ </QText>
+為什麼他選擇設計此表格？</QText>
 <Option>可匯入多媒體檔案。</Option>
 <Option correct="1">簡化使用者介面。</Option>
 <Option>一次可輸入更多數據。</Option>
@@ -6397,8 +6397,7 @@ A ← A+A
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016" figure="2016-q1.png">1. 在試算表儲存格內，輸入某體育學會的5位數字會員號碼
-00001， 00002， ...， 99999，須使用下列哪個儲存格格式？</QText>
+<QText examyear="HKDSE 2016">1. 在試算表儲存格內，輸入某體育學會的5位數字會員號碼 00001， 00002， ...， 99999，須使用下列哪個儲存格格式？</QText>
 <Option>通用格式</Option>
 <Option>數值格式</Option>
 <Option correct="1">文字格式</Option>
@@ -6406,9 +6405,7 @@ A ← A+A
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">2. 某裝置分別使用8個位元和16個位元，
-來儲存一個字符和一個整數。
-需要多少個字節來儲存字串「HKDSE5」？</QText>
+<QText examyear="HKDSE 2016">2. 某裝置分別使用8個位元和16個位元，來儲存一個字符和一個整數。需要多少個字節來儲存字串「HKDSE5」？</QText>
 <Option correct="1"> 6 個字節</Option>
 <Option> 7 個字節</Option>
 <Option>48 個字節</Option>
@@ -6420,8 +6417,7 @@ A ← A+A
 SELECT * FROM MEMBER
 SELECT * FROM MEMBER WHERE age ＜= 40
 SELECT * FROM MEMBER WHERE age ＞= 20
-這三句SQL 指令得出的結果都是一樣的。
-下列哪項/些是可能的成因？
+這三句SQL 指令得出的結果都是一樣的。下列哪項／些是可能的成因？
 (1) MEMBER 是空的。
 (2) MEMBER 內欄位age 的值介乎20至40，包括首尾兩數
 (3) MEMBER 內只有age 這個欄位。</QText>
@@ -6432,10 +6428,7 @@ SELECT * FROM MEMBER WHERE age ＞= 20
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">4. 莉莉採用文書處理器，為某超市製作每日銷售報告，
-當中使用了 儲存在多個試算表檔案的數據和圖表。
-那些數據和圖表會經常更新。
-下列哪項是最能幫助她？</QText>
+<QText examyear="HKDSE 2016">4. 莉莉採用文書處理器，為某超市製作每日銷售報告，當中使用了 儲存在多個試算表檔案的數據和圖表。那些數據和圖表會經常更新。下列哪項是最能幫助她？</QText>
 <Option>郵件合併</Option>
 <Option>「假設」情境</Option>
 <Option correct="1">物件連接與嵌入 OLE</Option>
@@ -6443,10 +6436,7 @@ SELECT * FROM MEMBER WHERE age ＞= 20
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">5. 某代碼包含了6個數字，最右邊的數字是檢查數位。
-代碼所採用的檢查數位方法是
-全部6個數字的總和能被10整除。
-下列哪個代碼是有效的？</QText>
+<QText examyear="HKDSE 2016">5. 某代碼包含了6個數字，最右邊的數字是檢查數位。代碼所採用的檢查數位方法是全部6個數字的總和能被10整除。下列哪個代碼是有效的？</QText>
 <Option>246822</Option>
 <Option>246824</Option>
 <Option>246826</Option>
@@ -6454,10 +6444,7 @@ SELECT * FROM MEMBER WHERE age ＞= 20
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">6. 莉莉建立了一個壓縮檔，
-當中包含儲存於多個資料夾中的圖像檔案。
-她上載該壓縮檔至互聯網與朋友分享。
-使用壓縮檔有什麼好處？
+<QText examyear="HKDSE 2016">6. 莉莉建立了一個壓縮檔，當中包含儲存於多個資料夾中的圖像檔案。她上載該壓縮檔至互聯網與朋友分享。使用壓縮檔有什麼好處？
 (1) 維持資料夾結構
 (2) 莉莉的朋友在下載此壓縮檔前，可以預覽圖像
 (3) 此壓縮檔可以使用密碼保護</QText>
@@ -6469,9 +6456,9 @@ SELECT * FROM MEMBER WHERE age ＞= 20
 
 <Question>
 <QText examyear="HKDSE 2016" figure="2016-q7.png">7. 參考以下P、Q和R的值。
-P = 10001000 2
-Q = 10001000 10
-R = 10001000 16
+P = 10001000(2進制)
+Q = 10001000(10進制)
+R = 10001000(16進制)
 下列哪項是正確的？</QText>
 <Option>P ＞ Q ＞ R</Option>
 <Option>P ＞ R ＞ Q</Option>
@@ -6539,20 +6526,17 @@ R = 10001000 16
 流程 從業員
 數據 資訊系統 硬件
 網絡 軟件
-下列哪項配對是不正確的？
-部件 例子</QText>
-<Option>從業員 資訊總監(CIO)</Option>
-<Option>軟件 操作系統</Option>
-<Option correct="1">數據 FTP</Option>
-<Option>網絡 WAN</Option>
+下列哪項配對是不正確的？</QText>
+<Option>部件：從業員； 例子：資訊總監(CIO)</Option>
+<Option>部件：軟件； 例子：操作系統</Option>
+<Option correct="1">部件：數據； 例子：FTP</Option>
+<Option>部件：網絡； 例子：WAN</Option>
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">根據以下段落回答問題14及15。
-莉莉使用演示軟件，建立了一個附有旁白、而可自動執行
-的投影片放映，她將此投影片放映，上載到她的網站供公眾人士觀看。
-
-14. 下列哪項是莉莉在建立投影片放映時必須做的？</QText>
+<QText examyear="HKDSE 2016">根據以下段落回答問題。
+14. 莉莉使用演示軟件，建立了一個附有旁白、而可自動執行的投影片放映，她將此投影片放映，上載到她的網站供公眾人士觀看。
+下列哪項是莉莉在建立投影片放映時必須做的？</QText>
 <Option correct="1">設定每張投影片的放映時間</Option>
 <Option>在投影片內 建立超連結</Option>
 <Option>在投影片內 建立動畫效果</Option>
@@ -6561,10 +6545,8 @@ R = 10001000 16
 
 <Question>
 <QText examyear="HKDSE 2016">根據以下段落回答問題14及15。
-莉莉使用演示軟件，建立了一個附有旁白、而可自動執行
-的投影片放映，她將此投影片放映，上載到她的網站供公眾人士觀看。
-
-15. 當莉莉選擇投影片放映的檔案格式時，下列哪項是重要的？</QText>
+15. 莉莉使用演示軟件，建立了一個附有旁白、而可自動執行的投影片放映，她將此投影片放映，上載到她的網站供公眾人士觀看。
+當莉莉選擇投影片放映的檔案格式時，下列哪項是重要的？</QText>
 <Option>支援加密</Option>
 <Option correct="1">跨平台</Option>
 <Option>物件連接與嵌入(OLE)</Option>
@@ -6572,7 +6554,7 @@ R = 10001000 16
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">16. 下列哪項/些是 使用統一碼勝於大五碼的優點？
+<QText examyear="HKDSE 2016">16. 下列哪項/些是使用統一碼勝於大五碼的優點？
 (1) 統一碼是跨平台的
 (2) 統一碼有較大的字符集
 (3) 在統一碼內可定義新的字符</QText>
@@ -6583,10 +6565,7 @@ R = 10001000 16
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">17. 某訂票系統包含了多個訂票櫃位，
-分布在市內不同地方。
-顧客可在其中一個訂票櫃位 購買劇院門票。
-下列哪項最能描述此訂票系統？</QText>
+<QText examyear="HKDSE 2016">17. 某訂票系統包含了多個訂票櫃位，分布在市內不同地方。顧客可在其中一個訂票櫃位 購買劇院門票。下列哪項最能描述此訂票系統？</QText>
 <Option correct="1">實時系統</Option>
 <Option>成批工件處理系統</Option>
 <Option>分布式處理系統</Option>
@@ -6594,9 +6573,7 @@ R = 10001000 16
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">18. 志明發覺在編輯視像檔時，
-其家中電腦的表現，比其辦公室的電腦為佳。
-下列哪項/些是可能的成因？
+<QText examyear="HKDSE 2016">18. 志明發覺在編輯視像檔時，其家中電腦的表現，比其辦公室的電腦為佳。下列哪項/些是可能的成因？
 (1) 硬碟讀/寫存取速度
 (2) ROM 的儲存容量
 (3) CPU 的時鐘比率</QText>
@@ -6607,7 +6584,7 @@ R = 10001000 16
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">19. 下列哪些是 操作系統通常設有的功能？
+<QText examyear="HKDSE 2016">19. 下列哪些是操作系統通常設有的功能？
 (1) 控制程序
 (2) 分配記憶體
 (3) 記錄網絡流量</QText>
@@ -6626,8 +6603,7 @@ R = 10001000 16
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">21. 志明把伺服器升級，以固態硬碟(SSD)取締硬碟。
-下列哪項/些SSD 特性 對此項升級有好處？
+<QText examyear="HKDSE 2016">21. 志明把伺服器升級，以固態硬碟(SSD)取締硬碟。下列哪項/些SSD 特性 對此項升級有好處？
 (1) 數據傳輸速率較高
 (2) 耗電量較低
 (3) 儲存容量較小</QText>
@@ -6638,9 +6614,7 @@ R = 10001000 16
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">22. 當啟動某個人電腦時，它從ROM 載入數據，
-並檢查所有主要部件是否正常運作。
-在這過程中，ROM不能被RAM替代，這是因為</QText>
+<QText examyear="HKDSE 2016">22. 當啟動某個人電腦時，它從ROM 載入數據，並檢查所有主要部件是否正常運作。在這過程中，ROM不能被RAM替代，這是因為</QText>
 <Option>RAM 的儲存容量較少。</Option>
 <Option correct="1">RAM 是易失性的。</Option>
 <Option>RAM 的數據傳輸速率較低。</Option>
@@ -6648,10 +6622,7 @@ R = 10001000 16
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">23. 物聯網(IoT) 是指由設備組成的網絡，
-這些設備可收集及交換數據，
-而這些網絡通常連接至互聯網。
-這些設備應通常設有下列哪項？</QText>
+<QText examyear="HKDSE 2016">23. 物聯網(IoT) 是指由設備組成的網絡，這些設備可收集及交換數據，而這些網絡通常連接至互聯網。這些設備應通常設有下列哪項？</QText>
 <Option correct="1">IP 位址</Option>
 <Option>運算能力高的CPU</Option>
 <Option>DNS</Option>
@@ -6659,9 +6630,7 @@ R = 10001000 16
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">24. 志明在家中觀看 使用串流傳輸的網上廣播視像，
-他覺得該視像播放不流暢。
-下列哪些是可能的成因？
+<QText examyear="HKDSE 2016">24. 志明在家中觀看 使用串流傳輸的網上廣播視像，他覺得該視像播放不流暢。下列哪些是可能的成因？
 (1) 視像的播放長度
 (2) 接達互聯網的方法
 (3) 互聯網連接的頻寬</QText>
@@ -6672,10 +6641,7 @@ R = 10001000 16
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">25. 香港特別行政區政府設立GovWiFi，
-提供免費無線上網，
-市民可以選擇使用非加密連接，或加密連接。
-下列哪句是正確的？</QText>
+<QText examyear="HKDSE 2016">25. 香港特別行政區政府設立GovWiFi，提供免費無線上網，市民可以選擇使用非加密連接，或加密連接。下列哪句是正確的？</QText>
 <Option correct="1">市民只可在特定的地點上網。</Option>
 <Option>市民不能透過非加密連接，來接達網上銀行網站。</Option>
 <Option>市民的裝置可透過加密連接，來阻隔電腦病毒。</Option>
@@ -6683,9 +6649,7 @@ R = 10001000 16
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">26. 李先生在公司內建構網絡時，考慮一些通訊連結，
-並比較其有效的數據傳輸速率。
-下列哪項比較是正確的？</QText>
+<QText examyear="HKDSE 2016">26. 李先生在公司內建構網絡時，考慮一些通訊連結，並比較其有效的數據傳輸速率。下列哪項比較是正確的？</QText>
 <Option>Cat6(雙扭線) ＜ 衛星 ＜ 光纖</Option>
 <Option correct="1">衛星 ＜ Cat6(雙扭線) ＜ 光纖</Option>
 <Option>Cat6(雙扭線) ＜ 光纖 ＜ 衛星 </Option>
@@ -6693,9 +6657,7 @@ R = 10001000 16
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">27. 志明打算上載學校網站的背景音樂，
-但其網站的儲存空間有限。
-下列哪項是合適的檔案格式？</QText>
+<QText examyear="HKDSE 2016">27. 志明打算上載學校網站的背景音樂，但其網站的儲存空間有限。下列哪項是合適的檔案格式？</QText>
 <Option>WAV</Option>
 <Option>AVI</Option>
 <Option>MPEG2</Option>
@@ -6703,8 +6665,7 @@ R = 10001000 16
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">28. 在網頁中加插表格時，
-下列哪項不是表格設定？</QText>
+<QText examyear="HKDSE 2016">28. 在網頁中加插表格時，下列哪項不是表格設定？</QText>
 <Option>儲存格的數量</Option>
 <Option correct="1">儲存格內的公式</Option>
 <Option>儲存格的色彩</Option>
@@ -6774,8 +6735,7 @@ N3
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">34. 某銀行設有保安室，只有很少員工能夠進入。
-下列哪項保安措施，是最安全的接達控制 (Access Control)？</QText>
+<QText examyear="HKDSE 2016">34. 某銀行設有保安室，只有很少員工能夠進入。下列哪項保安措施，是最安全的接達控制 (Access Control)？</QText>
 <Option>密碼</Option>
 <Option>智能卡</Option>
 <Option correct="1">指紋</Option>
@@ -6783,14 +6743,16 @@ N3
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016" figure="2016-q35.png">嘉碧收到一封匿名電郵，關於更改她的網上銀行戶口的密碼，
+<QText examyear="HKDSE 2016" figure="2016-q35.png">35. 嘉碧收到一封匿名電郵，關於更改她的網上銀行戶口的密碼，
 如下所示。她點擊電郵中的超連結，某個惡意網站便顯示。
 九龍銀行
 你的密碼已逾期。請點擊以下連結更新你的密碼。
 https://KLNbanks.ru
 
-35. 這事件主要涉及下列哪項/些保安議題？
-(1) 竊聽 (2) 入侵 (3) 仿冒詐騙</QText>
+這事件主要涉及下列哪項/些保安議題？
+(1) 竊聽 
+(2) 入侵 
+(3) 仿冒詐騙</QText>
 <Option>只有(1)</Option>
 <Option>心只有(2)</Option>
 <Option>只有(1)和(3)</Option>
@@ -6798,13 +6760,11 @@ https://KLNbanks.ru
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016" figure="2016-q35.png">嘉碧收到一封匿名電郵，關於更改她的網上銀行戶口的密碼，
-如下所示。她點擊電郵中的超連結，某個惡意網站便顯示。
+<QText examyear="HKDSE 2016" figure="2016-q35.png">36. 嘉碧收到一封匿名電郵，關於更改她的網上銀行戶口的密碼，如下所示。她點擊電郵中的超連結，某個惡意網站便顯示。
 九龍銀行
 你的密碼已逾期。請點擊以下連結更新你的密碼。
 https://KLNbanks.ru
-
-36. 下列哪些做法能幫助嘉碧，確保瀏覽一個可信的網站？</QText>
+下列哪些做法能幫助嘉碧，確保瀏覽一個可信的網站？</QText>
 <Option>確保網域名稱不包含「ru」</Option>
 <Option correct="1">核對網站的數碼證書</Option>
 <Option>造訪來自朋友 而非匿名 的電郵中的超連結</Option>
@@ -6812,11 +6772,7 @@ https://KLNbanks.ru
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">37. 以下政策的目的是什麼？
-「政府幫助有需要的家庭，
-添置電腦及上網服務，
-並提供個人支援及培訓，
-令兒童及家長能涉獵網上世界的潛能。」</QText>
+<QText examyear="HKDSE 2016">37. 以下政策的目的是什麼？「政府幫助有需要的家庭，添置電腦及上網服務，並提供個人支援及培訓，令兒童及家長能涉獵網上世界的潛能。」</QText>
 <Option>推廣互聯網的資訊自由</Option>
 <Option>支援電子化政府服務</Option>
 <Option>推廣工作性質的改變</Option>
@@ -6824,8 +6780,7 @@ https://KLNbanks.ru
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">38. 志明是一名學生，他做了以下事情。
-哪些是不合法的？
+<QText examyear="HKDSE 2016">38. 志明是一名學生，他做了以下事情。哪些是不合法的？
 (1) 使用BT程式 分享他的家課。
 (2) 使用BT程式 下載有版權的歌曲自用。
 (3) 購買有版權的軟件，並只製作副本給最好的朋友。</QText>
@@ -6836,11 +6791,7 @@ https://KLNbanks.ru
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016">39. 莉莉從互聯網下載了三類程式 P、Q、R。
-她能試用 P 一段時間、
-改寫 Q 的源碼
-和只可使用 R 的部分功能。
-哪類程式是共享軟件？</QText>
+<QText examyear="HKDSE 2016">39. 莉莉從互聯網下載了三類程式 P、Q、R。她能試用 P 一段時間、改寫 Q 的源碼和只可使用 R 的部分功能。哪類程式是共享軟件？</QText>
 <Option>只有P</Option>
 <Option>只有Q</Option>
 <Option correct="1">只有P和R</Option>
@@ -6848,9 +6799,7 @@ https://KLNbanks.ru
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2016" figure="2016-q40.png">40. 佩儀購買了話音識別字典 流動應用程式，
-來查閱文字的含義。當她在流動裝置安裝此程式時，
-它顯示了以下要求。
+<QText examyear="HKDSE 2016" figure="2016-q40.png">40. 佩儀購買了話音識別字典流動應用程式，來查閱文字的含義。當她在流動裝置安裝此程式時，它顯示了以下要求。
 設定
 允許此應用程式 接連你的流動裝置：
 麥高風 是 否
@@ -10004,7 +9953,7 @@ ROM（Read-Only Memory）是固定不變的記憶體，用於儲存系統啟動�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022" figure="2022_q_21_0.png">21. 在一般情況下， P 、 Q 和 R 會是什麼？
+<QText examyear="HKDSE 2022" figure="2022_q_21_0.png">21. 在一般情況下，P 、 Q 和 R 會是什麼？
 #figure
 </QText>
 <Option>P：操作系統，Q：硬件，R：應用軟件</Option>
@@ -10118,7 +10067,7 @@ D. 此網絡是 LAN 而不是 WAN：IP協定既適用於局域網(LAN)也適用�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2022" figure="2022_q_28_0.png">28. 在以下兩個算法中， X 和 Y 的最終值是相同的：
+<QText examyear="HKDSE 2022" figure="2022_q_28_0.png">28. 在以下兩個算法中，X 和 Y 的最終值是相同的：
 #figure
 算法 2 中欠缺部分是什麼？
 </QText>
@@ -10910,7 +10859,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="bin">1. 8位元二進制補碼的範圍是什麼？ </QText>
+<QText examyear="HKDSE 2024" topic="bin">1. 8位元二進制補碼的範圍是什麼？</QText>
 <Option>-2⁷ 至 2⁷</Option>
 <Option correct="1">-2⁷ 至 2⁷-1</Option>
 <Option>-2⁷+1 至 2⁷</Option>
@@ -10921,7 +10870,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 <QText examyear="HKDSE 2024" topic="doc">2. 某教師傳送給學生的筆記是 PDF 格式，而不是 DOCX 格式。為什麼？ 
 (1) 筆記的版面在不同操作系統閱覽也是相同 
 (2) DOCX 檔案可能帶有病毒 
-(3) 可包含網頁的超連結 </QText>
+(3) 可包含網頁的超連結</QText>
 <Option correct="1">只有 (1)</Option>
 <Option>只有 (2)</Option>
 <Option>只有 (1) 和 (3)</Option>
@@ -10932,7 +10881,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 <QText examyear="HKDSE 2024" topic="jpg">3. 以下哪個/些是圖像檔案格式？ 
 (1) MOV 
 (2) PNG 
-(3) AI </QText>
+(3) AI</QText>
 <Option>只有 (1)</Option>
 <Option correct="1">只有 (2)</Option>
 <Option>只有 (1) 和 (3)</Option>
@@ -10953,7 +10902,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 <QText examyear="HKDSE 2024" topic="data">5. 某文字檔包含英文、繁體中文和簡體中文字符。應使用以下哪個/些字符集？ 
 (1) UTF-8 
 (2) ASCII 
-(3) GB 碼 </QText>
+(3) GB 碼</QText>
 <Option correct="1">只有 (1)</Option>
 <Option>只有 (2)</Option>
 <Option>只有 (1) 和 (3)</Option>
@@ -10962,7 +10911,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 
 <Question>
 <QText examyear="HKDSE 2024" figure="2024-q6.png" topic="net">6. 某網絡卡有一個由6組 2個位的十六進制數字組成的MAC位址，如下列例子所示: 00:0A:95:9D:67:16 
-此格式可以表示多少個可能的位址？ </QText>
+此格式可以表示多少個可能的位址？</QText>
 <Option>26</Option>
 <Option>212</Option>
 <Option>224</Option>
@@ -10970,7 +10919,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="db">7. 以下哪句是正確的？ </QText>
+<QText examyear="HKDSE 2024" topic="db">7. 以下哪句是正確的？</QText>
 <Option>物件連接是用來調整數據庫報告的版面。</Option>
 <Option correct="1">數據庫內的查詢是用來提取數據庫中的資訊。</Option>
 <Option>數據庫內的報告是用來幫助用戶儲存數據。</Option>
@@ -10978,7 +10927,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="db">8. 使用表格把數據輸入至數據庫的優點是什麼？ </QText>
+<QText examyear="HKDSE 2024" topic="db">8. 使用表格把數據輸入至數據庫的優點是什麼？</QText>
 <Option>數據的儲存量較小</Option>
 <Option>數據篩選較快</Option>
 <Option correct="1">方便數據輸入</Option>
@@ -10989,7 +10938,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 <QText examyear="HKDSE 2024" topic="ppt">9. 使用網上演示工具來製作演示的優點是什麼？ 
 (1) 演示的檔案大小比演示軟件製作的為小 
 (2) 用戶可同時互相協作以製作同一個演示 
-(3) 可以有最新的功能用來製作演示 </QText>
+(3) 可以有最新的功能用來製作演示</QText>
 <Option>只有 (1) 和 (2)</Option>
 <Option>只有 (1) 和 (3)</Option>
 <Option correct="1">只有 (2) 和 (3)</Option>
@@ -11000,7 +10949,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 <QText examyear="HKDSE 2024" topic="doc">10. 志明考慮在文書處理中使用「目錄」功能。為什麼？ 
 (1) 它會自動產生標題的超連結 
 (2) 它提高文件的可讀性 
-(3) 它會協助更新頁碼 </QText>
+(3) 它會協助更新頁碼</QText>
 <Option>只有 (1) 和 (2)</Option>
 <Option correct="1">只有 (1) 和 (3)</Option>
 <Option>只有 (2) 和 (3)</Option>
@@ -11025,7 +10974,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 此試算表轉換成數據庫表 ABC。以下哪些 SQL 語句產生相同的結果？ 
 (1) SELECT COUNT(*) FROM ABC WHERE Choice  'Q' GROUP BY Choice 
 (2) SELECT SUM(Point) FROM ABC WHERE Choice  'Q' 
-(3) SELECT COUNT(*) FROM ABC WHERE Choice = 'P' </QText>
+(3) SELECT COUNT(*) FROM ABC WHERE Choice = 'P'</QText>
 <Option>只有 (1) 和 (2)</Option>
 <Option correct="1">只有 (1) 和 (3)</Option>
 <Option>只有 (2) 和 (3)</Option>
@@ -11036,7 +10985,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 <QText examyear="HKDSE 2024" topic="db">13. 以下哪個/些體育學會的會員資料可定義為布爾數據類型？ 
 (1) VIP 會員 
 (2) 銀行帳戶號碼 
-(3) 教育水平 </QText>
+(3) 教育水平</QText>
 <Option correct="1">只有 (1)</Option>
 <Option>只有 (2)</Option>
 <Option>只有 (1) 和 (3)</Option>
@@ -11044,7 +10993,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="bin">14. 下列哪項以二進制補碼表示的8位元數字的加法運算， 會引致上溢錯誤？ </QText>
+<QText examyear="HKDSE 2024" topic="bin">14. 下列哪項以二進制補碼表示的8位元數字的加法運算，會引致上溢錯誤？</QText>
 <Option correct="1">1001 1100 + 1100 1110 </Option>
 <Option>1001 1100 + 1111 1011 </Option>
 <Option>0010 0110 + 1111 0110</Option>
@@ -11052,7 +11001,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="io">15. 以下哪項不是常用於連接家用鐳射打印機的方法？ </QText>
+<QText examyear="HKDSE 2024" topic="io">15. 以下哪項不是常用於連接家用鐳射打印機的方法？</QText>
 <Option>藍牙</Option>
 <Option>USB 電纜</Option>
 <Option>WiFi</Option>
@@ -11063,7 +11012,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 <QText examyear="HKDSE 2024" topic="sys">16. 小芬在桌上電腦進行文書處理時出現了電源故障。 部分工作中的數據能夠復原，為什麼？ 
 (1) 這些工作中的數據儲存在硬碟內 
 (2) 這些工作中的數據儲存在 RAM 內 
-(3) 這些工作中的數據儲存在 ROM 內 </QText>
+(3) 這些工作中的數據儲存在 ROM 內</QText>
 <Option correct="1">只有 (1)</Option>
 <Option>只有 (2)</Option>
 <Option>只有 (1) 和 (3)</Option>
@@ -11071,7 +11020,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="sys">17. 驅動程式 P 和 Q 分別會應用於視像會議和列印上。 以下哪項描述是合理的？ </QText>
+<QText examyear="HKDSE 2024" topic="sys">17. 驅動程式 P 和 Q 分別會應用於視像會議和列印上。 以下哪項描述是合理的？</QText>
 <Option correct="1">P 容許操作系統和視像鏡頭互動</Option>
 <Option>Q 可以在不同操作系統中執行</Option>
 <Option>P 控制同時使用用戶的數量</Option>
@@ -11079,7 +11028,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="sec">18. 芝芝發現她的電腦感染了勒索軟件，她應該立刻如何處理？ </QText>
+<QText examyear="HKDSE 2024" topic="sec">18. 芝芝發現她的電腦感染了勒索軟件，她應該立刻如何處理？</QText>
 <Option>執行抗病毒程式去掃描及清除病毒</Option>
 <Option>安裝防火牆去封鎖未經授權存取</Option>
 <Option correct="1">移除網絡連接，並關閉電腦</Option>
@@ -11087,7 +11036,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="sys">19. 用作啟動電腦的啟動程式通常儲存在哪個地方？ </QText>
+<QText examyear="HKDSE 2024" topic="sys">19. 用作啟動電腦的啟動程式通常儲存在哪個地方？</QText>
 <Option>CPU</Option>
 <Option>RAM</Option>
 <Option correct="1">ROM</Option>
@@ -11095,7 +11044,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="mem">20. 以下哪項關於快取記憶體的句子是正確的？ </QText>
+<QText examyear="HKDSE 2024" topic="mem">20. 以下哪項關於快取記憶體的句子是正確的？</QText>
 <Option>它是 ROM 的一種</Option>
 <Option>它只能在 CPU內找到</Option>
 <Option correct="1">它儲存經常使用的數據和指令</Option>
@@ -11106,7 +11055,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 <QText examyear="HKDSE 2024" topic="os">21. 以下哪些是操作系統的功能？ 
 (1) 與其他裝置互動和便利輸入/輸出的操作 
 (2) 播放視像檔 
-(3) 便利電腦連接網絡 </QText>
+(3) 便利電腦連接網絡</QText>
 <Option>只有 (1) 和 (2)</Option>
 <Option correct="1">只有 (1) 和 (3)</Option>
 <Option>只有 (2) 和 (3)</Option>
@@ -11117,7 +11066,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 <QText examyear="HKDSE 2024" topic="cpu">22. 以下哪些會暫存數據或指令？ 
 (1) 累加器 
 (2) 指令寄存器 
-(3) 記憶體位址寄存器 </QText>
+(3) 記憶體位址寄存器</QText>
 <Option correct="1">只有 (1) 和 (2)</Option>
 <Option>只有 (1) 和 (3)</Option>
 <Option>只有 (2) 和 (3)</Option>
@@ -11125,10 +11074,10 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="url">23. 吳小姐為學校註冊了域名 abc.edu.hk， 她可以使用以下哪個/些 URL？ 
+<QText examyear="HKDSE 2024" topic="url">23. 吳小姐為學校註冊了域名 abc.edu.hk，她可以使用以下哪個/些 URL？ 
 (1) http://abc.hk 
 (2) http://hk.abc.edu.hk 
-(3) http://hk.abc.edu </QText>
+(3) http://hk.abc.edu</QText>
 <Option>只有 (1)</Option>
 <Option correct="1">只有 (2)</Option>
 <Option>只有 (1) 和 (3)</Option>
@@ -11139,7 +11088,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 <QText examyear="HKDSE 2024" topic="net">24. 音頻串流服務中通常涉及以下哪個/些協定？ 
 (1) FTP 
 (2) DNS 
-(3) IP </QText>
+(3) IP</QText>
 <Option>只有 (1)</Option>
 <Option>只有 (2)</Option>
 <Option>只有 (1) 和 (3)</Option>
@@ -11160,7 +11109,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 <QText examyear="HKDSE 2024" topic="int">26. 國明建立一個讓朋友瀏覽的網站，以下哪些是他應該關注的事項？ 
 (1) 所採用多媒體元素的檔案大小 
 (2) 朋友電腦的儲存容量 
-(3) 網頁方便用戶的程度 </QText>
+(3) 網頁方便用戶的程度</QText>
 <Option>只有 (1) 和 (2)</Option>
 <Option correct="1">只有 (1) 和 (3)</Option>
 <Option>只有 (2) 和 (3)</Option>
@@ -11172,7 +11121,7 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 輸入 N 
 S ← 0 
 設 i 由 3 至 N 執行 
-    S ← S + i </QText>
+    S ← S + i</QText>
 <Option>5</Option>
 <Option correct="1">6</Option>
 <Option>7</Option>
@@ -11194,7 +11143,7 @@ R ← 4
         x ← 30 
     否則 
         x ← 40 
-輸出 x </QText>
+輸出 x</QText>
 <Option>10</Option>
 <Option>20</Option>
 <Option>30</Option>
@@ -11207,7 +11156,7 @@ M ← 1
 重複 
     M ← M + 1 
 直至 NOT (M &lt;&gt; 3) 
-輸出 M </QText>
+輸出 M</QText>
 <Option>2</Option>
 <Option correct="1">3</Option>
 <Option>4</Option>
@@ -11222,7 +11171,7 @@ N = 1
     S = S + N 
     N = N + 2 
 直至 N &gt; 6 
-輸出 S </QText>
+輸出 S</QText>
 <Option>3</Option>
 <Option>4</Option>
 <Option correct="1">9</Option>
@@ -11243,7 +11192,7 @@ FLAG = FALSE
     輸出 i 
 否則 
     輸出 '沒有出現' 
-上列遺漏部分是什麼？ </QText>
+上列遺漏部分是什麼？</QText>
 <Option>OR</Option>
 <Option>AND</Option>
 <Option>OR NOT</Option>
@@ -11264,7 +11213,7 @@ FLAG = FALSE
     輸出 i 
 否則 
     輸出 '沒有出現' 
-使用變量 FLAG 的目的是什麼？ </QText>
+使用變量 FLAG 的目的是什麼？</QText>
 <Option>儲存找到的數值的位置</Option>
 <Option>儲存配對次數</Option>
 <Option>作為一個索引</Option>
@@ -11275,7 +11224,7 @@ FLAG = FALSE
 <QText examyear="HKDSE 2024" topic="pgm">33. 以下哪些是在編寫程式時使用模組的優點？ 
 (1) 有些模組可以重用 
 (2) 較容易進行程式除錯 
-(3) 較快定義問題 </QText>
+(3) 較快定義問題</QText>
 <Option correct="1">只有 (1) 和 (2)</Option>
 <Option>只有 (1) 和 (3)</Option>
 <Option>只有 (2) 和 (3)</Option>
@@ -11283,7 +11232,7 @@ FLAG = FALSE
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="sec">34. 以下哪項是用作過濾傳入和傳出的網絡流量？ </QText>
+<QText examyear="HKDSE 2024" topic="sec">34. 以下哪項是用作過濾傳入和傳出的網絡流量？</QText>
 <Option>間諜軟件</Option>
 <Option>保安權標</Option>
 <Option correct="1">防火牆</Option>
@@ -11296,7 +11245,7 @@ FLAG = FALSE
 #figure
 (1) 檢驗登入資料是正確無誤 
 (2) 核實登入是由真人執行 
-(3) 確保登入裝置裝配了觸式屏幕 </QText>
+(3) 確保登入裝置裝配了觸式屏幕</QText>
 <Option>只有 (1)</Option>
 <Option correct="1">只有 (2)</Option>
 <Option>只有 (1) 和 (3)</Option>
@@ -11304,10 +11253,10 @@ FLAG = FALSE
 </Question>
 
 <Question>
-<QText examyear="HKDSE 2024" topic="int">36. 當家健在某網站進行用戶登記時， 他收到一封由網站寄出的電郵， 內附一個編碼，讓他輸入。這個編碼的目的是什麼？ 
+<QText examyear="HKDSE 2024" topic="int">36. 當家健在某網站進行用戶登記時，他收到一封由網站寄出的電郵，內附一個編碼，讓他輸入。這個編碼的目的是什麼？ 
 (1) 核實他的身份 
 (2) 確保該電郵不是垃圾電郵 
-(3) 確保網站和他的帳戶受 SSL的保護 </QText>
+(3) 確保網站和他的帳戶受 SSL的保護</QText>
 <Option correct="1">只有 (1)</Option>
 <Option>只有 (2)</Option>
 <Option>只有 (1) 和 (3)</Option>
@@ -11318,7 +11267,7 @@ FLAG = FALSE
 <QText examyear="HKDSE 2024" topic="copy">37. 莉莉是一名攝影師，她與志明和志偉分享相片。 以下哪項/些行動很可能侵犯她的知識產權？ 
 (1) 莉莉透過點對點檔案分享 (BT) 把相片分享給志明和志偉 
 (2) 志明把相片賣給廣告公司 
-(3) 志明以非法複製的軟件修改這些相片 </QText>
+(3) 志明以非法複製的軟件修改這些相片</QText>
 <Option>只有 (1)</Option>
 <Option>只有 (2)</Option>
 <Option>只有 (1) 和 (3)</Option>
@@ -11329,7 +11278,7 @@ FLAG = FALSE
 <QText examyear="HKDSE 2024" topic="open">38. 以下哪個/些關於開放源碼軟件的句子是正確的？ 
 (1) 每個人都可以使用和修改源碼 
 (2) 軟件開發者有責任提供軟件更新 
-(3) 每個人都可以更改軟件名稱和重新分發軟件 </QText>
+(3) 每個人都可以更改軟件名稱和重新分發軟件</QText>
 <Option>只有 (1)</Option>
 <Option>只有 (2)</Option>
 <Option correct="1">只有 (1) 和 (3)</Option>
@@ -11348,7 +11297,7 @@ FLAG = FALSE
 <QText examyear="HKDSE 2024" topic="int">40. 以下哪些是 PKI 的主要功用？ 
 (1) 確保在互聯網上傳輸的數據完整性 
 (2) 支援較長的密碼 
-(3) 支援數據加密 </QText>
+(3) 支援數據加密</QText>
 <Option>只有 (1) 和 (2)</Option>
 <Option correct="1">只有 (1) 和 (3)</Option>
 <Option>只有 (2) 和 (3)</Option>
