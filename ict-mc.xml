@@ -10913,10 +10913,10 @@ DNS伺服器的作用是將人類可讀的網域名稱（例如www.example.com�
 <QText examyear="HKDSE 2024" figure="2024-q6.png" topic="net">6. 某網絡卡有一個由6組 2個位的十六進制數字組成的MAC位址，如下列例子所示: 
 00:0A:95:9D:67:16 
 此格式可以表示多少個可能的位址？</QText>
-<Option>26</Option>
-<Option>212</Option>
-<Option>224</Option>
-<Option correct="1">248</Option>
+<Option>2⁶</Option>
+<Option>2¹²</Option>
+<Option>2²⁴</Option>
+<Option correct="1">2⁴⁸</Option>
 </Question>
 
 <Question>
