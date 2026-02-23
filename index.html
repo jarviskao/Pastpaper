@@ -2,26 +2,26 @@
 <html lang="zh-Hant" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <!-- PWA Viewport Optimization -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     
-    <!-- SEO & Social Sharing -->
-    <title>HKDSE ICT Master Pro</title>
-    <meta name="description" content="最強 DSE ICT 刷題神器。支援即時練習、模擬考試與 DSE 等級預測。">
-    
-    <!-- 🍎 iOS / PWA App Meta Tags (新增) -->
+    <!-- SEO & PWA App Meta Tags (修正了 Console 警告) -->
+    <title>ICT 歷年MC試題庫</title>
+    <meta name="description" content="最強 DSE ICT 歷年MC試題庫。支援即時練習、模擬考試與 DSE 等級預測。">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="ICT Master">
-    <link rel="apple-touch-icon" href="icon-192.png"> <!--稍後會說明如何加入圖片-->
+    <meta name="apple-mobile-web-app-title" content="ICT 歷年MC試題庫">
     <link rel="manifest" href="manifest.json">
+    
+    <!-- 解決 Favicon 404 報錯 (使用內嵌手機 Emoji 作為圖示) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📱</text></svg>">
     
     <!-- Theme Colors -->
     <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)">
     
     <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     
     <!-- Tailwind CSS -->
@@ -33,7 +33,7 @@
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                    fontFamily: { sans: ['Noto Sans TC', 'Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
                     colors: { 
                         brand: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 900: '#312e81' },
                         dark: { bg: '#0b1120', card: '#151e32', border: '#2a3655' },
@@ -65,36 +65,34 @@
         .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* 避免在 iOS 作為 App 開啟時文字無法選取 */
         .select-auto { user-select: auto; -webkit-user-select: auto; }
     </style>
 </head>
 
 <body class="bg-light-bg text-slate-800 dark:bg-dark-bg dark:text-slate-200 transition-colors duration-300 min-h-screen flex flex-col pb-24 xl:pb-0 select-none">
 
-    <!-- Header (PWA Safe Top Padding) -->
+    <!-- Header -->
     <nav class="absolute md:fixed top-0 inset-x-0 z-40 glass-nav transition-all duration-300 pt-[env(safe-area-inset-top)] h-[calc(4rem+env(safe-area-inset-top))]">
         <div class="max-w-[1450px] mx-auto px-4 sm:px-6 h-full flex items-center justify-between">
             <div class="flex items-center gap-3 cursor-pointer group" onclick="window.scrollTo({top:0, behavior:'smooth'})">
                 <div class="w-9 h-9 bg-brand-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
-                    <i class="fas fa-layer-group text-sm"></i>
+                    <i class="fas fa-graduation-cap text-sm"></i>
                 </div>
                 <div>
-                    <h1 class="font-bold text-lg tracking-tight leading-none text-slate-900 dark:text-slate-100">ICT Master</h1>
-                    <p class="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest mt-0.5">Revision Pro</p>
+                    <h1 class="font-bold text-lg tracking-tight leading-none text-slate-900 dark:text-slate-100">ICT MC試題庫</h1>
+                    <p id="greeting-text" class="text-[10px] text-brand-600 dark:text-brand-400 font-bold tracking-wider mt-0.5">早晨，準備好溫習了嗎？</p>
                 </div>
             </div>
             <div class="hidden md:flex items-center gap-5">
                 <div class="flex flex-col items-end mr-2">
-                    <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Score</span>
+                    <span class="text-[10px] text-slate-400 font-bold tracking-wider">目前得分</span>
                     <div class="flex items-center gap-1.5">
                         <span id="header-score" class="font-mono font-bold text-brand-600 dark:text-brand-500 text-lg leading-none">0</span>
                         <span class="text-xs text-slate-400 font-bold">/ <span id="header-total">0</span></span>
                     </div>
                 </div>
                 <div class="h-6 w-px bg-slate-200 dark:bg-slate-700"></div>
-                <button onclick="toggleDarkMode()" class="w-9 h-9 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/80 transition-colors focus:ring-2 focus:ring-brand-500" aria-label="Toggle Theme">
+                <button onclick="toggleDarkMode()" class="w-9 h-9 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/80 transition-colors focus:ring-2 focus:ring-brand-500" aria-label="切換深色模式">
                     <i class="fas fa-moon dark:hidden"></i>
                     <i class="fas fa-sun hidden dark:inline text-amber-300"></i>
                 </button>
@@ -113,24 +111,24 @@
             <div class="sticky top-[calc(7rem+env(safe-area-inset-top))] space-y-6 max-h-[calc(100vh-9rem)] flex flex-col">
                 <div class="bg-light-card dark:bg-dark-card rounded-2xl p-5 shadow-soft border border-slate-200 dark:border-dark-border flex-shrink-0">
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Timer</span>
+                        <span class="text-xs font-bold text-slate-400 tracking-wider">計時器</span>
                         <span id="timer-display" class="font-mono font-bold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-dark-bg px-2.5 py-0.5 rounded border border-slate-200 dark:border-slate-700">00:00</span>
                     </div>
                     <div>
-                        <div class="text-[10px] text-slate-400 font-bold uppercase mb-1">Answered</div>
+                        <div class="text-[10px] text-slate-400 font-bold mb-1">已作答</div>
                         <div class="flex items-baseline gap-1">
                             <span id="sidebar-score" class="text-3xl font-extrabold text-slate-800 dark:text-slate-100 tracking-tight">0</span>
                             <span class="text-slate-400 font-bold text-sm">/ <span id="sidebar-total">0</span></span>
                         </div>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-dark-border flex items-center gap-2 text-[10px] text-slate-400 font-mono">
+                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-dark-border flex items-center gap-2 text-[10px] text-slate-400">
                         <i class="fas fa-check-circle text-emerald-500"></i>
-                        <span>DB Loaded: <span id="last-updated-date">...</span></span>
+                        <span>題庫載入成功</span>
                     </div>
                 </div>
                 <div class="bg-light-card dark:bg-dark-card rounded-2xl p-5 shadow-soft border border-slate-200 dark:border-dark-border flex-1 flex flex-col min-h-0">
                     <div class="flex justify-between items-center mb-4 flex-shrink-0">
-                        <h3 class="text-xs font-bold text-slate-400 uppercase flex items-center gap-2"><i class="fas fa-map"></i> Navigator</h3>
+                        <h3 class="text-xs font-bold text-slate-400 flex items-center gap-2"><i class="fas fa-map"></i> 題目導覽</h3>
                     </div>
                     <div class="overflow-y-auto custom-scroll pr-1 flex-1">
                         <div id="question-nav-grid" class="grid grid-cols-5 gap-2 pb-2"></div>
@@ -144,42 +142,42 @@
             <div class="bg-light-card dark:bg-dark-card rounded-2xl p-2 shadow-soft border border-slate-200 dark:border-dark-border mb-8 relative z-30">
                 <div class="p-4 pb-2 grid grid-cols-1 md:grid-cols-12 gap-5">
                     <div class="md:col-span-4 flex flex-col gap-1.5">
-                        <label for="examyear" class="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider ml-1">Select Paper</label>
+                        <label for="examyear" class="text-[11px] font-bold text-slate-500 dark:text-slate-400 tracking-wider ml-1">選擇年份 / 試卷</label>
                         <div class="relative">
-                            <select id="examyear" class="w-full pl-4 pr-10 py-3 rounded-xl border border-slate-200 dark:border-dark-border bg-slate-50 dark:bg-dark-bg/50 text-sm font-semibold focus:ring-2 focus:ring-brand-500 outline-none cursor-pointer text-slate-800 dark:text-slate-200 appearance-none shadow-sm" onchange="handleFilterChange()"></select>
+                            <select id="examyear" class="w-full pl-4 pr-10 py-3 rounded-xl border border-slate-200 dark:border-dark-border bg-slate-50 dark:bg-dark-bg/50 text-sm font-bold focus:ring-2 focus:ring-brand-500 outline-none cursor-pointer text-slate-800 dark:text-slate-200 appearance-none shadow-sm" onchange="handleFilterChange()"></select>
                             <i class="fas fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
                         </div>
                     </div>
                     <div class="md:col-span-4 flex flex-col gap-1.5">
-                        <label for="mode" class="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider ml-1">Mode</label>
+                        <label for="mode" class="text-[11px] font-bold text-slate-500 dark:text-slate-400 tracking-wider ml-1">練習模式</label>
                         <div class="relative">
-                            <select id="mode" class="w-full pl-4 pr-10 py-3 rounded-xl border border-slate-200 dark:border-dark-border bg-slate-50 dark:bg-dark-bg/50 text-sm font-semibold focus:ring-2 focus:ring-brand-500 outline-none cursor-pointer text-slate-800 dark:text-slate-200 appearance-none shadow-sm" onchange="handleModeChange()">
-                                <option value="practice">⚡ Practice (Instant Review)</option>
-                                <option value="exam">📝 Exam (Simulated Test)</option>
-                                <option value="study">📖 Study (Read Answers)</option>
+                            <select id="mode" class="w-full pl-4 pr-10 py-3 rounded-xl border border-slate-200 dark:border-dark-border bg-slate-50 dark:bg-dark-bg/50 text-sm font-bold focus:ring-2 focus:ring-brand-500 outline-none cursor-pointer text-slate-800 dark:text-slate-200 appearance-none shadow-sm" onchange="handleModeChange()">
+                                <option value="practice">⚡ 練習模式 (即時對答案)</option>
+                                <option value="exam">📝 考試模式 (模擬 DSE)</option>
+                                <option value="study">📖 溫習模式 (直接看答案)</option>
                             </select>
                             <i class="fas fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
                         </div>
                     </div>
                     <div class="md:col-span-4 flex flex-col gap-1.5">
-                        <label for="search-input" class="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider ml-1">Search Keyword</label>
+                        <label for="search-input" class="text-[11px] font-bold text-slate-500 dark:text-slate-400 tracking-wider ml-1">搜尋關鍵字</label>
                         <div class="relative">
-                            <input type="text" id="search-input" placeholder="Type to filter..." class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-dark-border bg-slate-50 dark:bg-dark-bg/50 text-sm font-semibold focus:ring-2 focus:ring-brand-500 outline-none text-slate-800 dark:text-slate-200 placeholder-slate-400 shadow-sm" oninput="handleSearch()">
+                            <input type="text" id="search-input" placeholder="輸入關鍵字尋找題目..." class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-dark-border bg-slate-50 dark:bg-dark-bg/50 text-sm font-bold focus:ring-2 focus:ring-brand-500 outline-none text-slate-800 dark:text-slate-200 placeholder-slate-400 shadow-sm" oninput="handleSearch()">
                             <i class="fas fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
                         </div>
                     </div>
                 </div>
                 <div class="flex px-4 pb-2 pt-1 gap-2 overflow-x-auto hide-scrollbar">
-                    <button onclick="setTab('all')" id="tab-all" class="flex-1 py-2.5 px-4 rounded-lg text-xs font-bold transition-all text-center whitespace-nowrap focus:ring-2 focus:ring-brand-500 shadow-sm">All Questions</button>
-                    <button onclick="setTab('wrong')" id="tab-wrong" class="flex-1 py-2.5 px-4 rounded-lg text-xs font-bold transition-all text-center whitespace-nowrap focus:ring-2 focus:ring-brand-500">Mistakes</button>
-                    <button onclick="setTab('starred')" id="tab-starred" class="flex-1 py-2.5 px-4 rounded-lg text-xs font-bold transition-all text-center whitespace-nowrap focus:ring-2 focus:ring-brand-500">Starred</button>
+                    <button onclick="setTab('all')" id="tab-all" class="flex-1 py-2.5 px-4 rounded-lg text-xs font-bold transition-all text-center whitespace-nowrap focus:ring-2 focus:ring-brand-500 shadow-sm">所有題目</button>
+                    <button onclick="setTab('wrong')" id="tab-wrong" class="flex-1 py-2.5 px-4 rounded-lg text-xs font-bold transition-all text-center whitespace-nowrap focus:ring-2 focus:ring-brand-500">❌ 錯題重溫</button>
+                    <button onclick="setTab('starred')" id="tab-starred" class="flex-1 py-2.5 px-4 rounded-lg text-xs font-bold transition-all text-center whitespace-nowrap focus:ring-2 focus:ring-brand-500">⭐ 星號收藏</button>
                 </div>
             </div>
 
             <div id="result" class="space-y-6 min-h-[50vh] select-auto">
                 <div class="flex flex-col items-center justify-center py-24 opacity-60">
                     <div class="w-10 h-10 border-4 border-slate-200 dark:border-slate-700 border-t-brand-500 rounded-full animate-spin mb-4"></div>
-                    <p class="font-bold text-slate-400 text-xs tracking-widest uppercase">Initializing App...</p>
+                    <p class="font-bold text-slate-400 text-xs tracking-widest uppercase">系統載入中...</p>
                 </div>
             </div>
         </div>
@@ -190,19 +188,19 @@
         <div class="flex items-center justify-around h-16 px-2">
             <button onclick="toggleMobileNav()" class="flex flex-col items-center justify-center gap-1 w-16 h-full text-slate-500 dark:text-slate-400 active:scale-95 transition-transform touch-manipulation">
                 <i class="fas fa-th-large text-lg mb-0.5"></i>
-                <span class="text-[9px] font-bold uppercase tracking-wide">Map</span>
+                <span class="text-[10px] font-bold">導覽</span>
             </button>
             <button onclick="toggleDarkMode()" class="flex flex-col items-center justify-center gap-1 w-16 h-full text-slate-500 dark:text-slate-400 active:scale-95 transition-transform touch-manipulation">
                 <i class="fas fa-adjust text-lg mb-0.5"></i>
-                <span class="text-[9px] font-bold uppercase tracking-wide">Theme</span>
+                <span class="text-[10px] font-bold">主題</span>
             </button>
             <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="flex flex-col items-center justify-center gap-1 w-16 h-full text-slate-500 dark:text-slate-400 active:scale-95 transition-transform touch-manipulation">
                 <i class="fas fa-arrow-up text-lg mb-0.5"></i>
-                <span class="text-[9px] font-bold uppercase tracking-wide">Top</span>
+                <span class="text-[10px] font-bold">置頂</span>
             </button>
             <button id="mobile-submit-btn" onclick="submitExam()" class="hidden flex-col items-center justify-center gap-1 w-16 h-full text-brand-600 dark:text-brand-400 active:scale-95 transition-transform touch-manipulation">
                 <i class="fas fa-check-circle text-xl mb-0.5"></i>
-                <span class="text-[9px] font-bold uppercase tracking-wide">Finish</span>
+                <span class="text-[10px] font-bold">交卷</span>
             </button>
         </div>
     </nav>
@@ -212,11 +210,11 @@
         <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="toggleMobileNav()"></div>
         <div class="absolute right-0 top-0 bottom-0 w-[80%] max-w-[320px] bg-light-card dark:bg-dark-card shadow-2xl p-6 pt-[calc(1.5rem+env(safe-area-inset-top))] flex flex-col transform transition-transform translate-x-full duration-300 pb-safe border-l border-slate-200 dark:border-dark-border" id="mobile-drawer-content">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="font-bold text-lg text-slate-900 dark:text-white">Navigator</h2>
+                <h2 class="font-bold text-lg text-slate-900 dark:text-white">題目導覽</h2>
                 <button onclick="toggleMobileNav()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-dark-bg border border-slate-200 dark:border-dark-border flex items-center justify-center text-slate-500 active:scale-90 transition-transform"><i class="fas fa-times"></i></button>
             </div>
             <div class="bg-slate-50 dark:bg-dark-bg rounded-xl p-4 mb-5 border border-slate-200 dark:border-slate-700/50">
-                <div class="flex justify-between text-xs mb-2 font-bold text-slate-400 uppercase"><span>Progress</span><span id="mobile-drawer-score">0/0</span></div>
+                <div class="flex justify-between text-xs mb-2 font-bold text-slate-400"><span>完成進度</span><span id="mobile-drawer-score">0/0</span></div>
                 <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden"><div id="mobile-drawer-progress" class="h-full bg-brand-500 w-0 transition-all duration-500"></div></div>
             </div>
             <div class="flex-1 overflow-y-auto custom-scroll -mr-2 pr-2">
@@ -225,53 +223,50 @@
         </div>
     </div>
 
-    <!-- ✅ 全新：DSE 成績預測 Result Modal -->
+    <!-- 🎓 測驗結果與 DSE 預測卡片 -->
     <div id="result-modal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-slate-900/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300">
         <div class="bg-light-card dark:bg-dark-card w-full max-w-sm rounded-3xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300 border border-slate-200 dark:border-dark-border" id="result-content">
             <div class="bg-gradient-to-br from-slate-800 to-slate-900 dark:from-slate-900 dark:to-black p-6 text-white text-center relative overflow-hidden">
                 <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-2xl"></div>
-                <h2 class="text-xl font-bold mb-1 relative z-10">Session Ended</h2>
-                <p class="text-slate-400 text-[10px] font-mono uppercase tracking-widest relative z-10">Performance Report</p>
+                <h2 class="text-xl font-bold mb-1 relative z-10">測驗結束</h2>
+                <p class="text-slate-400 text-[11px] font-bold tracking-widest relative z-10">個人成績報告</p>
             </div>
             <div class="p-5">
                 
-                <!-- 🎓 DSE Grade Predictor Card -->
                 <div id="grade-card" class="bg-gradient-to-r p-4 rounded-2xl mb-5 shadow-lg text-center transform transition-all text-white">
                     <div class="flex justify-center items-center gap-1.5 mb-1 opacity-90">
                         <i class="fas fa-award text-xs"></i>
-                        <span class="text-[10px] uppercase font-extrabold tracking-widest">Estimated DSE Grade</span>
+                        <span class="text-[11px] font-bold tracking-wider">預測 DSE 等級 (卷一甲部)</span>
                     </div>
-                    <div id="grade-level" class="text-4xl font-black mb-1 drop-shadow-md tracking-tighter">Level ?</div>
-                    <div id="grade-desc" class="text-xs font-semibold opacity-95">Evaluating performance...</div>
+                    <div id="grade-level" class="text-4xl font-black mb-1 drop-shadow-md">Level ?</div>
+                    <div id="grade-desc" class="text-xs font-bold opacity-95">正在分析成績...</div>
                 </div>
 
                 <div class="grid grid-cols-3 gap-2 mb-6">
                     <div class="bg-slate-50 dark:bg-dark-bg p-3 rounded-xl text-center border border-slate-200 dark:border-slate-700/50">
                         <div class="text-slate-800 dark:text-slate-100 font-black text-lg mb-0.5" id="modal-score">0</div>
-                        <div class="text-[9px] text-slate-500 uppercase font-bold tracking-wider">Correct</div>
+                        <div class="text-[10px] text-slate-500 font-bold tracking-wider">答對</div>
                     </div>
                     <div class="bg-red-50 dark:bg-red-500/10 p-3 rounded-xl text-center border border-red-100 dark:border-red-500/20">
                         <div class="text-red-500 font-black text-lg mb-0.5" id="modal-wrong">0</div>
-                        <div class="text-[9px] text-red-500 uppercase font-bold tracking-wider">Mistakes</div>
+                        <div class="text-[10px] text-red-500 font-bold tracking-wider">答錯</div>
                     </div>
                     <div class="bg-emerald-50 dark:bg-emerald-500/10 p-3 rounded-xl text-center border border-emerald-100 dark:border-emerald-500/20">
                         <div class="text-emerald-500 font-black text-lg mb-0.5" id="modal-accuracy">0%</div>
-                        <div class="text-[9px] text-emerald-500 uppercase font-bold tracking-wider">Accuracy</div>
+                        <div class="text-[10px] text-emerald-500 font-bold tracking-wider">準確率</div>
                     </div>
                 </div>
 
-                <p class="text-[10px] text-slate-400 text-center mb-4 leading-relaxed">* Prediction based on Paper 1A MC (22%).<br>Actual grades depend on Paper 1B & Paper 2.</p>
-
                 <div class="flex gap-3">
-                    <button onclick="closeModal()" class="flex-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 py-3.5 rounded-xl font-bold text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors active:scale-95">Review</button>
-                    <button onclick="retryExam()" class="flex-1 bg-brand-600 text-white py-3.5 rounded-xl font-bold text-sm hover:bg-brand-500 transition-colors shadow-lg shadow-brand-500/30 active:scale-95">Retry</button>
+                    <button onclick="closeModal()" class="flex-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 py-3.5 rounded-xl font-bold text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors active:scale-95">檢閱試卷</button>
+                    <button onclick="retryExam()" class="flex-1 bg-brand-600 text-white py-3.5 rounded-xl font-bold text-sm hover:bg-brand-500 transition-colors shadow-lg shadow-brand-500/30 active:scale-95">重新測驗</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- FAB -->
-    <button id="desktop-submit-btn" onclick="submitExam()" class="hidden xl:hidden fixed bottom-8 right-8 z-30 bg-brand-600 hover:bg-brand-500 text-white w-14 h-14 rounded-2xl shadow-xl shadow-brand-500/40 items-center justify-center transition-all hover:scale-105 active:scale-95 group focus:ring-4 focus:ring-brand-300" title="Submit Exam">
+    <!-- Desktop FAB -->
+    <button id="desktop-submit-btn" onclick="submitExam()" class="hidden xl:hidden fixed bottom-8 right-8 z-30 bg-brand-600 hover:bg-brand-500 text-white w-14 h-14 rounded-2xl shadow-xl shadow-brand-500/40 items-center justify-center transition-all hover:scale-105 active:scale-95 group focus:ring-4 focus:ring-brand-300" title="交卷">
         <i class="fas fa-check text-xl"></i>
     </button>
 
@@ -279,15 +274,27 @@
         let ALL_QUESTIONS = [], displayQuestions = [];
         let state = { score: 0, answeredCount: 0, examSubmitted: false, userAnswers: {}, timer: null, seconds: 0, currentTab: 'all', starredIds: new Set() };
 
-        // 🟢 PWA Service Worker Registration
+        // 🟢 PWA Service Worker (背景快取)
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('sw.js').then(reg => console.log('PWA SW registered')).catch(err => console.log('SW registration failed: ', err));
             });
         }
 
+        // 根據時間動態更新問候語
+        function updateGreeting() {
+            const hour = new Date().getHours();
+            let text = "準備好溫習了嗎？";
+            if (hour >= 5 && hour < 12) text = "早晨！新的一天，加油溫習！💪";
+            else if (hour >= 12 && hour < 18) text = "午安！吃飽後繼續作戰！📖";
+            else if (hour >= 18 && hour < 23) text = "晚安！把握晚上的黃金溫習時間！⭐";
+            else text = "夜深了，溫習完記得早點休息！🌙";
+            document.getElementById('greeting-text').innerText = text;
+        }
+
         document.addEventListener('DOMContentLoaded', async () => {
             initDarkMode();
+            updateGreeting();
             loadSavedData();
             await fetchXMLData();
             startTimer(); 
@@ -320,7 +327,7 @@
                 if(localStorage.getItem("ict_mode")) document.getElementById("mode").value = localStorage.getItem("ict_mode");
                 const savedStars = localStorage.getItem("ict_starred");
                 if (savedStars) state.starredIds = new Set(JSON.parse(savedStars));
-            } catch(e) { console.warn("LocalStorage access denied."); }
+            } catch(e) {}
         }
 
         async function fetchXMLData() {
@@ -337,21 +344,21 @@
                 const uniqueYears = new Set();
                 ALL_QUESTIONS = Array.from(questions).map((q, index) => {
                     const qTextNode = q.getElementsByTagName("QText")[0];
-                    const year = qTextNode.getAttribute("examyear") || "General";
+                    const year = qTextNode.getAttribute("examyear") || "綜合題庫";
                     uniqueYears.add(year);
 
                     let qText = qTextNode.textContent.replace(/\t/g, "");
                     const qFigure = qTextNode.getAttribute("figure");
-                    if (qFigure) qText = qText.replace('#figure', `<img src="./images/${qFigure}" alt="Figure" loading="lazy">`);
+                    if (qFigure) qText = qText.replace('#figure', `<img src="./images/${qFigure}" alt="圖片" loading="lazy">`);
 
                     const options = Array.from(q.getElementsByTagName("Option")).map((opt, i) => {
                         let text = opt.textContent;
                         const optFigure = opt.getAttribute("figure");
-                        if (optFigure) text = text.replace('#figure', `<img src="./images/${optFigure}" alt="Option" loading="lazy">`);
+                        if (optFigure) text = text.replace('#figure', `<img src="./images/${optFigure}" alt="選項圖片" loading="lazy">`);
                         return { id: `q${index}_opt${i}`, text: text, isCorrect: opt.getAttribute("correct") === "1" };
                     });
 
-                    const explanation = q.getElementsByTagName("explanation")[0]?.textContent || "No explanation available.";
+                    const explanation = q.getElementsByTagName("explanation")[0]?.textContent || "此題暫無詳細解釋。";
                     const searchText = (qTextNode.textContent + options.map(o => o.text).join(" ")).toLowerCase();
                     return { uid: `${year}_${index}`, id: index, year, qText, options, explanation, searchText };
                 });
@@ -362,10 +369,8 @@
                 const savedYear = localStorage.getItem("ict_year");
                 if (savedYear && uniqueYears.has(savedYear)) yearSelect.value = savedYear;
 
-                document.getElementById('last-updated-date').innerText = new Date().toLocaleDateString();
-
             } catch (err) {
-                document.getElementById("result").innerHTML = `<div class="flex flex-col items-center justify-center py-20 text-center px-4"><div class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-4"><i class="fas fa-exclamation-triangle text-red-500 text-2xl"></i></div><h3 class="text-lg font-bold text-slate-800 dark:text-slate-200 mb-2">Database Error</h3><p class="text-sm text-slate-500 dark:text-slate-400">Failed to load <code>ict-mc.xml</code>.</p></div>`;
+                document.getElementById("result").innerHTML = `<div class="flex flex-col items-center justify-center py-20 text-center px-4"><div class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-4"><i class="fas fa-exclamation-triangle text-red-500 text-2xl"></i></div><h3 class="text-lg font-bold text-slate-800 dark:text-slate-200 mb-2">題庫載入失敗</h3><p class="text-sm text-slate-500 dark:text-slate-400">請確認 <code>ict-mc.xml</code> 檔案已正確上傳。</p></div>`;
                 throw err;
             }
         }
@@ -429,7 +434,7 @@
 
             container.innerHTML = "";
             if (questions.length === 0) {
-                container.innerHTML = `<div class="flex flex-col items-center justify-center py-24 text-slate-300 dark:text-slate-600"><i class="far fa-folder-open text-5xl mb-4 opacity-50"></i><p class="font-bold text-sm tracking-widest uppercase">No Questions Found</p></div>`;
+                container.innerHTML = `<div class="flex flex-col items-center justify-center py-24 text-slate-300 dark:text-slate-600"><i class="far fa-folder-open text-5xl mb-4 opacity-50"></i><p class="font-bold text-sm tracking-widest mt-2">找不到相關題目</p></div>`;
                 return;
             }
 
@@ -440,13 +445,13 @@
                 qDiv.className = "question-card bg-light-card dark:bg-dark-card p-5 sm:p-8 rounded-2xl shadow-soft border border-slate-200 dark:border-dark-border scroll-mt-36";
                 qDiv.id = `card_${q.uid}`;
 
-                let html = `<div class="flex justify-between items-start mb-5"><span class="bg-slate-100 dark:bg-dark-bg border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 text-[11px] font-extrabold tracking-wider font-mono px-3 py-1 rounded-md">Q${idx + 1}</span><button onclick="toggleStar(event, '${q.uid}')" class="p-2 -mr-2 -mt-2"><i id="star_${q.uid}" class="${state.starredIds.has(q.uid) ? "fas fa-star text-amber-400" : "far fa-star text-slate-300"} text-lg"></i></button></div><div class="text-[16px] sm:text-[17px] text-slate-800 dark:text-slate-200 font-medium mb-6 formatted-text select-auto">${q.qText}</div><div class="space-y-3 mb-5">`;
+                let html = `<div class="flex justify-between items-start mb-5"><span class="bg-slate-100 dark:bg-dark-bg border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 text-[11px] font-extrabold tracking-wider font-mono px-3 py-1 rounded-md">第 ${idx + 1} 題</span><button onclick="toggleStar(event, '${q.uid}')" class="p-2 -mr-2 -mt-2"><i id="star_${q.uid}" class="${state.starredIds.has(q.uid) ? "fas fa-star text-amber-400" : "far fa-star text-slate-300"} text-lg"></i></button></div><div class="text-[16px] sm:text-[17px] text-slate-800 dark:text-slate-200 font-medium mb-6 formatted-text select-auto">${q.qText}</div><div class="space-y-3 mb-5">`;
 
                 q.options.forEach((opt, i) => {
                     html += `<button id="btn_${q.uid}_${i}" onclick="handleClick('${q.uid}', ${i})" class="option-btn w-full text-left p-4 rounded-xl border-2 border-transparent bg-slate-50 dark:bg-dark-bg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 flex justify-between items-center group"><div class="flex items-start gap-4 w-full"><div class="w-6 h-6 rounded-full bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 flex items-center justify-center text-xs font-bold text-slate-400 shrink-0 mt-0.5">${String.fromCharCode(65 + i)}</div><span class="formatted-text text-[15px] flex-1 pt-0.5 select-auto">${opt.text}</span></div><i id="icon_${q.uid}_${i}" class="text-xl ml-3"></i></button>`;
                 });
 
-                html += `</div><div id="exp_${q.uid}" class="hidden animate-subtleFadeIn border-t border-slate-100 dark:border-slate-800 pt-5 mt-5"><div class="flex items-start gap-3 p-4 bg-brand-50 dark:bg-brand-900/10 rounded-xl border border-brand-100 dark:border-brand-900/20"><div class="mt-0.5 w-6 h-6 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-brand-600 dark:text-brand-400 text-xs"><i class="fas fa-lightbulb"></i></div><div class="flex-1"><h4 class="text-[10px] font-extrabold text-brand-600 dark:text-brand-400 uppercase tracking-widest mb-1.5">Explanation</h4><p class="text-slate-700 dark:text-slate-300 text-[13px] sm:text-sm formatted-text select-auto">${q.explanation}</p></div></div></div>`;
+                html += `</div><div id="exp_${q.uid}" class="hidden animate-subtleFadeIn border-t border-slate-100 dark:border-slate-800 pt-5 mt-5"><div class="flex items-start gap-3 p-4 bg-brand-50 dark:bg-brand-900/10 rounded-xl border border-brand-100 dark:border-brand-900/20"><div class="mt-0.5 w-6 h-6 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-brand-600 dark:text-brand-400 text-xs"><i class="fas fa-lightbulb"></i></div><div class="flex-1"><h4 class="text-[10px] font-extrabold text-brand-600 dark:text-brand-400 tracking-wider mb-1.5">詳細解釋</h4><p class="text-slate-700 dark:text-slate-300 text-[13px] sm:text-sm formatted-text select-auto">${q.explanation}</p></div></div></div>`;
                 
                 qDiv.innerHTML = html;
                 fragment.appendChild(qDiv);
@@ -562,17 +567,17 @@
             isExamActive ? document.getElementById("mobile-submit-btn").classList.remove("hidden") & document.getElementById("mobile-submit-btn").classList.add("flex") : document.getElementById("mobile-submit-btn").classList.add("hidden") & document.getElementById("mobile-submit-btn").classList.remove("flex");
         }
 
-        // 🎓 Grade Prediction Logic
+        // 🎓 DSE 成績繁體中文評語邏輯
         function evaluateGrade(accuracy) {
-            if (accuracy >= 80) return { level: "Level 5+", class: "from-amber-400 to-amber-600 shadow-amber-500/40", text: "Excellent! You are on track for top tiers (5/5*/5**)." };
-            if (accuracy >= 70) return { level: "Level 4", class: "from-emerald-400 to-emerald-600 shadow-emerald-500/40", text: "Great job! Very solid foundation." };
-            if (accuracy >= 60) return { level: "Level 3", class: "from-blue-400 to-blue-600 shadow-blue-500/40", text: "Good effort. Review weak spots to push higher." };
-            if (accuracy >= 40) return { level: "Level 2", class: "from-orange-400 to-orange-600 shadow-orange-500/40", text: "Passable, but needs much more practice." };
-            return { level: "Level 1 / U", class: "from-slate-400 to-slate-600 shadow-slate-500/40", text: "Don't give up! Study the explanations carefully." };
+            if (accuracy >= 80) return { level: "Level 5+", class: "from-amber-400 to-amber-600 shadow-amber-500/40", text: "表現卓越！具備奪星實力 🌟" };
+            if (accuracy >= 70) return { level: "Level 4", class: "from-emerald-400 to-emerald-600 shadow-emerald-500/40", text: "根基扎實！目標穩中求勝 📈" };
+            if (accuracy >= 60) return { level: "Level 3", class: "from-blue-400 to-blue-600 shadow-blue-500/40", text: "表現不俗！針對弱點繼續操練 補底 🛡️" };
+            if (accuracy >= 40) return { level: "Level 2", class: "from-orange-400 to-orange-600 shadow-orange-500/40", text: "達到及格線！請多溫習錯題本 📖" };
+            return { level: "Level 1 / U", class: "from-slate-400 to-slate-600 shadow-slate-500/40", text: "不要灰心！由看詳細解釋開始重新出發 💪" };
         }
 
         function submitExam() {
-            if (!confirm("Are you sure you want to finish this session?")) return;
+            if (!confirm("確定要交卷並結束測驗嗎？")) return;
             clearInterval(state.timer); state.examSubmitted = true; state.score = 0; state.answeredCount = 0; let wrongCount = 0;
             
             displayQuestions.forEach(q => {
@@ -592,7 +597,6 @@
             document.getElementById("modal-wrong").innerText = wrongCount;
             document.getElementById("modal-accuracy").innerText = accuracy + "%";
 
-            // Update Grade Card
             const grade = evaluateGrade(accuracy);
             const gradeCard = document.getElementById("grade-card");
             gradeCard.className = `p-4 rounded-2xl mb-5 shadow-lg text-center transform transition-all text-white bg-gradient-to-r ${grade.class}`;

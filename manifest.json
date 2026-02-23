@@ -1,7 +1,7 @@
 {
   "name": "ICT Master Pro",
   "short_name": "ICT Master",
-  "description": "最強 DSE ICT 刷題神器",
+  "description": "DSE ICT MC試題庫",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0b1120",
