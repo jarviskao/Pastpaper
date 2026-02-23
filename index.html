@@ -1,451 +1,609 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
-
+<html lang="zh-Hant" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"
-        crossorigin="anonymous">
-
-    <title>HKDSE ICT MCQs 試題</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
+    <!-- SEO & Social Sharing (Open Graph) -->
+    <title>HKDSE ICT Master Pro | Revision Platform</title>
+    <meta name="description" content="專為 HKDSE ICT 學生打造的完美刷題平台。支援即時練習、模擬考試與溫習模式。">
+    <meta property="og:title" content="HKDSE ICT Master Pro">
+    <meta property="og:description" content="最強 DSE ICT 刷題神器，無廣告、極速、支援深色模式。">
+    <meta property="og:type" content="website">
+    
+    <!-- Theme Colors -->
+    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS & Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                    colors: { 
+                        brand: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 900: '#312e81' },
+                        dark: { bg: '#0b1120', card: '#151e32', border: '#2a3655' },
+                        light: { bg: '#f8fafc', card: '#ffffff' }
+                    },
+                    boxShadow: { 'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.04)' }
+                }
+            }
+        }
+    </script>
     <style>
-        body {
-            font-family: 'Noto Sans TC', sans-serif;
-            background-color: #f4f7f6;
-            /* 調整為稍微帶一點綠色的灰色，以緩和眼睛疲勞 */
-            color: #333;
-            line-height: 1.6;
-            max-width: 1500px;
-            margin: 10px auto
-        }
-
-        .title {
-            margin-bottom: 20px;
-            background: #fff;
-            border-radius: 15px;
-            /* 圓角設計讓元素更加柔和 */
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            /* 輕微的陰影設計給予層次感 */
-        }
-
-        .title p {
-            margin: 0;
-        }
-
-        .title h1 {
-            margin: 0;
-        }
-
-        .question-container {
-            /* display: flex;*/
-            flex-wrap: wrap;
-            /* 如容器太窄則換行 */
-            margin-bottom: 20px;
-            background: #fff;
-            border-radius: 15px;
-            /* 圓角設計讓元素更加柔和 */
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            /* 輕微的陰影設計給予層次感 */
-        }
-
-        .notification {
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-
-
-        .left-side {
-            /*flex: 1;*/
-            margin-right: 10px;
-        }
-
-        .right-side {
-            /*flex: 1;*/
-            padding-left: 10px;
-        }
-
-        .question {
-            font-size: 20px;
-            /* 放大題目字體以突出重要性 */
-            font-weight: 500;
-            /* 給題目加一點字重 */
-            margin-bottom: 20px;
-            color: #2c3e50;
-            /* 深色字體幫助專注 */
-        }
-
-        .formatted-text {
-            white-space: pre-wrap;
-        }
-
-        .answers {
-            list-style: none;
-            padding: 0;
-        }
-
-        .answers li:not(:last-child) {
-            margin-bottom: 10px;
-            /* 只為非最後一個選項添加底部邊距 */
-        }
-
-        .answer {
-            display: block;
-            border: 2px solid #ddd;
-            padding: 10px 15px;
-            background-color: #fafafa;
-            cursor: pointer;
-            text-align: left;
-            transition: all 0.3s;
-            /* 平滑的背景顏色過渡效果 */
-            border-radius: 5px;
-            /* 答案按鈕圓角 */
-            font-size: 18px;
-            /* 增加答案文字大小 */
-        }
-
-        .answer:hover {
-            background-color: #f0f0f0;
-            transform: translateY(-2px);
-            /* 滑鼠懸停時上移效果 */
-        }
-
-        .correct {
-            border-color: green;
-            background-color: #d4edda;
-            color: green;
-            /* 選中的答案使用白色文字以提高可讀性 */
-        }
-
-        .selected {
-            border-color: rgb(61, 61, 61);
-            */
-            /*background-color: #e7f0fe;*/
-        }
-
-        .explanation {
-            display: none;
-            /* 默認隱藏解釋 */
-            padding: 15px 20px;
-            border-radius: 5px;
-            /* 解釋區塊圓角 
-            font-style: italic;*/
-            background-color: #e9ecef;
-            color: #495057;
-            font-size: 18px;
-        }
-
-        select {
-            width: 98%;
-            border: none;
-            padding: 0 12px;
-        }
-
-        #dropdown p {
-            margin: 0;
-            padding: 0 12px;
-        }
-
-        .hidden {
-            display: none;
-        }
+        body { -webkit-tap-highlight-color: transparent; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .formatted-text { white-space: pre-wrap !important; word-break: break-word; line-height: 1.8; letter-spacing: 0.015em; color: inherit; }
+        .formatted-text img { max-width: 100%; border-radius: 12px; margin: 20px 0; border: 1px solid #e2e8f0; transition: filter 0.3s; }
+        .dark .formatted-text img { border-color: #2a3655; filter: brightness(0.9) contrast(1.1); }
+        .glass-nav { background: rgba(248, 250, 252, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(226, 232, 240, 0.6); }
+        .dark .glass-nav { background: rgba(11, 17, 32, 0.85); border-bottom: 1px solid rgba(42, 54, 85, 0.5); }
+        button:focus-visible, select:focus-visible, input:focus-visible { outline: none; box-shadow: 0 0 0 2px #6366f1, 0 0 0 4px rgba(99, 102, 241, 0.2); }
+        .option-btn { transition: transform 0.15s ease-out, background-color 0.2s, border-color 0.2s; }
+        .option-btn:active { transform: scale(0.98); }
+        .nav-grid-item { transition: all 0.2s; }
+        .nav-grid-item:hover { transform: translateY(-2px); }
+        .custom-scroll::-webkit-scrollbar { width: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+        .custom-scroll::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 20px; border: 2px solid transparent; background-clip: content-box; }
+        .dark .custom-scroll::-webkit-scrollbar-thumb { background-color: #475569; }
+        @keyframes subtleFadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+        .question-card { animation: subtleFadeIn 0.3s ease-out forwards; }
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 
-<body>
-    <div class="title">
-        <h1>HKDSE ICT MCQs 試題</h1>
-        <p class="text-muted" id="modifydate"></p>
-        <div class="row pt-3">
+<body class="bg-light-bg text-slate-800 dark:bg-dark-bg dark:text-slate-200 transition-colors duration-300 min-h-screen flex flex-col pb-24 xl:pb-0">
 
-            <div class="col-sm-4">
-                <div class="bg-light rounded border" id="dropdown">
-                    <p class="text-muted">年份</p>
-                    <select class="bg-light" id="examyear" name="examyear" onchange="loadpage();"></select>
+    <!-- Header -->
+    <nav class="absolute md:fixed top-0 inset-x-0 z-40 glass-nav h-16 transition-all duration-300">
+        <div class="max-w-[1450px] mx-auto px-4 sm:px-6 h-full flex items-center justify-between">
+            <div class="flex items-center gap-3 cursor-pointer group" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                <div class="w-9 h-9 bg-brand-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fas fa-layer-group text-sm"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg tracking-tight leading-none text-slate-900 dark:text-slate-100">ICT Master</h1>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest mt-0.5">Revision Pro</p>
                 </div>
             </div>
-            <div class="col-sm-4 mt-sm-0 mt-3">
-                <div class="bg-light rounded border" id="dropdown">
-                    <p class="text-muted">模式</p>
-                    <select class="bg-light" id="mode" name="mode" onchange="loadpage();">
-                        <option value="mode1">模擬練習</option>
-                        <option value="mode2">全部答案</option>
-                    </select>
+            <div class="hidden md:flex items-center gap-5">
+                <div class="flex flex-col items-end mr-2">
+                    <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Score</span>
+                    <div class="flex items-center gap-1.5">
+                        <span id="header-score" class="font-mono font-bold text-brand-600 dark:text-brand-500 text-lg leading-none">0</span>
+                        <span class="text-xs text-slate-400 font-bold">/ <span id="header-total">0</span></span>
+                    </div>
+                </div>
+                <div class="h-6 w-px bg-slate-200 dark:bg-slate-700"></div>
+                <button onclick="toggleDarkMode()" class="w-9 h-9 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/80 transition-colors focus:ring-2 focus:ring-brand-500" aria-label="Toggle Theme">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:inline text-amber-300"></i>
+                </button>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-[2px] bg-slate-100 dark:bg-dark-border">
+            <div id="progress-bar" class="h-full bg-brand-600 dark:bg-brand-500 transition-all duration-500 w-0 shadow-[0_0_10px_rgba(99,102,241,0.5)]"></div>
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <main class="flex-1 max-w-[1450px] mx-auto w-full px-4 sm:px-6 pt-20 md:pt-28 flex flex-col xl:flex-row gap-8">
+        
+        <!-- Sidebar -->
+        <aside class="hidden xl:flex flex-col w-72 flex-shrink-0">
+            <div class="sticky top-28 space-y-6 max-h-[calc(100vh-9rem)] flex flex-col">
+                <div class="bg-light-card dark:bg-dark-card rounded-2xl p-5 shadow-soft border border-slate-200 dark:border-dark-border flex-shrink-0">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Timer</span>
+                        <span id="timer-display" class="font-mono font-bold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-dark-bg px-2.5 py-0.5 rounded border border-slate-200 dark:border-slate-700">00:00</span>
+                    </div>
+                    <div>
+                        <div class="text-[10px] text-slate-400 font-bold uppercase mb-1">Answered</div>
+                        <div class="flex items-baseline gap-1">
+                            <span id="sidebar-score" class="text-3xl font-extrabold text-slate-800 dark:text-slate-100 tracking-tight">0</span>
+                            <span class="text-slate-400 font-bold text-sm">/ <span id="sidebar-total">0</span></span>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-dark-border flex items-center gap-2 text-[10px] text-slate-400 font-mono">
+                        <i class="fas fa-check-circle text-emerald-500"></i>
+                        <span>DB Loaded: <span id="last-updated-date">...</span></span>
+                    </div>
+                </div>
+
+                <div class="bg-light-card dark:bg-dark-card rounded-2xl p-5 shadow-soft border border-slate-200 dark:border-dark-border flex-1 flex flex-col min-h-0">
+                    <div class="flex justify-between items-center mb-4 flex-shrink-0">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase flex items-center gap-2"><i class="fas fa-map"></i> Navigator</h3>
+                    </div>
+                    <div class="overflow-y-auto custom-scroll pr-1 flex-1">
+                        <div id="question-nav-grid" class="grid grid-cols-5 gap-2 pb-2"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center -->
+        <div class="flex-1 min-w-0">
+            <div class="bg-light-card dark:bg-dark-card rounded-2xl p-2 shadow-soft border border-slate-200 dark:border-dark-border mb-8 relative z-30">
+                <div class="p-4 pb-2 grid grid-cols-1 md:grid-cols-12 gap-5">
+                    <div class="md:col-span-4 flex flex-col gap-1.5">
+                        <label for="examyear" class="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider ml-1">Select Paper</label>
+                        <div class="relative">
+                            <select id="examyear" class="w-full pl-4 pr-10 py-3 rounded-xl border border-slate-200 dark:border-dark-border bg-slate-50 dark:bg-dark-bg/50 text-sm font-semibold focus:ring-2 focus:ring-brand-500 outline-none cursor-pointer text-slate-800 dark:text-slate-200 appearance-none shadow-sm" onchange="handleFilterChange()"></select>
+                            <i class="fas fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
+                        </div>
+                    </div>
+                    <div class="md:col-span-4 flex flex-col gap-1.5">
+                        <label for="mode" class="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider ml-1">Mode</label>
+                        <div class="relative">
+                            <select id="mode" class="w-full pl-4 pr-10 py-3 rounded-xl border border-slate-200 dark:border-dark-border bg-slate-50 dark:bg-dark-bg/50 text-sm font-semibold focus:ring-2 focus:ring-brand-500 outline-none cursor-pointer text-slate-800 dark:text-slate-200 appearance-none shadow-sm" onchange="handleModeChange()">
+                                <option value="practice">⚡ Practice (Instant)</option>
+                                <option value="exam">📝 Exam (Simulated)</option>
+                                <option value="study">📖 Study (Review)</option>
+                            </select>
+                            <i class="fas fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
+                        </div>
+                    </div>
+                    <div class="md:col-span-4 flex flex-col gap-1.5">
+                        <label for="search-input" class="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider ml-1">Search Keywords</label>
+                        <div class="relative">
+                            <input type="text" id="search-input" placeholder="Type to filter..." class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-dark-border bg-slate-50 dark:bg-dark-bg/50 text-sm font-semibold focus:ring-2 focus:ring-brand-500 outline-none text-slate-800 dark:text-slate-200 placeholder-slate-400 shadow-sm" oninput="handleSearch()">
+                            <i class="fas fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex px-4 pb-2 pt-1 gap-2 overflow-x-auto hide-scrollbar">
+                    <button onclick="setTab('all')" id="tab-all" class="flex-1 py-2.5 px-4 rounded-lg text-xs font-bold transition-all text-center whitespace-nowrap focus:ring-2 focus:ring-brand-500 shadow-sm">All Questions</button>
+                    <button onclick="setTab('wrong')" id="tab-wrong" class="flex-1 py-2.5 px-4 rounded-lg text-xs font-bold transition-all text-center whitespace-nowrap focus:ring-2 focus:ring-brand-500">Mistakes</button>
+                    <button onclick="setTab('starred')" id="tab-starred" class="flex-1 py-2.5 px-4 rounded-lg text-xs font-bold transition-all text-center whitespace-nowrap focus:ring-2 focus:ring-brand-500">Starred</button>
                 </div>
             </div>
 
-            <div class="col-sm-4 mt-sm-0 mt-3">
-                <div class="bg-light rounded border" id="dropdown">
-                    <p class="text-muted">排序</p>
-                    <select class="bg-light" id="sort" name="sort" onchange="loadpage();">
-                        <option value="sort1">順序</option>
-                        <option value="sort2">倒序</option>
-                        <option value="sort3">隨機</option>
-                    </select>
+            <div id="result" class="space-y-6 min-h-[50vh]">
+                <div class="flex flex-col items-center justify-center py-24 opacity-60">
+                    <div class="w-10 h-10 border-4 border-slate-200 dark:border-slate-700 border-t-brand-500 rounded-full animate-spin mb-4"></div>
+                    <p class="font-bold text-slate-400 text-xs tracking-widest uppercase">Initializing Database...</p>
                 </div>
             </div>
+        </div>
+    </main>
 
+    <!-- Mobile Bottom Bar -->
+    <nav id="mobile-bottom-bar" class="xl:hidden fixed bottom-0 inset-x-0 bg-light-card/95 dark:bg-dark-card/95 backdrop-blur-lg border-t border-slate-200 dark:border-dark-border z-50 pb-safe shadow-[0_-5px_20px_rgba(0,0,0,0.05)]">
+        <div class="flex items-center justify-around h-16 px-2">
+            <button onclick="toggleMobileNav()" class="flex flex-col items-center justify-center gap-1 w-16 h-full text-slate-500 dark:text-slate-400 active:scale-95 transition-transform touch-manipulation">
+                <i class="fas fa-th-large text-lg mb-0.5"></i>
+                <span class="text-[9px] font-bold uppercase tracking-wide">Map</span>
+            </button>
+            <button onclick="toggleDarkMode()" class="flex flex-col items-center justify-center gap-1 w-16 h-full text-slate-500 dark:text-slate-400 active:scale-95 transition-transform touch-manipulation">
+                <i class="fas fa-adjust text-lg mb-0.5"></i>
+                <span class="text-[9px] font-bold uppercase tracking-wide">Theme</span>
+            </button>
+            <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="flex flex-col items-center justify-center gap-1 w-16 h-full text-slate-500 dark:text-slate-400 active:scale-95 transition-transform touch-manipulation">
+                <i class="fas fa-arrow-up text-lg mb-0.5"></i>
+                <span class="text-[9px] font-bold uppercase tracking-wide">Top</span>
+            </button>
+            <button id="mobile-submit-btn" onclick="submitExam()" class="hidden flex-col items-center justify-center gap-1 w-16 h-full text-brand-600 dark:text-brand-400 active:scale-95 transition-transform touch-manipulation">
+                <i class="fas fa-check-circle text-xl mb-0.5"></i>
+                <span class="text-[9px] font-bold uppercase tracking-wide">Finish</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-nav-drawer" class="fixed inset-0 z-[60] hidden" aria-hidden="true">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="toggleMobileNav()"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-[80%] max-w-[320px] bg-light-card dark:bg-dark-card shadow-2xl p-6 flex flex-col transform transition-transform translate-x-full duration-300 pb-safe border-l border-slate-200 dark:border-dark-border" id="mobile-drawer-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="font-bold text-lg text-slate-900 dark:text-white">Navigator</h2>
+                <button onclick="toggleMobileNav()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-dark-bg border border-slate-200 dark:border-dark-border flex items-center justify-center text-slate-500 active:scale-90 transition-transform"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="bg-slate-50 dark:bg-dark-bg rounded-xl p-4 mb-5 border border-slate-200 dark:border-slate-700/50">
+                <div class="flex justify-between text-xs mb-2 font-bold text-slate-400 uppercase"><span>Progress</span><span id="mobile-drawer-score">0/0</span></div>
+                <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden"><div id="mobile-drawer-progress" class="h-full bg-brand-500 w-0 transition-all duration-500"></div></div>
+            </div>
+            <div class="flex-1 overflow-y-auto custom-scroll -mr-2 pr-2">
+                <div id="mobile-nav-grid" class="grid grid-cols-5 gap-2.5"></div>
+            </div>
         </div>
     </div>
 
-    <div class="notification hidden" id="notification">
-        <div class="col-md col-lg col-xl">
-            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-                <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
-                    <path
-                        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                </symbol>
-            </svg>
-            <div id="msg" class="d-flex align-items-center">
-                <svg class="bi flex-shrink-0 me-2" width="20" height="20" role="img" aria-label="Info:">
-                    <use xlink:href="#info-fill" />
-                </svg>
-                <span id="notificationtext"></span>
+    <!-- Result Modal -->
+    <div id="result-modal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-slate-900/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-light-card dark:bg-dark-card w-full max-w-sm rounded-3xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300 border border-slate-200 dark:border-dark-border" id="result-content">
+            <div class="bg-gradient-to-br from-brand-600 to-brand-700 p-8 text-white text-center relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+                <h2 class="text-2xl font-bold mb-1 relative z-10">Session Ended</h2>
+                <p class="text-brand-100 text-xs uppercase tracking-wide opacity-90 relative z-10">Performance Report</p>
+            </div>
+            <div class="p-6">
+                <div class="flex justify-center items-baseline gap-1 mb-6">
+                    <span id="modal-score" class="text-6xl font-black text-slate-800 dark:text-white tracking-tighter">0</span>
+                    <span class="text-slate-400 font-bold text-xl">/ <span id="modal-total">0</span></span>
+                </div>
+                <div class="grid grid-cols-2 gap-3 mb-8">
+                    <div class="bg-red-50 dark:bg-red-500/10 p-3 rounded-xl text-center border border-red-100 dark:border-red-500/20">
+                        <div class="text-red-500 font-bold text-xl mb-0.5" id="modal-wrong">0</div>
+                        <div class="text-[10px] text-red-500 uppercase font-bold tracking-wider">Mistakes</div>
+                    </div>
+                    <div class="bg-emerald-50 dark:bg-emerald-500/10 p-3 rounded-xl text-center border border-emerald-100 dark:border-emerald-500/20">
+                        <div class="text-emerald-500 font-bold text-xl mb-0.5" id="modal-accuracy">0%</div>
+                        <div class="text-[10px] text-emerald-500 uppercase font-bold tracking-wider">Accuracy</div>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <button onclick="closeModal()" class="flex-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 py-3 rounded-xl font-bold text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">Review</button>
+                    <button onclick="retryExam()" class="flex-1 bg-brand-600 text-white py-3 rounded-xl font-bold text-sm hover:bg-brand-500 transition-colors shadow-lg shadow-brand-500/30">Retry</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <div id="result">
-    </div>
-
+    <!-- FAB -->
+    <button id="desktop-submit-btn" onclick="submitExam()" class="hidden xl:hidden fixed bottom-8 right-8 z-30 bg-brand-600 hover:bg-brand-500 text-white w-14 h-14 rounded-2xl shadow-xl shadow-brand-500/40 items-center justify-center transition-all hover:scale-105 active:scale-95 group focus:ring-4 focus:ring-brand-300" title="Submit Exam">
+        <i class="fas fa-check text-xl"></i>
+    </button>
 
     <script>
+        let ALL_QUESTIONS = [], displayQuestions = [];
+        let state = { score: 0, answeredCount: 0, examSubmitted: false, userAnswers: {}, timer: null, seconds: 0, currentTab: 'all', starredIds: new Set() };
 
-        function refresh() {
-            document.querySelectorAll('.question-container').forEach(container => {
-                let answers = container.querySelector('.left-side').querySelectorAll('.answer');
-                let explanation = container.querySelector('.right-side .explanation');
-                let icon = container.querySelector('.answers').querySelectorAll('.hidden');
+        document.addEventListener('DOMContentLoaded', async () => {
+            initDarkMode();
+            loadSavedData();
+            await fetchXMLData();
+            startTimer(); 
+            renderQuestions();
+            
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                if (!localStorage.getItem('theme')) {
+                    document.documentElement.classList.toggle('dark', e.matches);
+                    updateMetaThemeColor();
+                }
+            });
+        });
 
-                answers.forEach(answerBtn => {
-                    answerBtn.addEventListener('click', () => {
-                        // 清除其他所选的样式
-                        answers.forEach(btn => {
-                            btn.classList.remove('selected');
-                        });
-                        // 顯示被點選的答案的樣式
-                        answerBtn.classList.add('selected');
+        function initDarkMode() {
+            const isDark = localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            document.documentElement.classList.toggle('dark', isDark);
+            updateMetaThemeColor();
+        }
+        
+        function updateMetaThemeColor() {
+            const color = document.documentElement.classList.contains('dark') ? '#0b1120' : '#f8fafc';
+            document.querySelectorAll('meta[name="theme-color"]').forEach(m => m.remove());
+            const meta = document.createElement('meta'); meta.name = "theme-color"; meta.content = color;
+            document.head.appendChild(meta);
+        }
 
-                        // 打開當前問題的解釋
-                        explanation.style.display = 'block';
+        function loadSavedData() {
+            try {
+                if(localStorage.getItem("ict_year")) document.getElementById("examyear").value = localStorage.getItem("ict_year");
+                if(localStorage.getItem("ict_mode")) document.getElementById("mode").value = localStorage.getItem("ict_mode");
+                const savedStars = localStorage.getItem("ict_starred");
+                if (savedStars) state.starredIds = new Set(JSON.parse(savedStars));
+            } catch(e) { console.warn("LocalStorage access denied."); }
+        }
 
-                        // 設置答案按鈕狀態
-                        answers.forEach(btn => {
-                            btn.disabled = true; // 禁用所有答案按鈕
-                            if (btn.dataset.correct === "true") {
-                                btn.classList.add('correct'); // 顯示正確答案
-                                btn.classList.remove('selected');
-                            }
-                        });
+        async function fetchXMLData() {
+            try {
+                const response = await fetch('ict-mc.xml');
+                if (!response.ok) throw new Error("File not found");
+                
+                const lastModified = response.headers.get('last-modified');
+                document.getElementById('last-updated-date').innerText = lastModified ? new Date(lastModified).toLocaleDateString() : new Date().toLocaleDateString();
 
-                        icon.forEach(iconBtn => {
-                            iconBtn.classList.remove('hidden')
-                        });
+                const str = await response.text();
+                const xml = new window.DOMParser().parseFromString(str, "text/xml");
+                const questions = xml.getElementsByTagName("Question");
+                
+                if (questions.length === 0) throw new Error("Invalid XML format");
+                
+                const uniqueYears = new Set();
 
+                ALL_QUESTIONS = Array.from(questions).map((q, index) => {
+                    const qTextNode = q.getElementsByTagName("QText")[0];
+                    const year = qTextNode.getAttribute("examyear") || "General";
+                    uniqueYears.add(year);
+
+                    let qText = qTextNode.textContent.replace(/\t/g, "");
+                    const qFigure = qTextNode.getAttribute("figure");
+                    if (qFigure) qText = qText.replace('#figure', `<img src="./images/${qFigure}" alt="Figure" loading="lazy">`);
+
+                    const options = Array.from(q.getElementsByTagName("Option")).map((opt, i) => {
+                        let text = opt.textContent;
+                        const optFigure = opt.getAttribute("figure");
+                        if (optFigure) text = text.replace('#figure', `<img src="./images/${optFigure}" alt="Option" loading="lazy">`);
+                        return { id: `q${index}_opt${i}`, text: text, isCorrect: opt.getAttribute("correct") === "1" };
                     });
+
+                    const explanation = q.getElementsByTagName("explanation")[0]?.textContent || "No explanation available.";
+                    const searchText = (qTextNode.textContent + options.map(o => o.text).join(" ")).toLowerCase();
+                    
+                    return { uid: `${year}_${index}`, id: index, year, qText, options, explanation, searchText };
+                });
+
+                const yearSelect = document.getElementById('examyear');
+                yearSelect.innerHTML = "";
+                Array.from(uniqueYears).sort().reverse().forEach(year => yearSelect.add(new Option(year, year)));
+                
+                const savedYear = localStorage.getItem("ict_year");
+                if (savedYear && uniqueYears.has(savedYear)) yearSelect.value = savedYear;
+
+            } catch (err) {
+                document.getElementById("result").innerHTML = `
+                    <div class="flex flex-col items-center justify-center py-20 text-center px-4">
+                        <div class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-4">
+                             <i class="fas fa-exclamation-triangle text-red-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200 mb-2">Database Error</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 max-w-sm">Failed to load <code>ict-mc.xml</code>. Please ensure the file is uploaded correctly.</p>
+                    </div>`;
+                throw err;
+            }
+        }
+
+        function handleFilterChange() { localStorage.setItem("ict_year", document.getElementById("examyear").value); resetState(); renderQuestions(); }
+        function handleModeChange() { localStorage.setItem("ict_mode", document.getElementById("mode").value); resetState(); renderQuestions(); }
+        function handleSearch() { renderQuestions(document.getElementById("search-input").value.toLowerCase()); }
+
+        function resetState() {
+            state.score = 0; state.answeredCount = 0; state.examSubmitted = false; state.userAnswers = {}; state.seconds = 0; state.currentTab = 'all';
+            setTabUI('all'); startTimer(); window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function setTab(tab) { state.currentTab = tab; setTabUI(tab); renderQuestions(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+        function setTabUI(tab) {
+             ['all', 'wrong', 'starred'].forEach(t => {
+                const btn = document.getElementById(`tab-${t}`);
+                btn.className = t === tab 
+                    ? "flex-1 py-2.5 px-4 rounded-lg text-xs font-bold transition-all text-center whitespace-nowrap bg-slate-800 text-white dark:bg-brand-600 shadow-md"
+                    : "flex-1 py-2.5 px-4 rounded-lg text-xs font-bold transition-all text-center whitespace-nowrap bg-transparent text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50";
+            });
+        }
+
+        function toggleStar(e, uid) {
+            e.stopPropagation();
+            state.starredIds.has(uid) ? state.starredIds.delete(uid) : state.starredIds.add(uid);
+            try { localStorage.setItem("ict_starred", JSON.stringify([...state.starredIds])); } catch(e){}
+            
+            const icon = document.getElementById(`star_${uid}`);
+            if(icon) icon.className = state.starredIds.has(uid) ? "fas fa-star text-amber-400 text-lg transition-transform hover:scale-110" : "far fa-star text-slate-300 hover:text-amber-400 text-lg transition-transform hover:scale-110";
+            if(state.currentTab === 'starred' && !state.starredIds.has(uid)) renderQuestions();
+        }
+
+        function startTimer() {
+            if (state.timer) clearInterval(state.timer);
+            state.timer = setInterval(() => {
+                state.seconds++;
+                document.getElementById("timer-display").innerText = `${Math.floor(state.seconds / 60).toString().padStart(2, '0')}:${(state.seconds % 60).toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        function renderQuestions(searchKeyword = "") {
+            const year = document.getElementById("examyear").value;
+            if(!year) return;
+
+            let questions = ALL_QUESTIONS.filter(q => q.year === year);
+            if (searchKeyword) questions = questions.filter(q => q.searchText.includes(searchKeyword));
+            if (state.currentTab === 'starred') questions = questions.filter(q => state.starredIds.has(q.uid));
+            else if (state.currentTab === 'wrong') questions = questions.filter(q => state.userAnswers[q.uid] !== undefined && !q.options[state.userAnswers[q.uid]].isCorrect);
+
+            displayQuestions = questions;
+            updateDashboard(); updateNavigator();
+
+            const mode = document.getElementById("mode").value;
+            const container = document.getElementById("result");
+            const isExamAndActive = (mode === "exam" && !state.examSubmitted && questions.length > 0);
+            
+            document.getElementById("desktop-submit-btn").style.display = (isExamAndActive && window.innerWidth >= 1280) ? "flex" : "none";
+            const mobileBtn = document.getElementById("mobile-submit-btn");
+            isExamAndActive ? mobileBtn.classList.remove("hidden") & mobileBtn.classList.add("flex") : mobileBtn.classList.add("hidden") & mobileBtn.classList.remove("flex");
+
+            container.innerHTML = "";
+            if (questions.length === 0) {
+                container.innerHTML = `<div class="flex flex-col items-center justify-center py-24 text-slate-300 dark:text-slate-600"><i class="far fa-folder-open text-5xl mb-4 opacity-50"></i><p class="font-bold text-sm tracking-widest uppercase">No Questions Found</p></div>`;
+                return;
+            }
+
+            // High Performance Rendering using DocumentFragment
+            const fragment = document.createDocumentFragment();
+
+            questions.forEach((q, idx) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = "question-card bg-light-card dark:bg-dark-card p-5 sm:p-8 rounded-2xl shadow-soft border border-slate-200 dark:border-dark-border scroll-mt-36";
+                qDiv.id = `card_${q.uid}`;
+
+                let html = `
+                    <div class="flex justify-between items-start mb-5">
+                        <span class="bg-slate-100 dark:bg-dark-bg border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 text-[11px] font-extrabold tracking-wider font-mono px-3 py-1 rounded-md">Q${idx + 1}</span>
+                        <button onclick="toggleStar(event, '${q.uid}')" class="p-2 -mr-2 -mt-2"><i id="star_${q.uid}" class="${state.starredIds.has(q.uid) ? "fas fa-star text-amber-400" : "far fa-star text-slate-300"} text-lg"></i></button>
+                    </div>
+                    <div class="text-[16px] sm:text-[17px] text-slate-800 dark:text-slate-200 font-medium mb-6 formatted-text">${q.qText}</div>
+                    <div class="space-y-3 mb-5">
+                `;
+
+                q.options.forEach((opt, i) => {
+                    html += `
+                        <button id="btn_${q.uid}_${i}" onclick="handleClick('${q.uid}', ${i})" class="option-btn w-full text-left p-4 rounded-xl border-2 border-transparent bg-slate-50 dark:bg-dark-bg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 flex justify-between items-center group">
+                            <div class="flex items-start gap-4 w-full"><div class="w-6 h-6 rounded-full bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 flex items-center justify-center text-xs font-bold text-slate-400 shrink-0 mt-0.5">${String.fromCharCode(65 + i)}</div>
+                            <span class="formatted-text text-[15px] flex-1 pt-0.5">${opt.text}</span></div><i id="icon_${q.uid}_${i}" class="text-xl ml-3"></i>
+                        </button>
+                    `;
+                });
+
+                html += `</div><div id="exp_${q.uid}" class="hidden animate-subtleFadeIn border-t border-slate-100 dark:border-slate-800 pt-5 mt-5"><div class="flex items-start gap-3 p-4 bg-brand-50 dark:bg-brand-900/10 rounded-xl border border-brand-100 dark:border-brand-900/20"><div class="mt-0.5 w-6 h-6 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-brand-600 dark:text-brand-400 text-xs"><i class="fas fa-lightbulb"></i></div><div class="flex-1"><h4 class="text-[10px] font-extrabold text-brand-600 dark:text-brand-400 uppercase tracking-widest mb-1.5">Explanation</h4><p class="text-slate-700 dark:text-slate-300 text-[13px] sm:text-sm formatted-text">${q.explanation}</p></div></div></div>`;
+                
+                qDiv.innerHTML = html;
+                fragment.appendChild(qDiv);
+            });
+            
+            container.appendChild(fragment);
+            questions.forEach(q => restoreQuestionState(q, mode));
+        }
+
+        function handleClick(uid, optIdx) {
+            const mode = document.getElementById("mode").value;
+            if (mode === "study" || (mode === "exam" && state.examSubmitted) || (mode === "practice" && state.userAnswers[uid] !== undefined)) return;
+            
+            state.userAnswers[uid] = optIdx;
+            const q = ALL_QUESTIONS.find(item => item.uid === uid);
+            
+            if (mode === "practice") {
+                state.answeredCount++;
+                if (q.options[optIdx].isCorrect) state.score++;
+                revealAnswer(uid, optIdx, false);
+            } else markSelected(uid, optIdx);
+
+            updateDashboard(); updateNavigatorItem(uid, optIdx);
+        }
+
+        function markSelected(uid, optIdx) {
+            ALL_QUESTIONS.find(item => item.uid === uid).options.forEach((_, i) => {
+                const btn = document.getElementById(`btn_${uid}_${i}`);
+                const isSel = i === optIdx;
+                btn.className = `option-btn w-full text-left p-4 rounded-xl border-2 flex justify-between items-center ${isSel ? 'border-brand-500 bg-brand-50 dark:bg-brand-900/20 text-brand-800 dark:text-brand-200 shadow-sm' : 'border-transparent bg-slate-50 dark:bg-dark-bg text-slate-700 dark:text-slate-300'}`;
+                btn.querySelector("div > div").className = `w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 ${isSel ? 'bg-brand-500 text-white' : 'bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-400'}`;
+            });
+        }
+
+        function revealAnswer(uid, userOptIdx, isStudyMode) {
+            const q = ALL_QUESTIONS.find(item => item.uid === uid);
+            const correctIdx = q.options.findIndex(o => o.isCorrect);
+
+            q.options.forEach((_, i) => {
+                const btn = document.getElementById(`btn_${uid}_${i}`), icon = document.getElementById(`icon_${uid}_${i}`);
+                btn.disabled = true;
+                
+                if (i === correctIdx) {
+                    btn.className = "option-btn w-full text-left p-4 rounded-xl border-2 border-emerald-500 bg-emerald-50 dark:bg-emerald-900/10 text-emerald-800 dark:text-emerald-300 flex justify-between items-center font-bold shadow-sm opacity-100";
+                    btn.querySelector("div > div").className = "w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5";
+                    icon.className = "fas fa-check-circle text-emerald-500 text-xl";
+                } else if (i === userOptIdx && i !== correctIdx && !isStudyMode) {
+                    btn.className = "option-btn w-full text-left p-4 rounded-xl border-2 border-red-500 bg-red-50 dark:bg-red-900/10 text-red-800 dark:text-red-300 flex justify-between items-center opacity-100";
+                    btn.querySelector("div > div").className = "w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5";
+                    icon.className = "fas fa-times-circle text-red-500 text-xl";
+                } else {
+                    btn.className = "option-btn w-full text-left p-4 rounded-xl border-2 border-transparent bg-slate-50 dark:bg-dark-bg text-slate-400 dark:text-slate-500 flex justify-between items-center opacity-60"; 
+                    btn.querySelector("div > div").className = "w-6 h-6 rounded-full bg-transparent border border-slate-300 dark:border-slate-600 text-slate-300 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5";
+                }
+            });
+            document.getElementById(`exp_${uid}`).classList.remove('hidden');
+        }
+
+        function restoreQuestionState(q, mode) {
+            if (mode === "study" || (mode === "exam" && state.examSubmitted)) revealAnswer(q.uid, state.userAnswers[q.uid] ?? -1, mode === "study" || state.userAnswers[q.uid] === undefined);
+            else if (mode === "practice" && state.userAnswers[q.uid] !== undefined) revealAnswer(q.uid, state.userAnswers[q.uid], false);
+            else if (mode === "exam" && state.userAnswers[q.uid] !== undefined) markSelected(q.uid, state.userAnswers[q.uid]);
+        }
+
+        function updateNavigator() {
+            ["question-nav-grid", "mobile-nav-grid"].forEach(containerId => {
+                const container = document.getElementById(containerId);
+                container.innerHTML = "";
+                displayQuestions.forEach((q, idx) => {
+                    const btn = document.createElement("button");
+                    btn.id = `nav_btn_${q.uid}_${containerId}`; btn.innerText = idx + 1;
+                    btn.onclick = () => {
+                        const card = document.getElementById(`card_${q.uid}`);
+                        window.scrollTo({top: card.getBoundingClientRect().top + window.pageYOffset - (window.innerWidth >= 1280 ? 180 : 90), behavior: 'smooth'});
+                        card.classList.add("ring-2", "ring-brand-500"); setTimeout(() => card.classList.remove("ring-2", "ring-brand-500"), 1000);
+                        if(window.innerWidth < 1280) toggleMobileNav(); 
+                    };
+                    container.appendChild(btn); updateNavigatorBtnColor(btn, q);
                 });
             });
-            var sel = document.getElementById("mode");
-            // Set cookies for year and mode
-            setCookie("mode", sel.value, 7); // stores the value for 1 week
-            var text = sel.options[sel.selectedIndex].text;
-            console.log(document.getElementById('examyear').value, 'Paper Loaded - ', text)
-            if (sel.value == 'mode2') {
-                document.querySelectorAll('.hidden').forEach(icon => {
-                    icon.classList.remove('hidden')
-                });
-                document.querySelectorAll('.explanation').forEach(explanation => {
-                    explanation.style.display = 'block';
-                });
-                document.querySelectorAll('.answer').forEach(answerbtn => {
-                    answerbtn.disabled = true; // 禁用所有答案按鈕
-                    if (answerbtn.dataset.correct === "true") {
-                        answerbtn.classList.add('correct'); // 顯示正確答案
-                    }
-                });
-
-            }
         }
 
+        function updateNavigatorItem(uid) {
+            const q = ALL_QUESTIONS.find(item => item.uid === uid);
+            ["question-nav-grid", "mobile-nav-grid"].forEach(cId => {
+                const btn = document.getElementById(`nav_btn_${uid}_${cId}`);
+                if(btn) updateNavigatorBtnColor(btn, q);
+            });
+        }
 
-        /* 載入最後更新日期 */
-        var getDate = new XMLHttpRequest();
-        getDate.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                var commits = JSON.parse(this.responseText);
-                var lastCommitDate = commits[0].commit.committer.date;
-                // 轉換日期至指定格式
-                var date = new Date(lastCommitDate);
-                var year = date.getFullYear();
-                var month = ("0" + (date.getMonth() + 1)).slice(-2);
-                var day = ("0" + date.getDate()).slice(-2);
-                var formattedDate = year + '年' + month + '月' + day + '日';
-                document.getElementById("modifydate").innerHTML = "最後更新日期：" + formattedDate;
-            }
-        };
-        getDate.open('GET', 'https://api.github.com/repos/jarviskao/Pastpaper/commits?path=ict-mc.xml', true);
-        getDate.send();
+        function updateNavigatorBtnColor(btn, q) {
+            const ans = state.userAnswers[q.uid], mode = document.getElementById("mode").value, isCorrect = ans !== undefined && q.options[ans].isCorrect;
+            let c = "bg-slate-50 dark:bg-dark-bg text-slate-400 border border-slate-200 dark:border-dark-border hover:bg-slate-100"; 
+            if (mode === "study") c = "bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 border border-emerald-200";
+            else if (mode === "practice" && ans !== undefined) c = isCorrect ? "bg-emerald-500 text-white" : "bg-red-500 text-white";
+            else if (mode === "exam") c = state.examSubmitted ? (isCorrect ? "bg-emerald-500 text-white" : "bg-red-500 text-white") : (ans !== undefined ? "bg-brand-500 text-white" : c);
+            btn.className = `nav-grid-item w-full aspect-square rounded-lg text-[11px] font-bold flex items-center justify-center ${c}`;
+        }
 
-        /* 載入模擬試題 */
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                xmldata = xmlhttp.responseXML
-                /* 載入全部年份的選擇題 */
-                ALL_MCQS = xmldata.getElementsByTagName("Question")
-                //console.log("Total MCQs: ", ALL_MCQS.length);
-                /* 把模擬試題年份加到選單 */
-                var yearOptions = document.getElementById('examyear');
-                // Initialize a new Set to store unique years
-                var uniqueYears = new Set();
-                for (var i = ALL_MCQS.length - 1; i >= 0; i--) {
-                    var examYear = ALL_MCQS[i].getElementsByTagName("QText")[0].getAttribute("examyear");
-                    // Add the exam year to the Set
-                    if (examYear.includes("HKDSE")) {
-                        uniqueYears.add(examYear);
-                    }
+        function updateDashboard() {
+            const total = displayQuestions.length;
+            const current = (document.getElementById("mode").value === "exam" && !state.examSubmitted) ? Object.keys(state.userAnswers).filter(uid => displayQuestions.some(q => q.uid === uid)).length : state.answeredCount;
+            const percent = total === 0 ? 0 : (current / total) * 100;
+            
+            document.getElementById("progress-bar").style.width = `${percent}%`;
+            document.getElementById("header-score").innerText = state.score; document.getElementById("header-total").innerText = total;
+            document.getElementById("sidebar-score").innerText = (document.getElementById("mode").value === "exam" && !state.examSubmitted) ? current : state.score;
+            document.getElementById("sidebar-total").innerText = total;
+            document.getElementById("mobile-drawer-score").innerText = `${(document.getElementById("mode").value === "exam" && !state.examSubmitted) ? current : state.score}/${total}`;
+            document.getElementById("mobile-drawer-progress").style.width = `${percent}%`;
+
+            const isExamActive = document.getElementById("mode").value === "exam" && !state.examSubmitted && total > 0;
+            document.getElementById("desktop-submit-btn").style.display = (isExamActive && window.innerWidth >= 1280) ? "flex" : "none";
+            isExamActive ? document.getElementById("mobile-submit-btn").classList.remove("hidden") & document.getElementById("mobile-submit-btn").classList.add("flex") : document.getElementById("mobile-submit-btn").classList.add("hidden") & document.getElementById("mobile-submit-btn").classList.remove("flex");
+        }
+
+        function submitExam() {
+            if (!confirm("Are you sure you want to finish this session?")) return;
+            clearInterval(state.timer); state.examSubmitted = true; state.score = 0; state.answeredCount = 0; let wrongCount = 0;
+            
+            displayQuestions.forEach(q => {
+                if (state.userAnswers[q.uid] !== undefined) {
+                    state.answeredCount++;
+                    q.options[state.userAnswers[q.uid]].isCorrect ? state.score++ : wrongCount++;
                 }
-                // Now create option elements using the unique values in the Set
-                uniqueYears.forEach(function (examYear) {
-                    // Create new option element
-                    var optElement = document.createElement('option');
-                    // Set the value and text of the option element
-                    optElement.value = examYear;
-                    optElement.textContent = examYear;
-                    // Append the new option element to yearOptions
-                    yearOptions.appendChild(optElement);
-                });
-                // Load cookies
-                if (getCookie("year")) {
-                    document.getElementById("examyear").value = getCookie("year");
-                    console.log('Cookie loaded. Year:', getCookie("year"));
-                }
-                if (getCookie("year")) {
-                    document.getElementById("mode").value = getCookie("mode");
-                    console.log('Cookie loaded. Mode:', getCookie("mode"));
-                }
-                loadpage()
-            }
-        };
-        xmlhttp.open("GET", "ict-mc.xml", true);
-        //xmlhttp.open("GET", "https://cdn.jsdelivr.net/gh/jarviskao/Pastpaper@main/ict-mc.xml", true);
-        xmlhttp.send();
+            });
 
-        function loadpage() {
-            /* 顯示指定年份的選擇題 */
-            var year = document.getElementById("examyear").value;
-            /* 打印年份 */
-            //console.log(year);
-            /* 載入定年份的選擇題 */
-            var MCQs_content = ''
+            displayQuestions.forEach(q => restoreQuestionState(q, "exam")); 
+            updateDashboard(); updateNavigator();
 
-            // Set cookies for year and mode
-            setCookie("year", year, 7);
-            console.log('Cookie saved. Year:', getCookie("year"));
+            document.getElementById("modal-score").innerText = state.score;
+            document.getElementById("modal-total").innerText = displayQuestions.length;
+            document.getElementById("modal-wrong").innerText = wrongCount;
+            document.getElementById("modal-accuracy").innerText = state.answeredCount > 0 ? Math.round((state.score/state.answeredCount)*100) + "%" : "0%";
 
-            let filteredMCQs = Array.from(ALL_MCQS).filter(mcq => mcq.getElementsByTagName("QText")[0].getAttribute("examyear") == year);
+            const modal = document.getElementById("result-modal");
+            modal.classList.remove("hidden", "opacity-0"); modal.classList.add("flex", "opacity-100");
+            document.getElementById("result-content").classList.remove("scale-95"); document.getElementById("result-content").classList.add("scale-100");
+            if (displayQuestions.length > 0 && (state.score / displayQuestions.length) > 0.6) confetti({ particleCount: 200, spread: 80, origin: { y: 0.6 } });
+        }
 
-            let sortedMCQs = [...filteredMCQs]; // Create a copy for sorting
+        function closeModal() {
+            const modal = document.getElementById("result-modal");
+            modal.classList.remove("opacity-100"); document.getElementById("result-content").classList.remove("scale-100");
+            setTimeout(() => modal.classList.add("hidden") & modal.classList.remove("flex"), 300);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function retryExam() { closeModal(); setTimeout(() => { resetState(); renderQuestions(); }, 300); }
 
-            let sortOrder = document.getElementById("sort").value;
-
-            switch (sortOrder) {
-                case "sort2": // 倒序
-                    sortedMCQs.reverse();
-                    break;
-                case "sort3": // 隨機
-                    sortedMCQs.sort(() => Math.random() - 0.5);
-                    break;
-                // default:  "sort1" (順序) - no action needed as XML is already sorted
-            }
-
-            for (var i = 0; i < sortedMCQs.length; i++) {
-                let mcq = sortedMCQs[i];
-
-                /* 打印選擇題 */
-                let MCQS_pre = '<div class="question-container row"> <div class="left-side col-md col-lg col-xl"> <div class="question formatted-text">'
-                let MCQs_question;
-                if (mcq.getElementsByTagName("QText")[0].getAttribute("figure")) {
-                    let imgUrl = './images/' + mcq.getElementsByTagName("QText")[0].getAttribute("figure")
-                    //console.log(imgUrl)
-                    MCQs_question = mcq.getElementsByTagName("QText")[0].childNodes[0].nodeValue.replace('#figure', '<img src="' + imgUrl + '" class="img-fluid">')
-                }
-                else {
-                    MCQs_question = mcq.getElementsByTagName("QText")[0].childNodes[0].nodeValue.replace(/\\t/g, "      ")
-                }
-                let MCQs_post = '</div> <ul class="answers">'
-                MCQs_content = MCQs_content + MCQS_pre + MCQs_question + MCQs_post
-                /* 打印選擇題的選項 */
-                for (j = 0; j < 4; j++) {
-                    /* 記錄選擇題的正確答案 */
-                    let corret = mcq.getElementsByTagName("Option")[j].getAttribute("correct")
-                    if (corret) { corret = "true"; icon = "text-success fas fa-check"; } else { corret = "false"; icon = "text-danger fas fa-times"; }
-                    /* 記錄選擇題的選項內容 A. B. C. D.*/
-                    let char = String.fromCharCode('A'.charCodeAt(0) + j);
-                    let option_content;
-
-                    if (mcq.getElementsByTagName("Option")[j].getAttribute("figure")) {
-                        let imgUrl = './images/' + mcq.getElementsByTagName("Option")[j].getAttribute("figure")
-                        //console.log(imgUrl)
-                        option_content = '<li><button class="answer" data-correct=' + corret + '>' + char + '. ' + mcq.getElementsByTagName("Option")[j].childNodes[0].nodeValue.replace('#figure', '<img src="' + imgUrl + '" class="img-fluid">') + ' <i class="' + icon + ' hidden"></i></button></li>'
-                    }
-                    else {
-                        option_content = '<li><button class="answer" data-correct=' + corret + '>' + char + '. ' + mcq.getElementsByTagName("Option")[j].childNodes[0].nodeValue + ' <i class="' + icon + ' hidden"></i> </button></li>'
-                    }
-                    MCQs_content = MCQs_content + option_content
-                }
-                /* 打印選擇題的解釋 */
-                MCQs_explanation = '無解釋'
-                if (mcq.getElementsByTagName("explanation")[0]) {
-                    MCQs_explanation = mcq.getElementsByTagName("explanation")[0].childNodes[0].nodeValue
-                }
-                MCQs_content = MCQs_content + '</ul> </div> <div class="right-side col-md col-lg col-xl"> <div class="explanation formatted-text">' + MCQs_explanation + '</div> </div> </div>'
-            }
-
-            document.getElementById("result").innerHTML = MCQs_content
-
-            if (year.includes("HKDSE")) {
-                document.getElementById("notificationtext").innerHTML = '<span id = "notificationtext"> 您可以在Youtube上搜尋 「<a href="https://www.youtube.com/results?search_query=' + year + ' ICT MC" target="_blank">' + year + ' MC」</a> 題解。</span><span> 遇上困難時，您可以在POE上找到<a href="https://poe.com/HKDSE_ICT_Solver" target="_blank">「ICT 解題大師」</a></span>'
-                document.getElementById("notification").classList.remove('hidden')
+        function toggleMobileNav() {
+            const drawer = document.getElementById("mobile-nav-drawer"), content = document.getElementById("mobile-drawer-content");
+            if (drawer.classList.contains("hidden")) {
+                drawer.classList.remove("hidden"); requestAnimationFrame(() => content.classList.remove("translate-x-full")); document.body.style.overflow = 'hidden'; 
             } else {
-                document.getElementById("notification").classList.add('hidden')
+                content.classList.add("translate-x-full"); setTimeout(() => drawer.classList.add("hidden") & (document.body.style.overflow = ''), 300);
             }
-            refresh()
         }
-
-        function setCookie(name, value, days) {
-            var expires = "";
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            // Ensure you encode the cookie's value, as it might contain characters that need encoding
-            document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/; SameSite=Lax" + (location.protocol === "https:" ? "; Secure" : "");
-        }
-
-        function getCookie(name) {
-            // Escape special characters in cookie name to prepare it for regex pattern
-            var nameEscaped = name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1');
-
-            // Use a regular expression to find the cookie in the document.cookie string
-            var regex = new RegExp('(?:^|; )' + nameEscaped + '=([^;]*)');
-            var match = document.cookie.match(regex);
-
-            // Return the value, decoded from URI encoding, or return null if not found
-            return match ? decodeURIComponent(match[1]) : null;
-        }
-
+        
+        function toggleDarkMode() { document.documentElement.classList.toggle('dark'); try { localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); } catch(e){} updateMetaThemeColor(); }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
 </body>
-
 </html>
