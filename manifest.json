@@ -1,0 +1,17 @@
+{
+  "name": "ICT Master Pro",
+  "short_name": "ICT Master",
+  "description": "最強 DSE ICT 刷題神器",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b1120",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Eo_circle_indigo_white_letter-i.svg/512px-Eo_circle_indigo_white_letter-i.svg.png?20200417143551",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

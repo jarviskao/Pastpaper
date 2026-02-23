@@ -2,24 +2,29 @@
 <html lang="zh-Hant" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
+    <!-- PWA Viewport Optimization -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     
-    <!-- SEO & Social Sharing (Open Graph) -->
-    <title>HKDSE ICT Master Pro | Revision Platform</title>
-    <meta name="description" content="專為 HKDSE ICT 學生打造的完美刷題平台。支援即時練習、模擬考試與溫習模式。">
-    <meta property="og:title" content="HKDSE ICT Master Pro">
-    <meta property="og:description" content="最強 DSE ICT 刷題神器，無廣告、極速、支援深色模式。">
-    <meta property="og:type" content="website">
+    <!-- SEO & Social Sharing -->
+    <title>HKDSE ICT Master Pro</title>
+    <meta name="description" content="最強 DSE ICT 刷題神器。支援即時練習、模擬考試與 DSE 等級預測。">
+    
+    <!-- 🍎 iOS / PWA App Meta Tags (新增) -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ICT Master">
+    <link rel="apple-touch-icon" href="icon-192.png"> <!--稍後會說明如何加入圖片-->
+    <link rel="manifest" href="manifest.json">
     
     <!-- Theme Colors -->
     <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)">
     
     <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     
-    <!-- Tailwind CSS & Libraries -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     
@@ -60,13 +65,16 @@
         .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* 避免在 iOS 作為 App 開啟時文字無法選取 */
+        .select-auto { user-select: auto; -webkit-user-select: auto; }
     </style>
 </head>
 
-<body class="bg-light-bg text-slate-800 dark:bg-dark-bg dark:text-slate-200 transition-colors duration-300 min-h-screen flex flex-col pb-24 xl:pb-0">
+<body class="bg-light-bg text-slate-800 dark:bg-dark-bg dark:text-slate-200 transition-colors duration-300 min-h-screen flex flex-col pb-24 xl:pb-0 select-none">
 
-    <!-- Header -->
-    <nav class="absolute md:fixed top-0 inset-x-0 z-40 glass-nav h-16 transition-all duration-300">
+    <!-- Header (PWA Safe Top Padding) -->
+    <nav class="absolute md:fixed top-0 inset-x-0 z-40 glass-nav transition-all duration-300 pt-[env(safe-area-inset-top)] h-[calc(4rem+env(safe-area-inset-top))]">
         <div class="max-w-[1450px] mx-auto px-4 sm:px-6 h-full flex items-center justify-between">
             <div class="flex items-center gap-3 cursor-pointer group" onclick="window.scrollTo({top:0, behavior:'smooth'})">
                 <div class="w-9 h-9 bg-brand-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
@@ -97,12 +105,12 @@
         </div>
     </nav>
 
-    <!-- Main -->
-    <main class="flex-1 max-w-[1450px] mx-auto w-full px-4 sm:px-6 pt-20 md:pt-28 flex flex-col xl:flex-row gap-8">
+    <!-- Main Content -->
+    <main class="flex-1 max-w-[1450px] mx-auto w-full px-4 sm:px-6 pt-[calc(5rem+env(safe-area-inset-top))] md:pt-[calc(7rem+env(safe-area-inset-top))] flex flex-col xl:flex-row gap-8">
         
         <!-- Sidebar -->
         <aside class="hidden xl:flex flex-col w-72 flex-shrink-0">
-            <div class="sticky top-28 space-y-6 max-h-[calc(100vh-9rem)] flex flex-col">
+            <div class="sticky top-[calc(7rem+env(safe-area-inset-top))] space-y-6 max-h-[calc(100vh-9rem)] flex flex-col">
                 <div class="bg-light-card dark:bg-dark-card rounded-2xl p-5 shadow-soft border border-slate-200 dark:border-dark-border flex-shrink-0">
                     <div class="flex justify-between items-center mb-4">
                         <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Timer</span>
@@ -120,7 +128,6 @@
                         <span>DB Loaded: <span id="last-updated-date">...</span></span>
                     </div>
                 </div>
-
                 <div class="bg-light-card dark:bg-dark-card rounded-2xl p-5 shadow-soft border border-slate-200 dark:border-dark-border flex-1 flex flex-col min-h-0">
                     <div class="flex justify-between items-center mb-4 flex-shrink-0">
                         <h3 class="text-xs font-bold text-slate-400 uppercase flex items-center gap-2"><i class="fas fa-map"></i> Navigator</h3>
@@ -147,15 +154,15 @@
                         <label for="mode" class="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider ml-1">Mode</label>
                         <div class="relative">
                             <select id="mode" class="w-full pl-4 pr-10 py-3 rounded-xl border border-slate-200 dark:border-dark-border bg-slate-50 dark:bg-dark-bg/50 text-sm font-semibold focus:ring-2 focus:ring-brand-500 outline-none cursor-pointer text-slate-800 dark:text-slate-200 appearance-none shadow-sm" onchange="handleModeChange()">
-                                <option value="practice">⚡ Practice (Instant)</option>
-                                <option value="exam">📝 Exam (Simulated)</option>
-                                <option value="study">📖 Study (Review)</option>
+                                <option value="practice">⚡ Practice (Instant Review)</option>
+                                <option value="exam">📝 Exam (Simulated Test)</option>
+                                <option value="study">📖 Study (Read Answers)</option>
                             </select>
                             <i class="fas fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
                         </div>
                     </div>
                     <div class="md:col-span-4 flex flex-col gap-1.5">
-                        <label for="search-input" class="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider ml-1">Search Keywords</label>
+                        <label for="search-input" class="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider ml-1">Search Keyword</label>
                         <div class="relative">
                             <input type="text" id="search-input" placeholder="Type to filter..." class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-dark-border bg-slate-50 dark:bg-dark-bg/50 text-sm font-semibold focus:ring-2 focus:ring-brand-500 outline-none text-slate-800 dark:text-slate-200 placeholder-slate-400 shadow-sm" oninput="handleSearch()">
                             <i class="fas fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
@@ -169,10 +176,10 @@
                 </div>
             </div>
 
-            <div id="result" class="space-y-6 min-h-[50vh]">
+            <div id="result" class="space-y-6 min-h-[50vh] select-auto">
                 <div class="flex flex-col items-center justify-center py-24 opacity-60">
                     <div class="w-10 h-10 border-4 border-slate-200 dark:border-slate-700 border-t-brand-500 rounded-full animate-spin mb-4"></div>
-                    <p class="font-bold text-slate-400 text-xs tracking-widest uppercase">Initializing Database...</p>
+                    <p class="font-bold text-slate-400 text-xs tracking-widest uppercase">Initializing App...</p>
                 </div>
             </div>
         </div>
@@ -203,7 +210,7 @@
     <!-- Mobile Drawer -->
     <div id="mobile-nav-drawer" class="fixed inset-0 z-[60] hidden" aria-hidden="true">
         <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="toggleMobileNav()"></div>
-        <div class="absolute right-0 top-0 bottom-0 w-[80%] max-w-[320px] bg-light-card dark:bg-dark-card shadow-2xl p-6 flex flex-col transform transition-transform translate-x-full duration-300 pb-safe border-l border-slate-200 dark:border-dark-border" id="mobile-drawer-content">
+        <div class="absolute right-0 top-0 bottom-0 w-[80%] max-w-[320px] bg-light-card dark:bg-dark-card shadow-2xl p-6 pt-[calc(1.5rem+env(safe-area-inset-top))] flex flex-col transform transition-transform translate-x-full duration-300 pb-safe border-l border-slate-200 dark:border-dark-border" id="mobile-drawer-content">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="font-bold text-lg text-slate-900 dark:text-white">Navigator</h2>
                 <button onclick="toggleMobileNav()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-dark-bg border border-slate-200 dark:border-dark-border flex items-center justify-center text-slate-500 active:scale-90 transition-transform"><i class="fas fa-times"></i></button>
@@ -218,32 +225,46 @@
         </div>
     </div>
 
-    <!-- Result Modal -->
+    <!-- ✅ 全新：DSE 成績預測 Result Modal -->
     <div id="result-modal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-slate-900/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300">
         <div class="bg-light-card dark:bg-dark-card w-full max-w-sm rounded-3xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300 border border-slate-200 dark:border-dark-border" id="result-content">
-            <div class="bg-gradient-to-br from-brand-600 to-brand-700 p-8 text-white text-center relative overflow-hidden">
-                <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-                <h2 class="text-2xl font-bold mb-1 relative z-10">Session Ended</h2>
-                <p class="text-brand-100 text-xs uppercase tracking-wide opacity-90 relative z-10">Performance Report</p>
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 dark:from-slate-900 dark:to-black p-6 text-white text-center relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-2xl"></div>
+                <h2 class="text-xl font-bold mb-1 relative z-10">Session Ended</h2>
+                <p class="text-slate-400 text-[10px] font-mono uppercase tracking-widest relative z-10">Performance Report</p>
             </div>
-            <div class="p-6">
-                <div class="flex justify-center items-baseline gap-1 mb-6">
-                    <span id="modal-score" class="text-6xl font-black text-slate-800 dark:text-white tracking-tighter">0</span>
-                    <span class="text-slate-400 font-bold text-xl">/ <span id="modal-total">0</span></span>
+            <div class="p-5">
+                
+                <!-- 🎓 DSE Grade Predictor Card -->
+                <div id="grade-card" class="bg-gradient-to-r p-4 rounded-2xl mb-5 shadow-lg text-center transform transition-all text-white">
+                    <div class="flex justify-center items-center gap-1.5 mb-1 opacity-90">
+                        <i class="fas fa-award text-xs"></i>
+                        <span class="text-[10px] uppercase font-extrabold tracking-widest">Estimated DSE Grade</span>
+                    </div>
+                    <div id="grade-level" class="text-4xl font-black mb-1 drop-shadow-md tracking-tighter">Level ?</div>
+                    <div id="grade-desc" class="text-xs font-semibold opacity-95">Evaluating performance...</div>
                 </div>
-                <div class="grid grid-cols-2 gap-3 mb-8">
+
+                <div class="grid grid-cols-3 gap-2 mb-6">
+                    <div class="bg-slate-50 dark:bg-dark-bg p-3 rounded-xl text-center border border-slate-200 dark:border-slate-700/50">
+                        <div class="text-slate-800 dark:text-slate-100 font-black text-lg mb-0.5" id="modal-score">0</div>
+                        <div class="text-[9px] text-slate-500 uppercase font-bold tracking-wider">Correct</div>
+                    </div>
                     <div class="bg-red-50 dark:bg-red-500/10 p-3 rounded-xl text-center border border-red-100 dark:border-red-500/20">
-                        <div class="text-red-500 font-bold text-xl mb-0.5" id="modal-wrong">0</div>
-                        <div class="text-[10px] text-red-500 uppercase font-bold tracking-wider">Mistakes</div>
+                        <div class="text-red-500 font-black text-lg mb-0.5" id="modal-wrong">0</div>
+                        <div class="text-[9px] text-red-500 uppercase font-bold tracking-wider">Mistakes</div>
                     </div>
                     <div class="bg-emerald-50 dark:bg-emerald-500/10 p-3 rounded-xl text-center border border-emerald-100 dark:border-emerald-500/20">
-                        <div class="text-emerald-500 font-bold text-xl mb-0.5" id="modal-accuracy">0%</div>
-                        <div class="text-[10px] text-emerald-500 uppercase font-bold tracking-wider">Accuracy</div>
+                        <div class="text-emerald-500 font-black text-lg mb-0.5" id="modal-accuracy">0%</div>
+                        <div class="text-[9px] text-emerald-500 uppercase font-bold tracking-wider">Accuracy</div>
                     </div>
                 </div>
+
+                <p class="text-[10px] text-slate-400 text-center mb-4 leading-relaxed">* Prediction based on Paper 1A MC (22%).<br>Actual grades depend on Paper 1B & Paper 2.</p>
+
                 <div class="flex gap-3">
-                    <button onclick="closeModal()" class="flex-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 py-3 rounded-xl font-bold text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">Review</button>
-                    <button onclick="retryExam()" class="flex-1 bg-brand-600 text-white py-3 rounded-xl font-bold text-sm hover:bg-brand-500 transition-colors shadow-lg shadow-brand-500/30">Retry</button>
+                    <button onclick="closeModal()" class="flex-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 py-3.5 rounded-xl font-bold text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors active:scale-95">Review</button>
+                    <button onclick="retryExam()" class="flex-1 bg-brand-600 text-white py-3.5 rounded-xl font-bold text-sm hover:bg-brand-500 transition-colors shadow-lg shadow-brand-500/30 active:scale-95">Retry</button>
                 </div>
             </div>
         </div>
@@ -257,6 +278,13 @@
     <script>
         let ALL_QUESTIONS = [], displayQuestions = [];
         let state = { score: 0, answeredCount: 0, examSubmitted: false, userAnswers: {}, timer: null, seconds: 0, currentTab: 'all', starredIds: new Set() };
+
+        // 🟢 PWA Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').then(reg => console.log('PWA SW registered')).catch(err => console.log('SW registration failed: ', err));
+            });
+        }
 
         document.addEventListener('DOMContentLoaded', async () => {
             initDarkMode();
@@ -300,9 +328,6 @@
                 const response = await fetch('ict-mc.xml');
                 if (!response.ok) throw new Error("File not found");
                 
-                const lastModified = response.headers.get('last-modified');
-                document.getElementById('last-updated-date').innerText = lastModified ? new Date(lastModified).toLocaleDateString() : new Date().toLocaleDateString();
-
                 const str = await response.text();
                 const xml = new window.DOMParser().parseFromString(str, "text/xml");
                 const questions = xml.getElementsByTagName("Question");
@@ -310,7 +335,6 @@
                 if (questions.length === 0) throw new Error("Invalid XML format");
                 
                 const uniqueYears = new Set();
-
                 ALL_QUESTIONS = Array.from(questions).map((q, index) => {
                     const qTextNode = q.getElementsByTagName("QText")[0];
                     const year = qTextNode.getAttribute("examyear") || "General";
@@ -329,26 +353,19 @@
 
                     const explanation = q.getElementsByTagName("explanation")[0]?.textContent || "No explanation available.";
                     const searchText = (qTextNode.textContent + options.map(o => o.text).join(" ")).toLowerCase();
-                    
                     return { uid: `${year}_${index}`, id: index, year, qText, options, explanation, searchText };
                 });
 
                 const yearSelect = document.getElementById('examyear');
                 yearSelect.innerHTML = "";
                 Array.from(uniqueYears).sort().reverse().forEach(year => yearSelect.add(new Option(year, year)));
-                
                 const savedYear = localStorage.getItem("ict_year");
                 if (savedYear && uniqueYears.has(savedYear)) yearSelect.value = savedYear;
 
+                document.getElementById('last-updated-date').innerText = new Date().toLocaleDateString();
+
             } catch (err) {
-                document.getElementById("result").innerHTML = `
-                    <div class="flex flex-col items-center justify-center py-20 text-center px-4">
-                        <div class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-4">
-                             <i class="fas fa-exclamation-triangle text-red-500 text-2xl"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200 mb-2">Database Error</h3>
-                        <p class="text-sm text-slate-500 dark:text-slate-400 max-w-sm">Failed to load <code>ict-mc.xml</code>. Please ensure the file is uploaded correctly.</p>
-                    </div>`;
+                document.getElementById("result").innerHTML = `<div class="flex flex-col items-center justify-center py-20 text-center px-4"><div class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-4"><i class="fas fa-exclamation-triangle text-red-500 text-2xl"></i></div><h3 class="text-lg font-bold text-slate-800 dark:text-slate-200 mb-2">Database Error</h3><p class="text-sm text-slate-500 dark:text-slate-400">Failed to load <code>ict-mc.xml</code>.</p></div>`;
                 throw err;
             }
         }
@@ -377,7 +394,6 @@
             e.stopPropagation();
             state.starredIds.has(uid) ? state.starredIds.delete(uid) : state.starredIds.add(uid);
             try { localStorage.setItem("ict_starred", JSON.stringify([...state.starredIds])); } catch(e){}
-            
             const icon = document.getElementById(`star_${uid}`);
             if(icon) icon.className = state.starredIds.has(uid) ? "fas fa-star text-amber-400 text-lg transition-transform hover:scale-110" : "far fa-star text-slate-300 hover:text-amber-400 text-lg transition-transform hover:scale-110";
             if(state.currentTab === 'starred' && !state.starredIds.has(uid)) renderQuestions();
@@ -417,7 +433,6 @@
                 return;
             }
 
-            // High Performance Rendering using DocumentFragment
             const fragment = document.createDocumentFragment();
 
             questions.forEach((q, idx) => {
@@ -425,25 +440,13 @@
                 qDiv.className = "question-card bg-light-card dark:bg-dark-card p-5 sm:p-8 rounded-2xl shadow-soft border border-slate-200 dark:border-dark-border scroll-mt-36";
                 qDiv.id = `card_${q.uid}`;
 
-                let html = `
-                    <div class="flex justify-between items-start mb-5">
-                        <span class="bg-slate-100 dark:bg-dark-bg border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 text-[11px] font-extrabold tracking-wider font-mono px-3 py-1 rounded-md">Q${idx + 1}</span>
-                        <button onclick="toggleStar(event, '${q.uid}')" class="p-2 -mr-2 -mt-2"><i id="star_${q.uid}" class="${state.starredIds.has(q.uid) ? "fas fa-star text-amber-400" : "far fa-star text-slate-300"} text-lg"></i></button>
-                    </div>
-                    <div class="text-[16px] sm:text-[17px] text-slate-800 dark:text-slate-200 font-medium mb-6 formatted-text">${q.qText}</div>
-                    <div class="space-y-3 mb-5">
-                `;
+                let html = `<div class="flex justify-between items-start mb-5"><span class="bg-slate-100 dark:bg-dark-bg border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 text-[11px] font-extrabold tracking-wider font-mono px-3 py-1 rounded-md">Q${idx + 1}</span><button onclick="toggleStar(event, '${q.uid}')" class="p-2 -mr-2 -mt-2"><i id="star_${q.uid}" class="${state.starredIds.has(q.uid) ? "fas fa-star text-amber-400" : "far fa-star text-slate-300"} text-lg"></i></button></div><div class="text-[16px] sm:text-[17px] text-slate-800 dark:text-slate-200 font-medium mb-6 formatted-text select-auto">${q.qText}</div><div class="space-y-3 mb-5">`;
 
                 q.options.forEach((opt, i) => {
-                    html += `
-                        <button id="btn_${q.uid}_${i}" onclick="handleClick('${q.uid}', ${i})" class="option-btn w-full text-left p-4 rounded-xl border-2 border-transparent bg-slate-50 dark:bg-dark-bg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 flex justify-between items-center group">
-                            <div class="flex items-start gap-4 w-full"><div class="w-6 h-6 rounded-full bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 flex items-center justify-center text-xs font-bold text-slate-400 shrink-0 mt-0.5">${String.fromCharCode(65 + i)}</div>
-                            <span class="formatted-text text-[15px] flex-1 pt-0.5">${opt.text}</span></div><i id="icon_${q.uid}_${i}" class="text-xl ml-3"></i>
-                        </button>
-                    `;
+                    html += `<button id="btn_${q.uid}_${i}" onclick="handleClick('${q.uid}', ${i})" class="option-btn w-full text-left p-4 rounded-xl border-2 border-transparent bg-slate-50 dark:bg-dark-bg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 flex justify-between items-center group"><div class="flex items-start gap-4 w-full"><div class="w-6 h-6 rounded-full bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 flex items-center justify-center text-xs font-bold text-slate-400 shrink-0 mt-0.5">${String.fromCharCode(65 + i)}</div><span class="formatted-text text-[15px] flex-1 pt-0.5 select-auto">${opt.text}</span></div><i id="icon_${q.uid}_${i}" class="text-xl ml-3"></i></button>`;
                 });
 
-                html += `</div><div id="exp_${q.uid}" class="hidden animate-subtleFadeIn border-t border-slate-100 dark:border-slate-800 pt-5 mt-5"><div class="flex items-start gap-3 p-4 bg-brand-50 dark:bg-brand-900/10 rounded-xl border border-brand-100 dark:border-brand-900/20"><div class="mt-0.5 w-6 h-6 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-brand-600 dark:text-brand-400 text-xs"><i class="fas fa-lightbulb"></i></div><div class="flex-1"><h4 class="text-[10px] font-extrabold text-brand-600 dark:text-brand-400 uppercase tracking-widest mb-1.5">Explanation</h4><p class="text-slate-700 dark:text-slate-300 text-[13px] sm:text-sm formatted-text">${q.explanation}</p></div></div></div>`;
+                html += `</div><div id="exp_${q.uid}" class="hidden animate-subtleFadeIn border-t border-slate-100 dark:border-slate-800 pt-5 mt-5"><div class="flex items-start gap-3 p-4 bg-brand-50 dark:bg-brand-900/10 rounded-xl border border-brand-100 dark:border-brand-900/20"><div class="mt-0.5 w-6 h-6 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center text-brand-600 dark:text-brand-400 text-xs"><i class="fas fa-lightbulb"></i></div><div class="flex-1"><h4 class="text-[10px] font-extrabold text-brand-600 dark:text-brand-400 uppercase tracking-widest mb-1.5">Explanation</h4><p class="text-slate-700 dark:text-slate-300 text-[13px] sm:text-sm formatted-text select-auto">${q.explanation}</p></div></div></div>`;
                 
                 qDiv.innerHTML = html;
                 fragment.appendChild(qDiv);
@@ -471,8 +474,7 @@
 
         function markSelected(uid, optIdx) {
             ALL_QUESTIONS.find(item => item.uid === uid).options.forEach((_, i) => {
-                const btn = document.getElementById(`btn_${uid}_${i}`);
-                const isSel = i === optIdx;
+                const btn = document.getElementById(`btn_${uid}_${i}`), isSel = i === optIdx;
                 btn.className = `option-btn w-full text-left p-4 rounded-xl border-2 flex justify-between items-center ${isSel ? 'border-brand-500 bg-brand-50 dark:bg-brand-900/20 text-brand-800 dark:text-brand-200 shadow-sm' : 'border-transparent bg-slate-50 dark:bg-dark-bg text-slate-700 dark:text-slate-300'}`;
                 btn.querySelector("div > div").className = `w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 ${isSel ? 'bg-brand-500 text-white' : 'bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-400'}`;
             });
@@ -517,7 +519,7 @@
                     btn.id = `nav_btn_${q.uid}_${containerId}`; btn.innerText = idx + 1;
                     btn.onclick = () => {
                         const card = document.getElementById(`card_${q.uid}`);
-                        window.scrollTo({top: card.getBoundingClientRect().top + window.pageYOffset - (window.innerWidth >= 1280 ? 180 : 90), behavior: 'smooth'});
+                        window.scrollTo({top: card.getBoundingClientRect().top + window.pageYOffset - (window.innerWidth >= 1280 ? 180 : 100), behavior: 'smooth'});
                         card.classList.add("ring-2", "ring-brand-500"); setTimeout(() => card.classList.remove("ring-2", "ring-brand-500"), 1000);
                         if(window.innerWidth < 1280) toggleMobileNav(); 
                     };
@@ -560,6 +562,15 @@
             isExamActive ? document.getElementById("mobile-submit-btn").classList.remove("hidden") & document.getElementById("mobile-submit-btn").classList.add("flex") : document.getElementById("mobile-submit-btn").classList.add("hidden") & document.getElementById("mobile-submit-btn").classList.remove("flex");
         }
 
+        // 🎓 Grade Prediction Logic
+        function evaluateGrade(accuracy) {
+            if (accuracy >= 80) return { level: "Level 5+", class: "from-amber-400 to-amber-600 shadow-amber-500/40", text: "Excellent! You are on track for top tiers (5/5*/5**)." };
+            if (accuracy >= 70) return { level: "Level 4", class: "from-emerald-400 to-emerald-600 shadow-emerald-500/40", text: "Great job! Very solid foundation." };
+            if (accuracy >= 60) return { level: "Level 3", class: "from-blue-400 to-blue-600 shadow-blue-500/40", text: "Good effort. Review weak spots to push higher." };
+            if (accuracy >= 40) return { level: "Level 2", class: "from-orange-400 to-orange-600 shadow-orange-500/40", text: "Passable, but needs much more practice." };
+            return { level: "Level 1 / U", class: "from-slate-400 to-slate-600 shadow-slate-500/40", text: "Don't give up! Study the explanations carefully." };
+        }
+
         function submitExam() {
             if (!confirm("Are you sure you want to finish this session?")) return;
             clearInterval(state.timer); state.examSubmitted = true; state.score = 0; state.answeredCount = 0; let wrongCount = 0;
@@ -574,15 +585,24 @@
             displayQuestions.forEach(q => restoreQuestionState(q, "exam")); 
             updateDashboard(); updateNavigator();
 
+            const total = displayQuestions.length;
+            const accuracy = total > 0 ? Math.round((state.score / total) * 100) : 0;
+            
             document.getElementById("modal-score").innerText = state.score;
-            document.getElementById("modal-total").innerText = displayQuestions.length;
             document.getElementById("modal-wrong").innerText = wrongCount;
-            document.getElementById("modal-accuracy").innerText = state.answeredCount > 0 ? Math.round((state.score/state.answeredCount)*100) + "%" : "0%";
+            document.getElementById("modal-accuracy").innerText = accuracy + "%";
+
+            // Update Grade Card
+            const grade = evaluateGrade(accuracy);
+            const gradeCard = document.getElementById("grade-card");
+            gradeCard.className = `p-4 rounded-2xl mb-5 shadow-lg text-center transform transition-all text-white bg-gradient-to-r ${grade.class}`;
+            document.getElementById("grade-level").innerText = grade.level;
+            document.getElementById("grade-desc").innerText = grade.text;
 
             const modal = document.getElementById("result-modal");
             modal.classList.remove("hidden", "opacity-0"); modal.classList.add("flex", "opacity-100");
             document.getElementById("result-content").classList.remove("scale-95"); document.getElementById("result-content").classList.add("scale-100");
-            if (displayQuestions.length > 0 && (state.score / displayQuestions.length) > 0.6) confetti({ particleCount: 200, spread: 80, origin: { y: 0.6 } });
+            if (accuracy >= 60) confetti({ particleCount: 200, spread: 80, origin: { y: 0.6 } });
         }
 
         function closeModal() {
