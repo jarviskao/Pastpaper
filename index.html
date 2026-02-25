@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     
-    <!-- SEO & PWA App Meta Tags (修正了 Console 警告) -->
+    <!-- SEO & PWA -->
     <title>ICT 歷年MC試題庫</title>
-    <meta name="description" content="最強 DSE ICT 歷年MC試題庫。支援即時練習、模擬考試與 DSE 等級預測。">
+    <meta name="description" content="最強 DSE ICT 歷年MC試題庫。支援即時練習、模擬考試與自訂組卷。">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="ICT 歷年MC試題庫">
     <link rel="manifest" href="manifest.json">
-    
-    <!-- 解決 Favicon 404 報錯 (使用內嵌手機 Emoji 作為圖示) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📱</text></svg>">
     
-    <!-- Theme Colors -->
+    <!-- Theme & Preload (防止深色模式白屏閃爍 FOUC) -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
     <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)">
     
-    <!-- Fonts & Icons -->
+    <!-- Libraries -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     
@@ -47,8 +47,8 @@
     <style>
         body { -webkit-tap-highlight-color: transparent; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
         .formatted-text { white-space: pre-wrap !important; word-break: break-word; line-height: 1.8; letter-spacing: 0.015em; color: inherit; }
-        .formatted-text img { max-width: 100%; border-radius: 12px; margin: 20px 0; border: 1px solid #e2e8f0; transition: filter 0.3s; }
-        .dark .formatted-text img { border-color: #2a3655; filter: brightness(0.9) contrast(1.1); }
+        .formatted-text img { max-width: 100%; border-radius: 12px; margin: 20px 0; border: 1px solid #e2e8f0; transition: transform 0.2s; cursor: zoom-in; background: #fff; }
+        .dark .formatted-text img { border-color: #2a3655; filter: brightness(0.95); }
         .glass-nav { background: rgba(248, 250, 252, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(226, 232, 240, 0.6); }
         .dark .glass-nav { background: rgba(11, 17, 32, 0.85); border-bottom: 1px solid rgba(42, 54, 85, 0.5); }
         button:focus-visible, select:focus-visible, input:focus-visible { outline: none; box-shadow: 0 0 0 2px #6366f1, 0 0 0 4px rgba(99, 102, 241, 0.2); }
@@ -66,6 +66,8 @@
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .select-auto { user-select: auto; -webkit-user-select: auto; }
+        .modal-container { display: none; } 
+        .modal-container.active { display: flex !important; } 
     </style>
 </head>
 
@@ -121,9 +123,14 @@
                             <span class="text-slate-400 font-bold text-sm">/ <span id="sidebar-total">0</span></span>
                         </div>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-dark-border flex items-center gap-2 text-[10px] text-slate-400">
-                        <i class="fas fa-check-circle text-emerald-500"></i>
-                        <span>題庫載入成功</span>
+                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-dark-border flex justify-between items-center">
+                        <div class="flex items-center gap-2 text-[10px] text-slate-400">
+                            <i class="fas fa-check-circle text-emerald-500"></i>
+                            <span>題庫載入成功</span>
+                        </div>
+                        <button onclick="toggleModal('history-modal', true)" class="text-[10px] font-bold text-brand-600 hover:text-brand-500 transition-colors">
+                            <i class="fas fa-history mr-1"></i>歷史紀錄
+                        </button>
                     </div>
                 </div>
                 <div class="bg-light-card dark:bg-dark-card rounded-2xl p-5 shadow-soft border border-slate-200 dark:border-dark-border flex-1 flex flex-col min-h-0">
@@ -141,13 +148,21 @@
         <div class="flex-1 min-w-0">
             <div class="bg-light-card dark:bg-dark-card rounded-2xl p-2 shadow-soft border border-slate-200 dark:border-dark-border mb-8 relative z-30">
                 <div class="p-4 pb-2 grid grid-cols-1 md:grid-cols-12 gap-5">
+                    
+                    <!-- Year Selection -->
                     <div class="md:col-span-4 flex flex-col gap-1.5">
-                        <label for="examyear" class="text-[11px] font-bold text-slate-500 dark:text-slate-400 tracking-wider ml-1">選擇年份 / 試卷</label>
+                        <div class="flex justify-between items-baseline">
+                            <label for="examyear" class="text-[11px] font-bold text-slate-500 dark:text-slate-400 tracking-wider ml-1">年份 / 試卷</label>
+                            <button onclick="openCustomExamModal()" class="text-[10px] font-bold text-brand-600 hover:text-brand-500 transition-colors flex items-center gap-1">
+                                <i class="fas fa-magic"></i> 自訂試卷
+                            </button>
+                        </div>
                         <div class="relative">
                             <select id="examyear" class="w-full pl-4 pr-10 py-3 rounded-xl border border-slate-200 dark:border-dark-border bg-slate-50 dark:bg-dark-bg/50 text-sm font-bold focus:ring-2 focus:ring-brand-500 outline-none cursor-pointer text-slate-800 dark:text-slate-200 appearance-none shadow-sm" onchange="handleFilterChange()"></select>
                             <i class="fas fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
                         </div>
                     </div>
+
                     <div class="md:col-span-4 flex flex-col gap-1.5">
                         <label for="mode" class="text-[11px] font-bold text-slate-500 dark:text-slate-400 tracking-wider ml-1">練習模式</label>
                         <div class="relative">
@@ -174,10 +189,16 @@
                 </div>
             </div>
 
+            <!-- Main Question Area -->
             <div id="result" class="space-y-6 min-h-[50vh] select-auto">
-                <div class="flex flex-col items-center justify-center py-24 opacity-60">
-                    <div class="w-10 h-10 border-4 border-slate-200 dark:border-slate-700 border-t-brand-500 rounded-full animate-spin mb-4"></div>
-                    <p class="font-bold text-slate-400 text-xs tracking-widest uppercase">系統載入中...</p>
+                <!-- Skeleton Loader -->
+                <div class="animate-pulse bg-white dark:bg-dark-card p-6 rounded-2xl border border-slate-200 dark:border-dark-border shadow-soft">
+                    <div class="flex justify-between mb-6"><div class="h-6 bg-slate-200 dark:bg-slate-700 rounded w-20"></div></div>
+                    <div class="h-4 bg-slate-200 dark:bg-slate-700 rounded w-3/4 mb-3"></div>
+                    <div class="space-y-4">
+                        <div class="h-14 bg-slate-100 dark:bg-slate-800 rounded-xl w-full"></div>
+                        <div class="h-14 bg-slate-100 dark:bg-slate-800 rounded-xl w-full"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -211,7 +232,10 @@
         <div class="absolute right-0 top-0 bottom-0 w-[80%] max-w-[320px] bg-light-card dark:bg-dark-card shadow-2xl p-6 pt-[calc(1.5rem+env(safe-area-inset-top))] flex flex-col transform transition-transform translate-x-full duration-300 pb-safe border-l border-slate-200 dark:border-dark-border" id="mobile-drawer-content">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="font-bold text-lg text-slate-900 dark:text-white">題目導覽</h2>
-                <button onclick="toggleMobileNav()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-dark-bg border border-slate-200 dark:border-dark-border flex items-center justify-center text-slate-500 active:scale-90 transition-transform"><i class="fas fa-times"></i></button>
+                <div class="flex gap-2">
+                    <button onclick="toggleModal('history-modal', true); toggleMobileNav()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-dark-bg border border-slate-200 dark:border-dark-border flex items-center justify-center text-slate-500 active:scale-90 transition-transform"><i class="fas fa-history"></i></button>
+                    <button onclick="toggleMobileNav()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-dark-bg border border-slate-200 dark:border-dark-border flex items-center justify-center text-slate-500 active:scale-90 transition-transform"><i class="fas fa-times"></i></button>
+                </div>
             </div>
             <div class="bg-slate-50 dark:bg-dark-bg rounded-xl p-4 mb-5 border border-slate-200 dark:border-slate-700/50">
                 <div class="flex justify-between text-xs mb-2 font-bold text-slate-400"><span>完成進度</span><span id="mobile-drawer-score">0/0</span></div>
@@ -220,11 +244,74 @@
             <div class="flex-1 overflow-y-auto custom-scroll -mr-2 pr-2">
                 <div id="mobile-nav-grid" class="grid grid-cols-5 gap-2.5"></div>
             </div>
+            <div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center">
+                 <span class="text-xs font-bold text-slate-400">字體大小</span>
+                 <div class="flex gap-2">
+                     <button onclick="adjustFontSize('decrease')" class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 font-bold">A-</button>
+                     <button onclick="adjustFontSize('increase')" class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 font-bold">A+</button>
+                 </div>
+            </div>
         </div>
     </div>
 
-    <!-- 🎓 測驗結果與 DSE 預測卡片 -->
-    <div id="result-modal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-slate-900/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300">
+    <!-- ✨ 自訂試卷 Modal -->
+    <div id="custom-exam-modal" class="modal-container fixed inset-0 z-[80] items-center justify-center bg-slate-900/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-light-card dark:bg-dark-card w-full max-w-md rounded-3xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300 border border-slate-200 dark:border-dark-border flex flex-col max-h-[85vh]">
+            <div class="p-6 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/20">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2"><i class="fas fa-magic text-brand-600"></i> 自訂模擬試卷</h2>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">從歷年試題中組合出一份全新的試卷</p>
+                    </div>
+                    <button onclick="toggleModal('custom-exam-modal', false)" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"><i class="fas fa-times text-xl"></i></button>
+                </div>
+            </div>
+            
+            <div class="p-6 overflow-y-auto custom-scroll flex-1">
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <label class="text-sm font-bold text-slate-700 dark:text-slate-300">1. 選擇來源年份</label>
+                            <button onclick="toggleAllYears()" class="text-[10px] font-bold text-brand-600 hover:underline">全選 / 取消</button>
+                        </div>
+                        <div id="custom-year-list" class="grid grid-cols-3 gap-2"></div>
+                    </div>
+                    <div>
+                        <label class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-3 block">2. 題目數量</label>
+                        <div class="flex items-center gap-4">
+                            <input type="range" id="custom-count-range" min="10" max="60" step="5" value="40" class="flex-1 h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-brand-600" oninput="document.getElementById('custom-count-display').innerText = this.value">
+                            <span class="font-mono font-bold text-lg text-brand-600 dark:text-brand-400 w-8 text-center" id="custom-count-display">40</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-3 block">3. 進階設定</label>
+                        <div class="space-y-3">
+                            <label class="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-dark-bg border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                                <span class="text-xs font-bold text-slate-600 dark:text-slate-300">🔀 打亂題目次序</span>
+                                <div class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" id="custom-shuffle-q" class="sr-only peer" checked>
+                                    <div class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-brand-600"></div>
+                                </div>
+                            </label>
+                            <label class="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-dark-bg border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                                <span class="text-xs font-bold text-slate-600 dark:text-slate-300">🔠 打亂選項 (A/B/C/D)</span>
+                                <div class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" id="custom-shuffle-o" class="sr-only peer">
+                                    <div class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-brand-600"></div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-dark-card z-10">
+                <button onclick="generateCustomExam()" class="w-full bg-brand-600 hover:bg-brand-500 text-white py-3.5 rounded-xl font-bold shadow-lg shadow-brand-500/30 active:scale-95 transition-all">生成試卷並開始</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Modal -->
+    <div id="result-modal" class="modal-container fixed inset-0 z-[70] items-center justify-center bg-slate-900/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300">
         <div class="bg-light-card dark:bg-dark-card w-full max-w-sm rounded-3xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300 border border-slate-200 dark:border-dark-border" id="result-content">
             <div class="bg-gradient-to-br from-slate-800 to-slate-900 dark:from-slate-900 dark:to-black p-6 text-white text-center relative overflow-hidden">
                 <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-2xl"></div>
@@ -232,7 +319,6 @@
                 <p class="text-slate-400 text-[11px] font-bold tracking-widest relative z-10">個人成績報告</p>
             </div>
             <div class="p-5">
-                
                 <div id="grade-card" class="bg-gradient-to-r p-4 rounded-2xl mb-5 shadow-lg text-center transform transition-all text-white">
                     <div class="flex justify-center items-center gap-1.5 mb-1 opacity-90">
                         <i class="fas fa-award text-xs"></i>
@@ -241,7 +327,6 @@
                     <div id="grade-level" class="text-4xl font-black mb-1 drop-shadow-md">Level ?</div>
                     <div id="grade-desc" class="text-xs font-bold opacity-95">正在分析成績...</div>
                 </div>
-
                 <div class="grid grid-cols-3 gap-2 mb-6">
                     <div class="bg-slate-50 dark:bg-dark-bg p-3 rounded-xl text-center border border-slate-200 dark:border-slate-700/50">
                         <div class="text-slate-800 dark:text-slate-100 font-black text-lg mb-0.5" id="modal-score">0</div>
@@ -256,13 +341,39 @@
                         <div class="text-[10px] text-emerald-500 font-bold tracking-wider">準確率</div>
                     </div>
                 </div>
-
                 <div class="flex gap-3">
-                    <button onclick="closeModal()" class="flex-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 py-3.5 rounded-xl font-bold text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors active:scale-95">檢閱試卷</button>
+                    <button onclick="toggleModal('result-modal', false)" class="flex-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 py-3.5 rounded-xl font-bold text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors active:scale-95">檢閱試卷</button>
                     <button onclick="retryExam()" class="flex-1 bg-brand-600 text-white py-3.5 rounded-xl font-bold text-sm hover:bg-brand-500 transition-colors shadow-lg shadow-brand-500/30 active:scale-95">重新測驗</button>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- History Modal -->
+    <div id="history-modal" class="modal-container fixed inset-0 z-[75] items-center justify-center bg-slate-900/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300" onclick="toggleModal('history-modal', false)">
+        <div class="bg-light-card dark:bg-dark-card w-full max-w-sm max-h-[70vh] flex flex-col rounded-3xl shadow-2xl transform scale-95 transition-transform duration-300 border border-slate-200 dark:border-dark-border" onclick="event.stopPropagation()">
+            <div class="p-5 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                <h3 class="font-bold text-slate-900 dark:text-white">歷史成績紀錄</h3>
+                <button onclick="toggleModal('history-modal', false)" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="overflow-y-auto p-4 custom-scroll flex-1" id="history-list"></div>
+            <div class="p-4 border-t border-slate-100 dark:border-slate-800 grid grid-cols-2 gap-3 bg-slate-50 dark:bg-slate-800/30">
+                <button onclick="exportData()" class="py-2.5 rounded-lg bg-white dark:bg-dark-bg border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors shadow-sm">
+                    <i class="fas fa-download mr-1.5 text-brand-600"></i> 備份進度
+                </button>
+                <button onclick="document.getElementById('import-file').click()" class="py-2.5 rounded-lg bg-white dark:bg-dark-bg border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors shadow-sm">
+                    <i class="fas fa-upload mr-1.5 text-emerald-600"></i> 還原紀錄
+                </button>
+                <input type="file" id="import-file" class="hidden" accept=".json" onchange="importData(this)">
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center p-4 transition-opacity duration-300 opacity-0" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" class="max-w-full max-h-full object-contain rounded-sm shadow-2xl transform transition-transform duration-300 scale-95">
+        <button class="absolute top-4 right-4 text-white/70 hover:text-white text-4xl font-bold z-[101]">&times;</button>
+        <p class="absolute bottom-8 text-white/50 text-xs font-mono tracking-widest pointer-events-none">點擊任意處關閉</p>
     </div>
 
     <!-- Desktop FAB -->
@@ -272,16 +383,19 @@
 
     <script>
         let ALL_QUESTIONS = [], displayQuestions = [];
-        let state = { score: 0, answeredCount: 0, examSubmitted: false, userAnswers: {}, timer: null, seconds: 0, currentTab: 'all', starredIds: new Set() };
+        let state = { 
+            score: 0, answeredCount: 0, examSubmitted: false, 
+            userAnswers: {}, timer: null, seconds: 0, 
+            currentTab: 'all', starredIds: new Set(),
+            customQuestionSet: [], isCustomMode: false 
+        };
 
-        // 🟢 PWA Service Worker (背景快取)
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js').then(reg => console.log('PWA SW registered')).catch(err => console.log('SW registration failed: ', err));
-            });
+        if ('serviceWorker' in navigator) { 
+            window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(err => console.log('SW fail', err))); 
         }
+        
+        const vibrate = (pattern) => { if ('vibrate' in navigator) navigator.vibrate(pattern); };
 
-        // 根據時間動態更新問候語
         function updateGreeting() {
             const hour = new Date().getHours();
             let text = "準備好溫習了嗎？";
@@ -293,98 +407,265 @@
         }
 
         document.addEventListener('DOMContentLoaded', async () => {
-            initDarkMode();
-            updateGreeting();
+            updateMetaThemeColor(); 
+            updateGreeting(); 
             loadSavedData();
-            await fetchXMLData();
+            await fetchXMLData(); 
+            checkUnfinishedSession();
             startTimer(); 
             renderQuestions();
             
+            document.getElementById('result').addEventListener('click', function(e) { 
+                if (e.target.tagName === 'IMG') openLightbox(e.target.src); 
+            });
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-                if (!localStorage.getItem('theme')) {
-                    document.documentElement.classList.toggle('dark', e.matches);
-                    updateMetaThemeColor();
+                if (!localStorage.getItem('theme')) { 
+                    document.documentElement.classList.toggle('dark', e.matches); 
+                    updateMetaThemeColor(); 
                 }
             });
         });
 
-        function initDarkMode() {
-            const isDark = localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
-            document.documentElement.classList.toggle('dark', isDark);
-            updateMetaThemeColor();
+        function toggleModal(id, show) {
+            const modal = document.getElementById(id);
+            if (show) {
+                if(id === 'history-modal') viewHistory();
+                modal.classList.add('active');
+                requestAnimationFrame(() => { 
+                    modal.classList.remove('opacity-0'); 
+                    if(modal.firstElementChild) { 
+                        modal.firstElementChild.classList.remove('scale-95'); 
+                        modal.firstElementChild.classList.add('scale-100'); 
+                    } 
+                });
+                document.body.style.overflow = 'hidden';
+            } else {
+                modal.classList.add('opacity-0');
+                if(modal.firstElementChild) { 
+                    modal.firstElementChild.classList.remove('scale-100'); 
+                    modal.firstElementChild.classList.add('scale-95'); 
+                }
+                setTimeout(() => { 
+                    modal.classList.remove('active'); 
+                    document.body.style.overflow = ''; 
+                }, 300);
+            }
+        }
+
+        let currentZoom = 100;
+        function adjustFontSize(action) {
+            if (action === 'increase') currentZoom += 10; 
+            else if (action === 'decrease') currentZoom -= 10;
+            if (currentZoom < 80) currentZoom = 80; 
+            if (currentZoom > 130) currentZoom = 130;
+            document.documentElement.style.fontSize = `${currentZoom}%`;
+        }
+        
+        function toggleDarkMode() { 
+            document.documentElement.classList.toggle('dark'); 
+            try { localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); } catch(e){} 
+            updateMetaThemeColor(); 
         }
         
         function updateMetaThemeColor() {
             const color = document.documentElement.classList.contains('dark') ? '#0b1120' : '#f8fafc';
             document.querySelectorAll('meta[name="theme-color"]').forEach(m => m.remove());
-            const meta = document.createElement('meta'); meta.name = "theme-color"; meta.content = color;
+            const meta = document.createElement('meta'); meta.name = "theme-color"; meta.content = color; 
             document.head.appendChild(meta);
         }
 
         function loadSavedData() {
             try {
-                if(localStorage.getItem("ict_year")) document.getElementById("examyear").value = localStorage.getItem("ict_year");
-                if(localStorage.getItem("ict_mode")) document.getElementById("mode").value = localStorage.getItem("ict_mode");
+                if(localStorage.getItem("ict_year") && localStorage.getItem("ict_year") !== 'custom') {
+                    document.getElementById("examyear").value = localStorage.getItem("ict_year");
+                }
+                if(localStorage.getItem("ict_mode")) {
+                    document.getElementById("mode").value = localStorage.getItem("ict_mode");
+                }
                 const savedStars = localStorage.getItem("ict_starred");
                 if (savedStars) state.starredIds = new Set(JSON.parse(savedStars));
             } catch(e) {}
         }
 
-        async function fetchXMLData() {
-            try {
-                const response = await fetch('ict-mc.xml');
-                if (!response.ok) throw new Error("File not found");
-                
-                const str = await response.text();
-                const xml = new window.DOMParser().parseFromString(str, "text/xml");
-                const questions = xml.getElementsByTagName("Question");
-                
-                if (questions.length === 0) throw new Error("Invalid XML format");
-                
-                const uniqueYears = new Set();
-                ALL_QUESTIONS = Array.from(questions).map((q, index) => {
-                    const qTextNode = q.getElementsByTagName("QText")[0];
-                    const year = qTextNode.getAttribute("examyear") || "綜合題庫";
-                    uniqueYears.add(year);
-
-                    let qText = qTextNode.textContent.replace(/\t/g, "");
-                    const qFigure = qTextNode.getAttribute("figure");
-                    if (qFigure) qText = qText.replace('#figure', `<img src="./images/${qFigure}" alt="圖片" loading="lazy">`);
-
-                    const options = Array.from(q.getElementsByTagName("Option")).map((opt, i) => {
-                        let text = opt.textContent;
-                        const optFigure = opt.getAttribute("figure");
-                        if (optFigure) text = text.replace('#figure', `<img src="./images/${optFigure}" alt="選項圖片" loading="lazy">`);
-                        return { id: `q${index}_opt${i}`, text: text, isCorrect: opt.getAttribute("correct") === "1" };
-                    });
-
-                    const explanation = q.getElementsByTagName("explanation")[0]?.textContent || "此題暫無詳細解釋。";
-                    const searchText = (qTextNode.textContent + options.map(o => o.text).join(" ")).toLowerCase();
-                    return { uid: `${year}_${index}`, id: index, year, qText, options, explanation, searchText };
-                });
-
-                const yearSelect = document.getElementById('examyear');
-                yearSelect.innerHTML = "";
-                Array.from(uniqueYears).sort().reverse().forEach(year => yearSelect.add(new Option(year, year)));
-                const savedYear = localStorage.getItem("ict_year");
-                if (savedYear && uniqueYears.has(savedYear)) yearSelect.value = savedYear;
-
-            } catch (err) {
-                document.getElementById("result").innerHTML = `<div class="flex flex-col items-center justify-center py-20 text-center px-4"><div class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-4"><i class="fas fa-exclamation-triangle text-red-500 text-2xl"></i></div><h3 class="text-lg font-bold text-slate-800 dark:text-slate-200 mb-2">題庫載入失敗</h3><p class="text-sm text-slate-500 dark:text-slate-400">請確認 <code>ict-mc.xml</code> 檔案已正確上傳。</p></div>`;
-                throw err;
+        function checkUnfinishedSession() {
+            const savedSession = localStorage.getItem('ict_exam_session');
+            if (savedSession) {
+                try {
+                    const session = JSON.parse(savedSession);
+                    if (Date.now() - session.timestamp < 86400000) {
+                        if (confirm("檢測到您有未完成的考試進度，是否繼續？")) {
+                            state.userAnswers = session.answers; 
+                            state.seconds = session.time; 
+                            state.answeredCount = Object.keys(session.answers).length;
+                            document.getElementById("mode").value = 'exam';
+                            
+                            if (session.isCustomMode && session.customQuestionSet) {
+                                state.isCustomMode = true; 
+                                state.customQuestionSet = session.customQuestionSet;
+                                const yearSelect = document.getElementById('examyear');
+                                if (!yearSelect.querySelector('option[value="custom"]')) yearSelect.add(new Option("✨ 自訂模擬試卷", "custom"), 0);
+                                yearSelect.value = "custom";
+                            } else { 
+                                document.getElementById("examyear").value = session.year || document.getElementById("examyear").value; 
+                            }
+                        } else { 
+                            localStorage.removeItem('ict_exam_session'); 
+                        }
+                    } else { 
+                        localStorage.removeItem('ict_exam_session'); 
+                    }
+                } catch (e) { localStorage.removeItem('ict_exam_session'); }
             }
         }
 
-        function handleFilterChange() { localStorage.setItem("ict_year", document.getElementById("examyear").value); resetState(); renderQuestions(); }
-        function handleModeChange() { localStorage.setItem("ict_mode", document.getElementById("mode").value); resetState(); renderQuestions(); }
-        function handleSearch() { renderQuestions(document.getElementById("search-input").value.toLowerCase()); }
+        async function fetchXMLData() {
+            try {
+                // 移除 Cache-Buster (?t=...) 交由 sw.js 處理緩存策略
+                const response = await fetch('ict-mc.xml');
+                if (!response.ok) throw new Error("File not found");
+                const str = await response.text(); 
+                const xml = new window.DOMParser().parseFromString(str, "text/xml");
+                const questions = xml.getElementsByTagName("Question");
+                
+                const uniqueYears = new Set();
+                const yearCounts = {}; 
 
-        function resetState() {
-            state.score = 0; state.answeredCount = 0; state.examSubmitted = false; state.userAnswers = {}; state.seconds = 0; state.currentTab = 'all';
-            setTabUI('all'); startTimer(); window.scrollTo({ top: 0, behavior: 'smooth' });
+                ALL_QUESTIONS = Array.from(questions).map((q, index) => {
+                    const qTextNode = q.getElementsByTagName("QText")[0]; 
+                    const year = qTextNode.getAttribute("examyear") || "綜合題庫"; 
+                    uniqueYears.add(year);
+                    
+                    if (yearCounts[year] === undefined) yearCounts[year] = 0;
+                    const paperIndex = yearCounts[year];
+                    yearCounts[year]++;
+
+                    let qText = qTextNode.textContent.replace(/\t/g, ""); 
+                    const qFigure = qTextNode.getAttribute("figure");
+                    // 加入 onerror 避免破圖
+                    if (qFigure) qText = qText.replace('#figure', `<img src="./images/${qFigure}" alt="圖片" loading="lazy" onerror="this.style.display='none'">`);
+                    
+                    const options = Array.from(q.getElementsByTagName("Option")).map((opt, i) => {
+                        let text = opt.textContent; 
+                        const optFigure = opt.getAttribute("figure");
+                        if (optFigure) text = text.replace('#figure', `<img src="./images/${optFigure}" alt="選項圖片" loading="lazy" onerror="this.style.display='none'">`);
+                        return { id: `q${index}_opt${i}`, text: text, isCorrect: opt.getAttribute("correct") === "1" };
+                    });
+                    
+                    const explanation = q.getElementsByTagName("explanation")[0]?.textContent || "此題暫無詳細解釋。";
+                    const searchText = (qTextNode.textContent + options.map(o => o.text).join(" ")).toLowerCase();
+                    
+                    return { uid: `${year}_${index}`, id: index, paperIndex, year, qText, options, explanation, searchText };
+                });
+
+                const yearSelect = document.getElementById('examyear'); 
+                yearSelect.innerHTML = "";
+                Array.from(uniqueYears).sort().reverse().forEach(year => yearSelect.add(new Option(year, year)));
+                
+                const savedYear = localStorage.getItem("ict_year"); 
+                if (savedYear && uniqueYears.has(savedYear)) yearSelect.value = savedYear;
+                
+            } catch (err) { 
+                document.getElementById("result").innerHTML = `<div class="flex flex-col items-center justify-center py-20 text-center px-4"><div class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-4"><i class="fas fa-exclamation-triangle text-red-500 text-2xl"></i></div><h3 class="text-lg font-bold text-slate-800 dark:text-slate-200 mb-2">題庫載入失敗</h3><p class="text-sm text-slate-500 dark:text-slate-400">請確認 <code>ict-mc.xml</code> 檔案已正確上傳，並檢查網路連線。</p></div>`; 
+            }
         }
 
-        function setTab(tab) { state.currentTab = tab; setTabUI(tab); renderQuestions(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        function openCustomExamModal() {
+            const list = document.getElementById('custom-year-list'); 
+            list.innerHTML = "";
+            const years = Array.from(new Set(ALL_QUESTIONS.map(q => q.year))).sort().reverse();
+            years.forEach(year => {
+                const div = document.createElement('div');
+                div.innerHTML = `<label class="cursor-pointer flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"><input type="checkbox" name="custom-year" value="${year}" class="w-4 h-4 rounded text-brand-600 focus:ring-brand-500 custom-year-checkbox" checked><span class="text-xs font-bold text-slate-700 dark:text-slate-300">${year}</span></label>`;
+                list.appendChild(div);
+            });
+            toggleModal('custom-exam-modal', true);
+        }
+
+        function toggleAllYears() {
+            const checkboxes = document.querySelectorAll('.custom-year-checkbox');
+            const allChecked = Array.from(checkboxes).every(c => c.checked);
+            checkboxes.forEach(c => c.checked = !allChecked);
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) { 
+                const j = Math.floor(Math.random() * (i + 1)); 
+                [array[i], array[j]] = [array[j], array[i]]; 
+            } 
+            return array;
+        }
+
+        function generateCustomExam() {
+            const selectedYears = Array.from(document.querySelectorAll('input[name="custom-year"]:checked')).map(cb => cb.value);
+            if (selectedYears.length === 0) { alert("請至少選擇一個年份！"); return; }
+            
+            const count = parseInt(document.getElementById('custom-count-range').value);
+            const shuffleQ = document.getElementById('custom-shuffle-q').checked;
+            const shuffleO = document.getElementById('custom-shuffle-o').checked;
+
+            let pool = ALL_QUESTIONS.filter(q => selectedYears.includes(q.year)); 
+            pool = shuffleArray([...pool]); 
+            let selectedQuestions = pool.slice(0, count);
+
+            if (!shuffleQ) { 
+                selectedQuestions.sort((a, b) => { 
+                    if (a.year !== b.year) return b.year.localeCompare(a.year); 
+                    return a.id - b.id; 
+                }); 
+            }
+
+            state.customQuestionSet = selectedQuestions.map((q, idx) => {
+                const qCopy = { ...q, options: [...q.options], customIndex: idx };
+                qCopy.options = qCopy.options.map((opt, oIdx) => ({...opt, originalIndex: oIdx}));
+                if (shuffleO) qCopy.options = shuffleArray(qCopy.options); 
+                return qCopy;
+            });
+
+            state.isCustomMode = true;
+            const yearSelect = document.getElementById('examyear');
+            if (!yearSelect.querySelector('option[value="custom"]')) yearSelect.add(new Option("✨ 自訂模擬試卷", "custom"), 0);
+            yearSelect.value = "custom"; 
+            document.getElementById('mode').value = 'exam'; 
+            
+            toggleModal('custom-exam-modal', false); 
+            resetState(); 
+            renderQuestions();
+        }
+
+        function handleFilterChange() { 
+            const val = document.getElementById("examyear").value;
+            if (val !== 'custom') state.isCustomMode = false;
+            localStorage.setItem("ict_year", val); 
+            resetState(); 
+            renderQuestions(); 
+        }
+        
+        function handleModeChange() { 
+            localStorage.setItem("ict_mode", document.getElementById("mode").value); 
+            resetState(); 
+            renderQuestions(); 
+        }
+        
+        function handleSearch() { 
+            renderQuestions(document.getElementById("search-input").value.toLowerCase()); 
+        }
+
+        function resetState() {
+            state.score = 0; state.answeredCount = 0; state.examSubmitted = false; 
+            state.userAnswers = {}; state.seconds = 0; state.currentTab = 'all';
+            localStorage.removeItem('ict_exam_session'); 
+            setTabUI('all'); 
+            document.getElementById("search-input").value = ""; 
+            startTimer(); 
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function setTab(tab) { 
+            state.currentTab = tab; 
+            setTabUI(tab); 
+            renderQuestions(); 
+            window.scrollTo({ top: 0, behavior: 'smooth' }); 
+        }
 
         function setTabUI(tab) {
              ['all', 'wrong', 'starred'].forEach(t => {
@@ -400,7 +681,11 @@
             state.starredIds.has(uid) ? state.starredIds.delete(uid) : state.starredIds.add(uid);
             try { localStorage.setItem("ict_starred", JSON.stringify([...state.starredIds])); } catch(e){}
             const icon = document.getElementById(`star_${uid}`);
-            if(icon) icon.className = state.starredIds.has(uid) ? "fas fa-star text-amber-400 text-lg transition-transform hover:scale-110" : "far fa-star text-slate-300 hover:text-amber-400 text-lg transition-transform hover:scale-110";
+            if(icon) {
+                icon.className = state.starredIds.has(uid) 
+                    ? "fas fa-star text-amber-400 text-lg transition-transform hover:scale-110" 
+                    : "far fa-star text-slate-300 hover:text-amber-400 text-lg transition-transform hover:scale-110";
+            }
             if(state.currentTab === 'starred' && !state.starredIds.has(uid)) renderQuestions();
         }
 
@@ -409,24 +694,47 @@
             state.timer = setInterval(() => {
                 state.seconds++;
                 document.getElementById("timer-display").innerText = `${Math.floor(state.seconds / 60).toString().padStart(2, '0')}:${(state.seconds % 60).toString().padStart(2, '0')}`;
+                
+                if (document.getElementById("mode").value === 'exam' && !state.examSubmitted && state.seconds % 5 === 0) {
+                    const saveData = { answers: state.userAnswers, time: state.seconds, year: document.getElementById('examyear').value, timestamp: Date.now(), isCustomMode: state.isCustomMode };
+                    if (state.isCustomMode) saveData.customQuestionSet = state.customQuestionSet;
+                    localStorage.setItem('ict_exam_session', JSON.stringify(saveData));
+                }
             }, 1000);
+        }
+
+        function isQuestionWrong(q) {
+            const ans = state.userAnswers[q.uid];
+            const mode = document.getElementById("mode").value;
+            const isSubmittedExam = (mode === "exam" && state.examSubmitted);
+            
+            if (ans === undefined) return isSubmittedExam; 
+            return (typeof ans === 'object') ? !ans.isCorrect : !q.options[ans].isCorrect;
         }
 
         function renderQuestions(searchKeyword = "") {
             const year = document.getElementById("examyear").value;
             if(!year) return;
 
-            let questions = ALL_QUESTIONS.filter(q => q.year === year);
+            let questions = (state.isCustomMode && year === 'custom') ? state.customQuestionSet : ALL_QUESTIONS.filter(q => q.year === year);
+
             if (searchKeyword) questions = questions.filter(q => q.searchText.includes(searchKeyword));
             if (state.currentTab === 'starred') questions = questions.filter(q => state.starredIds.has(q.uid));
-            else if (state.currentTab === 'wrong') questions = questions.filter(q => state.userAnswers[q.uid] !== undefined && !q.options[state.userAnswers[q.uid]].isCorrect);
+            else if (state.currentTab === 'wrong') {
+                const mode = document.getElementById("mode").value;
+                const isUnsubmittedExam = (mode === "exam" && !state.examSubmitted);
+                if (isUnsubmittedExam) { questions = []; } else { questions = questions.filter(q => isQuestionWrong(q)); }
+            }
 
             displayQuestions = questions;
-            updateDashboard(); updateNavigator();
+            updateDashboard(); 
+            updateNavigator();
 
             const mode = document.getElementById("mode").value;
             const container = document.getElementById("result");
-            const isExamAndActive = (mode === "exam" && !state.examSubmitted && questions.length > 0);
+            
+            const fullPaperCount = (state.isCustomMode && year === 'custom') ? state.customQuestionSet.length : ALL_QUESTIONS.filter(q => q.year === year).length;
+            const isExamAndActive = (mode === "exam" && !state.examSubmitted && fullPaperCount > 0);
             
             document.getElementById("desktop-submit-btn").style.display = (isExamAndActive && window.innerWidth >= 1280) ? "flex" : "none";
             const mobileBtn = document.getElementById("mobile-submit-btn");
@@ -434,18 +742,22 @@
 
             container.innerHTML = "";
             if (questions.length === 0) {
-                container.innerHTML = `<div class="flex flex-col items-center justify-center py-24 text-slate-300 dark:text-slate-600"><i class="far fa-folder-open text-5xl mb-4 opacity-50"></i><p class="font-bold text-sm tracking-widest mt-2">找不到相關題目</p></div>`;
+                const isExamWrongTab = (state.currentTab === 'wrong' && mode === "exam" && !state.examSubmitted);
+                const emptyMsg = isExamWrongTab ? "考試進行中，請在交卷後查看錯題 📝" : "找不到相關題目";
+                container.innerHTML = `<div class="flex flex-col items-center justify-center py-24 text-slate-300 dark:text-slate-600"><i class="${isExamWrongTab ? 'fas fa-lock' : 'far fa-folder-open'} text-5xl mb-4 opacity-50"></i><p class="font-bold text-sm tracking-widest mt-2">${emptyMsg}</p></div>`;
                 return;
             }
 
             const fragment = document.createDocumentFragment();
 
-            questions.forEach((q, idx) => {
+            questions.forEach((q) => {
                 const qDiv = document.createElement('div');
                 qDiv.className = "question-card bg-light-card dark:bg-dark-card p-5 sm:p-8 rounded-2xl shadow-soft border border-slate-200 dark:border-dark-border scroll-mt-36";
                 qDiv.id = `card_${q.uid}`;
 
-                let html = `<div class="flex justify-between items-start mb-5"><span class="bg-slate-100 dark:bg-dark-bg border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 text-[11px] font-extrabold tracking-wider font-mono px-3 py-1 rounded-md">第 ${idx + 1} 題</span><button onclick="toggleStar(event, '${q.uid}')" class="p-2 -mr-2 -mt-2"><i id="star_${q.uid}" class="${state.starredIds.has(q.uid) ? "fas fa-star text-amber-400" : "far fa-star text-slate-300"} text-lg"></i></button></div><div class="text-[16px] sm:text-[17px] text-slate-800 dark:text-slate-200 font-medium mb-6 formatted-text select-auto">${q.qText}</div><div class="space-y-3 mb-5">`;
+                const qNumber = (state.isCustomMode && year === 'custom') ? (q.customIndex + 1) : (q.paperIndex + 1);
+
+                let html = `<div class="flex justify-between items-start mb-5"><span class="bg-slate-100 dark:bg-dark-bg border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 text-[11px] font-extrabold tracking-wider font-mono px-3 py-1 rounded-md">第 ${qNumber} 題 <span class="opacity-50 font-normal ml-1">(${q.year})</span></span><button onclick="toggleStar(event, '${q.uid}')" class="p-2 -mr-2 -mt-2"><i id="star_${q.uid}" class="${state.starredIds.has(q.uid) ? "fas fa-star text-amber-400" : "far fa-star text-slate-300"} text-lg"></i></button></div><div class="text-[16px] sm:text-[17px] text-slate-800 dark:text-slate-200 font-medium mb-6 formatted-text select-auto">${q.qText}</div><div class="space-y-3 mb-5">`;
 
                 q.options.forEach((opt, i) => {
                     html += `<button id="btn_${q.uid}_${i}" onclick="handleClick('${q.uid}', ${i})" class="option-btn w-full text-left p-4 rounded-xl border-2 border-transparent bg-slate-50 dark:bg-dark-bg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 flex justify-between items-center group"><div class="flex items-start gap-4 w-full"><div class="w-6 h-6 rounded-full bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 flex items-center justify-center text-xs font-bold text-slate-400 shrink-0 mt-0.5">${String.fromCharCode(65 + i)}</div><span class="formatted-text text-[15px] flex-1 pt-0.5 select-auto">${opt.text}</span></div><i id="icon_${q.uid}_${i}" class="text-xl ml-3"></i></button>`;
@@ -461,43 +773,56 @@
             questions.forEach(q => restoreQuestionState(q, mode));
         }
 
-        function handleClick(uid, optIdx) {
+        function handleClick(uid, visualIndex) {
             const mode = document.getElementById("mode").value;
             if (mode === "study" || (mode === "exam" && state.examSubmitted) || (mode === "practice" && state.userAnswers[uid] !== undefined)) return;
             
-            state.userAnswers[uid] = optIdx;
-            const q = ALL_QUESTIONS.find(item => item.uid === uid);
+            const year = document.getElementById("examyear").value;
+            const baseSet = (state.isCustomMode && year === 'custom') ? state.customQuestionSet : ALL_QUESTIONS.filter(q => q.year === year);
+            const q = baseSet.find(item => item.uid === uid);
+            if(!q) return;
+
+            const selectedOption = q.options[visualIndex];
+            state.userAnswers[uid] = { visualIndex: visualIndex, isCorrect: selectedOption.isCorrect };
             
             if (mode === "practice") {
-                state.answeredCount++;
-                if (q.options[optIdx].isCorrect) state.score++;
-                revealAnswer(uid, optIdx, false);
-            } else markSelected(uid, optIdx);
+                if (selectedOption.isCorrect) state.score++; else vibrate(200);
+                revealAnswer(uid, visualIndex, false, q);
+            } else {
+                markSelected(uid, visualIndex, q);
+            }
 
-            updateDashboard(); updateNavigatorItem(uid, optIdx);
+            updateDashboard(); 
+            updateNavigatorItem(uid, visualIndex);
         }
 
-        function markSelected(uid, optIdx) {
-            ALL_QUESTIONS.find(item => item.uid === uid).options.forEach((_, i) => {
-                const btn = document.getElementById(`btn_${uid}_${i}`), isSel = i === optIdx;
-                btn.className = `option-btn w-full text-left p-4 rounded-xl border-2 flex justify-between items-center ${isSel ? 'border-brand-500 bg-brand-50 dark:bg-brand-900/20 text-brand-800 dark:text-brand-200 shadow-sm' : 'border-transparent bg-slate-50 dark:bg-dark-bg text-slate-700 dark:text-slate-300'}`;
-                btn.querySelector("div > div").className = `w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 ${isSel ? 'bg-brand-500 text-white' : 'bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-400'}`;
+        function markSelected(uid, visualIndex, q) {
+            if(!q) return;
+            q.options.forEach((_, i) => {
+                const btn = document.getElementById(`btn_${uid}_${i}`);
+                const isSel = i === visualIndex;
+                if(btn) {
+                    btn.className = `option-btn w-full text-left p-4 rounded-xl border-2 flex justify-between items-center ${isSel ? 'border-brand-500 bg-brand-50 dark:bg-brand-900/20 text-brand-800 dark:text-brand-200 shadow-sm' : 'border-transparent bg-slate-50 dark:bg-dark-bg text-slate-700 dark:text-slate-300'}`;
+                    btn.querySelector("div > div").className = `w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 ${isSel ? 'bg-brand-500 text-white' : 'bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-400'}`;
+                }
             });
         }
 
-        function revealAnswer(uid, userOptIdx, isStudyMode) {
-            const q = ALL_QUESTIONS.find(item => item.uid === uid);
-            const correctIdx = q.options.findIndex(o => o.isCorrect);
+        function revealAnswer(uid, userVisualIdx, isStudyMode, q) {
+            if(!q) return;
+            const correctVisualIdx = q.options.findIndex(o => o.isCorrect);
 
             q.options.forEach((_, i) => {
-                const btn = document.getElementById(`btn_${uid}_${i}`), icon = document.getElementById(`icon_${uid}_${i}`);
+                const btn = document.getElementById(`btn_${uid}_${i}`);
+                const icon = document.getElementById(`icon_${uid}_${i}`);
+                if (!btn) return;
                 btn.disabled = true;
                 
-                if (i === correctIdx) {
+                if (i === correctVisualIdx) {
                     btn.className = "option-btn w-full text-left p-4 rounded-xl border-2 border-emerald-500 bg-emerald-50 dark:bg-emerald-900/10 text-emerald-800 dark:text-emerald-300 flex justify-between items-center font-bold shadow-sm opacity-100";
                     btn.querySelector("div > div").className = "w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5";
                     icon.className = "fas fa-check-circle text-emerald-500 text-xl";
-                } else if (i === userOptIdx && i !== correctIdx && !isStudyMode) {
+                } else if (i === userVisualIdx && i !== correctVisualIdx && !isStudyMode) {
                     btn.className = "option-btn w-full text-left p-4 rounded-xl border-2 border-red-500 bg-red-50 dark:bg-red-900/10 text-red-800 dark:text-red-300 flex justify-between items-center opacity-100";
                     btn.querySelector("div > div").className = "w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5";
                     icon.className = "fas fa-times-circle text-red-500 text-xl";
@@ -510,64 +835,107 @@
         }
 
         function restoreQuestionState(q, mode) {
-            if (mode === "study" || (mode === "exam" && state.examSubmitted)) revealAnswer(q.uid, state.userAnswers[q.uid] ?? -1, mode === "study" || state.userAnswers[q.uid] === undefined);
-            else if (mode === "practice" && state.userAnswers[q.uid] !== undefined) revealAnswer(q.uid, state.userAnswers[q.uid], false);
-            else if (mode === "exam" && state.userAnswers[q.uid] !== undefined) markSelected(q.uid, state.userAnswers[q.uid]);
+            let answerData = state.userAnswers[q.uid];
+            let visualIndex = -1;
+            if (answerData !== undefined) visualIndex = (typeof answerData === 'object') ? answerData.visualIndex : answerData;
+
+            if (mode === "study" || (mode === "exam" && state.examSubmitted)) revealAnswer(q.uid, visualIndex, mode === "study" || visualIndex === -1, q);
+            else if (mode === "practice" && answerData !== undefined) revealAnswer(q.uid, visualIndex, false, q);
+            else if (mode === "exam" && answerData !== undefined) markSelected(q.uid, visualIndex, q);
         }
 
         function updateNavigator() {
+            const year = document.getElementById("examyear").value;
+            const fullPaperQuestions = (state.isCustomMode && year === 'custom') ? state.customQuestionSet : ALL_QUESTIONS.filter(q => q.year === year);
+            
             ["question-nav-grid", "mobile-nav-grid"].forEach(containerId => {
                 const container = document.getElementById(containerId);
                 container.innerHTML = "";
-                displayQuestions.forEach((q, idx) => {
+                fullPaperQuestions.forEach((q) => {
                     const btn = document.createElement("button");
-                    btn.id = `nav_btn_${q.uid}_${containerId}`; btn.innerText = idx + 1;
+                    btn.id = `nav_btn_${q.uid}_${containerId}`; 
+                    btn.innerText = (state.isCustomMode && year === 'custom') ? (q.customIndex + 1) : (q.paperIndex + 1);
+                    
                     btn.onclick = () => {
                         const card = document.getElementById(`card_${q.uid}`);
-                        window.scrollTo({top: card.getBoundingClientRect().top + window.pageYOffset - (window.innerWidth >= 1280 ? 180 : 100), behavior: 'smooth'});
-                        card.classList.add("ring-2", "ring-brand-500"); setTimeout(() => card.classList.remove("ring-2", "ring-brand-500"), 1000);
+                        if(card) {
+                            window.scrollTo({top: card.getBoundingClientRect().top + window.pageYOffset - (window.innerWidth >= 1280 ? 180 : 100), behavior: 'smooth'});
+                            card.classList.add("ring-2", "ring-brand-500"); 
+                            setTimeout(() => card.classList.remove("ring-2", "ring-brand-500"), 1000);
+                        } else {
+                            document.getElementById("search-input").value = ""; 
+                            setTab('all');
+                            setTimeout(() => {
+                                const newCard = document.getElementById(`card_${q.uid}`);
+                                if(newCard) {
+                                    window.scrollTo({top: newCard.getBoundingClientRect().top + window.pageYOffset - (window.innerWidth >= 1280 ? 180 : 100), behavior: 'smooth'});
+                                    newCard.classList.add("ring-2", "ring-brand-500"); 
+                                    setTimeout(() => newCard.classList.remove("ring-2", "ring-brand-500"), 1000);
+                                }
+                            }, 50);
+                        }
                         if(window.innerWidth < 1280) toggleMobileNav(); 
                     };
-                    container.appendChild(btn); updateNavigatorBtnColor(btn, q);
+                    container.appendChild(btn); 
+                    updateNavigatorBtnColor(btn, q);
                 });
             });
         }
 
-        function updateNavigatorItem(uid) {
-            const q = ALL_QUESTIONS.find(item => item.uid === uid);
+        function updateNavigatorItem(uid, visualIndex) {
+            const year = document.getElementById("examyear").value;
+            const baseSet = (state.isCustomMode && year === 'custom') ? state.customQuestionSet : ALL_QUESTIONS.filter(q => q.year === year);
+            const q = baseSet.find(item => item.uid === uid);
             ["question-nav-grid", "mobile-nav-grid"].forEach(cId => {
                 const btn = document.getElementById(`nav_btn_${uid}_${cId}`);
-                if(btn) updateNavigatorBtnColor(btn, q);
+                if(btn && q) updateNavigatorBtnColor(btn, q);
             });
         }
 
         function updateNavigatorBtnColor(btn, q) {
-            const ans = state.userAnswers[q.uid], mode = document.getElementById("mode").value, isCorrect = ans !== undefined && q.options[ans].isCorrect;
+            const ans = state.userAnswers[q.uid];
+            const mode = document.getElementById("mode").value;
+            let isAnswered = ans !== undefined;
+            let isCorrect = false;
+            
+            if (isAnswered) isCorrect = (typeof ans === 'object') ? ans.isCorrect : q.options[ans].isCorrect;
+
             let c = "bg-slate-50 dark:bg-dark-bg text-slate-400 border border-slate-200 dark:border-dark-border hover:bg-slate-100"; 
-            if (mode === "study") c = "bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 border border-emerald-200";
-            else if (mode === "practice" && ans !== undefined) c = isCorrect ? "bg-emerald-500 text-white" : "bg-red-500 text-white";
-            else if (mode === "exam") c = state.examSubmitted ? (isCorrect ? "bg-emerald-500 text-white" : "bg-red-500 text-white") : (ans !== undefined ? "bg-brand-500 text-white" : c);
+            if (mode === "study") {
+                c = "bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 border border-emerald-200";
+            } else if (mode === "practice" && isAnswered) {
+                c = isCorrect ? "bg-emerald-500 text-white" : "bg-red-500 text-white";
+            } else if (mode === "exam") {
+                if (state.examSubmitted) {
+                    if (!isAnswered) c = "bg-red-500 text-white";
+                    else c = isCorrect ? "bg-emerald-500 text-white" : "bg-red-500 text-white";
+                } else {
+                    c = isAnswered ? "bg-brand-500 text-white" : c;
+                }
+            }
             btn.className = `nav-grid-item w-full aspect-square rounded-lg text-[11px] font-bold flex items-center justify-center ${c}`;
         }
 
         function updateDashboard() {
-            const total = displayQuestions.length;
-            const current = (document.getElementById("mode").value === "exam" && !state.examSubmitted) ? Object.keys(state.userAnswers).filter(uid => displayQuestions.some(q => q.uid === uid)).length : state.answeredCount;
-            const percent = total === 0 ? 0 : (current / total) * 100;
+            const year = document.getElementById("examyear").value;
+            if(!year) return;
+            const fullPaperQuestions = (state.isCustomMode && year === 'custom') ? state.customQuestionSet : ALL_QUESTIONS.filter(q => q.year === year);
+            const total = fullPaperQuestions.length;
+            
+            const attempted = fullPaperQuestions.filter(q => state.userAnswers[q.uid] !== undefined).length;
+            const percent = total === 0 ? 0 : (attempted / total) * 100;
+            const isExamActive = document.getElementById("mode").value === "exam" && !state.examSubmitted;
+            const displayScoreText = isExamActive ? attempted : state.score;
             
             document.getElementById("progress-bar").style.width = `${percent}%`;
-            document.getElementById("header-score").innerText = state.score; document.getElementById("header-total").innerText = total;
-            document.getElementById("sidebar-score").innerText = (document.getElementById("mode").value === "exam" && !state.examSubmitted) ? current : state.score;
+            document.getElementById("header-score").innerText = displayScoreText; 
+            document.getElementById("header-total").innerText = total;
+            document.getElementById("sidebar-score").innerText = displayScoreText;
             document.getElementById("sidebar-total").innerText = total;
-            document.getElementById("mobile-drawer-score").innerText = `${(document.getElementById("mode").value === "exam" && !state.examSubmitted) ? current : state.score}/${total}`;
+            document.getElementById("mobile-drawer-score").innerText = `${displayScoreText}/${total}`;
             document.getElementById("mobile-drawer-progress").style.width = `${percent}%`;
-
-            const isExamActive = document.getElementById("mode").value === "exam" && !state.examSubmitted && total > 0;
-            document.getElementById("desktop-submit-btn").style.display = (isExamActive && window.innerWidth >= 1280) ? "flex" : "none";
-            isExamActive ? document.getElementById("mobile-submit-btn").classList.remove("hidden") & document.getElementById("mobile-submit-btn").classList.add("flex") : document.getElementById("mobile-submit-btn").classList.add("hidden") & document.getElementById("mobile-submit-btn").classList.remove("flex");
         }
 
-        // 🎓 DSE 成績繁體中文評語邏輯
         function evaluateGrade(accuracy) {
             if (accuracy >= 80) return { level: "Level 5+", class: "from-amber-400 to-amber-600 shadow-amber-500/40", text: "表現卓越！具備奪星實力 🌟" };
             if (accuracy >= 70) return { level: "Level 4", class: "from-emerald-400 to-emerald-600 shadow-emerald-500/40", text: "根基扎實！目標穩中求勝 📈" };
@@ -577,22 +945,49 @@
         }
 
         function submitExam() {
-            if (!confirm("確定要交卷並結束測驗嗎？")) return;
-            clearInterval(state.timer); state.examSubmitted = true; state.score = 0; state.answeredCount = 0; let wrongCount = 0;
+            const year = document.getElementById("examyear").value;
+            const fullPaperQuestions = (state.isCustomMode && year === 'custom') ? state.customQuestionSet : ALL_QUESTIONS.filter(q => q.year === year);
+            const total = fullPaperQuestions.length;
+
+            if (total === 0) return;
+            const answered = fullPaperQuestions.filter(q => state.userAnswers[q.uid] !== undefined).length;
+            if (!confirm(`您答了 ${answered} / ${total} 題，確定要交卷並結束測驗嗎？`)) return;
+
+            vibrate([50, 50, 50]);
+            clearInterval(state.timer); 
+            state.examSubmitted = true; 
+            state.score = 0; 
+            state.answeredCount = 0; 
+            let wrongCount = 0;
             
-            displayQuestions.forEach(q => {
-                if (state.userAnswers[q.uid] !== undefined) {
+            fullPaperQuestions.forEach(q => {
+                const ans = state.userAnswers[q.uid];
+                if (ans !== undefined) {
                     state.answeredCount++;
-                    q.options[state.userAnswers[q.uid]].isCorrect ? state.score++ : wrongCount++;
+                    const isCorrect = (typeof ans === 'object') ? ans.isCorrect : q.options[ans].isCorrect;
+                    isCorrect ? state.score++ : wrongCount++;
+                } else {
+                    wrongCount++; 
                 }
             });
 
-            displayQuestions.forEach(q => restoreQuestionState(q, "exam")); 
-            updateDashboard(); updateNavigator();
+            renderQuestions(); 
 
-            const total = displayQuestions.length;
             const accuracy = total > 0 ? Math.round((state.score / total) * 100) : 0;
             
+            const historyItem = {
+                date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}),
+                year: state.isCustomMode ? '自訂試卷' : document.getElementById('examyear').value,
+                score: state.score,
+                total: total,
+                grade: evaluateGrade(accuracy).level
+            };
+            let history = JSON.parse(localStorage.getItem('ict_exam_history') || '[]');
+            history.unshift(historyItem);
+            if (history.length > 20) history.pop();
+            localStorage.setItem('ict_exam_history', JSON.stringify(history));
+            localStorage.removeItem('ict_exam_session');
+
             document.getElementById("modal-score").innerText = state.score;
             document.getElementById("modal-wrong").innerText = wrongCount;
             document.getElementById("modal-accuracy").innerText = accuracy + "%";
@@ -603,31 +998,100 @@
             document.getElementById("grade-level").innerText = grade.level;
             document.getElementById("grade-desc").innerText = grade.text;
 
-            const modal = document.getElementById("result-modal");
-            modal.classList.remove("hidden", "opacity-0"); modal.classList.add("flex", "opacity-100");
-            document.getElementById("result-content").classList.remove("scale-95"); document.getElementById("result-content").classList.add("scale-100");
+            toggleModal('result-modal', true);
             if (accuracy >= 60) confetti({ particleCount: 200, spread: 80, origin: { y: 0.6 } });
         }
 
         function closeModal() {
-            const modal = document.getElementById("result-modal");
-            modal.classList.remove("opacity-100"); document.getElementById("result-content").classList.remove("scale-100");
-            setTimeout(() => modal.classList.add("hidden") & modal.classList.remove("flex"), 300);
+            toggleModal('result-modal', false);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         
-        function retryExam() { closeModal(); setTimeout(() => { resetState(); renderQuestions(); }, 300); }
+        function retryExam() { 
+            closeModal(); 
+            setTimeout(() => { resetState(); renderQuestions(); }, 300); 
+        }
 
         function toggleMobileNav() {
-            const drawer = document.getElementById("mobile-nav-drawer"), content = document.getElementById("mobile-drawer-content");
+            const drawer = document.getElementById("mobile-nav-drawer");
+            const content = document.getElementById("mobile-drawer-content");
             if (drawer.classList.contains("hidden")) {
-                drawer.classList.remove("hidden"); requestAnimationFrame(() => content.classList.remove("translate-x-full")); document.body.style.overflow = 'hidden'; 
+                drawer.classList.remove("hidden"); 
+                requestAnimationFrame(() => content.classList.remove("translate-x-full")); 
+                document.body.style.overflow = 'hidden'; 
             } else {
-                content.classList.add("translate-x-full"); setTimeout(() => drawer.classList.add("hidden") & (document.body.style.overflow = ''), 300);
+                content.classList.add("translate-x-full"); 
+                setTimeout(() => {
+                    drawer.classList.add("hidden");
+                    document.body.style.overflow = '';
+                }, 300);
             }
         }
         
-        function toggleDarkMode() { document.documentElement.classList.toggle('dark'); try { localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); } catch(e){} updateMetaThemeColor(); }
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox'); 
+            const img = document.getElementById('lightbox-img');
+            img.src = src; 
+            lb.classList.remove('hidden'); 
+            lb.classList.add('flex');
+            requestAnimationFrame(() => { 
+                lb.classList.remove('opacity-0'); 
+                img.classList.remove('scale-95'); 
+                img.classList.add('scale-100'); 
+            }); 
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox'); 
+            const img = document.getElementById('lightbox-img');
+            lb.classList.add('opacity-0'); 
+            img.classList.remove('scale-100'); 
+            img.classList.add('scale-95'); 
+            setTimeout(() => { 
+                lb.classList.remove('flex'); 
+                lb.classList.add('hidden'); 
+                document.body.style.overflow = ''; 
+            }, 300);
+        }
+
+        function viewHistory() {
+            const list = document.getElementById('history-list'); 
+            const history = JSON.parse(localStorage.getItem('ict_exam_history') || '[]');
+            list.innerHTML = history.length === 0 ? '<p class="text-center text-slate-400 text-xs py-10">暫無考試紀錄</p>' : history.map(h => `
+                <div class="bg-slate-50 dark:bg-slate-800 p-3 rounded-xl mb-3 border border-slate-100 dark:border-slate-700">
+                    <div class="flex justify-between items-center mb-1"><span class="font-bold text-sm text-slate-800 dark:text-slate-200">${h.year}</span><span class="font-bold text-xs px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-900 text-brand-700 dark:text-brand-300">${h.grade}</span></div>
+                    <div class="flex justify-between text-[11px] text-slate-500 dark:text-slate-400"><span>${h.date}</span><span class="font-mono font-bold">${h.score} / ${h.total}</span></div>
+                </div>`).join('');
+        }
+        
+        function exportData() {
+            const data = { 
+                history: localStorage.getItem('ict_exam_history'), 
+                starred: localStorage.getItem('ict_starred'), 
+                theme: localStorage.getItem('theme') 
+            };
+            const a = document.createElement('a'); 
+            a.href = URL.createObjectURL(new Blob([JSON.stringify(data)], {type: "application/json"})); 
+            a.download = `ICT_Backup_${new Date().toISOString().slice(0,10)}.json`; 
+            document.body.appendChild(a); 
+            a.click(); 
+            document.body.removeChild(a);
+        }
+        
+        function importData(input) {
+            const reader = new FileReader(); 
+            reader.onload = e => { 
+                try { 
+                    const d = JSON.parse(e.target.result); 
+                    if(d.history) localStorage.setItem('ict_exam_history', d.history); 
+                    if(d.starred) localStorage.setItem('ict_starred', d.starred); 
+                    if(d.theme) localStorage.setItem('theme', d.theme); 
+                    location.reload(); 
+                } catch(err){ alert("檔案格式錯誤"); } 
+            }; 
+            if(input.files[0]) reader.readAsText(input.files[0]);
+        }
     </script>
 </body>
 </html>
