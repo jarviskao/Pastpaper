@@ -1,0 +1,51 @@
+name: Update Paper Data & Verify
+
+on:
+  push:
+    paths:
+      - 'Paper/**'
+      - 'scripts/**'
+      - 'data/answers.json'
+      - 'data/ocr.json'
+      - 'js/**'
+      - 'css/**'
+      - 'tests/**'
+      - 'index.html'
+      - 'sw.js'
+      - 'manifest.json'
+      - 'package.json'
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate papers.json
+        run: node scripts/generate-data.js
+
+      - name: Run Automated Verification Tests
+        run: npm test
+
+      - name: Commit and push changes
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/papers.json
+          if git diff --staged --quiet; then
+            echo "No changes to data/papers.json"
+          else
+            git commit -m "chore: auto-update data/papers.json [skip ci]"
+            git push
+          fi
