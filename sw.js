@@ -1,27 +1,47 @@
-const CACHE_NAME = 'ict-master-v2';
-const ASSETS_TO_CACHE = [
+/**
+ * sw.js - Service Worker for ICT Past Paper Learning Platform
+ * Robust offline-first asset caching, background update synchronization,
+ * and high-performance Cache-First strategy for past paper images.
+ */
+
+const CACHE_NAME = 'ict-master-v5';
+const PRECACHE_ASSETS = [
   './',
   './index.html',
   './manifest.json',
-  './ict-mc.xml'
+  './css/app.css',
+  './js/store.js',
+  './js/quiz.js',
+  './js/ui.js',
+  './js/app.js',
+  './data/papers.json',
+  './data/answers.json',
+  './data/ocr.json',
+  './icons/icon.svg'
 ];
 
-// 1. 安裝 Service Worker 並寫入初始快取
+// 1. Install & precache essential assets
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(ASSETS_TO_CACHE))
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(PRECACHE_ASSETS).catch(err => {
+        console.warn('[SW] Precache partial failure:', err);
+      });
+    })
   );
   self.skipWaiting();
 });
 
-// 2. 啟動並清除舊版快取
+// 2. Activate & cleanup stale caches
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
-          if (cacheName !== CACHE_NAME) return caches.delete(cacheName);
+          if (cacheName !== CACHE_NAME) {
+            console.log('[SW] Purging stale cache:', cacheName);
+            return caches.delete(cacheName);
+          }
         })
       );
     })
@@ -29,27 +49,69 @@ self.addEventListener('activate', event => {
   self.clients.claim();
 });
 
-// 3. 攔截請求策略：Network First, Cache Fallback (非常重要！)
+// 3. Intercept requests with domain-appropriate caching strategies
 self.addEventListener('fetch', event => {
-  // 只攔截 GET 請求
-  if (event.request.method !== 'GET') return;
+  const req = event.request;
 
-  event.respondWith(
-    fetch(event.request)
-      .then(networkResponse => {
-        // 如果網路請求成功，將最新的檔案存入快取 (動態更新)
-        // 確保未來在無網路環境下，使用者看到的是最後一次成功連線的版本
-        if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
-          const responseToCache = networkResponse.clone();
-          caches.open(CACHE_NAME).then(cache => {
-            cache.put(event.request, responseToCache);
+  // Intercept only GET requests over HTTP/HTTPS
+  if (req.method !== 'GET' || !req.url.startsWith('http')) return;
+
+  const url = new URL(req.url);
+
+  // Strategy A: Cache-First for static past paper exam images
+  if (url.pathname.includes('/Paper/') || /\.(png|jpg|jpeg|webp|svg)$/i.test(url.pathname)) {
+    event.respondWith(
+      caches.match(req).then(cachedResponse => {
+        if (cachedResponse) return cachedResponse;
+
+        return fetch(req)
+          .then(networkResponse => {
+            if (networkResponse && (networkResponse.status === 200 || networkResponse.type === 'opaque')) {
+              const clone = networkResponse.clone();
+              caches.open(CACHE_NAME).then(cache => cache.put(req, clone)).catch(() => {});
+            }
+            return networkResponse;
+          })
+          .catch(async () => {
+            const fallback = await caches.match(req);
+            return fallback || new Response('', { status: 504, statusText: 'Offline' });
           });
+      })
+    );
+    return;
+  }
+
+  // Strategy B: Network-First with Cache Fallback for HTML, JS, CSS, and JSON data
+  event.respondWith(
+    fetch(req)
+      .then(networkResponse => {
+        if (networkResponse && (networkResponse.status === 200 || networkResponse.type === 'opaque')) {
+          const clone = networkResponse.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(req, clone)).catch(() => {});
         }
         return networkResponse;
       })
-      .catch(() => {
-        // 如果網路連線失敗 (Offline)，則從快取中讀取檔案
-        return caches.match(event.request);
+      .catch(async () => {
+        const cachedResponse = await caches.match(req);
+        if (cachedResponse) return cachedResponse;
+
+        // If navigation request and offline, fallback to root index.html
+        if (req.mode === 'navigate') {
+          const navFallback = await caches.match('./index.html');
+          if (navFallback) return navFallback;
+        }
+        return new Response('Offline', {
+          status: 503,
+          statusText: 'Service Unavailable',
+          headers: { 'Content-Type': 'text/plain; charset=utf-8' }
+        });
       })
   );
+});
+
+// 4. Message event for instant updates
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });

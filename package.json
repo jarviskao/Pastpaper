@@ -1,0 +1,25 @@
+{
+  "name": "ict-mc-platform",
+  "version": "2.1.0",
+  "description": "HKDSE / HKCEE ICT MC Past Paper Learning Platform",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "serve": "node scripts/serve.js",
+    "generate": "node scripts/generate-data.js",
+    "test": "node tests/run_all_tests.js",
+    "verify": "node tests/run_all_tests.js"
+  },
+  "keywords": [
+    "hkdse",
+    "ict",
+    "past-paper",
+    "mc-practice",
+    "education"
+  ],
+  "author": "ICT MC Platform",
+  "license": "ISC"
+}

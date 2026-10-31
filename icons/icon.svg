@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="108" fill="url(#grad)"/>
+  <path d="M256 120 L390 195 L256 270 L122 195 Z" fill="#ffffff" opacity="0.95"/>
+  <path d="M160 230 L160 310 C160 350 256 380 256 380 C256 380 352 350 352 310 L352 230 L256 284 Z" fill="#ffffff" opacity="0.85"/>
+  <path d="M390 205 L415 220 L415 310 L395 310 L395 235 Z" fill="#fbbf24"/>
+  <text x="256" y="440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="54" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="4">ICT MC</text>
+</svg>

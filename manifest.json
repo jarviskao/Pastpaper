@@ -1,22 +1,19 @@
 {
-  "name": "ICT Master Pro",
-  "short_name": "ICT Master",
-  "description": "最強 DSE ICT MC試題庫",
+  "name": "ICT MC 歷年試題庫",
+  "short_name": "ICT MC",
+  "description": "最強香港中學文憑試 (HKDSE) 與會考 (HKCEE) 資訊及通訊科技科歷年 MC 試題庫與在線學習平台",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#0b1120",
+  "orientation": "portrait-primary",
+  "background_color": "#f8fafc",
   "theme_color": "#4f46e5",
+  "categories": ["education", "productivity"],
   "icons": [
     {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Eo_circle_indigo_white_letter-i.svg/192px-Eo_circle_indigo_white_letter-i.svg.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Eo_circle_indigo_white_letter-i.svg/512px-Eo_circle_indigo_white_letter-i.svg.png",
-      "sizes": "512x512",
-      "type": "image/png",
+      "src": "icons/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
       "purpose": "any maskable"
     }
   ]

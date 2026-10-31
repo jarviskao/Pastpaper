@@ -1,0 +1,173 @@
+/* ==========================================================================
+   ICT Past Paper Learning Platform - Styles (Optimized Light UI)
+   ========================================================================== */
+
+/* Base & Typography */
+body {
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+/* Glassmorphism Header & Bars */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Custom Scrollbar */
+.custom-scroll::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 9999px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: #94a3b8;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Question & Option Cards Animation */
+@keyframes subtleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.question-card {
+    animation: subtleFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Image Presentation - No border / no box outline */
+.exam-img-container {
+    background-color: transparent;
+    border: none !important;
+    padding: 0 !important;
+    display: block;
+    max-width: 100%;
+    box-shadow: none !important;
+}
+
+.exam-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    cursor: zoom-in;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Option Buttons - Compact, neat, distinct */
+.option-btn {
+    transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+    touch-action: manipulation;
+    border-width: 1.5px;
+    min-height: 48px;
+}
+
+.option-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    border-color: #93c5fd;
+    box-shadow: 0 2px 8px -2px rgba(59, 130, 246, 0.12);
+}
+
+.option-btn:active:not(:disabled) {
+    transform: scale(0.995);
+}
+
+/* Option States */
+.option-btn.opt-default {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+    color: #334155;
+}
+
+.option-btn.opt-selected {
+    background-color: #f5f7ff;
+    border-color: #4f46e5;
+    color: #312e81;
+    box-shadow: 0 0 0 1px #4f46e5;
+}
+
+.option-btn.opt-correct {
+    background-color: #f0fdf4;
+    border-color: #10b981;
+    color: #065f46;
+    box-shadow: 0 0 0 1px #10b981;
+}
+
+.option-btn.opt-wrong {
+    background-color: #fef2f2;
+    border-color: #ef4444;
+    color: #991b1b;
+    box-shadow: 0 0 0 1px #ef4444;
+}
+
+.option-btn.opt-dimmed {
+    opacity: 0.5;
+}
+
+/* Navigator Grid Items */
+.nav-pill {
+    transition: all 0.12s ease-out;
+}
+.nav-pill:hover {
+    transform: translateY(-1px);
+}
+.nav-pill:active {
+    transform: scale(0.95);
+}
+
+/* Modals */
+.modal-overlay {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+}
+
+.modal-overlay.active {
+    display: flex !important;
+    opacity: 1 !important;
+}
+
+.modal-overlay.active .modal-panel {
+    transform: scale(1) translateY(0);
+}
+
+.modal-panel {
+    transform: scale(0.97) translateY(8px);
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Safe Area Insets for Mobile */
+.pb-safe {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+.pt-safe {
+    padding-top: max(1rem, env(safe-area-inset-top));
+}
