@@ -1,6 +1,6 @@
 {
   "name": "ict-mc-platform",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "HKDSE / HKCEE ICT MC Past Paper Learning Platform",
   "private": true,
   "engines": {

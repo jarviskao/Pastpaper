@@ -14,11 +14,21 @@
         async init() {
             if (this.initialized) return;
 
-            this.updateGreeting();
-
             try {
                 await Store.loadPapersData();
                 UI.init();
+                // Parse URL shortcuts (PWA launch parameters)
+                if (typeof window !== 'undefined' && window.location.search) {
+                    const params = new URLSearchParams(window.location.search);
+                    const qMode = params.get('mode');
+                    const qTab = params.get('tab');
+                    if (qMode && ['practice', 'exam', 'study'].includes(qMode)) {
+                        Store.mode = qMode;
+                    }
+                    if (qTab && ['all', 'wrong', 'starred'].includes(qTab)) {
+                        Store.currentTab = qTab;
+                    }
+                }
 
                 // Synchronize mode dropdown
                 const modeSelect = document.getElementById('mode');
@@ -175,19 +185,6 @@
                     Store.clearExamSession();
                 }
             }
-        },
-
-        updateGreeting() {
-            const el = document.getElementById('greeting-text');
-            if (!el) return;
-            const hour = new Date().getHours();
-            let greeting = '早晨，準備好溫習了嗎？';
-            if (hour >= 12 && hour < 18) {
-                greeting = '下午好，持續刷題保持手感！';
-            } else if (hour >= 18 || hour < 5) {
-                greeting = '夜深了，溫習辛苦了！';
-            }
-            el.textContent = greeting;
         },
 
         handleKeydown(e) {

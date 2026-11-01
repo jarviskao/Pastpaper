@@ -59,13 +59,15 @@
             if (mode === 'practice') {
                 if (isCorrect === true) {
                     Store.score++;
+                    this.vibrate([15, 30, 20]);
                 } else if (isCorrect === false) {
-                    this.vibrate(200);
+                    this.vibrate([35, 45, 35]);
                 }
                 if (typeof UI !== 'undefined' && UI.revealQuestionAnswer) {
                     UI.revealQuestionAnswer(question, optionIndex, false);
                 }
             } else if (mode === 'exam') {
+                this.vibrate(12);
                 if (typeof UI !== 'undefined' && UI.markQuestionSelected) {
                     UI.markQuestionSelected(question, optionIndex);
                 }
@@ -99,6 +101,7 @@
 
             this.stopTimer();
             Store.examSubmitted = true;
+            this.vibrate([30, 50, 30]);
             Store.clearExamSession();
 
             // Calculate precise score

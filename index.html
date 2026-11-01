@@ -10,6 +10,8 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="ICT MC">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icons/icon.svg">
@@ -64,10 +66,7 @@
                 <div class="w-8 h-8 rounded bg-[#141414] text-white flex items-center justify-center font-bold text-xs">
                     ICT
                 </div>
-                <div>
-                    <h1 class="font-bold text-base sm:text-lg tracking-tight leading-none text-[#0a0a0a]">ICT 歷年 MC 試題庫</h1>
-                    <p id="greeting-text" class="text-xs text-[#525252] font-medium tracking-wide mt-1">早晨，準備好溫習了嗎？</p>
-                </div>
+                <h1 class="font-bold text-base sm:text-lg tracking-tight leading-none text-[#0a0a0a]">ICT 歷年 MC 試題庫</h1>
             </div>
 
             <div class="flex items-center gap-4">
@@ -227,23 +226,23 @@
     <!-- Mobile Bottom Navigation Bar -->
     <nav id="mobile-bottom-bar" class="xl:hidden fixed bottom-0 inset-x-0 bg-white border-t border-[#e6e6e6] z-50 pb-safe">
         <div class="flex items-center justify-around h-14 px-2">
-            <button onclick="UI.toggleMobileNav(true)" class="flex flex-col items-center justify-center gap-0.5 w-16 h-full text-[#525252] hover:text-[#0a0a0a] active:scale-95 transition-transform touch-manipulation">
+            <button onclick="UI.toggleMobileNav(true)" class="mobile-tab-btn flex flex-col items-center justify-center gap-0.5 w-16 h-full text-[#525252] hover:text-[#0a0a0a] transition-transform">
                 <i class="fas fa-th-large text-sm"></i>
                 <span class="text-xs font-semibold">題號導覽</span>
             </button>
-            <button onclick="UI.setTab('wrong'); window.scrollTo({top:0, behavior:'smooth'})" class="flex flex-col items-center justify-center gap-0.5 w-16 h-full text-[#525252] hover:text-[#0a0a0a] active:scale-95 transition-transform touch-manipulation">
+            <button onclick="UI.setTab('wrong'); window.scrollTo({top:0, behavior:'smooth'})" class="mobile-tab-btn flex flex-col items-center justify-center gap-0.5 w-16 h-full text-[#525252] hover:text-[#0a0a0a] transition-transform">
                 <i class="fas fa-times-circle text-sm text-[#c4242a]"></i>
                 <span class="text-xs font-semibold">錯題重溫</span>
             </button>
-            <button onclick="UI.setTab('starred'); window.scrollTo({top:0, behavior:'smooth'})" class="flex flex-col items-center justify-center gap-0.5 w-16 h-full text-[#525252] hover:text-[#0a0a0a] active:scale-95 transition-transform touch-manipulation">
+            <button onclick="UI.setTab('starred'); window.scrollTo({top:0, behavior:'smooth'})" class="mobile-tab-btn flex flex-col items-center justify-center gap-0.5 w-16 h-full text-[#525252] hover:text-[#0a0a0a] transition-transform">
                 <i class="fas fa-star text-sm text-[#92400e]"></i>
                 <span class="text-xs font-semibold">星號收藏</span>
             </button>
-            <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="flex flex-col items-center justify-center gap-0.5 w-16 h-full text-[#525252] hover:text-[#0a0a0a] active:scale-95 transition-transform touch-manipulation">
+            <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="mobile-tab-btn flex flex-col items-center justify-center gap-0.5 w-16 h-full text-[#525252] hover:text-[#0a0a0a] transition-transform">
                 <i class="fas fa-arrow-up text-sm"></i>
                 <span class="text-xs font-semibold">頂部</span>
             </button>
-            <button id="mobile-submit-btn" onclick="Quiz.submitExam()" class="hidden flex-col items-center justify-center gap-0.5 w-16 h-full text-[#141414] active:scale-95 transition-transform touch-manipulation font-bold">
+            <button id="mobile-submit-btn" onclick="Quiz.submitExam()" class="mobile-tab-btn hidden flex-col items-center justify-center gap-0.5 w-16 h-full text-[#141414] transition-transform font-bold">
                 <i class="fas fa-check-circle text-base text-[#1d5fbf]"></i>
                 <span class="text-xs font-bold">交卷</span>
             </button>

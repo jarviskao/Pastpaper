@@ -258,9 +258,6 @@
                             <i class="fas fa-file-alt text-xs"></i>
                             <span class="hidden sm:inline">文字審查</span>
                         </button>
-                        <button onclick="UI.openLightbox('${q.questionImg}')" class="p-1.5 text-[#525252] hover:text-[#0a0a0a] transition-colors" title="放大題目圖片" aria-label="放大題目圖片">
-                            <i class="fas fa-search-plus text-xs"></i>
-                        </button>
                         <button onclick="UI.toggleStar('${q.uid}')" class="p-1.5 text-[#525252] hover:text-[#92400e] transition-transform active:scale-110" title="收藏題目" aria-label="收藏題目">
                             <i id="star_${q.uid}" class="${isStarred ? 'fas fa-star text-[#92400e]' : 'far fa-star text-[#a3a3a3]'} text-sm"></i>
                         </button>
@@ -521,6 +518,7 @@
         },
 
         toggleStar(uid) {
+            if (typeof Quiz !== 'undefined' && Quiz.vibrate) Quiz.vibrate(14);
             const isStarred = Store.toggleStar(uid);
             const icon = document.getElementById(`star_${uid}`);
             if (icon) {
@@ -535,6 +533,7 @@
         },
 
         setTab(tab) {
+            if (typeof Quiz !== 'undefined' && Quiz.vibrate) Quiz.vibrate(10);
             Store.currentTab = tab;
             ['all', 'wrong', 'starred'].forEach(t => {
                 const btn = document.getElementById(`tab-${t}`);
@@ -611,9 +610,8 @@
             return escapedText.replace(re, '<mark class="bg-amber-200 text-amber-950 font-bold px-1 rounded">$1</mark>');
         },
 
-        // --- Mobile Drawer Navigation ---
-
         toggleMobileNav(forceState) {
+            if (typeof Quiz !== 'undefined' && Quiz.vibrate) Quiz.vibrate(10);
             const drawer = document.getElementById('mobile-nav-drawer');
             const content = document.getElementById('mobile-drawer-content');
             if (!drawer || !content) return;

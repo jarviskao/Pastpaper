@@ -1,14 +1,46 @@
 {
   "name": "ICT MC 歷年試題庫",
   "short_name": "ICT MC",
+  "id": "ict-mc-pastpaper-pwa",
   "description": "最強香港中學文憑試 (HKDSE) 與會考 (HKCEE) 資訊及通訊科技科歷年 MC 試題庫與在線學習平台",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "window-controls-overlay"],
   "orientation": "portrait-primary",
   "background_color": "#f4f6f8",
   "theme_color": "#141414",
   "categories": ["education", "productivity"],
+  "shortcuts": [
+    {
+      "name": "練習模式 (即時對答案)",
+      "short_name": "即時練習",
+      "description": "即時對答案學習練習",
+      "url": "./index.html?mode=practice",
+      "icons": [{ "src": "icons/icon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "考試模式 (模擬 DSE 計時)",
+      "short_name": "模擬考",
+      "description": "模擬計時考卷試題",
+      "url": "./index.html?mode=exam",
+      "icons": [{ "src": "icons/icon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "錯題重溫",
+      "short_name": "錯題本",
+      "description": "重溫並重設歷次錯題",
+      "url": "./index.html?tab=wrong",
+      "icons": [{ "src": "icons/icon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "星號收藏",
+      "short_name": "收藏題",
+      "description": "檢視已加星號收藏之題目",
+      "url": "./index.html?tab=starred",
+      "icons": [{ "src": "icons/icon.svg", "sizes": "192x192" }]
+    }
+  ],
   "icons": [
     {
       "src": "icons/icon.svg",

@@ -39,6 +39,11 @@
     font-variant-numeric: tabular-nums;
 }
 
+html {
+    overscroll-behavior-y: none;
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
     font-family: var(--font-sans);
     -webkit-tap-highlight-color: transparent;
@@ -47,8 +52,21 @@ body {
     font-variant-numeric: tabular-nums;
     background-color: var(--ground);
     color: var(--text);
+    overscroll-behavior-y: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
 }
 
+button, select, input, .option-btn, .nav-pill {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.select-auto, .ocr-question-text, .ocr-options-text {
+    -webkit-user-select: text;
+    user-select: text;
+}
 .num {
     font-variant-numeric: tabular-nums;
 }
@@ -215,4 +233,14 @@ body {
 
 .pt-safe {
     padding-top: max(1rem, env(safe-area-inset-top));
+}
+
+/* Mobile App Tab Bar Active Press */
+.mobile-tab-btn {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-tab-btn:active {
+    transform: scale(0.92);
 }
