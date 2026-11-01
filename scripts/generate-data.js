@@ -296,23 +296,12 @@ function buildData(options = {}) {
             }
 
             // Combined search index string
+            // Combined search index string: strictly actual question content, options, explanation and IDs
             const searchText = [
                 year,
                 `q${qNum}`,
                 `第${qNum}題`,
                 qData.qNumDisplay,
-                qcode,
-                level.category,
-                level.stage,
-                topic.nameZh,
-                topic.nameEn,
-                subtopic ? subtopic.nameZh : '',
-                subtopic ? subtopic.nameEn : '',
-                difficulty.label,
-                difficulty.labelEn,
-                `難度:${difficulty.label}`,
-                correctRate !== null ? `答對率:${correctRate}%` : '',
-                correctRate !== null ? `${correctRate}%` : '',
                 ocrQuestionText,
                 ocrOptionsText,
                 explanation
