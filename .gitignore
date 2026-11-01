@@ -1,6 +1,42 @@
+# Dependencies
 node_modules/
-.playwright-mcp/
+.pnp
+.pnp.js
+
+# Raw source dumps & sensitive tokens / keys
+All.json
+meta.json
+get_usable_packages.json
+ict-mc.xml
+*.jwt
+*.token
+*.pem
+*.key
+*.env
+*.env.*
+!.env.example
+
+# OS / Temporary / Editor files
 .DS_Store
 Thumbs.db
+desktop.ini
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.playwright-mcp/
 .taste-skill/
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+env/

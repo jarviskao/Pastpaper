@@ -19,9 +19,9 @@ const PAPER_DIR = path.join(ROOT_DIR, 'Paper');
 const ANSWERS_FILE = path.join(ROOT_DIR, 'data', 'answers.json');
 const OCR_FILE = path.join(ROOT_DIR, 'data', 'ocr.json');
 const OUTPUT_FILE = path.join(ROOT_DIR, 'data', 'papers.json');
+const METADATA_FILE = path.join(ROOT_DIR, 'data', 'metadata.json');
 const ALL_FILE = path.join(ROOT_DIR, 'All.json');
 const META_FILE = path.join(ROOT_DIR, 'meta.json');
-const PACKAGES_FILE = path.join(ROOT_DIR, 'get_usable_packages.json');
 /**
  * Normalizes Chinese text spacing while strictly preserving English identifiers and formulas.
  * @param {string} str
@@ -86,40 +86,66 @@ function buildData(options = {}) {
     const topicMap = new Map();
     const subtopicMap = new Map();
     const diffMap = new Map();
-    if (fs.existsSync(META_FILE)) {
-        try {
-            metaDb = JSON.parse(fs.readFileSync(META_FILE, 'utf-8'));
-            const cit = Array.isArray(metaDb.subjects) ? metaDb.subjects.find(s => s.code === 'cit') : null;
-            if (cit) {
-                if (Array.isArray(cit.topics)) {
-                    cit.topics.forEach(t => topicMap.set(t.code, t));
-                }
-                if (Array.isArray(cit.subtopics)) {
-                    cit.subtopics.forEach(st => subtopicMap.set(st.code, st));
-                }
-            }
-            if (Array.isArray(metaDb.difficulties)) {
-                metaDb.difficulties.forEach(d => diffMap.set(d.code, d));
-            }
-            if (!silent) console.log(`[generate-data] Loaded metadata definitions (Topics: ${topicMap.size}, Subtopics: ${subtopicMap.size})`);
-        } catch (e) {
-            console.warn('[generate-data] Could not parse meta.json:', e.message);
-        }
-    }
-
     const allMap = new Map();
-    if (fs.existsSync(ALL_FILE)) {
+
+    if (fs.existsSync(METADATA_FILE)) {
         try {
-            const allDb = JSON.parse(fs.readFileSync(ALL_FILE, 'utf-8'));
-            const list = Array.isArray(allDb.result) ? allDb.result : (Array.isArray(allDb) ? allDb : []);
-            list.forEach(q => {
-                if (q.year && q.question_no) {
-                    allMap.set(`${q.year}_${q.question_no}`, q);
-                }
-            });
-            if (!silent) console.log('[generate-data] Loaded question bank metadata for', allMap.size, 'questions from All.json');
+            const mData = JSON.parse(fs.readFileSync(METADATA_FILE, 'utf-8'));
+            if (Array.isArray(mData.topics)) {
+                mData.topics.forEach(t => topicMap.set(t.code, t));
+            }
+            if (Array.isArray(mData.subtopics)) {
+                mData.subtopics.forEach(st => subtopicMap.set(st.code, st));
+            }
+            if (Array.isArray(mData.difficulties)) {
+                mData.difficulties.forEach(d => diffMap.set(d.code, d));
+            }
+            if (mData.questions) {
+                Object.entries(mData.questions).forEach(([k, q]) => {
+                    allMap.set(k, {
+                        qcode: q.qcode,
+                        difficulty_code: q.difficulty,
+                        hkeaa_correct_pc: q.correctRate,
+                        topic_code: q.topic ? [q.topic] : [],
+                        subtopic_code: q.subtopic ? [q.subtopic] : [],
+                        suggested_time: q.suggestedTime,
+                        eaa_difficulty_code: q.eaaDifficulty
+                    });
+                });
+            }
+            if (!silent) console.log(`[generate-data] Loaded clean metadata from data/metadata.json (${allMap.size} questions, ${topicMap.size} topics)`);
         } catch (e) {
-            console.warn('[generate-data] Could not parse All.json:', e.message);
+            console.warn('[generate-data] Could not parse data/metadata.json:', e.message);
+        }
+    } else {
+        if (fs.existsSync(META_FILE)) {
+            try {
+                metaDb = JSON.parse(fs.readFileSync(META_FILE, 'utf-8'));
+                const cit = Array.isArray(metaDb.subjects) ? metaDb.subjects.find(s => s.code === 'cit') : null;
+                if (cit) {
+                    if (Array.isArray(cit.topics)) cit.topics.forEach(t => topicMap.set(t.code, t));
+                    if (Array.isArray(cit.subtopics)) cit.subtopics.forEach(st => subtopicMap.set(st.code, st));
+                }
+                if (Array.isArray(metaDb.difficulties)) {
+                    metaDb.difficulties.forEach(d => diffMap.set(d.code, d));
+                }
+            } catch (e) {
+                console.warn('[generate-data] Could not parse meta.json:', e.message);
+            }
+        }
+        if (fs.existsSync(ALL_FILE)) {
+            try {
+                const allDb = JSON.parse(fs.readFileSync(ALL_FILE, 'utf-8'));
+                const list = Array.isArray(allDb.result) ? allDb.result : (Array.isArray(allDb) ? allDb : []);
+                list.forEach(q => {
+                    if (q.year && q.question_no) {
+                        allMap.set(`${q.year}_${q.question_no}`, q);
+                    }
+                });
+                if (!silent) console.log('[generate-data] Loaded question bank metadata for', allMap.size, 'questions from All.json');
+            } catch (e) {
+                console.warn('[generate-data] Could not parse All.json:', e.message);
+            }
         }
     }
 
