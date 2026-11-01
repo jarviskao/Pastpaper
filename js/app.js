@@ -44,15 +44,12 @@
                 const container = document.getElementById('result');
                 if (container) {
                     container.innerHTML = `
-                        <div class="flex flex-col items-center justify-center py-20 text-center px-4">
-                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4 text-red-500">
-                                <i class="fas fa-exclamation-triangle text-2xl"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-slate-800 mb-2">題庫載入失敗</h3>
-                            <p class="text-sm text-slate-500 max-w-md">
+                        <div class="flex flex-col items-center justify-center py-16 text-center px-4">
+                            <h3 class="text-base font-bold text-[#0a0a0a] mb-2">題庫載入失敗</h3>
+                            <p class="text-sm text-[#525252] max-w-md">
                                 無法讀取題庫資料 (data/papers.json)。請確認您已執行 <code>node scripts/generate-data.js</code> 生成題目，並確認網路或伺服器連線正常。
                             </p>
-                            <button onclick="location.reload()" class="mt-5 px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white rounded-xl text-xs font-bold transition-all shadow-md">
+                            <button onclick="location.reload()" class="mt-5 px-5 py-2.5 bg-[#141414] hover:bg-[#262626] text-white rounded-md text-xs font-bold transition-colors">
                                 重新載入
                             </button>
                         </div>
@@ -207,14 +204,14 @@
                 return;
             }
 
+            const cards = Array.from(document.querySelectorAll('.question-card'));
+            if (cards.length === 0) return;
+
+            const threshold = 110;
+
             // Quick Question Navigation: 'j' next card, 'k' prev card
             if (e.key === 'j' || e.key === 'k') {
-                const cards = Array.from(document.querySelectorAll('.question-card'));
-                if (cards.length === 0) return;
-
-                const threshold = 110; // Account for sticky header height
                 let nextIdx = 0;
-
                 if (e.key === 'j') {
                     const found = cards.findIndex(c => c.getBoundingClientRect().top > threshold);
                     nextIdx = found !== -1 ? found : cards.length - 1;
@@ -226,8 +223,21 @@
                         }
                     }
                 }
-
                 cards[nextIdx]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                return;
+            }
+
+            // Identify active card near top of viewport for direct keyboard answering (1-4 / a-d) or starring (s)
+            const activeCard = cards.find(c => c.getBoundingClientRect().bottom > threshold + 40) || cards[0];
+            if (!activeCard || !activeCard.id.startsWith('card_')) return;
+            const activeUid = activeCard.id.slice(5);
+
+            const keyLower = e.key.toLowerCase();
+            const optMap = { '1': 0, '2': 1, '3': 2, '4': 3, 'a': 0, 'b': 1, 'c': 2, 'd': 3 };
+            if (Object.prototype.hasOwnProperty.call(optMap, keyLower) && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                Quiz.handleOptionClick(activeUid, optMap[keyLower]);
+            } else if (keyLower === 's' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                UI.toggleStar(activeUid);
             }
         },
 

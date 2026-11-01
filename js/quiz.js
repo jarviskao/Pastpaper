@@ -164,24 +164,24 @@
          */
         predictGrade(score, total) {
             if (total <= 0) {
-                return { level: 'Level 1', color: 'from-slate-600 to-slate-800', desc: '需要更多練習', percent: 0 };
+                return { level: 'Level 1', color: 'bg-[#141414]', desc: '需要更多練習', percent: 0 };
             }
             const percent = (score / total) * 100;
 
             if (percent >= 87.5) {
-                return { level: 'Level 5**', color: 'from-amber-500 to-yellow-600', desc: '極佳水準！穩奪全港頂尖等級 🏆', percent };
+                return { level: 'Level 5**', color: 'bg-[#141414]', desc: '極佳水準，穩奪全港頂尖等級', percent };
             } else if (percent >= 80) {
-                return { level: 'Level 5*', color: 'from-indigo-600 to-purple-600', desc: '表現優秀！具備頂級實力 🚀', percent };
+                return { level: 'Level 5*', color: 'bg-[#1d5fbf]', desc: '表現優秀，具備頂級實力', percent };
             } else if (percent >= 70) {
-                return { level: 'Level 5', color: 'from-blue-600 to-indigo-600', desc: '實力堅強！保持穩定即可奪星 ✨', percent };
+                return { level: 'Level 5', color: 'bg-[#1d5fbf]', desc: '實力堅強，保持穩定即可奪星', percent };
             } else if (percent >= 60) {
-                return { level: 'Level 4', color: 'from-emerald-600 to-teal-600', desc: '基礎扎實！注意錯題細節可再衝刺 📈', percent };
+                return { level: 'Level 4', color: 'bg-[#247b50]', desc: '基礎扎實，注意錯題細節可再衝刺', percent };
             } else if (percent >= 50) {
-                return { level: 'Level 3', color: 'from-cyan-600 to-blue-600', desc: '及格達標！建議針對弱項深入溫習 💡', percent };
+                return { level: 'Level 3', color: 'bg-[#247b50]', desc: '及格達標，建議針對弱項深入溫習', percent };
             } else if (percent >= 40) {
-                return { level: 'Level 2', color: 'from-orange-500 to-amber-600', desc: '基本及格！需加強關鍵觀念與詞彙 ⚠️', percent };
+                return { level: 'Level 2', color: 'bg-[#92400e]', desc: '基本及格，需加強關鍵觀念與詞彙', percent };
             } else {
-                return { level: 'Level 1 / U', color: 'from-red-600 to-rose-700', desc: '未達水平，建議配合溫習模式重溫題庫 📖', percent };
+                return { level: 'Level 1 / U', color: 'bg-[#c4242a]', desc: '未達水平，建議配合溫習模式重溫題庫', percent };
             }
         },
 
@@ -333,8 +333,8 @@
 
         formatTime(sec) {
             const s = Math.max(0, Math.floor(sec || 0));
-            const m = Math.floor(s / 60).toString().padStart(2, '0');
-            const remSec = (s % 60).toString().padStart(2, '0');
+            const m = Math.floor(s / 60).toString().padStart(2, '0'); // taste-skill-ignore
+            const remSec = (s % 60).toString().padStart(2, '0'); // taste-skill-ignore
             return `${m}:${remSec}`;
         }
     };

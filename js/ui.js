@@ -2,6 +2,7 @@
  * js/ui.js
  * UI rendering, responsive layout, DOM manipulation, accessible modals, and lightbox.
  * Engineered for Clean Code, strict XSS defense, accessibility, and high performance.
+ * Follows the Achromatic Ledger design system (seed 1021686034).
  */
 
 (function (global) {
@@ -44,31 +45,31 @@
             if (!toast) {
                 toast = document.createElement('div');
                 toast.id = 'app-toast';
-                toast.className = 'fixed top-20 right-4 z-[120] max-w-sm px-4 py-3 rounded-xl shadow-lg border text-sm font-bold flex items-center gap-2.5 transition-all duration-300 transform translate-y-[-10px] opacity-0 pointer-events-none';
+                toast.className = 'fixed top-16 right-4 z-[120] max-w-sm px-4 py-3 rounded-md border text-xs font-semibold flex items-center gap-2.5 transition-opacity duration-200 opacity-0 pointer-events-none';
                 document.body.appendChild(toast);
             }
 
             const styles = {
-                info: 'bg-white text-slate-800 border-slate-200 shadow-slate-200/50',
-                success: 'bg-emerald-50 text-emerald-800 border-emerald-200 shadow-emerald-500/10',
-                warning: 'bg-amber-50 text-amber-800 border-amber-200 shadow-amber-500/10',
-                error: 'bg-red-50 text-red-800 border-red-200 shadow-red-500/10'
+                info: 'bg-[#141414] text-white border-[#262626]',
+                success: 'bg-[#dcfae5] text-[#04250e] border-[#247b50]',
+                warning: 'bg-[#fffbeb] text-[#92400e] border-[#fde68a]',
+                error: 'bg-[#ffedea] text-[#831c1e] border-[#c4242a]'
             };
 
             const icons = {
-                info: 'fas fa-info-circle text-brand-600',
-                success: 'fas fa-check-circle text-emerald-600',
-                warning: 'fas fa-exclamation-triangle text-amber-600',
-                error: 'fas fa-times-circle text-red-600'
+                info: 'fas fa-info-circle text-white',
+                success: 'fas fa-check-circle text-[#247b50]',
+                warning: 'fas fa-exclamation-triangle text-[#92400e]',
+                error: 'fas fa-times-circle text-[#c4242a]'
             };
 
-            toast.className = `fixed top-20 right-4 z-[120] max-w-sm px-4 py-3 rounded-xl shadow-lg border text-sm font-bold flex items-center gap-2.5 transition-all duration-300 transform translate-y-0 opacity-100 ${styles[type] || styles.info}`;
+            toast.className = `fixed top-16 right-4 z-[120] max-w-sm px-4 py-3 rounded-md border text-xs font-semibold flex items-center gap-2.5 transition-opacity duration-200 opacity-100 ${styles[type] || styles.info}`;
             toast.innerHTML = `<i class="${icons[type] || icons.info}"></i> <span>${escapeHtml(message)}</span>`;
 
             clearTimeout(this.toastTimer);
             this.toastTimer = setTimeout(() => {
-                toast.classList.remove('opacity-100', 'translate-y-0');
-                toast.classList.add('opacity-0', 'translate-y-[-10px]');
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0');
             }, 3000);
         },
 
@@ -82,7 +83,7 @@
             select.innerHTML = '';
 
             if (Store.isCustomMode) {
-                const customOpt = new Option('✨ 自訂模擬試卷', 'custom');
+                const customOpt = new Option('自訂模擬試卷', 'custom');
                 select.add(customOpt);
             }
 
@@ -133,26 +134,24 @@
             if (questions.length === 0) {
                 let emptyMsg = '找不到符合條件的題目';
                 let iconClass = 'far fa-folder-open';
-                let actionBtnHtml = '';
 
                 if (Store.currentTab === 'wrong') {
                     if (mode === 'exam' && !Store.examSubmitted) {
-                        emptyMsg = '考試進行中，請於交卷後查看錯題 📝';
-                        iconClass = 'fas fa-lock text-slate-400';
+                        emptyMsg = '考試進行中，請於交卷後查看錯題';
+                        iconClass = 'fas fa-lock text-[#525252]';
                     } else {
-                        emptyMsg = '太棒了！目前沒有答錯的題目 🎉';
-                        iconClass = 'fas fa-check-circle text-emerald-500';
+                        emptyMsg = '目前沒有答錯的題目';
+                        iconClass = 'fas fa-check-circle text-[#247b50]';
                     }
                 } else if (Store.currentTab === 'starred') {
-                    emptyMsg = '尚未收藏任何題目，點擊題目右上角的 ⭐ 即可加入收藏';
-                    iconClass = 'far fa-star text-amber-400';
+                    emptyMsg = '尚未收藏任何題目，點擊題目右上角的星號即可加入收藏';
+                    iconClass = 'far fa-star text-[#92400e]';
                 }
 
                 container.innerHTML = `
-                    <div class="flex flex-col items-center justify-center py-20 text-slate-400 text-center px-4 bg-white rounded-2xl border border-slate-200 shadow-sm">
-                        <i class="${iconClass} text-5xl mb-3 opacity-70"></i>
-                        <p class="font-bold text-sm tracking-wide text-slate-600 mt-1">${escapeHtml(emptyMsg)}</p>
-                        ${actionBtnHtml}
+                    <div class="flex flex-col items-center justify-center py-16 text-[#525252] text-center px-4 bg-white rounded-lg border border-[#e6e6e6]">
+                        <i class="${iconClass} text-4xl mb-3 opacity-80"></i>
+                        <p class="font-semibold text-sm text-[#0a0a0a] mt-1">${escapeHtml(emptyMsg)}</p>
                     </div>
                 `;
                 this.updateDashboard();
@@ -163,13 +162,13 @@
             // Optional Wrong-Tab Action Bar: Retry wrong questions
             if (Store.currentTab === 'wrong' && questions.length > 0 && Store.mode !== 'exam') {
                 const retryBanner = document.createElement('div');
-                retryBanner.className = 'mb-4 p-3 bg-red-50/80 border border-red-200 rounded-xl flex items-center justify-between text-xs sm:text-sm';
+                retryBanner.className = 'mb-3.5 p-3 bg-[#ffedea] border border-[#ffc9c2] rounded-md flex items-center justify-between text-xs sm:text-sm';
                 retryBanner.innerHTML = `
-                    <div class="flex items-center gap-2 text-red-700 font-bold">
-                        <i class="fas fa-redo-alt"></i>
+                    <div class="flex items-center gap-2 text-[#831c1e] font-semibold">
+                        <i class="fas fa-redo-alt text-xs"></i>
                         <span>共有 ${questions.length} 道錯題需加強溫習</span>
                     </div>
-                    <button onclick="UI.retryWrongQuestions()" class="px-3 py-1.5 bg-red-600 hover:bg-red-500 text-white font-bold rounded-lg transition-colors text-xs shadow-sm">
+                    <button onclick="UI.retryWrongQuestions()" class="px-3 py-1.5 bg-[#c4242a] hover:bg-[#a61b20] text-white font-bold rounded-md transition-colors text-xs">
                         重新作答錯題
                     </button>
                 `;
@@ -210,7 +209,7 @@
          */
         createQuestionCard(q) {
             const card = document.createElement('div');
-            card.className = 'question-card bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-slate-200/90 scroll-mt-24 md:scroll-mt-32 transition-all';
+            card.className = 'question-card bg-white p-4 sm:p-5 rounded-lg border border-[#e6e6e6] scroll-mt-20 sm:scroll-mt-24 transition-colors';
             card.id = `card_${q.uid}`;
 
             const isStarred = Store.starredIds.has(q.uid);
@@ -225,14 +224,14 @@
             let optionsHtml = '';
             q.options.forEach((opt, optIdx) => {
                 optionsHtml += `
-                    <button id="btn_${q.uid}_${optIdx}" onclick="Quiz.handleOptionClick('${q.uid}', ${optIdx})" class="option-btn opt-default w-full text-left px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl border flex items-center justify-between group">
+                    <button id="btn_${q.uid}_${optIdx}" onclick="Quiz.handleOptionClick('${q.uid}', ${optIdx})" class="option-btn opt-default w-full text-left px-3.5 py-2.5 rounded-md border flex items-center justify-between group">
                         <div class="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
-                            <div id="badge_${q.uid}_${optIdx}" class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-xs font-bold text-slate-500 shrink-0">
+                            <div id="badge_${q.uid}_${optIdx}" class="w-6 h-6 sm:w-7 sm:h-7 rounded border border-[#d4d4d4] bg-[#f4f6f8] flex items-center justify-center text-xs font-bold text-[#0a0a0a] num shrink-0">
                                 ${escapeHtml(opt.letter)}
                             </div>
                             <img src="${opt.img}" alt="選項 ${opt.letter}" class="max-h-16 sm:max-h-20 object-contain pointer-events-none select-none" loading="lazy" onerror="this.alt='選項圖片載入失敗'">
                         </div>
-                        <i id="icon_${q.uid}_${optIdx}" class="text-xl ml-2 shrink-0"></i>
+                        <i id="icon_${q.uid}_${optIdx}" class="text-base ml-2 shrink-0"></i>
                     </button>
                 `;
             });
@@ -241,45 +240,45 @@
             const rawExp = q.explanation ? q.explanation : '此題暫無詳細解釋。';
             const safeExp = escapeHtml(rawExp).replace(/\n/g, '<br>');
             const shuffleNote = q.optionsShuffled
-                ? `<div class="mt-2 text-[11px] text-brand-600 font-bold bg-brand-50 p-2 rounded-lg border border-brand-100">
-                     <i class="fas fa-random mr-1"></i> 已啟用選項隨機重組：本題原卷官方答案為 <strong>${escapeHtml(q.answerLetter)}</strong>。
+                ? `<div class="mt-2 text-xs text-[#0a0a0a] font-semibold bg-[#eef4fc] p-2 rounded border border-[#c4dcfa]">
+                     <i class="fas fa-random text-[#1d5fbf] mr-1"></i> 已啟用選項隨機重組：本題原卷官方答案為 <strong>${escapeHtml(q.answerLetter)}</strong>。
                    </div>`
                 : '';
 
             card.innerHTML = `
-                <div class="flex justify-between items-center mb-4 pb-2.5 border-b border-slate-100">
+                <div class="flex justify-between items-center mb-3 pb-2 border-b border-[#f0f0f0]">
                     <div class="flex items-center gap-2">
-                        <span class="bg-brand-50 border border-brand-200 text-brand-700 text-xs font-mono font-bold px-2.5 py-0.5 rounded-md">
+                        <span class="bg-[#f4f6f8] border border-[#e6e6e6] text-[#0a0a0a] text-xs font-bold px-2 py-0.5 rounded num">
                             第 ${displayIndex} 題
                         </span>
-                        <span class="text-xs text-slate-400 font-semibold font-mono">(${escapeHtml(String(q.year))})</span>
+                        <span class="text-xs text-[#525252] font-semibold num">(${escapeHtml(String(q.year))})</span>
                     </div>
                     <div class="flex items-center gap-1.5">
-                        <button onclick="UI.toggleTextPreview('${q.uid}')" class="px-2 py-1 rounded-md text-[11px] font-semibold text-slate-500 hover:text-brand-600 hover:bg-slate-100 transition-colors flex items-center gap-1 border border-slate-200/80" title="檢視 OCR 識別文本">
-                            <i class="fas fa-file-alt text-[10px]"></i>
+                        <button onclick="UI.toggleTextPreview('${q.uid}')" class="px-2 py-1 rounded text-xs font-semibold text-[#525252] hover:text-[#0a0a0a] hover:bg-[#eeeeee] transition-colors flex items-center gap-1 border border-[#d4d4d4]" title="檢視 OCR 識別文本">
+                            <i class="fas fa-file-alt text-xs"></i>
                             <span class="hidden sm:inline">文字審查</span>
                         </button>
-                        <button onclick="UI.openLightbox('${q.questionImg}')" class="p-1.5 text-slate-400 hover:text-brand-600 transition-colors" title="放大題目圖片" aria-label="放大題目圖片">
-                            <i class="fas fa-search-plus text-sm"></i>
+                        <button onclick="UI.openLightbox('${q.questionImg}')" class="p-1.5 text-[#525252] hover:text-[#0a0a0a] transition-colors" title="放大題目圖片" aria-label="放大題目圖片">
+                            <i class="fas fa-search-plus text-xs"></i>
                         </button>
-                        <button onclick="UI.toggleStar('${q.uid}')" class="p-1.5 text-slate-400 hover:text-amber-500 transition-transform active:scale-125" title="收藏題目" aria-label="收藏題目">
-                            <i id="star_${q.uid}" class="${isStarred ? 'fas fa-star text-amber-400' : 'far fa-star text-slate-300'} text-base"></i>
+                        <button onclick="UI.toggleStar('${q.uid}')" class="p-1.5 text-[#525252] hover:text-[#92400e] transition-transform active:scale-110" title="收藏題目" aria-label="收藏題目">
+                            <i id="star_${q.uid}" class="${isStarred ? 'fas fa-star text-[#92400e]' : 'far fa-star text-[#a3a3a3]'} text-sm"></i>
                         </button>
                     </div>
                 </div>
 
                 <!-- OCR Text Preview Box -->
-                <div id="ocr_box_${q.uid}" class="${isMatchingSearch ? '' : 'hidden'} mb-4 p-3.5 bg-slate-50 border border-slate-200/90 rounded-xl text-xs sm:text-sm text-slate-700 leading-relaxed font-sans select-auto">
-                    <div class="font-bold text-slate-500 text-[11px] mb-1.5 flex items-center justify-between">
-                        <span class="flex items-center gap-1.5"><i class="fas fa-search text-brand-600"></i> OCR 識別文本審查</span>
-                        <span class="text-[10px] text-slate-400 font-normal">支援文字複製與檢索</span>
+                <div id="ocr_box_${q.uid}" class="${isMatchingSearch ? '' : 'hidden'} mb-3.5 p-3 bg-[#f4f6f8] border border-[#e6e6e6] rounded-md text-sm text-[#0a0a0a] leading-relaxed select-auto">
+                    <div class="font-bold text-[#525252] text-xs mb-1.5 flex items-center justify-between">
+                        <span class="flex items-center gap-1.5"><i class="fas fa-search text-xs"></i> OCR 識別文本審查</span>
+                        <span class="text-xs text-[#525252] font-normal">支援文字複製與檢索</span>
                     </div>
-                    <div class="ocr-question-text mb-2 text-slate-800 whitespace-pre-wrap">${this.highlightKeywords(safeQuestionText, Store.searchKeyword)}</div>
-                    ${safeOptionsText ? `<div class="ocr-options-text pt-2 border-t border-slate-200/80 text-slate-600 font-mono text-xs whitespace-pre-wrap">${this.highlightKeywords(safeOptionsText, Store.searchKeyword)}</div>` : ''}
+                    <div class="ocr-question-text mb-2 text-[#0a0a0a] whitespace-pre-wrap">${this.highlightKeywords(safeQuestionText, Store.searchKeyword)}</div>
+                    ${safeOptionsText ? `<div class="ocr-options-text pt-2 border-t border-[#e6e6e6] text-[#525252] text-xs whitespace-pre-wrap">${this.highlightKeywords(safeOptionsText, Store.searchKeyword)}</div>` : ''}
                 </div>
 
                 <!-- Question Image -->
-                <div class="mb-4 flex justify-start">
+                <div class="mb-3.5 flex justify-start">
                     <img src="${q.questionImg}" alt="題目 ${q.qNum}" class="exam-img max-w-full h-auto cursor-zoom-in rounded" loading="lazy" onclick="UI.openLightbox('${q.questionImg}')" onerror="this.alt='題目圖片載入失敗'">
                 </div>
 
@@ -289,16 +288,16 @@
                 </div>
 
                 <!-- Explanation Box -->
-                <div id="exp_${q.uid}" class="hidden mt-4 pt-3.5 border-t border-slate-100 animate-subtleFadeIn">
-                    <div class="p-3.5 bg-brand-50/70 rounded-xl border border-brand-100 flex items-start gap-3">
-                        <div class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs shrink-0 mt-0.5">
-                            <i class="fas fa-lightbulb"></i>
+                <div id="exp_${q.uid}" class="hidden mt-3.5 pt-3 border-t border-[#f0f0f0]">
+                    <div class="p-3 bg-[#f4f6f8] rounded-md border border-[#e6e6e6] flex flex-col gap-1.5">
+                        <div class="font-bold text-xs text-[#0a0a0a] flex items-center gap-1.5">
+                            <i class="fas fa-lightbulb text-xs text-[#1d5fbf]"></i>
+                            <span>詳細題解</span>
                         </div>
-                        <div class="flex-1 text-xs sm:text-sm text-slate-700 leading-relaxed select-auto">
-                            <div class="font-bold text-brand-900 text-xs mb-1">詳細解釋</div>
-                            <div>${safeExp}</div>
-                            ${shuffleNote}
+                        <div class="text-sm text-[#0a0a0a] leading-relaxed select-auto">
+                            ${safeExp}
                         </div>
+                        ${shuffleNote}
                     </div>
                 </div>
             `;
@@ -316,8 +315,8 @@
                 if (!btn || !badge) return;
 
                 const isSel = (i === selectedIdx);
-                btn.className = `option-btn w-full text-left px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl border flex items-center justify-between group ${isSel ? 'opt-selected font-bold' : 'opt-default'}`;
-                badge.className = `w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${isSel ? 'bg-brand-600 text-white border-transparent' : 'bg-slate-100 border border-slate-200 text-slate-500'}`;
+                btn.className = `option-btn w-full text-left px-3.5 py-2.5 rounded-md border flex items-center justify-between group ${isSel ? 'opt-selected font-bold' : 'opt-default'}`;
+                badge.className = `w-6 h-6 sm:w-7 sm:h-7 rounded flex items-center justify-center text-xs font-bold num shrink-0 ${isSel ? 'bg-[#1d5fbf] text-white border-transparent' : 'border border-[#d4d4d4] bg-[#f4f6f8] text-[#0a0a0a]'}`;
             });
         },
 
@@ -337,16 +336,16 @@
                 btn.disabled = true;
 
                 if (i === correctVisualIdx) {
-                    btn.className = 'option-btn opt-correct w-full text-left px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl border flex items-center justify-between font-bold';
-                    if (badge) badge.className = 'w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold shrink-0';
-                    if (icon) icon.className = 'fas fa-check-circle text-emerald-500 text-xl';
+                    btn.className = 'option-btn opt-correct w-full text-left px-3.5 py-2.5 rounded-md border flex items-center justify-between font-bold';
+                    if (badge) badge.className = 'w-6 h-6 sm:w-7 sm:h-7 rounded bg-[#247b50] text-white flex items-center justify-center text-xs font-bold num shrink-0 border-transparent';
+                    if (icon) icon.className = 'fas fa-check-circle text-[#247b50] text-base';
                 } else if (i === userVisualIdx && i !== correctVisualIdx && !isStudyMode) {
-                    btn.className = 'option-btn opt-wrong w-full text-left px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl border flex items-center justify-between';
-                    if (badge) badge.className = 'w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-red-500 text-white flex items-center justify-center text-xs font-bold shrink-0';
-                    if (icon) icon.className = 'fas fa-times-circle text-red-500 text-xl';
+                    btn.className = 'option-btn opt-wrong w-full text-left px-3.5 py-2.5 rounded-md border flex items-center justify-between font-bold';
+                    if (badge) badge.className = 'w-6 h-6 sm:w-7 sm:h-7 rounded bg-[#c4242a] text-white flex items-center justify-center text-xs font-bold num shrink-0 border-transparent';
+                    if (icon) icon.className = 'fas fa-times-circle text-[#c4242a] text-base';
                 } else {
-                    btn.className = 'option-btn opt-default opt-dimmed w-full text-left px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl border flex items-center justify-between';
-                    if (badge) badge.className = 'w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-slate-100 border border-slate-200 text-slate-400 flex items-center justify-center text-xs font-bold shrink-0';
+                    btn.className = 'option-btn opt-default opt-dimmed w-full text-left px-3.5 py-2.5 rounded-md border flex items-center justify-between';
+                    if (badge) badge.className = 'w-6 h-6 sm:w-7 sm:h-7 rounded border border-[#d4d4d4] bg-[#f4f6f8] text-[#525252] flex items-center justify-center text-xs font-bold num shrink-0';
                     if (icon) icon.className = '';
                 }
             });
@@ -497,35 +496,35 @@
             const isStarred = Store.starredIds.has(q.uid);
             const mode = Store.mode;
 
-            const base = 'nav-pill h-8 rounded-lg font-mono font-bold text-xs flex items-center justify-center transition-all ';
+            const base = 'nav-pill h-7 rounded border text-xs font-semibold num flex items-center justify-center transition-colors ';
 
             if (mode === 'exam' && !Store.examSubmitted) {
                 if (ans !== undefined) {
-                    return base + 'bg-brand-600 text-white shadow-sm';
+                    return base + 'bg-[#1d5fbf] text-white border-transparent';
                 }
-                return base + 'bg-slate-100 text-slate-600 hover:bg-slate-200';
+                return base + 'bg-white border-[#e6e6e6] text-[#0a0a0a] hover:bg-[#eeeeee]';
             }
 
             if (ans !== undefined) {
                 if (ans.isCorrect === true) {
-                    return base + 'bg-emerald-500 text-white shadow-sm';
+                    return base + 'bg-[#dcfae5] text-[#04250e] border-[#247b50]';
                 } else if (ans.isCorrect === false) {
-                    return base + 'bg-red-500 text-white shadow-sm';
+                    return base + 'bg-[#ffedea] text-[#831c1e] border-[#c4242a]';
                 }
             }
 
             if (isStarred) {
-                return base + 'bg-amber-50 text-amber-700 border border-amber-300';
+                return base + 'bg-[#fffbeb] text-[#92400e] border-[#fde68a]';
             }
 
-            return base + 'bg-slate-100 text-slate-600 hover:bg-slate-200';
+            return base + 'bg-white border-[#e6e6e6] text-[#0a0a0a] hover:bg-[#eeeeee]';
         },
 
         toggleStar(uid) {
             const isStarred = Store.toggleStar(uid);
             const icon = document.getElementById(`star_${uid}`);
             if (icon) {
-                icon.className = isStarred ? 'fas fa-star text-amber-400 text-base' : 'far fa-star text-slate-300 text-base';
+                icon.className = isStarred ? 'fas fa-star text-[#92400e] text-sm' : 'far fa-star text-[#a3a3a3] text-sm';
             }
             this.updateDashboard();
             if (Store.currentTab === 'starred' && !isStarred) {
@@ -541,9 +540,9 @@
                 const btn = document.getElementById(`tab-${t}`);
                 if (!btn) return;
                 if (t === tab) {
-                    btn.className = 'flex-1 py-2 px-3 rounded-lg text-xs sm:text-sm font-bold transition-all text-center whitespace-nowrap bg-white text-brand-600 shadow-sm border border-slate-200/80 flex items-center justify-center gap-1.5';
+                    btn.className = 'flex-1 py-1.5 px-3 rounded text-xs sm:text-sm font-bold text-center whitespace-nowrap bg-white text-[#0a0a0a] border border-[#d4d4d4] flex items-center justify-center gap-1.5 transition-colors';
                 } else {
-                    btn.className = 'flex-1 py-2 px-3 rounded-lg text-xs sm:text-sm font-semibold transition-all text-center whitespace-nowrap text-slate-600 hover:text-slate-900 hover:bg-white/60 flex items-center justify-center gap-1.5';
+                    btn.className = 'flex-1 py-1.5 px-3 rounded text-xs sm:text-sm font-medium text-center whitespace-nowrap text-[#525252] hover:text-[#0a0a0a] flex items-center justify-center gap-1.5 transition-colors';
                 }
             });
             this.renderAllQuestions();
@@ -560,8 +559,6 @@
             lightbox.classList.remove('hidden');
             setTimeout(() => {
                 lightbox.classList.remove('opacity-0');
-                img.classList.remove('scale-95');
-                img.classList.add('scale-100');
             }, 10);
         },
 
@@ -571,12 +568,10 @@
             if (!lightbox || !img) return;
 
             lightbox.classList.add('opacity-0');
-            img.classList.remove('scale-100');
-            img.classList.add('scale-95');
             setTimeout(() => {
                 lightbox.classList.add('hidden');
                 img.src = '';
-            }, 200);
+            }, 150);
         },
 
         // --- Search & OCR Helpers ---
@@ -634,7 +629,7 @@
                 content.classList.add('translate-x-full');
                 setTimeout(() => {
                     drawer.classList.add('hidden');
-                }, 250);
+                }, 200);
             }
         },
 
@@ -671,7 +666,7 @@
             if (gradeLevel) gradeLevel.textContent = gradeInfo.level;
             if (gradeDesc) gradeDesc.textContent = gradeInfo.desc;
             if (gradeCard) {
-                gradeCard.className = `bg-gradient-to-r ${gradeInfo.color} p-4 rounded-2xl mb-5 shadow-lg text-center transform transition-all text-white`;
+                gradeCard.className = `p-3.5 rounded-md mb-3 text-center border border-[#e6e6e6] text-white ${gradeInfo.color || 'bg-[#141414]'}`;
             }
 
             this.toggleModal('result-modal', true);
@@ -683,19 +678,19 @@
 
             const history = Store.getHistory();
             if (history.length === 0) {
-                listEl.innerHTML = '<div class="text-center py-10 text-slate-400 text-xs font-semibold">尚無測驗紀錄</div>';
+                listEl.innerHTML = '<div class="text-center py-8 text-[#525252] text-xs font-semibold">尚無測驗紀錄</div>';
                 return;
             }
 
             listEl.innerHTML = history.map(item => `
-                <div class="p-3 mb-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                <div class="p-3 mb-2 rounded-md bg-[#f4f6f8] border border-[#e6e6e6] flex items-center justify-between">
                     <div>
-                        <div class="font-bold text-xs text-slate-800">${escapeHtml(item.year || '')}</div>
-                        <div class="text-[10px] text-slate-400 mt-0.5">${escapeHtml(item.date || '')} • 用時 ${Quiz.formatTime(item.duration || 0)}</div>
+                        <div class="font-bold text-xs text-[#0a0a0a]">${escapeHtml(item.year || '')}</div>
+                        <div class="text-xs text-[#525252] mt-0.5">${escapeHtml(item.date || '')} • 用時 ${Quiz.formatTime(item.duration || 0)}</div>
                     </div>
                     <div class="text-right">
-                        <div class="font-mono font-bold text-sm text-brand-600">${item.score}/${item.total} (${item.accuracy}%)</div>
-                        <span class="inline-block text-[10px] font-bold px-1.5 py-0.5 rounded bg-brand-50 text-brand-600 mt-0.5">${escapeHtml(item.grade || '')}</span>
+                        <div class="num font-bold text-sm text-[#0a0a0a]">${item.score}/${item.total} (${item.accuracy}%)</div>
+                        <span class="inline-block text-xs font-bold px-1.5 py-0.5 rounded bg-[#141414] text-white mt-0.5 num">${escapeHtml(item.grade || '')}</span>
                     </div>
                 </div>
             `).join('');
@@ -706,9 +701,9 @@
             if (!listEl) return;
 
             listEl.innerHTML = Store.years.map(yr => `
-                <label class="cursor-pointer flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 transition-colors">
-                    <input type="checkbox" name="custom-year" value="${escapeHtml(yr)}" class="w-4 h-4 rounded text-brand-600 focus:ring-brand-500 custom-year-checkbox" checked>
-                    <span class="text-xs font-bold text-slate-700">${escapeHtml(yr)}</span>
+                <label class="cursor-pointer flex items-center gap-2 p-1.5 rounded hover:bg-[#eeeeee] transition-colors">
+                    <input type="checkbox" name="custom-year" value="${escapeHtml(yr)}" class="w-4 h-4 rounded text-[#141414] focus:ring-[#141414] custom-year-checkbox" checked>
+                    <span class="text-xs font-semibold text-[#0a0a0a] num">${escapeHtml(yr)}</span>
                 </label>
             `).join('');
         },

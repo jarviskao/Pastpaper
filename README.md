@@ -50,7 +50,7 @@
 ```text
 ├── index.html                  # 核心頁面入口 (輕量簡潔語意化 HTML，支援無障礙 WCAG)
 ├── manifest.json               # PWA 設定檔 (支援可安裝 Web App 與獨立視窗)
-├── sw.js                       # Service Worker v5 (離線快取、圖片優先與離線標準 Response 防護)
+├── sw.js                       # Service Worker v6 (離線快取、圖片優先與離線標準 Response 防護)
 ├── icons/                      # PWA 與高解析度應用圖示
 │   └── icon.svg
 ├── css/

@@ -1,23 +1,69 @@
 /* ==========================================================================
-   ICT Past Paper Learning Platform - Styles (Optimized Light UI)
+   ICT Past Paper Learning Platform - Achromatic Ledger System (v2.2)
+   Dealt style: achromatic-ledger (seed 1021686034)
    ========================================================================== */
 
+:root {
+    --ground: #f4f6f8;
+    --surface: #ffffff;
+    --raised: #eeeeee;
+    --border: #e6e6e6;
+    --rule: #f0f0f0;
+    --control: #d4d4d4;
+    --text: #0a0a0a;
+    --muted: #525252;
+    --accent: #141414;
+    --data-hue: #1d5fbf;
+    --data-tint: #eef4fc;
+    --positive: #247b50;
+    --negative: #c4242a;
+    --warning: #92400e;
+    --pill-positive-bg: #dcfae5;
+    --pill-positive-ink: #04250e;
+    --pill-negative-bg: #ffedea;
+    --pill-negative-ink: #831c1e;
+    --pill-warning-bg: #fffbeb;
+    --pill-warning-ink: #92400e;
+    --pill-neutral-bg: #eeeeee;
+    --pill-neutral-ink: #3d3d3d;
+    --radius-card: 8px;
+    --radius-control: 6px;
+    --gap: 12px;
+    --pad: 24px;
+    --control-height: 36px;
+    --font-sans: "Geist", "Noto Sans TC", system-ui, -apple-system, sans-serif;
+}
+
 /* Base & Typography */
+*, *::before, *::after {
+    font-variant-numeric: tabular-nums;
+}
+
 body {
+    font-family: var(--font-sans);
     -webkit-tap-highlight-color: transparent;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-    background-color: #f8fafc;
-    color: #1e293b;
+    font-variant-numeric: tabular-nums;
+    background-color: var(--ground);
+    color: var(--text);
 }
 
-/* Glassmorphism Header & Bars */
-.glass-nav {
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid #e2e8f0;
+.num {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Top Ledger Bar (Opaque surface, 1px border, no glass blur) */
+.ledger-header {
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Ledger Panel & Sheet */
+.ledger-panel {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
 }
 
 /* Custom Scrollbar */
@@ -31,46 +77,37 @@ body {
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
-    background-color: #cbd5e1;
+    background-color: #c4c9d0;
     border-radius: 9999px;
 }
 
 .custom-scroll::-webkit-scrollbar-thumb:hover {
-    background-color: #94a3b8;
+    background-color: #8c939e;
 }
 
 .hide-scrollbar::-webkit-scrollbar {
     display: none;
 }
+
 .hide-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
-/* Question & Option Cards Animation */
-@keyframes subtleFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(4px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* Question Cards */
 .question-card {
-    animation: subtleFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
 }
 
-/* Image Presentation - No border / no box outline */
+/* Image Presentation */
 .exam-img-container {
     background-color: transparent;
     border: none !important;
     padding: 0 !important;
     display: block;
     max-width: 100%;
-    box-shadow: none !important;
 }
 
 .exam-img {
@@ -82,72 +119,78 @@ body {
     -webkit-user-select: none;
 }
 
-/* Option Buttons - Compact, neat, distinct */
+/* Option Buttons - Tactile, flat, crisp ledger borders */
 .option-btn {
-    transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: background-color 0.14s ease, border-color 0.14s ease, color 0.14s ease, transform 0.12s ease;
     touch-action: manipulation;
-    border-width: 1.5px;
+    border-width: 1px;
+    border-radius: var(--radius-control);
     min-height: 48px;
 }
 
 .option-btn:hover:not(:disabled) {
-    transform: translateY(-1px);
-    border-color: #93c5fd;
-    box-shadow: 0 2px 8px -2px rgba(59, 130, 246, 0.12);
+    border-color: var(--data-hue);
+    background-color: #f8fafd;
 }
 
 .option-btn:active:not(:disabled) {
-    transform: scale(0.995);
+    transform: scale(0.996);
+}
+
+.option-btn:focus-visible {
+    outline: 2px solid var(--data-hue);
+    outline-offset: 1px;
 }
 
 /* Option States */
 .option-btn.opt-default {
-    background-color: #ffffff;
-    border-color: #e2e8f0;
-    color: #334155;
+    background-color: var(--surface);
+    border-color: var(--border);
+    color: var(--text);
 }
 
 .option-btn.opt-selected {
-    background-color: #f5f7ff;
-    border-color: #4f46e5;
-    color: #312e81;
-    box-shadow: 0 0 0 1px #4f46e5;
+    background-color: var(--data-tint);
+    border-color: var(--data-hue);
+    color: var(--text);
 }
 
 .option-btn.opt-correct {
-    background-color: #f0fdf4;
-    border-color: #10b981;
-    color: #065f46;
-    box-shadow: 0 0 0 1px #10b981;
+    background-color: var(--pill-positive-bg);
+    border-color: var(--positive);
+    color: var(--pill-positive-ink);
 }
 
 .option-btn.opt-wrong {
-    background-color: #fef2f2;
-    border-color: #ef4444;
-    color: #991b1b;
-    box-shadow: 0 0 0 1px #ef4444;
+    background-color: var(--pill-negative-bg);
+    border-color: var(--negative);
+    color: var(--pill-negative-ink);
 }
 
 .option-btn.opt-dimmed {
-    opacity: 0.5;
+    opacity: 0.55;
 }
 
 /* Navigator Grid Items */
 .nav-pill {
-    transition: all 0.12s ease-out;
+    transition: background-color 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+    border-radius: var(--radius-control);
+    font-variant-numeric: tabular-nums;
 }
+
 .nav-pill:hover {
-    transform: translateY(-1px);
+    border-color: var(--text);
 }
+
 .nav-pill:active {
-    transform: scale(0.95);
+    transform: scale(0.96);
 }
 
 /* Modals */
 .modal-overlay {
     display: none;
     opacity: 0;
-    transition: opacity 0.2s ease-out;
+    transition: opacity 0.18s ease-out;
 }
 
 .modal-overlay.active {
@@ -160,14 +203,16 @@ body {
 }
 
 .modal-panel {
-    transform: scale(0.97) translateY(8px);
-    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: scale(0.98) translateY(6px);
+    transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: var(--radius-card);
 }
 
 /* Safe Area Insets for Mobile */
 .pb-safe {
     padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
 }
+
 .pt-safe {
     padding-top: max(1rem, env(safe-area-inset-top));
 }
