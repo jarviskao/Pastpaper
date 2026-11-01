@@ -303,8 +303,7 @@ function buildData(options = {}) {
                 `第${qNum}題`,
                 qData.qNumDisplay,
                 ocrQuestionText,
-                ocrOptionsText,
-                explanation
+                ocrOptionsText
             ].filter(Boolean).join(' ').toLowerCase();
 
             questions.push({

@@ -4,7 +4,7 @@
  * and high-performance Cache-First strategy for past paper images.
  */
 
-const CACHE_NAME = 'ict-master-v8';
+const CACHE_NAME = 'ict-master-v9';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
