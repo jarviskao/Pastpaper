@@ -192,12 +192,23 @@
          * Generate a randomized or structured custom exam set.
          * @param {Object} options
          * @param {string[]} options.selectedYears - Array of years to pick from
-         * @param {number} options.count - Target question count (e.g. 40)
-         * @param {boolean} options.shuffleQ - Whether to shuffle question sequence
-         * @param {boolean} options.shuffleO - Whether to shuffle A/B/C/D option sequence
+         * @param {number} [options.count=40] - Target question count (e.g. 40)
+         * @param {boolean} [options.shuffleQ=true] - Whether to shuffle question sequence
+         * @param {boolean} [options.shuffleO=false] - Whether to shuffle A/B/C/D option sequence
+         * @param {string|string[]} [options.topicFilter='all'] - Topic code filter
+         * @param {string|number|Array} [options.difficultyFilter='all'] - Difficulty code filter (1, 2, 3)
+         * @param {string} [options.correctRateFilter='all'] - Correct rate range filter ('all'|'high'|'medium'|'challenging'|'extreme')
          * @returns {boolean} Success status
          */
-        generateCustomExam({ selectedYears, count = 40, shuffleQ = true, shuffleO = false }) {
+        generateCustomExam({
+            selectedYears,
+            count = 40,
+            shuffleQ = true,
+            shuffleO = false,
+            topicFilter = 'all',
+            difficultyFilter = 'all',
+            correctRateFilter = 'all'
+        }) {
             if (!Array.isArray(selectedYears) || selectedYears.length === 0) {
                 if (typeof UI !== 'undefined' && UI.showToast) {
                     UI.showToast('請至少選擇一個年份！', 'warning');
@@ -211,7 +222,7 @@
                 return false;
             }
 
-            // Collect questions pool
+            // Collect questions pool from selected years
             let pool = [];
             for (const yr of selectedYears) {
                 const paper = Store.data.papers[yr];
@@ -220,11 +231,38 @@
                 }
             }
 
+            // Filter by topic if specified
+            if (topicFilter && topicFilter !== 'all') {
+                const topicArr = Array.isArray(topicFilter) ? topicFilter : [topicFilter];
+                pool = pool.filter(q => q.topic && topicArr.includes(q.topic.code));
+            }
+
+            // Filter by difficulty if specified
+            if (difficultyFilter && difficultyFilter !== 'all') {
+                const diffArr = (Array.isArray(difficultyFilter) ? difficultyFilter : [difficultyFilter]).map(Number);
+                pool = pool.filter(q => q.difficulty && diffArr.includes(q.difficulty.code));
+            }
+
+            // Filter by correct rate if specified
+            if (correctRateFilter && correctRateFilter !== 'all') {
+                pool = pool.filter(q => {
+                    if (typeof q.correctRate !== 'number') return false;
+                    switch (correctRateFilter) {
+                        case 'high': return q.correctRate >= 70;
+                        case 'medium': return q.correctRate >= 50 && q.correctRate < 70;
+                        case 'challenging': return q.correctRate < 50;
+                        case 'extreme': return q.correctRate < 30;
+                        default: return true;
+                    }
+                });
+            }
+
             if (pool.length === 0) {
+                const msg = '所選條件（年份/課題/難度/答對率）下無符合題目，請放寬篩選！';
                 if (typeof UI !== 'undefined' && UI.showToast) {
-                    UI.showToast('選定年份無題目可用！', 'warning');
+                    UI.showToast(msg, 'warning');
                 } else if (typeof alert !== 'undefined') {
-                    alert('選定年份無題目可用！');
+                    alert(msg);
                 }
                 return false;
             }

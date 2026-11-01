@@ -1,0 +1,2139 @@
+{
+    "difficulties": [
+        {
+            "code": 0,
+            "desc_zh": "混合",
+            "desc_en": "Mixed"
+        },
+        {
+            "code": 1,
+            "desc_zh": "容易",
+            "desc_en": "Easy"
+        },
+        {
+            "code": 2,
+            "desc_zh": "普通",
+            "desc_en": "Normal"
+        },
+        {
+            "code": 3,
+            "desc_zh": "困難",
+            "desc_en": "Hard"
+        }
+    ],
+    "ks_levels": [
+        {
+            "code": "KS1",
+            "desc_zh": "小一至小三",
+            "desc_en": "P1 - P3"
+        },
+        {
+            "code": "KS2",
+            "desc_zh": "小四至小六",
+            "desc_en": "P4 - P6"
+        },
+        {
+            "code": "KS3",
+            "desc_zh": "中一至中三",
+            "desc_en": "S1 - S3"
+        },
+        {
+            "code": "KS4",
+            "desc_zh": "中四至中六",
+            "desc_en": "S4 - S6"
+        }
+    ],
+    "publishers": [
+        {
+            "code": "EPH",
+            "desc_zh": "教育出版社有限公司",
+            "desc_en": "Educational Publishing House Limited"
+        },
+        {
+            "code": "HKEAA",
+            "desc_zh": "考評局",
+            "desc_en": "HKEAA"
+        },
+        {
+            "code": "HKEJ-IET",
+            "desc_zh": "信報通識組",
+            "desc_en": "HKEJ iKnow Editorial Team"
+        },
+        {
+            "code": "HKEP",
+            "desc_zh": "香港教育圖書公司",
+            "desc_en": "HKEP"
+        },
+        {
+            "code": "MERS",
+            "desc_zh": "現代教育",
+            "desc_en": "MERS"
+        },
+        {
+            "code": "KAN-KWWONG",
+            "desc_zh": "資訊科技教育領袖協會",
+            "desc_en": "Association of IT Leaders in Education"
+        },
+        {
+            "code": "RTHK",
+            "desc_zh": "香港電台「通識網」",
+            "desc_en": "Liberal Studies Website (RTHK)"
+        }
+    ],
+    "sch_levels": [
+        {
+            "code": 0,
+            "desc_zh": "",
+            "desc_en": ""
+        },
+        {
+            "code": 1,
+            "desc_zh": "幼一",
+            "desc_en": "K1"
+        },
+        {
+            "code": 2,
+            "desc_zh": "幼二",
+            "desc_en": "K2"
+        },
+        {
+            "code": 3,
+            "desc_zh": "幼三",
+            "desc_en": "K3"
+        },
+        {
+            "code": 4,
+            "desc_zh": "小一",
+            "desc_en": "P1"
+        },
+        {
+            "code": 5,
+            "desc_zh": "小二",
+            "desc_en": "P2"
+        },
+        {
+            "code": 6,
+            "desc_zh": "小三",
+            "desc_en": "P3"
+        },
+        {
+            "code": 7,
+            "desc_zh": "小四",
+            "desc_en": "P4"
+        },
+        {
+            "code": 8,
+            "desc_zh": "小五",
+            "desc_en": "P5"
+        },
+        {
+            "code": 9,
+            "desc_zh": "小六",
+            "desc_en": "P6"
+        },
+        {
+            "code": 10,
+            "desc_zh": "中一",
+            "desc_en": "S1"
+        },
+        {
+            "code": 11,
+            "desc_zh": "中二",
+            "desc_en": "S2"
+        },
+        {
+            "code": 12,
+            "desc_zh": "中三",
+            "desc_en": "S3"
+        },
+        {
+            "code": 13,
+            "desc_zh": "中四",
+            "desc_en": "S4"
+        },
+        {
+            "code": 14,
+            "desc_zh": "中五",
+            "desc_en": "S5"
+        },
+        {
+            "code": 15,
+            "desc_zh": "中六",
+            "desc_en": "S6"
+        }
+    ],
+    "subjects": [
+        {
+            "code": "eng",
+            "year_start": 2023,
+            "year_end": 2024,
+            "desc_zh": "英國語文科",
+            "desc_en": "English Language",
+            "lang_default": "en",
+            "create_disabled": 1,
+            "sfs_required": 1,
+            "report_disabled": 1,
+            "legend_score": 1,
+            "topics": [],
+            "subtopics": [],
+            "sfs": {
+                "q_num_min": 1,
+                "q_num_min_criteria": {
+                    "year": 1
+                },
+                "q_num_available": 0
+            }
+        },
+        {
+            "code": "math",
+            "year_start": 1995,
+            "year_end": 2025,
+            "desc_zh": "數學",
+            "desc_en": "Mathematics",
+            "sfs": {
+                "q_num_min": 20,
+                "q_num_min_criteria": {
+                    "random": 30
+                },
+                "topics": [],
+                "years": [
+                    2024,
+                    2023,
+                    2022,
+                    2021,
+                    2020,
+                    2019,
+                    2018,
+                    2017,
+                    2016,
+                    2015,
+                    2014,
+                    2013,
+                    2012
+                ],
+                "q_num_available": 585,
+                "eaa_difficulty_code": [
+                    {
+                        "code": "A",
+                        "count": 20
+                    },
+                    {
+                        "code": "B",
+                        "count": 126
+                    },
+                    {
+                        "code": "C",
+                        "count": 177
+                    },
+                    {
+                        "code": "D",
+                        "count": 262
+                    }
+                ],
+                "content_domain": [
+                    {
+                        "code": "math_content_DIM1",
+                        "code_short": "DIM1",
+                        "count": 158,
+                        "desc_zh": "數與代數 I",
+                        "desc_en": "Number & Algebra I"
+                    },
+                    {
+                        "code": "math_content_DIM2",
+                        "code_short": "DIM2",
+                        "count": 150,
+                        "desc_zh": "數與代數 II",
+                        "desc_en": "Number & Algebra II"
+                    },
+                    {
+                        "code": "math_content_DIM3",
+                        "code_short": "DIM3",
+                        "count": 139,
+                        "desc_zh": "度量、圖形與空間 I",
+                        "desc_en": "Measures, Shape & Space I"
+                    },
+                    {
+                        "code": "math_content_DIM4",
+                        "code_short": "DIM4",
+                        "count": 126,
+                        "desc_zh": "度量、圖形與空間 II",
+                        "desc_en": "Measures, Shape & Space II"
+                    },
+                    {
+                        "code": "math_content_DIM5",
+                        "code_short": "DIM5",
+                        "count": 40,
+                        "desc_zh": "數據處理 I",
+                        "desc_en": "Data Handling I"
+                    },
+                    {
+                        "code": "math_content_DIM6",
+                        "code_short": "DIM6",
+                        "count": 56,
+                        "desc_zh": "數據處理 II",
+                        "desc_en": "Data Handling II"
+                    }
+                ],
+                "cognitive_domain": [
+                    {
+                        "code": "math_cognitive_DIM1",
+                        "code_short": "DIM1",
+                        "count": 434,
+                        "desc_zh": "藉數學作溝通的能力",
+                        "desc_en": "Communication"
+                    },
+                    {
+                        "code": "math_cognitive_DIM2",
+                        "code_short": "DIM2",
+                        "count": 560,
+                        "desc_zh": "設定解題策略的能力",
+                        "desc_en": "Devising Strategies"
+                    },
+                    {
+                        "code": "math_cognitive_DIM3",
+                        "code_short": "DIM3",
+                        "count": 468,
+                        "desc_zh": "構建數學模型的能力",
+                        "desc_en": "Mathematising"
+                    },
+                    {
+                        "code": "math_cognitive_DIM4",
+                        "code_short": "DIM4",
+                        "count": 155,
+                        "desc_zh": "運用數學表示的能力",
+                        "desc_en": "Representation"
+                    },
+                    {
+                        "code": "math_cognitive_DIM5",
+                        "code_short": "DIM5",
+                        "count": 83,
+                        "desc_zh": "利用數學推論的能力",
+                        "desc_en": "Reasoning and Argument"
+                    }
+                ]
+            },
+            "topics": [
+                {
+                    "code": "math_1",
+                    "desc_zh": "百分法, 率及比, 變數法, 估算",
+                    "desc_en": "Percentages, Rate and ratio, Variations, Estimation"
+                },
+                {
+                    "code": "math_2",
+                    "desc_zh": "多項式, 餘式定理",
+                    "desc_en": "Polynomials, Remainder theorem"
+                },
+                {
+                    "code": "math_3",
+                    "desc_zh": "指數定律",
+                    "desc_en": "Laws of Indices"
+                },
+                {
+                    "code": "math_4",
+                    "desc_zh": "數列",
+                    "desc_en": "Sequences"
+                },
+                {
+                    "code": "math_5",
+                    "desc_zh": "一元方程, 二元聯立方程",
+                    "desc_en": "Equations in one unknown, Simultaneous equations in two unknowns"
+                },
+                {
+                    "code": "math_6",
+                    "desc_zh": "公式, 函數及圖像",
+                    "desc_en": "Formulas, Functions and graphs"
+                },
+                {
+                    "code": "math_7",
+                    "desc_zh": "不等式",
+                    "desc_en": "Inequalities"
+                },
+                {
+                    "code": "math_8",
+                    "desc_zh": "指數函數及對數函數",
+                    "desc_en": "Exponential functions, Logarithmic functions"
+                },
+                {
+                    "code": "math_9",
+                    "desc_zh": "常見平面及立體圖形的求積, 弧長及扇形面積, 相似平面圖形及立體圖形",
+                    "desc_en": "Mensuration of common plane figures and solids, Length of an arc and area of a sector of a circle, Similar plane figures and solids"
+                },
+                {
+                    "code": "math_10",
+                    "desc_zh": "演繹推理幾何, 角和直線, 三角形, 畢氏定理, 四邊形及多邊形, 圓形, 平面圖形之變換及對稱性, 立體圖形",
+                    "desc_en": "Deductive reasoning of geometry, Angles and straight lines, Triangles, Pythagoras' theorem, Quadrilaterals and polygons, Circles, Transformation and symmetry in 2-D figures, 3-D figures"
+                },
+                {
+                    "code": "math_11",
+                    "desc_zh": "坐標簡介, 直線之坐標幾何, 圓之坐標幾何",
+                    "desc_en": "Introduction to coordinates, Coordinate geometry of straight lines, Coordinate geometry of circles"
+                },
+                {
+                    "code": "math_12",
+                    "desc_zh": "角之量度, 三角比, 簡單三角方程, 三角比之應用",
+                    "desc_en": "Measures of angles, Trigonometric ratios, Simple trigonometric equations, Applications of trigonometric ratios"
+                },
+                {
+                    "code": "math_13",
+                    "desc_zh": "概率",
+                    "desc_en": "Probability"
+                },
+                {
+                    "code": "math_14",
+                    "desc_zh": "數據之組織及其表示法, 集中趨勢之量度, 離差之量度, 統計的應用及誤用",
+                    "desc_en": "Organization and representation of numerical data, Measures of central tendency, Measures of dispersion, Uses and abuses of statistics"
+                }
+            ],
+            "subtopics": []
+        },
+        {
+            "code": "phy",
+            "year_start": 2005,
+            "year_end": 2025,
+            "desc_zh": "物理",
+            "desc_en": "Physics",
+            "sfs": {
+                "q_num_min": 20,
+                "q_num_min_criteria": {
+                    "random": 30
+                },
+                "topics": [
+                    "phy_1",
+                    "phy_2",
+                    "phy_3",
+                    "phy_4",
+                    "phy_5"
+                ],
+                "years": [
+                    2024,
+                    2023,
+                    2022,
+                    2021,
+                    2020,
+                    2019,
+                    2018,
+                    2017,
+                    2016,
+                    2015,
+                    2014,
+                    2013,
+                    2012
+                ],
+                "q_num_available": 433,
+                "eaa_difficulty_code": [
+                    {
+                        "code": "A",
+                        "count": 46
+                    },
+                    {
+                        "code": "B",
+                        "count": 118
+                    },
+                    {
+                        "code": "C",
+                        "count": 141
+                    },
+                    {
+                        "code": "D",
+                        "count": 128
+                    }
+                ],
+                "content_domain": [
+                    {
+                        "code": "phy_content_DIM1",
+                        "code_short": "DIM1",
+                        "count": 41,
+                        "desc_zh": "熱和氣體",
+                        "desc_en": "Heat and Gases"
+                    },
+                    {
+                        "code": "phy_content_DIM2",
+                        "code_short": "DIM2",
+                        "count": 125,
+                        "desc_zh": "力和運動",
+                        "desc_en": "Force and Motion"
+                    },
+                    {
+                        "code": "phy_content_DIM3",
+                        "code_short": "DIM3",
+                        "count": 115,
+                        "desc_zh": "波動",
+                        "desc_en": "Wave Motion"
+                    },
+                    {
+                        "code": "phy_content_DIM4",
+                        "code_short": "DIM4",
+                        "count": 120,
+                        "desc_zh": "電和磁",
+                        "desc_en": "Electricity and Magnetism"
+                    },
+                    {
+                        "code": "phy_content_DIM5",
+                        "code_short": "DIM5",
+                        "count": 38,
+                        "desc_zh": "放射現象和核能",
+                        "desc_en": "Radioactivity and Nuclear Energy"
+                    }
+                ]
+            },
+            "topics": [
+                {
+                    "code": "phy_1",
+                    "desc_zh": "熱和氣體",
+                    "desc_en": "Heat & Gases"
+                },
+                {
+                    "code": "phy_2",
+                    "desc_zh": "力和運動",
+                    "desc_en": "Force and Motion"
+                },
+                {
+                    "code": "phy_3",
+                    "desc_zh": "波動",
+                    "desc_en": "Wave Motion"
+                },
+                {
+                    "code": "phy_4",
+                    "desc_zh": "電和磁",
+                    "desc_en": "Electricity and Magnetism"
+                },
+                {
+                    "code": "phy_5",
+                    "desc_zh": "放射現象和核能",
+                    "desc_en": "Radioactivity and Nuclear Energy"
+                },
+                {
+                    "code": "phy_6",
+                    "desc_zh": "天文學和航天科學",
+                    "desc_en": "Astronomy and Space Science"
+                },
+                {
+                    "code": "phy_7",
+                    "desc_zh": "原子世界",
+                    "desc_en": "Atomic World"
+                },
+                {
+                    "code": "phy_8",
+                    "desc_zh": "能量和能源的使用",
+                    "desc_en": "Energy and Use of Energy"
+                },
+                {
+                    "code": "phy_9",
+                    "desc_zh": "醫學物理學",
+                    "desc_en": "Medical Physics"
+                }
+            ],
+            "subtopics": [
+                {
+                    "code": "phy_1_1",
+                    "topic_code": "phy_1",
+                    "desc_zh": "溫度、熱及內能",
+                    "desc_en": "Temperature, heat and internal energy"
+                },
+                {
+                    "code": "phy_1_2",
+                    "topic_code": "phy_1",
+                    "desc_zh": "熱轉移過程",
+                    "desc_en": "Transfer processes"
+                },
+                {
+                    "code": "phy_1_3",
+                    "topic_code": "phy_1",
+                    "desc_zh": "物態的改變",
+                    "desc_en": "Change of state"
+                },
+                {
+                    "code": "phy_1_4",
+                    "topic_code": "phy_1",
+                    "desc_zh": "氣體",
+                    "desc_en": "Gases"
+                },
+                {
+                    "code": "phy_2_1",
+                    "topic_code": "phy_2",
+                    "desc_zh": "位置和移動",
+                    "desc_en": "Position and movement"
+                },
+                {
+                    "code": "phy_2_2",
+                    "topic_code": "phy_2",
+                    "desc_zh": "力和運動",
+                    "desc_en": "Force and motion"
+                },
+                {
+                    "code": "phy_2_3",
+                    "topic_code": "phy_2",
+                    "desc_zh": "拋體運動",
+                    "desc_en": "Projectile motion"
+                },
+                {
+                    "code": "phy_2_4",
+                    "topic_code": "phy_2",
+                    "desc_zh": "作功、能量和功率",
+                    "desc_en": "Work, energy and power"
+                },
+                {
+                    "code": "phy_2_5",
+                    "topic_code": "phy_2",
+                    "desc_zh": "動量",
+                    "desc_en": "Momentum"
+                },
+                {
+                    "code": "phy_2_6",
+                    "topic_code": "phy_2",
+                    "desc_zh": "勻速圓周運動",
+                    "desc_en": "Uniform circular motion"
+                },
+                {
+                    "code": "phy_2_7",
+                    "topic_code": "phy_2",
+                    "desc_zh": "引力",
+                    "desc_en": "Gravitation"
+                },
+                {
+                    "code": "phy_3_1",
+                    "topic_code": "phy_3",
+                    "desc_zh": "波的本質和特性",
+                    "desc_en": "Nature and properties of waves"
+                },
+                {
+                    "code": "phy_3_2",
+                    "topic_code": "phy_3",
+                    "desc_zh": "光",
+                    "desc_en": "Light"
+                },
+                {
+                    "code": "phy_3_3",
+                    "topic_code": "phy_3",
+                    "desc_zh": "聲音",
+                    "desc_en": "Sound"
+                },
+                {
+                    "code": "phy_4_1",
+                    "topic_code": "phy_4",
+                    "desc_zh": "靜電學",
+                    "desc_en": "Electrostatics"
+                },
+                {
+                    "code": "phy_4_2",
+                    "topic_code": "phy_4",
+                    "desc_zh": "電路和家居用電",
+                    "desc_en": "Circuits and domestic electricity"
+                },
+                {
+                    "code": "phy_4_3",
+                    "topic_code": "phy_4",
+                    "desc_zh": "電磁學",
+                    "desc_en": "Electromagnetism"
+                },
+                {
+                    "code": "phy_5_1",
+                    "topic_code": "phy_5",
+                    "desc_zh": "輻射與放射現象",
+                    "desc_en": "Radiation and radioactivity"
+                },
+                {
+                    "code": "phy_5_2",
+                    "topic_code": "phy_5",
+                    "desc_zh": "原子模型",
+                    "desc_en": "Atomic model"
+                },
+                {
+                    "code": "phy_5_3",
+                    "topic_code": "phy_5",
+                    "desc_zh": "核能",
+                    "desc_en": "Nuclear energy"
+                },
+                {
+                    "code": "phy_6_1",
+                    "topic_code": "phy_6",
+                    "desc_zh": "不同空間標度下的宇宙面貌",
+                    "desc_en": "The universe as seen in different scales"
+                },
+                {
+                    "code": "phy_6_2",
+                    "topic_code": "phy_6",
+                    "desc_zh": "天文學的發展史",
+                    "desc_en": "Astronomy through history"
+                },
+                {
+                    "code": "phy_6_3",
+                    "topic_code": "phy_6",
+                    "desc_zh": "重力下的軌道運動",
+                    "desc_en": "Orbital motions under gravity"
+                },
+                {
+                    "code": "phy_6_4",
+                    "topic_code": "phy_6",
+                    "desc_zh": "恆星和宇宙",
+                    "desc_en": "Stars and the universe"
+                },
+                {
+                    "code": "phy_7_1",
+                    "topic_code": "phy_7",
+                    "desc_zh": "盧瑟福原子模型",
+                    "desc_en": "Rutherford's atomic model"
+                },
+                {
+                    "code": "phy_7_2",
+                    "topic_code": "phy_7",
+                    "desc_zh": "光電效應",
+                    "desc_en": "Photoelectric effect"
+                },
+                {
+                    "code": "phy_7_3",
+                    "topic_code": "phy_7",
+                    "desc_zh": "玻爾的氫原子模型",
+                    "desc_en": "Bohr's atomic model of hydrogen"
+                },
+                {
+                    "code": "phy_7_4",
+                    "topic_code": "phy_7",
+                    "desc_zh": "粒子或波",
+                    "desc_en": "Particles or waves"
+                },
+                {
+                    "code": "phy_7_5",
+                    "topic_code": "phy_7",
+                    "desc_zh": "窺探納米世界",
+                    "desc_en": "Probing into nano scale"
+                },
+                {
+                    "code": "phy_8_1",
+                    "topic_code": "phy_8",
+                    "desc_zh": "家居用電",
+                    "desc_en": "Electricity at home"
+                },
+                {
+                    "code": "phy_8_2",
+                    "topic_code": "phy_8",
+                    "desc_zh": "在建築和運輸業中的能源效率",
+                    "desc_en": "Energy efficiency in building and transportation "
+                },
+                {
+                    "code": "phy_8_3",
+                    "topic_code": "phy_8",
+                    "desc_zh": "可再生和不可再生能源",
+                    "desc_en": "Renewable and non-renewable sources of energy"
+                },
+                {
+                    "code": "phy_9_1",
+                    "topic_code": "phy_9",
+                    "desc_zh": "眼和耳的感官",
+                    "desc_en": "Making sense of the eye and the ear"
+                },
+                {
+                    "code": "phy_9_2",
+                    "topic_code": "phy_9",
+                    "desc_zh": "非電離輻射醫學影像學",
+                    "desc_en": "Medical imaging using non-ionizing radiation"
+                },
+                {
+                    "code": "phy_9_3",
+                    "topic_code": "phy_9",
+                    "desc_zh": "電離輻射醫學影像學",
+                    "desc_en": "Medical imaging using ionizing radiation"
+                }
+            ]
+        },
+        {
+            "code": "bio",
+            "year_start": 2005,
+            "year_end": 2025,
+            "desc_zh": "生物",
+            "desc_en": "Biology",
+            "sfs": {
+                "q_num_min": 20,
+                "q_num_min_criteria": {
+                    "random": 30
+                },
+                "topics": [],
+                "years": [
+                    2024,
+                    2023,
+                    2022,
+                    2021,
+                    2020,
+                    2019,
+                    2018,
+                    2017,
+                    2016,
+                    2015,
+                    2014,
+                    2013,
+                    2012
+                ],
+                "q_num_available": 448,
+                "eaa_difficulty_code": [
+                    {
+                        "code": "A",
+                        "count": 31
+                    },
+                    {
+                        "code": "B",
+                        "count": 81
+                    },
+                    {
+                        "code": "C",
+                        "count": 127
+                    },
+                    {
+                        "code": "D",
+                        "count": 209
+                    }
+                ],
+                "content_domain": [
+                    {
+                        "code": "bio_content_DIM1",
+                        "code_short": "DIM1",
+                        "count": 67,
+                        "desc_zh": "細胞",
+                        "desc_en": "Cells"
+                    },
+                    {
+                        "code": "bio_content_DIM2",
+                        "code_short": "DIM2",
+                        "count": 70,
+                        "desc_zh": "細胞能量學",
+                        "desc_en": "Cellular Energetics"
+                    },
+                    {
+                        "code": "bio_content_DIM3",
+                        "code_short": "DIM3",
+                        "count": 66,
+                        "desc_zh": "遺傳",
+                        "desc_en": "Genetics"
+                    },
+                    {
+                        "code": "bio_content_DIM4",
+                        "code_short": "DIM4",
+                        "count": 66,
+                        "desc_zh": "生物多樣性、進化和生態系",
+                        "desc_en": "Biodiversity, Evolution and Ecosystems"
+                    },
+                    {
+                        "code": "bio_content_DIM5",
+                        "code_short": "DIM5",
+                        "count": 69,
+                        "desc_zh": "生物 (植物)",
+                        "desc_en": "Organisms (Plants)"
+                    },
+                    {
+                        "code": "bio_content_DIM6",
+                        "code_short": "DIM6",
+                        "count": 158,
+                        "desc_zh": "生物 (動物)",
+                        "desc_en": "Organisms (Animals)"
+                    },
+                    {
+                        "code": "bio_content_DIM7",
+                        "code_short": "DIM7",
+                        "count": 26,
+                        "desc_zh": "健康與疾病",
+                        "desc_en": "Health and Diseases"
+                    }
+                ],
+                "cognitive_domain": [
+                    {
+                        "code": "bio_cognitive_DIM1",
+                        "code_short": "DIM1",
+                        "count": 67,
+                        "desc_zh": "憶述事實",
+                        "desc_en": "Factual Recall"
+                    },
+                    {
+                        "code": "bio_cognitive_DIM2",
+                        "code_short": "DIM2",
+                        "count": 190,
+                        "desc_zh": "理解",
+                        "desc_en": "Understanding"
+                    },
+                    {
+                        "code": "bio_cognitive_DIM3",
+                        "code_short": "DIM3",
+                        "count": 191,
+                        "desc_zh": "應用與分析",
+                        "desc_en": "Application & Analysis"
+                    }
+                ]
+            },
+            "topics": [
+                {
+                    "code": "bio_1",
+                    "desc_zh": "細胞與生命分子：生命分子；細胞組織；細胞週期和分裂",
+                    "desc_en": "Cells and Molecules of Life: molecules of life; cellular organization; cell cycle and division"
+                },
+                {
+                    "code": "bio_2",
+                    "desc_zh": "細胞與生命分子：物質穿越細胞膜的活動；細胞能量學",
+                    "desc_en": "Cells and Molecules of Life: movement of substances across membrane; cellular energetics"
+                },
+                {
+                    "code": "bio_3",
+                    "desc_zh": "遺傳與進化：基礎遺傳學；分子遺傳學",
+                    "desc_en": "Genetics and Evolution: basic genetics; molecular genetics"
+                },
+                {
+                    "code": "bio_4",
+                    "desc_zh": "遺傳與進化：生物多樣性和進化",
+                    "desc_en": "Genetics and Evolution: biodiversity and evolution"
+                },
+                {
+                    "code": "bio_5",
+                    "desc_zh": "生物與環境：植物和動物維持生命的活動",
+                    "desc_en": "Organisms and Environment: essential life processes in plants and animals"
+                },
+                {
+                    "code": "bio_6",
+                    "desc_zh": "生物與環境：生殖、生長和發育",
+                    "desc_en": "Organisms and Environment: reproduction, growth and development"
+                },
+                {
+                    "code": "bio_7",
+                    "desc_zh": "生物與環境：協調和反應；體內平衡",
+                    "desc_en": "Organisms and Environment: coordination and response; homeostasis"
+                },
+                {
+                    "code": "bio_8",
+                    "desc_zh": "生物與環境：生態系",
+                    "desc_en": "Organisms and Environment: ecosystem"
+                },
+                {
+                    "code": "bio_9",
+                    "desc_zh": "健康與疾病：個人健康；疾病",
+                    "desc_en": "Health and Diseases: personal health; diseases"
+                },
+                {
+                    "code": "bio_10",
+                    "desc_zh": "健康與疾病：身體的防禦機制",
+                    "desc_en": "Health and Diseases: body defence mechanisms"
+                },
+                {
+                    "code": "bio_11",
+                    "desc_zh": "人體生理學：調節與控制",
+                    "desc_en": "Human Physiology: Regulation and Control"
+                },
+                {
+                    "code": "bio_12",
+                    "desc_zh": "應用生態學",
+                    "desc_en": "Applied Ecology"
+                },
+                {
+                    "code": "bio_13",
+                    "desc_zh": "微生物與人類",
+                    "desc_en": "Microorganisms and Humans"
+                },
+                {
+                    "code": "bio_14",
+                    "desc_zh": "生物工程",
+                    "desc_en": "Biotechnology"
+                }
+            ],
+            "subtopics": []
+        },
+        {
+            "code": "chem",
+            "year_start": 2005,
+            "year_end": 2025,
+            "desc_zh": "化學",
+            "desc_en": "Chemistry",
+            "sfs": {
+                "q_num_min": 20,
+                "q_num_min_criteria": {
+                    "random": 30
+                },
+                "topics": [],
+                "years": [
+                    2024,
+                    2023,
+                    2022,
+                    2021,
+                    2020,
+                    2019,
+                    2018,
+                    2017,
+                    2016,
+                    2015,
+                    2014,
+                    2013,
+                    2012
+                ],
+                "q_num_available": 466,
+                "eaa_difficulty_code": [
+                    {
+                        "code": "A",
+                        "count": 15
+                    },
+                    {
+                        "code": "B",
+                        "count": 40
+                    },
+                    {
+                        "code": "C",
+                        "count": 135
+                    },
+                    {
+                        "code": "D",
+                        "count": 276
+                    }
+                ],
+                "item_classifications": [
+                    {
+                        "code": "chem_classifications_DIM1",
+                        "code_short": "DIM1",
+                        "count": 117,
+                        "desc_zh": "我們的化學世界",
+                        "desc_en": "Our chemical world"
+                    },
+                    {
+                        "code": "chem_classifications_DIM2",
+                        "code_short": "DIM2",
+                        "count": 87,
+                        "desc_zh": "金屬",
+                        "desc_en": "Metals"
+                    },
+                    {
+                        "code": "chem_classifications_DIM3",
+                        "code_short": "DIM3",
+                        "count": 90,
+                        "desc_zh": "酸和鹽基",
+                        "desc_en": "Acids and bases"
+                    },
+                    {
+                        "code": "chem_classifications_DIM4",
+                        "code_short": "DIM4",
+                        "count": 132,
+                        "desc_zh": "碳的化學",
+                        "desc_en": "Carbon chemistry"
+                    },
+                    {
+                        "code": "chem_classifications_DIM5",
+                        "code_short": "DIM5",
+                        "count": 72,
+                        "desc_zh": "氧化和還原",
+                        "desc_en": "Oxidation and reduction"
+                    },
+                    {
+                        "code": "chem_classifications_DIM6",
+                        "code_short": "DIM6",
+                        "count": 95,
+                        "desc_zh": "物理化學原理",
+                        "desc_en": "Physiochemical principles"
+                    },
+                    {
+                        "code": "chem_classifications_DIM7",
+                        "code_short": "DIM7",
+                        "count": 80,
+                        "desc_zh": "與實驗有關",
+                        "desc_en": "Experiment related"
+                    },
+                    {
+                        "code": "chem_classifications_DIM8",
+                        "code_short": "DIM8",
+                        "count": 101,
+                        "desc_zh": "計算／數據詮釋",
+                        "desc_en": "Calculation\/ Data interpretation"
+                    }
+                ]
+            },
+            "topics": [
+                {
+                    "code": "chem_1",
+                    "desc_zh": "地球",
+                    "desc_en": "Planet earth"
+                },
+                {
+                    "code": "chem_2",
+                    "desc_zh": "微觀世界I",
+                    "desc_en": "Microscopic world I"
+                },
+                {
+                    "code": "chem_3",
+                    "desc_zh": "金屬",
+                    "desc_en": "Metals"
+                },
+                {
+                    "code": "chem_4",
+                    "desc_zh": "酸和鹽基",
+                    "desc_en": "Acids and bases"
+                },
+                {
+                    "code": "chem_5",
+                    "desc_zh": "化石燃料和碳化合物",
+                    "desc_en": "Fossil fuels and carbon compounds"
+                },
+                {
+                    "code": "chem_6",
+                    "desc_zh": "微觀世界II",
+                    "desc_en": "Microscopic world II"
+                },
+                {
+                    "code": "chem_7",
+                    "desc_zh": "氧化還原反應、化學電池和電解",
+                    "desc_en": "Redox reactions, chemical cells and electrolysis"
+                },
+                {
+                    "code": "chem_8",
+                    "desc_zh": "化學反應和能量",
+                    "desc_en": "Chemical reactions and energy"
+                },
+                {
+                    "code": "chem_9",
+                    "desc_zh": "反應速率",
+                    "desc_en": "Rate of reaction"
+                },
+                {
+                    "code": "chem_10",
+                    "desc_zh": "化學平衡",
+                    "desc_en": "Chemical equilibrium"
+                },
+                {
+                    "code": "chem_11",
+                    "desc_zh": "碳化合物的化學",
+                    "desc_en": "Chemistry of carbon compounds"
+                },
+                {
+                    "code": "chem_12",
+                    "desc_zh": "化學世界中的規律",
+                    "desc_en": "Patterns in the chemical world"
+                },
+                {
+                    "code": "chem_13",
+                    "desc_zh": "工業化學",
+                    "desc_en": "Industrial chemistry"
+                },
+                {
+                    "code": "chem_14",
+                    "desc_zh": "物料化學",
+                    "desc_en": "Materials chemistry"
+                },
+                {
+                    "code": "chem_15",
+                    "desc_zh": "分析化學",
+                    "desc_en": "Analytical chemistry"
+                }
+            ],
+            "subtopics": []
+        },
+        {
+            "code": "econ",
+            "year_start": 2005,
+            "year_end": 2025,
+            "desc_zh": "經濟",
+            "desc_en": "Economics",
+            "sfs": {
+                "q_num_min": 20,
+                "q_num_min_criteria": {
+                    "random": 30
+                },
+                "topics": [],
+                "years": [
+                    2024,
+                    2023,
+                    2022,
+                    2021,
+                    2020,
+                    2019,
+                    2018,
+                    2017,
+                    2016,
+                    2015,
+                    2014,
+                    2013,
+                    2012
+                ],
+                "q_num_available": 569,
+                "eaa_difficulty_code": [
+                    {
+                        "code": "A",
+                        "count": 46
+                    },
+                    {
+                        "code": "B",
+                        "count": 80
+                    },
+                    {
+                        "code": "C",
+                        "count": 182
+                    },
+                    {
+                        "code": "D",
+                        "count": 261
+                    }
+                ],
+                "item_classifications": [
+                    {
+                        "code": "econ_classifications_DIM1",
+                        "code_short": "DIM1",
+                        "count": 136,
+                        "desc_zh": "基本概念、廠商與生產",
+                        "desc_en": "Basic Concepts, Firms and Production"
+                    },
+                    {
+                        "code": "econ_classifications_DIM2",
+                        "code_short": "DIM2",
+                        "count": 116,
+                        "desc_zh": "價格、競爭與巿場結構",
+                        "desc_en": "Price, Competition and Market Structure"
+                    },
+                    {
+                        "code": "econ_classifications_DIM3",
+                        "code_short": "DIM3",
+                        "count": 61,
+                        "desc_zh": "效率、公平和政府的角色",
+                        "desc_en": "Efficiency, Equity and the Role of Government"
+                    },
+                    {
+                        "code": "econ_classifications_DIM4",
+                        "code_short": "DIM4",
+                        "count": 174,
+                        "desc_zh": "國民收入：量度、決定、問題和政策",
+                        "desc_en": "National Income: Measurement, Determination, Problems and Policies"
+                    },
+                    {
+                        "code": "econ_classifications_DIM5",
+                        "code_short": "DIM5",
+                        "count": 62,
+                        "desc_zh": "貨幣與銀行",
+                        "desc_en": "Money and Banking"
+                    },
+                    {
+                        "code": "econ_classifications_DIM6",
+                        "code_short": "DIM6",
+                        "count": 69,
+                        "desc_zh": "國際貿易和金融",
+                        "desc_en": "International Trade and Finance"
+                    },
+                    {
+                        "code": "econ_classifications_DIM7",
+                        "code_short": "DIM7",
+                        "count": 106,
+                        "desc_zh": "計算",
+                        "desc_en": "Calculation"
+                    },
+                    {
+                        "code": "econ_classifications_DIM8",
+                        "code_short": "DIM8",
+                        "count": 98,
+                        "desc_zh": "圖表詮釋",
+                        "desc_en": "Graphical Interpretation"
+                    }
+                ]
+            },
+            "topics": [
+                {
+                    "code": "econ_1",
+                    "desc_zh": "基本經濟概念",
+                    "desc_en": "Basic Economic Concepts"
+                },
+                {
+                    "code": "econ_2",
+                    "desc_zh": "廠商與生產",
+                    "desc_en": "Firms and Production"
+                },
+                {
+                    "code": "econ_3",
+                    "desc_zh": "巿場與價格",
+                    "desc_en": "Market and Price"
+                },
+                {
+                    "code": "econ_4",
+                    "desc_zh": "競爭與巿場結構",
+                    "desc_en": "Competition and Market Structure"
+                },
+                {
+                    "code": "econ_5",
+                    "desc_zh": "效率、公平和政府的角色",
+                    "desc_en": "Efficiency, Equity and the Role of Government"
+                },
+                {
+                    "code": "econ_6",
+                    "desc_zh": "經濟表現的量度",
+                    "desc_en": "Measurement of Economic Performance"
+                },
+                {
+                    "code": "econ_7",
+                    "desc_zh": "國民收入決定及價格水平",
+                    "desc_en": "National Income Determination and Price Level"
+                },
+                {
+                    "code": "econ_8",
+                    "desc_zh": "貨幣與銀行",
+                    "desc_en": "Money and Banking"
+                },
+                {
+                    "code": "econ_9",
+                    "desc_zh": "宏觀經濟問題和政策",
+                    "desc_en": "Macroeconomic Problems and Policies"
+                },
+                {
+                    "code": "econ_10",
+                    "desc_zh": "國際貿易和金融",
+                    "desc_en": "International Trade and Finance"
+                }
+            ],
+            "subtopics": []
+        },
+        {
+            "code": "geog",
+            "year_start": 2005,
+            "year_end": 2025,
+            "desc_zh": "地理",
+            "desc_en": "Geography",
+            "sfs": {
+                "q_num_min": 20,
+                "q_num_min_criteria": {
+                    "random": 30
+                },
+                "topics": [],
+                "years": [
+                    2024,
+                    2023,
+                    2022,
+                    2021,
+                    2020,
+                    2019,
+                    2018,
+                    2017,
+                    2016,
+                    2015,
+                    2014,
+                    2013,
+                    2012
+                ],
+                "q_num_available": 400,
+                "eaa_difficulty_code": [
+                    {
+                        "code": "A",
+                        "count": 48
+                    },
+                    {
+                        "code": "B",
+                        "count": 40
+                    },
+                    {
+                        "code": "C",
+                        "count": 66
+                    },
+                    {
+                        "code": "D",
+                        "count": 246
+                    }
+                ],
+                "content_domain": [
+                    {
+                        "code": "geog_content_DIM1",
+                        "code_short": "DIM1",
+                        "count": 90,
+                        "desc_zh": "與我們的自然環境共存",
+                        "desc_en": "Living with Our Physical Environment"
+                    },
+                    {
+                        "code": "geog_content_DIM2",
+                        "code_short": "DIM2",
+                        "count": 89,
+                        "desc_zh": "面對人文環境的轉變",
+                        "desc_en": "Facing Changes in Human Environment "
+                    },
+                    {
+                        "code": "geog_content_DIM3",
+                        "code_short": "DIM3",
+                        "count": 132,
+                        "desc_zh": "正視全球性挑戰",
+                        "desc_en": "Confronting Global Challenges"
+                    },
+                    {
+                        "code": "geog_content_DIM4",
+                        "code_short": "DIM4",
+                        "count": 89,
+                        "desc_zh": "地圖閱讀及闡釋",
+                        "desc_en": "Map Reading and Interpretation"
+                    }
+                ]
+            },
+            "topics": [
+                {
+                    "code": "geog_1",
+                    "desc_zh": "機會與風險 — 居住在災害頻生的地區是否明智之舉？",
+                    "desc_en": "Opportunities and Risks – Is it rational to live in hazard-prone areas?"
+                },
+                {
+                    "code": "geog_2",
+                    "desc_zh": "管理河流和海岸地貌：一個持續的挑戰",
+                    "desc_en": "Managing River and Coastal Environments: A continuing challenge"
+                },
+                {
+                    "code": "geog_3",
+                    "desc_zh": "轉變中的工業區位 — 它如何及為何隨時間和空間的變化而改變？",
+                    "desc_en": "Changing Industrial Location – How and why does it change over space and time?"
+                },
+                {
+                    "code": "geog_4",
+                    "desc_zh": "建設一個可持續發展的城市 — 環境保育與城市發展是否不能並存？",
+                    "desc_en": "Building a Sustainable City – Are environmental conservation and urban development mutually exclusive?"
+                },
+                {
+                    "code": "geog_5",
+                    "desc_zh": "對抗饑荒 — 科技是否解決糧食短缺的靈丹妙藥？",
+                    "desc_en": "Combating Famine – Is technology a panacea for food shortage?"
+                },
+                {
+                    "code": "geog_6",
+                    "desc_zh": "消失中的綠色樹冠 — 誰應為大規模砍伐雨林付出代價？",
+                    "desc_en": "Disappearing Green Canopy – Who should pay for the massive deforestation in rainforest regions?"
+                },
+                {
+                    "code": "geog_7",
+                    "desc_zh": "全球增溫 — 是事實還是虛構？",
+                    "desc_en": "Global Warming – Is it fact or fiction?"
+                },
+                {
+                    "code": "geog_8",
+                    "desc_zh": "動態的地球：香港地質與地貌的形成",
+                    "desc_en": "Dynamic Earth: The building of Hong Kong"
+                },
+                {
+                    "code": "geog_9",
+                    "desc_zh": "天氣與氣候",
+                    "desc_en": "Weather and Climate"
+                },
+                {
+                    "code": "geog_10",
+                    "desc_zh": "運輸發展、規劃與管理",
+                    "desc_en": "Transport Development, Planning and Management"
+                },
+                {
+                    "code": "geog_11",
+                    "desc_zh": "珠江三角洲區域研習",
+                    "desc_en": "Regional Study of Zhujiang (Pearl River) Delta"
+                },
+                {
+                    "code": "geog_12",
+                    "desc_zh": "地圖閱讀及闡釋",
+                    "desc_en": "Map reading and interpretation"
+                }
+            ],
+            "subtopics": []
+        },
+        {
+            "code": "cit",
+            "year_start": 2005,
+            "year_end": 2025,
+            "desc_zh": "資訊及通訊科技",
+            "desc_en": "Information and Communication Technology",
+            "sfs": {
+                "q_num_min": 20,
+                "q_num_min_criteria": {
+                    "random": 30
+                },
+                "topics": [],
+                "years": [
+                    2024,
+                    2023,
+                    2022,
+                    2021,
+                    2020,
+                    2019,
+                    2018,
+                    2017,
+                    2016,
+                    2015,
+                    2014,
+                    2013,
+                    2012
+                ],
+                "q_num_available": 519,
+                "eaa_difficulty_code": [
+                    {
+                        "code": "A",
+                        "count": 10
+                    },
+                    {
+                        "code": "B",
+                        "count": 40
+                    },
+                    {
+                        "code": "C",
+                        "count": 84
+                    },
+                    {
+                        "code": "D",
+                        "count": 385
+                    }
+                ],
+                "content_domain": [
+                    {
+                        "code": "cit_content_DIM1",
+                        "code_short": "DIM1",
+                        "count": 180,
+                        "desc_zh": "資訊處理",
+                        "desc_en": "Information Processing"
+                    },
+                    {
+                        "code": "cit_content_DIM2",
+                        "code_short": "DIM2",
+                        "count": 99,
+                        "desc_zh": "電腦系統基礎",
+                        "desc_en": "Computer System Fundamentals   "
+                    },
+                    {
+                        "code": "cit_content_DIM3",
+                        "code_short": "DIM3",
+                        "count": 110,
+                        "desc_zh": "互聯網及其應用",
+                        "desc_en": "Internet and its Applications"
+                    },
+                    {
+                        "code": "cit_content_DIM4",
+                        "code_short": "DIM4",
+                        "count": 77,
+                        "desc_zh": "基本程式編寫概念",
+                        "desc_en": "Basic Programming Concepts"
+                    },
+                    {
+                        "code": "cit_content_DIM5",
+                        "code_short": "DIM5",
+                        "count": 97,
+                        "desc_zh": "資訊及通訊科技對社會的影響",
+                        "desc_en": "Social Implications"
+                    }
+                ]
+            },
+            "topics": [
+                {
+                    "code": "cit_1",
+                    "desc_zh": "資訊處理",
+                    "desc_en": "Information Processing"
+                },
+                {
+                    "code": "cit_2",
+                    "desc_zh": "電腦系統基礎",
+                    "desc_en": "Computer System Fundamentals"
+                },
+                {
+                    "code": "cit_3",
+                    "desc_zh": "互聯網及其應用",
+                    "desc_en": "Internet and its Applications"
+                },
+                {
+                    "code": "cit_4",
+                    "desc_zh": "計算思維與程式編寫",
+                    "desc_en": "Computational Thinking and Programming"
+                },
+                {
+                    "code": "cit_5",
+                    "desc_zh": "資訊及通訊科技對社會的影響",
+                    "desc_en": "Social Implications"
+                }
+            ],
+            "subtopics": [
+                {
+                    "code": "cit_1_1",
+                    "topic_code": "cit_1",
+                    "desc_zh": "資訊處理簡介",
+                    "desc_en": "Introduction to Information Processing"
+                },
+                {
+                    "code": "cit_1_2",
+                    "topic_code": "cit_1",
+                    "desc_zh": "數據組織及數據控制",
+                    "desc_en": "Data Organisation and Data Control"
+                },
+                {
+                    "code": "cit_1_3",
+                    "topic_code": "cit_1",
+                    "desc_zh": "數據表示",
+                    "desc_en": "Data Representation"
+                },
+                {
+                    "code": "cit_1_4",
+                    "topic_code": "cit_1",
+                    "desc_zh": "數據操縱和分析",
+                    "desc_en": "Data Manipulation and Analysis"
+                },
+                {
+                    "code": "cit_1_5",
+                    "topic_code": "cit_1",
+                    "desc_zh": "資訊演示",
+                    "desc_en": "Presentation of Information"
+                },
+                {
+                    "code": "cit_2_1",
+                    "topic_code": "cit_2",
+                    "desc_zh": "基本機器組織",
+                    "desc_en": "Basic Machine Organisation"
+                },
+                {
+                    "code": "cit_2_2",
+                    "topic_code": "cit_2",
+                    "desc_zh": "系統軟件",
+                    "desc_en": "System Software"
+                },
+                {
+                    "code": "cit_3_1",
+                    "topic_code": "cit_3",
+                    "desc_zh": "建網及互聯網基本知識",
+                    "desc_en": "Networking and Internet Basics "
+                },
+                {
+                    "code": "cit_3_2",
+                    "topic_code": "cit_3",
+                    "desc_zh": "互聯網服務及應用",
+                    "desc_en": "Internet Services and Applications"
+                },
+                {
+                    "code": "cit_3_3",
+                    "topic_code": "cit_3",
+                    "desc_zh": "初級網頁創作",
+                    "desc_en": "Elementary Web Authoring"
+                },
+                {
+                    "code": "cit_3_4",
+                    "topic_code": "cit_3",
+                    "desc_zh": "網上威脅及保安",
+                    "desc_en": "Threats and Security on the Internet"
+                },
+                {
+                    "code": "cit_4_1",
+                    "topic_code": "cit_4",
+                    "desc_zh": "問題建構和分析",
+                    "desc_en": "Problem-Formulation and Analysis"
+                },
+                {
+                    "code": "cit_4_2",
+                    "topic_code": "cit_4",
+                    "desc_zh": "算法設計",
+                    "desc_en": "Algorithm Design"
+                },
+                {
+                    "code": "cit_4_3",
+                    "topic_code": "cit_4",
+                    "desc_zh": "程式開發",
+                    "desc_en": "Program Development"
+                },
+                {
+                    "code": "cit_4_4",
+                    "topic_code": "cit_4",
+                    "desc_zh": "程式測試和除錯",
+                    "desc_en": "Program Testing and Debugging"
+                },
+                {
+                    "code": "cit_5_1",
+                    "topic_code": "cit_5",
+                    "desc_zh": "科技創新",
+                    "desc_en": "Technological Innovations"
+                },
+                {
+                    "code": "cit_5_2",
+                    "topic_code": "cit_5",
+                    "desc_zh": "健康及道德議題",
+                    "desc_en": "Health and Ethical Issues"
+                },
+                {
+                    "code": "cit_5_3",
+                    "topic_code": "cit_5",
+                    "desc_zh": "知識產權",
+                    "desc_en": "Intellectual Property"
+                }
+            ]
+        },
+        {
+            "code": "bafs",
+            "year_start": 2012,
+            "year_end": 2025,
+            "desc_zh": "企業、會計與財務概論",
+            "desc_en": "Business, Accounting and Financial Studies",
+            "sfs": {
+                "q_num_min": 20,
+                "q_num_min_criteria": {
+                    "random": 30
+                },
+                "topics": [],
+                "years": [
+                    2024,
+                    2023,
+                    2022,
+                    2021,
+                    2020,
+                    2019,
+                    2018,
+                    2017,
+                    2016,
+                    2015,
+                    2014,
+                    2013,
+                    2012
+                ],
+                "q_num_available": 362,
+                "eaa_difficulty_code": [
+                    {
+                        "code": "A",
+                        "count": 18
+                    },
+                    {
+                        "code": "B",
+                        "count": 36
+                    },
+                    {
+                        "code": "C",
+                        "count": 97
+                    },
+                    {
+                        "code": "D",
+                        "count": 211
+                    }
+                ],
+                "content_domain": [
+                    {
+                        "code": "bafs_content_DIM1",
+                        "code_short": "DIM1",
+                        "count": 73,
+                        "desc_zh": "營商環境",
+                        "desc_en": "Business Environment"
+                    },
+                    {
+                        "code": "bafs_content_DIM2",
+                        "code_short": "DIM2",
+                        "count": 79,
+                        "desc_zh": "管理導論",
+                        "desc_en": "Introduction to Management"
+                    },
+                    {
+                        "code": "bafs_content_DIM3",
+                        "code_short": "DIM3",
+                        "count": 133,
+                        "desc_zh": "會計導論",
+                        "desc_en": "Introduction to Accounting"
+                    },
+                    {
+                        "code": "bafs_content_DIM4",
+                        "code_short": "DIM4",
+                        "count": 77,
+                        "desc_zh": "基礎個人理財",
+                        "desc_en": "Basics of Personal Financial Management"
+                    }
+                ]
+            },
+            "topics": [
+                {
+                    "code": "bafs_1",
+                    "desc_zh": "香港的營商環境",
+                    "desc_en": "Hong Kong Business Environment"
+                },
+                {
+                    "code": "bafs_2",
+                    "desc_zh": "企業擁有權類型",
+                    "desc_en": "Forms of Business Ownership"
+                },
+                {
+                    "code": "bafs_3",
+                    "desc_zh": "商業道德與社會責任",
+                    "desc_en": "Business Ethics and Social Responsibilities"
+                },
+                {
+                    "code": "bafs_4",
+                    "desc_zh": "管理功能",
+                    "desc_en": "Management Functions"
+                },
+                {
+                    "code": "bafs_5",
+                    "desc_zh": "主要商業功能",
+                    "desc_en": "Key Business Functions"
+                },
+                {
+                    "code": "bafs_6",
+                    "desc_zh": "中小型企業",
+                    "desc_en": "Small and Medium Enterprises"
+                },
+                {
+                    "code": "bafs_7",
+                    "desc_zh": "會計的目的及角色",
+                    "desc_en": "Purposes and role of Accounting"
+                },
+                {
+                    "code": "bafs_8",
+                    "desc_zh": "複式記帳法",
+                    "desc_en": "Double entry system"
+                },
+                {
+                    "code": "bafs_9",
+                    "desc_zh": "試算表",
+                    "desc_en": "Trial balance"
+                },
+                {
+                    "code": "bafs_10",
+                    "desc_zh": "財務報表",
+                    "desc_en": "Financial statements"
+                },
+                {
+                    "code": "bafs_11",
+                    "desc_zh": "財務報表的用途",
+                    "desc_en": "Uses of Financial Statements"
+                },
+                {
+                    "code": "bafs_12",
+                    "desc_zh": "會計假設、原則及慣例",
+                    "desc_en": "Accounting Assumptions, Principles and Conventions"
+                },
+                {
+                    "code": "bafs_13",
+                    "desc_zh": "基礎比率分析",
+                    "desc_en": "Basic Ratio Analysis"
+                },
+                {
+                    "code": "bafs_14",
+                    "desc_zh": "金錢的時間值",
+                    "desc_en": "Time value of money"
+                },
+                {
+                    "code": "bafs_15",
+                    "desc_zh": "消費者信貸",
+                    "desc_en": "Consumer credit"
+                },
+                {
+                    "code": "bafs_16",
+                    "desc_zh": "策畫個人理財及投資",
+                    "desc_en": "Personal financial planning and investments"
+                },
+                {
+                    "code": "bafs_17",
+                    "desc_zh": "以證券交易作投資",
+                    "desc_en": "Stock Trading as an Investment"
+                }
+            ],
+            "subtopics": []
+        },
+        {
+            "code": "ths",
+            "year_start": 2012,
+            "year_end": 2025,
+            "desc_zh": "旅遊與款待",
+            "desc_en": "Tourism and Hospitality Studies",
+            "sfs": {
+                "q_num_min": 20,
+                "q_num_min_criteria": {
+                    "random": 30
+                },
+                "topics": [],
+                "years": [
+                    2024,
+                    2023,
+                    2022,
+                    2021,
+                    2020,
+                    2019,
+                    2018,
+                    2017,
+                    2016,
+                    2015,
+                    2014,
+                    2013,
+                    2012
+                ],
+                "q_num_available": 380,
+                "eaa_difficulty_code": [
+                    {
+                        "code": "A",
+                        "count": 65
+                    },
+                    {
+                        "code": "B",
+                        "count": 40
+                    },
+                    {
+                        "code": "C",
+                        "count": 67
+                    },
+                    {
+                        "code": "D",
+                        "count": 208
+                    }
+                ],
+                "content_domain": [
+                    {
+                        "code": "ths_content_DIM1",
+                        "code_short": "DIM1",
+                        "count": 132,
+                        "desc_zh": "旅遊導論",
+                        "desc_en": "Introduction to Tourism"
+                    },
+                    {
+                        "code": "ths_content_DIM2",
+                        "code_short": "DIM2",
+                        "count": 108,
+                        "desc_zh": "款待導論",
+                        "desc_en": "Introduction to Hospitality  "
+                    },
+                    {
+                        "code": "ths_content_DIM3",
+                        "code_short": "DIM3",
+                        "count": 78,
+                        "desc_zh": "地理名勝",
+                        "desc_en": "Destination Geography"
+                    },
+                    {
+                        "code": "ths_content_DIM4",
+                        "code_short": "DIM4",
+                        "count": 45,
+                        "desc_zh": "客務關係及服務",
+                        "desc_en": "Customer Relations and Services"
+                    },
+                    {
+                        "code": "ths_content_DIM5",
+                        "code_short": "DIM5",
+                        "count": 59,
+                        "desc_zh": "趨勢及議題",
+                        "desc_en": "Trends and Issues"
+                    }
+                ]
+            },
+            "topics": [
+                {
+                    "code": "ths_1",
+                    "desc_zh": "旅遊的概念與原理",
+                    "desc_en": "Tourism concepts and principles"
+                },
+                {
+                    "code": "ths_2",
+                    "desc_zh": "本地旅遊業",
+                    "desc_en": "The local tourism industry"
+                },
+                {
+                    "code": "ths_3",
+                    "desc_zh": "款待業",
+                    "desc_en": "Hospitality Industry"
+                },
+                {
+                    "code": "ths_4",
+                    "desc_zh": "住宿業",
+                    "desc_en": "Accommodation sector"
+                },
+                {
+                    "code": "ths_5",
+                    "desc_zh": "餐飲業",
+                    "desc_en": "Food and Beverage Sector"
+                },
+                {
+                    "code": "ths_6",
+                    "desc_zh": "地理名勝",
+                    "desc_en": "Destination Geography"
+                },
+                {
+                    "code": "ths_7",
+                    "desc_zh": "客戶服務",
+                    "desc_en": "Customer services"
+                },
+                {
+                    "code": "ths_8",
+                    "desc_zh": "客務關係",
+                    "desc_en": "Customer relations"
+                },
+                {
+                    "code": "ths_9",
+                    "desc_zh": "旅遊與款待業熱門議題",
+                    "desc_en": "Current issues in tourism and hospitality"
+                },
+                {
+                    "code": "ths_10",
+                    "desc_zh": "旅遊業趨勢",
+                    "desc_en": "Trends in tourism"
+                },
+                {
+                    "code": "ths_11",
+                    "desc_zh": "款待業趨勢",
+                    "desc_en": "Trends in hospitality"
+                },
+                {
+                    "code": "ths_12",
+                    "desc_zh": "會議、獎勵、商務、展覽是旅遊業中一個界別",
+                    "desc_en": "MICE Sector"
+                }
+            ],
+            "subtopics": []
+        },
+        {
+            "code": "pe",
+            "year_start": 2012,
+            "year_end": 2025,
+            "desc_zh": "體育",
+            "desc_en": "Physical Education",
+            "sfs": {
+                "q_num_min": 20,
+                "q_num_min_criteria": {
+                    "random": 30
+                },
+                "topics": [],
+                "years": [
+                    2024,
+                    2023,
+                    2022,
+                    2021,
+                    2020,
+                    2019,
+                    2018,
+                    2017,
+                    2016,
+                    2015,
+                    2014,
+                    2013,
+                    2012
+                ],
+                "q_num_available": 463,
+                "eaa_difficulty_code": [
+                    {
+                        "code": "A",
+                        "count": 10
+                    },
+                    {
+                        "code": "B",
+                        "count": 26
+                    },
+                    {
+                        "code": "C",
+                        "count": 92
+                    },
+                    {
+                        "code": "D",
+                        "count": 335
+                    }
+                ],
+                "content_domain": [
+                    {
+                        "code": "pe_content_DIM1",
+                        "code_short": "DIM1",
+                        "count": 39,
+                        "desc_zh": "歷史和發展",
+                        "desc_en": "History and Development"
+                    },
+                    {
+                        "code": "pe_content_DIM2",
+                        "code_short": "DIM2",
+                        "count": 62,
+                        "desc_zh": "人體",
+                        "desc_en": "Human Body"
+                    },
+                    {
+                        "code": "pe_content_DIM3",
+                        "code_short": "DIM3",
+                        "count": 33,
+                        "desc_zh": "動作分析",
+                        "desc_en": "Movement Analysis"
+                    },
+                    {
+                        "code": "pe_content_DIM4",
+                        "code_short": "DIM4",
+                        "count": 65,
+                        "desc_zh": "體適能和營養",
+                        "desc_en": "Fitness and Nutrition "
+                    },
+                    {
+                        "code": "pe_content_DIM5",
+                        "code_short": "DIM5",
+                        "count": 62,
+                        "desc_zh": "訓練方法",
+                        "desc_en": "Training Methods"
+                    },
+                    {
+                        "code": "pe_content_DIM6",
+                        "code_short": "DIM6",
+                        "count": 40,
+                        "desc_zh": "運動創傷",
+                        "desc_en": "Sports Injuries"
+                    },
+                    {
+                        "code": "pe_content_DIM7",
+                        "code_short": "DIM7",
+                        "count": 62,
+                        "desc_zh": "心理技能",
+                        "desc_en": "Psychological Skills "
+                    },
+                    {
+                        "code": "pe_content_DIM8",
+                        "code_short": "DIM8",
+                        "count": 63,
+                        "desc_zh": "社會影響",
+                        "desc_en": "Social Aspects "
+                    },
+                    {
+                        "code": "pe_content_DIM9",
+                        "code_short": "DIM9",
+                        "count": 38,
+                        "desc_zh": "運動和康樂活動管理",
+                        "desc_en": "Sport and Recreation Management"
+                    }
+                ],
+                "theme_classification": [
+                    {
+                        "code": "pe_theme_DIM1",
+                        "code_short": "DIM1",
+                        "count": 140,
+                        "desc_zh": "關心社群",
+                        "desc_en": "Care for the Community"
+                    },
+                    {
+                        "code": "pe_theme_DIM2",
+                        "code_short": "DIM2",
+                        "count": 157,
+                        "desc_zh": "提升自我",
+                        "desc_en": "Self Enhancement"
+                    },
+                    {
+                        "code": "pe_theme_DIM3",
+                        "code_short": "DIM3",
+                        "count": 166,
+                        "desc_zh": "强身健體",
+                        "desc_en": "Body Maintenance"
+                    }
+                ]
+            },
+            "topics": [
+                {
+                    "code": "pe_1",
+                    "desc_zh": "體育、運動、康樂、消閒與豐盛人生：歷史和發展",
+                    "desc_en": "Physical Education, Sport, Recreation, Leisure and Wellness: History and Recent Development"
+                },
+                {
+                    "code": "pe_2",
+                    "desc_zh": "人體",
+                    "desc_en": "Human Body"
+                },
+                {
+                    "code": "pe_3",
+                    "desc_zh": "動作分析",
+                    "desc_en": "Movement Analysis"
+                },
+                {
+                    "code": "pe_4",
+                    "desc_zh": "維持健康與活動表現的體適能和營養",
+                    "desc_en": "Fitness and Nutrition for Health and Performance in Physical Activities"
+                },
+                {
+                    "code": "pe_5",
+                    "desc_zh": "運動與訓練的生理學基礎",
+                    "desc_en": "Physiological Basis for Exercise and Sports Training"
+                },
+                {
+                    "code": "pe_6",
+                    "desc_zh": "運動創傷、處理與預防方法",
+                    "desc_en": "Sports Injuries, Treatment and Precaution"
+                },
+                {
+                    "code": "pe_7",
+                    "desc_zh": "體育、運動及康樂相關心理技能",
+                    "desc_en": "Psychological Skills for PE, Sport and Recreation"
+                },
+                {
+                    "code": "pe_8",
+                    "desc_zh": "體育、運動及康樂的社會影響",
+                    "desc_en": "Social Aspects of PE, Sport and Recreation"
+                },
+                {
+                    "code": "pe_9",
+                    "desc_zh": "運動和康樂活動管理",
+                    "desc_en": "Sport and Recreation Management"
+                }
+            ],
+            "subtopics": []
+        }
+    ]
+}

@@ -87,7 +87,9 @@
         mode: 'practice',        // 'practice' | 'exam' | 'study'
         currentTab: 'all',       // 'all' | 'wrong' | 'starred'
         searchKeyword: '',
-
+        filterTopic: 'all',          // 'all' | 'cit_1' | 'cit_2' | 'cit_3' | 'cit_4' | 'cit_5'
+        filterDifficulty: 'all',     // 'all' | '1' | '2' | '3'
+        filterCorrectRate: 'all',    // 'all' | 'high' | 'medium' | 'challenging' | 'extreme'
         // Progress & Answers
         userAnswers: {},         // { [uid]: { visualIndex, selectedPart, isCorrect, answeredAt } }
         score: 0,
@@ -194,7 +196,7 @@
             const rawKw = (this.searchKeyword || '').trim();
             const isSearching = rawKw.length > 0;
 
-            const baseList = (isSearching && this.searchScope === 'all')
+            const baseList = (this.searchScope === 'all')
                 ? this.getAllQuestions()
                 : this.getCurrentPaperQuestions();
 
@@ -212,6 +214,34 @@
                     return ans && ans.isCorrect === false;
                 });
             }
+            // 2. Flexible Metadata Filters (Topic, Difficulty, Correct Rate)
+            if (this.filterTopic && this.filterTopic !== 'all') {
+                list = list.filter(q => q.topic && q.topic.code === this.filterTopic);
+            }
+
+            if (this.filterDifficulty && this.filterDifficulty !== 'all') {
+                const diffCode = parseInt(this.filterDifficulty, 10);
+                list = list.filter(q => q.difficulty && q.difficulty.code === diffCode);
+            }
+
+            if (this.filterCorrectRate && this.filterCorrectRate !== 'all') {
+                list = list.filter(q => {
+                    if (typeof q.correctRate !== 'number') return false;
+                    switch (this.filterCorrectRate) {
+                        case 'high':
+                            return q.correctRate >= 70;
+                        case 'medium':
+                            return q.correctRate >= 50 && q.correctRate < 70;
+                        case 'challenging':
+                            return q.correctRate < 50;
+                        case 'extreme':
+                            return q.correctRate < 30;
+                        default:
+                            return true;
+                    }
+                });
+            }
+
 
             // 2. Search query filtering
             if (isSearching) {
@@ -388,6 +418,34 @@
             }
             this.score = correct;
             return correct;
+        },
+
+        // --- Flexible Filtering Helpers ---
+
+        setFilterTopic(topicCode) {
+            this.filterTopic = topicCode || 'all';
+        },
+
+        setFilterDifficulty(diffCode) {
+            this.filterDifficulty = diffCode || 'all';
+        },
+
+        setFilterCorrectRate(rateRangeId) {
+            this.filterCorrectRate = rateRangeId || 'all';
+        },
+
+        resetFilters() {
+            this.filterTopic = 'all';
+            this.filterDifficulty = 'all';
+            this.filterCorrectRate = 'all';
+            this.searchKeyword = '';
+        },
+
+        hasActiveFilters() {
+            return (this.filterTopic !== 'all') ||
+                   (this.filterDifficulty !== 'all') ||
+                   (this.filterCorrectRate !== 'all') ||
+                   (Boolean((this.searchKeyword || '').trim()));
         }
     };
 

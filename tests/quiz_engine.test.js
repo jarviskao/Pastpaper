@@ -92,6 +92,24 @@ function run() {
         assert.strictEqual(q.optionsShuffled, true);
     });
 
+    // Verify Custom Exam with Topic & Difficulty & Correct Rate filters
+    const filteredExam = Quiz.generateCustomExam({
+        selectedYears: ['2025', '2024', '2023', '2022', '2021'],
+        count: 10,
+        shuffleQ: false,
+        shuffleO: false,
+        topicFilter: 'cit_1',
+        difficultyFilter: '2',
+        correctRateFilter: 'medium'
+    });
+    assert.strictEqual(filteredExam, true);
+    assert(Store.customQuestionSet.length <= 10 && Store.customQuestionSet.length > 0);
+    Store.customQuestionSet.forEach(q => {
+        assert.strictEqual(q.topic.code, 'cit_1');
+        assert.strictEqual(q.difficulty.code, 2);
+        assert(q.correctRate >= 50 && q.correctRate < 70);
+    });
+
     // 5. Cross-Year Search Option Click
     Store.isCustomMode = false;
     Store.currentYear = '2025';

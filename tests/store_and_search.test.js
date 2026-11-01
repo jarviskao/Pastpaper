@@ -118,6 +118,40 @@ function run() {
     };
     assert.strictEqual(Store.recalculateScore(), 2, 'recalculateScore must only count current paper questions');
 
+
+    // 8. Flexible Metadata Filters (Topic, Difficulty, Correct Rate)
+    Store.searchScope = 'all';
+    Store.resetFilters();
+    assert.strictEqual(Store.getDisplayQuestions().length, 835);
+
+    // Filter topic cit_4 (計算思維與程式編寫) -> 151 questions
+    Store.setFilterTopic('cit_4');
+    const cit4List = Store.getDisplayQuestions();
+    assert.strictEqual(cit4List.length, 151, `Expected 151 cit_4 questions, got ${cit4List.length}`);
+    cit4List.forEach(q => assert.strictEqual(q.topic.code, 'cit_4'));
+
+    // Filter difficulty '3' (困難) -> should intersect with cit_4 (51 questions)
+    Store.setFilterDifficulty('3');
+    const hardCit4List = Store.getDisplayQuestions();
+    assert.strictEqual(hardCit4List.length, 51, `Expected 51 hard cit_4 questions, got ${hardCit4List.length}`);
+    hardCit4List.forEach(q => {
+        assert.strictEqual(q.topic.code, 'cit_4');
+        assert.strictEqual(q.difficulty.code, 3);
+    });
+
+    // Filter correct rate 'extreme' (<30%)
+    Store.setFilterCorrectRate('extreme');
+    const extremeList = Store.getDisplayQuestions();
+    extremeList.forEach(q => {
+        assert.strictEqual(q.topic.code, 'cit_4');
+        assert.strictEqual(q.difficulty.code, 3);
+        assert(q.correctRate < 30);
+    });
+
+    // Reset filters
+    Store.resetFilters();
+    assert.strictEqual(Store.getDisplayQuestions().length, 835);
+    assert.strictEqual(Store.hasActiveFilters(), false);
     console.log('[Test: Store & Search] PASS: Search engine, question targeting, and state queries verified.');
 }
 

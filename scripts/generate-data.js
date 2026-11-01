@@ -19,7 +19,9 @@ const PAPER_DIR = path.join(ROOT_DIR, 'Paper');
 const ANSWERS_FILE = path.join(ROOT_DIR, 'data', 'answers.json');
 const OCR_FILE = path.join(ROOT_DIR, 'data', 'ocr.json');
 const OUTPUT_FILE = path.join(ROOT_DIR, 'data', 'papers.json');
-
+const ALL_FILE = path.join(ROOT_DIR, 'All.json');
+const META_FILE = path.join(ROOT_DIR, 'meta.json');
+const PACKAGES_FILE = path.join(ROOT_DIR, 'get_usable_packages.json');
 /**
  * Normalizes Chinese text spacing while strictly preserving English identifiers and formulas.
  * @param {string} str
@@ -78,6 +80,46 @@ function buildData(options = {}) {
             if (!silent) console.log('[generate-data] Loaded OCR text for', Object.keys(ocrDb).length, 'questions');
         } catch (e) {
             console.warn('[generate-data] Could not parse ocr.json:', e.message);
+        }
+    }
+    let metaDb = {};
+    const topicMap = new Map();
+    const subtopicMap = new Map();
+    const diffMap = new Map();
+    if (fs.existsSync(META_FILE)) {
+        try {
+            metaDb = JSON.parse(fs.readFileSync(META_FILE, 'utf-8'));
+            const cit = Array.isArray(metaDb.subjects) ? metaDb.subjects.find(s => s.code === 'cit') : null;
+            if (cit) {
+                if (Array.isArray(cit.topics)) {
+                    cit.topics.forEach(t => topicMap.set(t.code, t));
+                }
+                if (Array.isArray(cit.subtopics)) {
+                    cit.subtopics.forEach(st => subtopicMap.set(st.code, st));
+                }
+            }
+            if (Array.isArray(metaDb.difficulties)) {
+                metaDb.difficulties.forEach(d => diffMap.set(d.code, d));
+            }
+            if (!silent) console.log(`[generate-data] Loaded metadata definitions (Topics: ${topicMap.size}, Subtopics: ${subtopicMap.size})`);
+        } catch (e) {
+            console.warn('[generate-data] Could not parse meta.json:', e.message);
+        }
+    }
+
+    const allMap = new Map();
+    if (fs.existsSync(ALL_FILE)) {
+        try {
+            const allDb = JSON.parse(fs.readFileSync(ALL_FILE, 'utf-8'));
+            const list = Array.isArray(allDb.result) ? allDb.result : (Array.isArray(allDb) ? allDb : []);
+            list.forEach(q => {
+                if (q.year && q.question_no) {
+                    allMap.set(`${q.year}_${q.question_no}`, q);
+                }
+            });
+            if (!silent) console.log('[generate-data] Loaded question bank metadata for', allMap.size, 'questions from All.json');
+        } catch (e) {
+            console.warn('[generate-data] Could not parse All.json:', e.message);
         }
     }
 
@@ -149,12 +191,69 @@ function buildData(options = {}) {
                 };
             });
 
+            // Look up metadata from All.json & meta.json
+            const allInfo = allMap.get(`${year}_${qNum}`) || null;
+
             // Look up answer and explanation
             const yearAnswers = answersDb[year] || {};
             const qAnsInfo = yearAnswers[String(qNum)] || null;
 
-            const correctAnswer = qAnsInfo ? qAnsInfo.answer : -1;
+            let correctAnswer = qAnsInfo ? qAnsInfo.answer : -1;
+            if (correctAnswer === -1 && allInfo && allInfo.suggested_answer) {
+                try {
+                    const parsedAns = JSON.parse(allInfo.suggested_answer);
+                    if (Array.isArray(parsedAns) && typeof parsedAns[0] === 'number') {
+                        correctAnswer = parsedAns[0];
+                    }
+                } catch (e) {}
+            }
             const explanation = qAnsInfo && qAnsInfo.explanation ? qAnsInfo.explanation : '';
+
+            // Topic resolution
+            const topicCode = Array.isArray(allInfo?.topic_code) && allInfo.topic_code[0] ? allInfo.topic_code[0] : 'cit_1';
+            const topicObj = topicMap.get(topicCode) || { code: topicCode, desc_zh: '資訊處理', desc_en: 'Information Processing' };
+            const topic = {
+                code: topicObj.code,
+                nameZh: topicObj.desc_zh,
+                nameEn: topicObj.desc_en
+            };
+
+            // Subtopic resolution
+            let subtopic = null;
+            if (Array.isArray(allInfo?.subtopic_code) && allInfo.subtopic_code[0]) {
+                const stCode = allInfo.subtopic_code[0];
+                const stObj = subtopicMap.get(stCode);
+                if (stObj) {
+                    subtopic = {
+                        code: stObj.code,
+                        nameZh: stObj.desc_zh,
+                        nameEn: stObj.desc_en
+                    };
+                }
+            }
+
+            // Difficulty resolution
+            const diffCode = typeof allInfo?.difficulty_code === 'number' ? allInfo.difficulty_code : 2;
+            const diffObj = diffMap.get(diffCode) || { code: diffCode, desc_zh: '普通', desc_en: 'Normal' };
+            const difficulty = {
+                code: diffCode,
+                label: diffObj.desc_zh,
+                labelEn: diffObj.desc_en
+            };
+
+            const eaaDifficulty = allInfo?.eaa_difficulty_code || '';
+            const correctRate = typeof allInfo?.hkeaa_correct_pc === 'number' ? allInfo.hkeaa_correct_pc : null;
+
+            const isDse = Number(year) >= 2012;
+            const level = {
+                category: isDse ? 'HKDSE' : 'HKCEE',
+                stage: isDse ? '高中 (S4-S6)' : '會考 (S4-S5)',
+                ksLevel: 'KS4',
+                isDse: Boolean(isDse)
+            };
+
+            const suggestedTime = allInfo?.suggested_time || 72;
+            const qcode = allInfo?.qcode || `HKEAA_cit_${year}_${qNum}`;
 
             // Look up OCR text
             const qOcrInfo = ocrDb[uid] || null;
@@ -176,10 +275,22 @@ function buildData(options = {}) {
                 `q${qNum}`,
                 `第${qNum}題`,
                 qData.qNumDisplay,
+                qcode,
+                level.category,
+                level.stage,
+                topic.nameZh,
+                topic.nameEn,
+                subtopic ? subtopic.nameZh : '',
+                subtopic ? subtopic.nameEn : '',
+                difficulty.label,
+                difficulty.labelEn,
+                `難度:${difficulty.label}`,
+                correctRate !== null ? `答對率:${correctRate}%` : '',
+                correctRate !== null ? `${correctRate}%` : '',
                 ocrQuestionText,
                 ocrOptionsText,
                 explanation
-            ].join(' ').toLowerCase();
+            ].filter(Boolean).join(' ').toLowerCase();
 
             questions.push({
                 uid,
@@ -192,6 +303,14 @@ function buildData(options = {}) {
                 answer: correctAnswer,
                 answerLetter: correctAnswer >= 0 ? String.fromCharCode(65 + correctAnswer) : '',
                 explanation,
+                qcode,
+                difficulty,
+                eaaDifficulty,
+                correctRate,
+                level,
+                topic,
+                subtopic,
+                suggestedTime,
                 ocrText: {
                     question: ocrQuestionText,
                     options: ocrOptionsText
@@ -214,12 +333,68 @@ function buildData(options = {}) {
         totalQuestionsAll += questions.length;
         if (!silent) console.log(`[generate-data] ${year} (${examLabel}): ${questions.length} questions parsed`);
     }
+    // Aggregate metadata statistics
+    const topicStats = {};
+    const subtopicStats = {};
+    const diffStats = { 1: 0, 2: 0, 3: 0 };
+    const correctRateStats = { high: 0, medium: 0, challenging: 0, extreme: 0 };
+
+    for (const yr of yearDirs) {
+        const p = papers[yr];
+        if (!p || !Array.isArray(p.questions)) continue;
+        for (const q of p.questions) {
+            if (q.topic?.code) {
+                topicStats[q.topic.code] = (topicStats[q.topic.code] || 0) + 1;
+            }
+            if (q.subtopic?.code) {
+                subtopicStats[q.subtopic.code] = (subtopicStats[q.subtopic.code] || 0) + 1;
+            }
+            if (q.difficulty?.code) {
+                diffStats[q.difficulty.code] = (diffStats[q.difficulty.code] || 0) + 1;
+            }
+            if (typeof q.correctRate === 'number') {
+                if (q.correctRate >= 70) correctRateStats.high++;
+                else if (q.correctRate >= 50) correctRateStats.medium++;
+                else correctRateStats.challenging++;
+
+                if (q.correctRate < 30) correctRateStats.extreme++;
+            }
+        }
+    }
 
     const payload = {
         generatedAt: new Date().toISOString(),
         totalYears: yearDirs.length,
         totalQuestions: totalQuestionsAll,
         years: yearDirs,
+        meta: {
+            topics: [
+                { code: 'cit_1', nameZh: '資訊處理', nameEn: 'Information Processing', count: topicStats['cit_1'] || 0 },
+                { code: 'cit_2', nameZh: '電腦系統基礎', nameEn: 'Computer System Fundamentals', count: topicStats['cit_2'] || 0 },
+                { code: 'cit_3', nameZh: '互聯網及其應用', nameEn: 'Internet and its Applications', count: topicStats['cit_3'] || 0 },
+                { code: 'cit_4', nameZh: '計算思維與程式編寫', nameEn: 'Computational Thinking and Programming', count: topicStats['cit_4'] || 0 },
+                { code: 'cit_5', nameZh: '資訊及通訊科技對社會的影響', nameEn: 'Social Implications', count: topicStats['cit_5'] || 0 }
+            ],
+            subtopics: Array.from(subtopicMap.values()).map(st => ({
+                code: st.code,
+                topicCode: st.topic_code,
+                nameZh: st.desc_zh,
+                nameEn: st.desc_en,
+                count: subtopicStats[st.code] || 0
+            })),
+            difficulties: [
+                { code: 1, label: '容易', labelEn: 'Easy', count: diffStats[1] || 0 },
+                { code: 2, label: '普通', labelEn: 'Normal', count: diffStats[2] || 0 },
+                { code: 3, label: '困難', labelEn: 'Hard', count: diffStats[3] || 0 }
+            ],
+            correctRateRanges: [
+                { id: 'all', label: '全部答對率', min: 0, max: 100, count: totalQuestionsAll },
+                { id: 'high', label: '高答對率 (≥70%)', min: 70, max: 100, count: correctRateStats.high, desc: '基礎穩固題' },
+                { id: 'medium', label: '中等答對率 (50-69%)', min: 50, max: 69, count: correctRateStats.medium, desc: '標準核心題' },
+                { id: 'challenging', label: '挑戰題 (<50%)', min: 0, max: 49, count: correctRateStats.challenging, desc: '鑑別攻堅題' },
+                { id: 'extreme', label: '極難題 (<30%)', min: 0, max: 29, count: correctRateStats.extreme, desc: '奪星陷阱題' }
+            ]
+        },
         papers
     };
 

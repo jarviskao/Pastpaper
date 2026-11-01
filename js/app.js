@@ -252,15 +252,34 @@
 
             const countRange = document.getElementById('custom-count-range');
             const count = countRange ? parseInt(countRange.value, 10) : 40;
-
             const shuffleQ = document.getElementById('custom-shuffle-q')?.checked ?? true;
             const shuffleO = document.getElementById('custom-shuffle-o')?.checked ?? false;
+            const topicCbs = document.querySelectorAll('input[name="custom-topic"]:checked');
+            const selectedTopics = Array.from(topicCbs).map(cb => cb.value);
+            if (selectedTopics.length === 0) {
+                UI.showToast('請至少勾選一個課題！', 'warning');
+                return;
+            }
+
+            const diffCbs = document.querySelectorAll('input[name="custom-difficulty"]:checked');
+            const selectedDiffs = Array.from(diffCbs).map(cb => cb.value);
+            if (selectedDiffs.length === 0) {
+                UI.showToast('請至少勾選一個難度！', 'warning');
+                return;
+            }
+
+            const topicFilter = selectedTopics.length === 5 ? 'all' : selectedTopics;
+            const difficultyFilter = selectedDiffs.length === 3 ? 'all' : selectedDiffs;
+            const correctRateFilter = document.getElementById('custom-correct-rate')?.value || 'all';
 
             const success = Quiz.generateCustomExam({
                 selectedYears,
                 count,
                 shuffleQ,
-                shuffleO
+                shuffleO,
+                topicFilter,
+                difficultyFilter,
+                correctRateFilter
             });
 
             if (success) {

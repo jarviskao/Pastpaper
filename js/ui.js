@@ -97,7 +97,7 @@
 
             const scopeLabel = document.getElementById('search-scope-label');
             if (scopeLabel && Store.data?.totalQuestions) {
-                scopeLabel.textContent = `跨年份全庫搜尋 (${Store.data.totalQuestions}題)`;
+                scopeLabel.textContent = `全庫搜尋 (${Store.data.totalQuestions}題)`;
             }
         },
 
@@ -245,6 +245,13 @@
                    </div>`
                 : '';
 
+            // Metadata Definitions for Explanation Bar
+            const topicName = q.topic?.nameZh || '資訊處理';
+            const subtopicName = q.subtopic?.nameZh || '';
+            const diffLabel = q.difficulty?.label || '普通';
+            const levelCat = q.level?.category || (Number(q.year) >= 2012 ? 'HKDSE' : 'HKCEE');
+            const levelStage = q.level?.stage || (Number(q.year) >= 2012 ? '高中 S4-S6' : '會考 S4-S5');
+
             card.innerHTML = `
                 <div class="flex justify-between items-center mb-3 pb-2 border-b border-[#f0f0f0]">
                     <div class="flex items-center gap-2">
@@ -265,40 +272,60 @@
                 </div>
 
                 <!-- OCR Text Preview Box -->
-                <div id="ocr_box_${q.uid}" class="${isMatchingSearch ? '' : 'hidden'} mb-3.5 p-3 bg-[#f4f6f8] border border-[#e6e6e6] rounded-md text-sm text-[#0a0a0a] leading-relaxed select-auto">
-                    <div class="font-bold text-[#525252] text-xs mb-1.5 flex items-center justify-between">
-                        <span class="flex items-center gap-1.5"><i class="fas fa-search text-xs"></i> OCR 識別文本審查</span>
-                        <span class="text-xs text-[#525252] font-normal">支援文字複製與檢索</span>
+                <div id=\"ocr_box_${q.uid}\" class="${isMatchingSearch ? '' : 'hidden'} mb-3.5 p-3 bg-[#f4f6f8] border border-[#e6e6e6] rounded-md text-sm text-[#0a0a0a] leading-relaxed select-auto">
+                    <div class=\"font-bold text-[#525252] text-xs mb-1.5 flex items-center justify-between\">
+                        <span class=\"flex items-center gap-1.5\"><i class=\"fas fa-search text-xs\"></i> OCR 識別文本審查</span>
+                        <span class=\"text-xs text-[#525252] font-normal\">支援文字複製與檢索</span>
                     </div>
-                    <div class="ocr-question-text mb-2 text-[#0a0a0a] whitespace-pre-wrap">${this.highlightKeywords(safeQuestionText, Store.searchKeyword)}</div>
-                    ${safeOptionsText ? `<div class="ocr-options-text pt-2 border-t border-[#e6e6e6] text-[#525252] text-xs whitespace-pre-wrap">${this.highlightKeywords(safeOptionsText, Store.searchKeyword)}</div>` : ''}
+                    <div class=\"ocr-question-text mb-2 text-[#0a0a0a] whitespace-pre-wrap\">${this.highlightKeywords(safeQuestionText, Store.searchKeyword)}</div>
+                    ${safeOptionsText ? `<div class=\"ocr-options-text pt-2 border-t border-[#e6e6e6] text-[#525252] text-xs whitespace-pre-wrap\">${this.highlightKeywords(safeOptionsText, Store.searchKeyword)}</div>` : ''}
                 </div>
 
                 <!-- Question Image -->
-                <div class="mb-3.5 flex justify-start">
-                    <img src="${q.questionImg}" alt="題目 ${q.qNum}" class="exam-img max-w-full h-auto cursor-zoom-in rounded" loading="lazy" onclick="UI.openLightbox('${q.questionImg}')" onerror="this.alt='題目圖片載入失敗'">
+                <div class=\"mb-3.5 flex justify-start\">
+                    <img src=\"${q.questionImg}\" alt=\"題目 ${q.qNum}\" class=\"exam-img max-w-full h-auto cursor-zoom-in rounded\" loading=\"lazy\" onclick=\"UI.openLightbox('${q.questionImg}')\" onerror=\"this.alt='題目圖片載入失敗'\">
                 </div>
 
                 <!-- Options -->
-                <div class="space-y-2 mb-2" id="options_${q.uid}">
+                <div class=\"space-y-2 mb-2\" id=\"options_${q.uid}\">
                     ${optionsHtml}
                 </div>
 
                 <!-- Explanation Box -->
-                <div id="exp_${q.uid}" class="hidden mt-3.5 pt-3 border-t border-[#f0f0f0]">
-                    <div class="p-3 bg-[#f4f6f8] rounded-md border border-[#e6e6e6] flex flex-col gap-1.5">
-                        <div class="font-bold text-xs text-[#0a0a0a] flex items-center gap-1.5">
-                            <i class="fas fa-lightbulb text-xs text-[#1d5fbf]"></i>
-                            <span>詳細題解</span>
+                <div id=\"exp_${q.uid}\" class=\"hidden mt-3.5 pt-3 border-t border-[#f0f0f0]\">
+                    <div class=\"p-3.5 bg-[#f4f6f8] rounded-md border border-[#e6e6e6] flex flex-col gap-2.5\">
+                        <!-- Metadata Pill Bar -->
+                        <!-- Metadata Pill Bar -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs p-2.5 bg-white rounded border border-[#e5e7eb]">
+                            <div>
+                                <span class="text-[#6b7280] block text-[11px]">考試程度</span>
+                                <span class="font-bold text-[#111827]">${escapeHtml(levelCat)} <span class="text-[#6b7280] font-normal text-[11px]">(${escapeHtml(levelStage)})</span></span>
+                            </div>
+                            <div>
+                                <span class="text-[#6b7280] block text-[11px]">課題與子課題</span>
+                                <span class="font-bold text-[#111827]">${escapeHtml(topicName)}${subtopicName ? `<span class="text-[#4b5563] font-medium text-[11px] block">${escapeHtml(subtopicName)}</span>` : ''}</span>
+                            </div>
+                            <div>
+                                <span class="text-[#6b7280] block text-[11px]">題目難度</span>
+                                <span class="font-bold text-[#111827]">${escapeHtml(diffLabel)} <span class="text-[#6b7280] font-normal text-[11px]">(${escapeHtml(q.difficulty?.labelEn || 'Normal')})</span></span>
+                            </div>
+                            <div>
+                                <span class="text-[#6b7280] block text-[11px]">考評局答對率</span>
+                                <span class="font-bold text-[#111827]">${typeof q.correctRate === 'number' ? `${q.correctRate}%` : '暫無統計'}</span>
+                            </div>
                         </div>
-                        <div class="text-sm text-[#0a0a0a] leading-relaxed select-auto">
+
+                        <div class=\"font-bold text-xs text-[#0a0a0a] flex items-center gap-1.5\">
+                            <i class=\"fas fa-lightbulb text-xs text-[#1d5fbf]\"></i>
+                            <span>詳細題解說明</span>
+                        </div>
+                        <div class=\"text-sm text-[#0a0a0a] leading-relaxed select-auto\">
                             ${safeExp}
                         </div>
                         ${shuffleNote}
                     </div>
                 </div>
             `;
-
             return card;
         },
 
@@ -425,16 +452,22 @@
             if (badgeWrong) badgeWrong.textContent = countWrong;
             if (badgeStarred) badgeStarred.textContent = countStarred;
 
-            // Search stats
+            // Search & filter stats
             const searchStats = document.getElementById('search-stats-text');
+            const resetBtn = document.getElementById('reset-filters-btn');
+            if (resetBtn) {
+                resetBtn.style.display = Store.hasActiveFilters() ? 'inline-block' : 'none';
+            }
+
             if (searchStats) {
                 const rawKw = Store.searchKeyword.trim();
-                if (rawKw) {
+                const hasFilters = Store.hasActiveFilters();
+                if (hasFilters) {
                     const matchedCount = Store.getDisplayQuestions().length;
                     const totalAllCount = Store.getAllQuestions().length || 835;
                     const currentLabel = Store.isCustomMode ? '自訂試卷' : `${Store.currentYear} 試卷`;
                     const scopeName = Store.searchScope === 'all' ? `全體題庫 (${totalAllCount}題)` : currentLabel;
-                    searchStats.textContent = `於 ${scopeName} 找到 ${matchedCount} 筆結果`;
+                    searchStats.textContent = `條件篩選/檢索: ${scopeName} 找到 ${matchedCount} 筆結果`;
                 } else {
                     searchStats.textContent = '';
                 }
@@ -580,6 +613,40 @@
             this.renderAllQuestions();
         },
 
+        handleTopicFilterChange(topicCode) {
+            Store.setFilterTopic(topicCode);
+            this.renderAllQuestions();
+            this.updateDashboard();
+        },
+
+        handleDifficultyFilterChange(diffCode) {
+            Store.setFilterDifficulty(diffCode);
+            this.renderAllQuestions();
+            this.updateDashboard();
+        },
+
+        handleCorrectRateFilterChange(rateRangeId) {
+            Store.setFilterCorrectRate(rateRangeId);
+            this.renderAllQuestions();
+            this.updateDashboard();
+        },
+
+        resetAllFilters() {
+            Store.resetFilters();
+            const topicSel = document.getElementById('filter-topic');
+            if (topicSel) topicSel.value = 'all';
+            const diffSel = document.getElementById('filter-difficulty');
+            if (diffSel) diffSel.value = 'all';
+            const crSel = document.getElementById('filter-correct-rate');
+            if (crSel) crSel.value = 'all';
+            const searchInput = document.getElementById('search-input');
+            if (searchInput) searchInput.value = '';
+
+            this.renderAllQuestions();
+            this.updateDashboard();
+            this.showToast('已重設所有篩選條件與關鍵字', 'info');
+        },
+
         toggleTextPreview(uid) {
             const box = document.getElementById(`ocr_box_${uid}`);
             if (box) box.classList.toggle('hidden');
@@ -708,6 +775,20 @@
 
         toggleAllCustomYears() {
             const cbs = document.querySelectorAll('.custom-year-checkbox');
+            const allChecked = Array.from(cbs).every(c => c.checked);
+            cbs.forEach(c => c.checked = !allChecked);
+        },
+
+        toggleAllCustomTopics() {
+            const cbs = document.querySelectorAll('input[name="custom-topic"]');
+            if (!cbs || cbs.length === 0) return;
+            const allChecked = Array.from(cbs).every(c => c.checked);
+            cbs.forEach(c => c.checked = !allChecked);
+        },
+
+        toggleAllCustomDifficulties() {
+            const cbs = document.querySelectorAll('input[name="custom-difficulty"]');
+            if (!cbs || cbs.length === 0) return;
             const allChecked = Array.from(cbs).every(c => c.checked);
             cbs.forEach(c => c.checked = !allChecked);
         },

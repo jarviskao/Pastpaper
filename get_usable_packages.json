@@ -1,0 +1,108 @@
+{
+    "success": true,
+    "result": [
+        {
+            "id": 17,
+            "app": "OQB",
+            "subject_code": "cit",
+            "publisher_code": "HKEAA",
+            "school_code": "",
+            "title_zh": "考評局資訊及通訊科技歷屆公開試試題 (會考及文憑試)",
+            "title_en": "HKEAA Information and Communication Technology Public Exam Past Paper (HKCEE & DSE)",
+            "stat": {
+                "count_topic": {
+                    "cit_1": 262,
+                    "cit_2": 146,
+                    "cit_3": 175,
+                    "cit_4": 151,
+                    "cit_5": 101
+                },
+                "count_subtopic": {
+                    "cit_1_1": 10,
+                    "cit_1_2": 10,
+                    "cit_1_3": 31,
+                    "cit_1_4": 43,
+                    "cit_1_5": 4,
+                    "cit_2_1": 41,
+                    "cit_2_2": 16,
+                    "cit_3_1": 34,
+                    "cit_3_2": 13,
+                    "cit_3_3": 10,
+                    "cit_3_4": 22,
+                    "cit_4_1": 4,
+                    "cit_4_2": 36,
+                    "cit_4_3": 11,
+                    "cit_4_4": 11,
+                    "cit_5_2": 11,
+                    "cit_5_3": 12
+                },
+                "count_topic_difficulty": {
+                    "cit_1": {
+                        "1": 69,
+                        "2": 124,
+                        "3": 69
+                    },
+                    "cit_2": {
+                        "1": 48,
+                        "2": 72,
+                        "3": 26
+                    },
+                    "cit_3": {
+                        "1": 60,
+                        "2": 72,
+                        "3": 43
+                    },
+                    "cit_4": {
+                        "1": 27,
+                        "2": 73,
+                        "3": 51
+                    },
+                    "cit_5": {
+                        "1": 51,
+                        "2": 41,
+                        "3": 9
+                    }
+                }
+            },
+            "function_types": {
+                "question_attempt.compose.view": 0
+            },
+            "access_type": [
+                "school"
+            ]
+        },
+        {
+            "id": 26,
+            "app": "OQB",
+            "subject_code": "cit",
+            "publisher_code": "KAN-KWWONG",
+            "school_code": "",
+            "title_zh": "資訊科技教育領袖協會 - 資訊及通訊科技(免費)",
+            "title_en": "Association of IT Leaders in Education - Information and Communication Technology (Free)",
+            "stat": {
+                "count_topic": {
+                    "cit_2": 276,
+                    "cit_3": 165,
+                    "cit_4": 14
+                },
+                "count_topic_difficulty": {
+                    "cit_2": {
+                        "2": 276
+                    },
+                    "cit_3": {
+                        "2": 165
+                    },
+                    "cit_4": {
+                        "2": 14
+                    }
+                }
+            },
+            "function_types": {
+                "question_attempt.compose.view": 0
+            },
+            "access_type": [
+                "free"
+            ]
+        }
+    ]
+}

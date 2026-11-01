@@ -88,6 +88,13 @@ function run() {
 
             // OCR verification
             assert(q.ocrText, `Question ${q.uid} must have ocrText object`);
+
+            // Enriched Metadata verification (Topic, Difficulty, Correct Rate, Level)
+            assert(q.topic && typeof q.topic.code === 'string' && q.topic.nameZh, `Question ${q.uid} must have valid topic`);
+            assert(['cit_1', 'cit_2', 'cit_3', 'cit_4', 'cit_5'].includes(q.topic.code), `Question ${q.uid} topic code invalid`);
+            assert(q.difficulty && [1, 2, 3].includes(q.difficulty.code), `Question ${q.uid} must have valid difficulty`);
+            assert(typeof q.correctRate === 'number' && q.correctRate >= 0 && q.correctRate <= 100, `Question ${q.uid} correctRate must be 0-100`);
+            assert(q.level && ['HKDSE', 'HKCEE'].includes(q.level.category), `Question ${q.uid} must have valid level category`);
         }
     }
 
@@ -97,6 +104,28 @@ function run() {
     assert.strictEqual(missingAnswers, 0, 'Must have zero missing or out-of-bounds answers');
     assert.strictEqual(invalidOptionCounts, 0, 'All questions must have exactly 4 options');
 
+
+    // 4. Verify all 835 question answers against All.json official data
+    const allPath = path.join(rootDir, 'All.json');
+    if (fs.existsSync(allPath)) {
+        const allData = JSON.parse(fs.readFileSync(allPath, 'utf8')).result;
+        const allMap = new Map();
+        allData.forEach(q => allMap.set(`${q.year}_${q.question_no}`, q));
+
+        for (const yr of papersData.years) {
+            for (const q of papersData.papers[yr].questions) {
+                const official = allMap.get(`${q.year}_${q.qNum}`);
+                if (official && official.suggested_answer) {
+                    const expectedIdx = JSON.parse(official.suggested_answer)[0];
+                    assert.strictEqual(q.answer, expectedIdx, `Question ${q.uid} answer (${q.answer}) must match All.json official (${expectedIdx})`);
+                }
+            }
+        }
+        // Explicit check for corrected 2005 Q40
+        const q2005_40 = papersData.papers['2005'].questions.find(q => q.qNum === 40);
+        assert.strictEqual(q2005_40.answer, 2, '2005 Q40 answer index must be 2 (C)');
+        assert.strictEqual(q2005_40.answerLetter, 'C', '2005 Q40 answer letter must be C');
+    }
     console.log(`[Test: Data Integrity] PASS: ${papersData.totalYears} years, ${questionCounter} questions, ${questionCounter * 5} images verified successfully.`);
 }
 
