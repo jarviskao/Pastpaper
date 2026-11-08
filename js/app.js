@@ -191,9 +191,10 @@
             // Ignore keydown events inside text input fields
             if (['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target?.tagName)) return;
 
-            // Escape key closes modals, drawers, and lightbox
+            // Escape key closes modals, drawers, and resets any inline-zoomed image
             if (e.key === 'Escape') {
-                UI.closeLightbox();
+                const zoomedImg = document.querySelector('.exam-img.img-zoomed');
+                if (zoomedImg) zoomedImg.classList.remove('img-zoomed');
                 UI.toggleModal('result-modal', false);
                 UI.toggleModal('history-modal', false);
                 UI.toggleModal('custom-exam-modal', false);

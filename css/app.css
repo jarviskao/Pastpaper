@@ -139,6 +139,20 @@ button, select, input, .option-btn, .nav-pill {
     cursor: zoom-in;
     user-select: none;
     -webkit-user-select: none;
+    transition: transform 0.28s var(--ease-out);
+    transform-origin: left top;
+    will-change: transform;
+}
+
+.exam-img.img-zoomed {
+    transform: scale(1.6);
+    cursor: zoom-out;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border-radius: var(--radius-control);
+    background-color: var(--surface);
+    position: relative;
+    z-index: 10;
 }
 
 /* Option Buttons - Tactile, flat, crisp ledger borders */
@@ -208,11 +222,10 @@ button, select, input, .option-btn, .nav-pill {
 
 /* Strike-through / Eliminated Option State (刪去法) */
 .option-btn.opt-eliminated {
-    opacity: 0.38 !important;
+    opacity: 0.35 !important;
     background-color: #f7f7f7 !important;
     border-color: #e5e5e5 !important;
-    text-decoration: line-through;
-    filter: grayscale(0.85);
+    filter: grayscale(0.9);
 }
 
 .option-btn.opt-eliminated::after {
@@ -230,45 +243,6 @@ button, select, input, .option-btn, .nav-pill {
 
 .option-btn.opt-eliminated .num {
     text-decoration: line-through;
-}
-
-/* Strike toggle trigger button */
-.strike-toggle-btn {
-    opacity: 0.6;
-    transition: opacity 0.15s ease, transform 0.15s var(--ease-out), color 0.15s ease, background-color 0.15s ease;
-    touch-action: manipulation;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .strike-toggle-btn {
-        opacity: 0;
-    }
-    .option-btn:hover ~ .strike-toggle-btn,
-    .strike-toggle-btn:hover,
-    .group\/opt:hover .strike-toggle-btn,
-    .option-btn.opt-eliminated ~ .strike-toggle-btn {
-        opacity: 0.85;
-    }
-}
-
-/* Touch screen & eliminated state: always clearly accessible */
-@media (hover: none), (pointer: coarse) {
-    .strike-toggle-btn {
-        opacity: 0.75;
-    }
-}
-
-.option-btn.opt-eliminated ~ .strike-toggle-btn {
-    opacity: 1;
-    color: var(--negative);
-}
-
-.strike-toggle-btn:hover {
-    opacity: 1 !important;
-}
-
-.strike-toggle-btn:active {
-    transform: translateY(-50%) scale(0.88);
 }
 
 /* Animations & Keyframes */
@@ -361,20 +335,6 @@ button, select, input, .option-btn, .nav-pill {
     transform: translateY(0) scale(1) !important;
     opacity: 1 !important;
     pointer-events: auto !important;
-}
-
-/* Lightbox Modal & Zoom Transition */
-#lightbox {
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    transition: opacity 0.22s var(--ease-out);
-    touch-action: manipulation;
-}
-
-#lightbox-img {
-    transition: transform 0.28s var(--ease-out), opacity 0.22s var(--ease-out);
-    will-change: transform, opacity;
-    transform-origin: center center;
 }
 
 /* Modals */

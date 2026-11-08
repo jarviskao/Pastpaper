@@ -239,23 +239,18 @@
                 const eliminatedClass = isEliminated ? 'opt-eliminated' : '';
 
                 optionsHtml += `
-                    <div class="relative group/opt flex items-center">
-                        <button id="btn_${q.uid}_${optIdx}" onclick="Quiz.handleOptionClick('${q.uid}', ${optIdx})" oncontextmenu="event.preventDefault(); UI.handleOptionContextMenu('${q.uid}', ${optIdx});" class="option-btn opt-default ${eliminatedClass} w-full text-left pl-3.5 pr-11 sm:pr-12 py-2.5 rounded-md border flex items-center justify-between group">
-                            <div class="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
-                                <div id="badge_${q.uid}_${optIdx}" class="w-6 h-6 sm:w-7 sm:h-7 rounded border border-[#d4d4d4] bg-[#f4f6f8] flex items-center justify-center text-xs font-bold text-[#0a0a0a] num shrink-0 transition-colors">
-                                    ${escapeHtml(opt.letter)}
-                                </div>
-                                <img src="${opt.img}" alt="選項 ${opt.letter}" class="max-h-16 sm:max-h-20 object-contain pointer-events-none select-none" loading="lazy" onerror="this.alt='選項圖片載入失敗'">
+                    <button id="btn_${q.uid}_${optIdx}" onclick="Quiz.handleOptionClick('${q.uid}', ${optIdx})" oncontextmenu="event.preventDefault(); UI.handleOptionContextMenu('${q.uid}', ${optIdx});" ontouchstart="UI.handleOptionTouchStart(event, '${q.uid}', ${optIdx})" ontouchend="UI.handleOptionTouchEnd(event)" ontouchmove="UI.handleOptionTouchCancel()" ontouchcancel="UI.handleOptionTouchCancel()" class="option-btn opt-default ${eliminatedClass} w-full text-left px-3.5 py-2.5 rounded-md border flex items-center justify-between group">
+                        <div class="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
+                            <div id="badge_${q.uid}_${optIdx}" class="w-6 h-6 sm:w-7 sm:h-7 rounded border border-[#d4d4d4] bg-[#f4f6f8] flex items-center justify-center text-xs font-bold text-[#0a0a0a] num shrink-0 transition-colors">
+                                ${escapeHtml(opt.letter)}
                             </div>
-                            <div class="flex items-center gap-1.5 shrink-0">
-                                <span class="hidden sm:inline-block text-[11px] font-mono text-[#a3a3a3] opacity-60 group-hover:opacity-100 transition-opacity" title="鍵盤快捷鍵">[${optKeyHint}]</span>
-                                <i id="icon_${q.uid}_${optIdx}" class="text-base shrink-0"></i>
-                            </div>
-                        </button>
-                        <button type="button" onclick="event.stopPropagation(); UI.toggleStrikeThrough('${q.uid}', ${optIdx});" class="strike-toggle-btn absolute right-2 sm:right-2.5 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-md flex items-center justify-center text-[#737373] hover:text-[#c4242a] hover:bg-[#ffedea] active:scale-90 transition-all" title="刪去法 (排除/還原此選項)" aria-label="刪去選項">
-                            <i class="fas fa-strikethrough text-xs"></i>
-                        </button>
-                    </div>
+                            <img src="${opt.img}" alt="選項 ${opt.letter}" class="max-h-16 sm:max-h-20 object-contain pointer-events-none select-none" loading="lazy" onerror="this.alt='選項圖片載入失敗'">
+                        </div>
+                        <div class="flex items-center gap-1.5 shrink-0">
+                            <span class="hidden sm:inline-block text-[11px] font-mono text-[#a3a3a3] opacity-60 group-hover:opacity-100 transition-opacity" title="鍵盤快捷鍵">[${optKeyHint}]</span>
+                            <i id="icon_${q.uid}_${optIdx}" class="text-base shrink-0"></i>
+                        </div>
+                    </button>
                 `;
             });
 
@@ -305,8 +300,8 @@
                 </div>
 
                 <!-- Question Image -->
-                <div class=\"mb-3.5 flex justify-start\">
-                    <img src=\"${q.questionImg}\" alt=\"題目 ${q.qNum}\" class=\"exam-img max-w-full h-auto cursor-zoom-in rounded\" loading=\"lazy\" onclick=\"UI.openLightbox('${q.questionImg}', this)\" onerror=\"this.alt='題目圖片載入失敗'\">
+                <div class=\"mb-3.5 flex justify-start overflow-hidden rounded\">
+                    <img src=\"${q.questionImg}\" alt=\"題目 ${q.qNum}\" class=\"exam-img max-w-full h-auto cursor-zoom-in rounded\" loading=\"lazy\" onclick=\"UI.toggleInlineZoom(this)\" onerror=\"this.alt='題目圖片載入失敗'\">
                 </div>
 
                 <!-- Options -->
@@ -617,91 +612,18 @@
             this.renderAllQuestions();
         },
 
-        // --- Lightbox Zoom (Smooth Origin FLIP Zoom) ---
-        lastSourceImgEl: null,
+        // --- In-card Inline Smooth Image Zoom (原地放大/縮回) ---
 
-        openLightbox(src, triggerEl = null) {
-            const lightbox = document.getElementById('lightbox');
-            const img = document.getElementById('lightbox-img');
-            if (!lightbox || !img) return;
-
-            this.lastSourceImgEl = triggerEl;
-            img.src = src;
-
-            // Compute origin geometry if trigger element exists
-            if (triggerEl && triggerEl.getBoundingClientRect) {
-                const rect = triggerEl.getBoundingClientRect();
-                const viewportW = window.innerWidth;
-                const viewportH = window.innerHeight;
-                
-                // Target center is screen center
-                const targetCenterX = viewportW / 2;
-                const targetCenterY = viewportH / 2;
-
-                const originCenterX = rect.left + rect.width / 2;
-                const originCenterY = rect.top + rect.height / 2;
-
-                const deltaX = originCenterX - targetCenterX;
-                const deltaY = originCenterY - targetCenterY;
-
-                // Estimate initial scale ratio from thumbnail to dialog
-                const initialScale = Math.min(rect.width / Math.min(viewportW * 0.9, 800), rect.height / Math.min(viewportH * 0.85, 600)) || 0.35;
-
-                // Set initial transform at original thumbnail coordinates
-                img.style.transition = 'none';
-                img.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${initialScale})`;
-                img.style.opacity = '0.3';
+        toggleInlineZoom(imgEl) {
+            if (!imgEl) return;
+            const isZoomed = imgEl.classList.contains('img-zoomed');
+            if (isZoomed) {
+                imgEl.classList.remove('img-zoomed');
+                if (typeof Quiz !== 'undefined' && Quiz.vibrate) Quiz.vibrate(8);
             } else {
-                img.style.transition = 'none';
-                img.style.transform = 'scale(0.85)';
-                img.style.opacity = '0';
+                imgEl.classList.add('img-zoomed');
+                if (typeof Quiz !== 'undefined' && Quiz.vibrate) Quiz.vibrate(12);
             }
-
-            lightbox.classList.remove('hidden');
-
-            // Force reflow and transition smoothly into full size
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    lightbox.classList.remove('opacity-0');
-                    img.style.transition = 'transform 0.28s var(--ease-out), opacity 0.22s var(--ease-out)';
-                    img.style.transform = 'translate(0px, 0px) scale(1)';
-                    img.style.opacity = '1';
-                });
-            });
-        },
-
-        closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            const img = document.getElementById('lightbox-img');
-            if (!lightbox || !img) return;
-
-            lightbox.classList.add('opacity-0');
-
-            if (this.lastSourceImgEl && this.lastSourceImgEl.getBoundingClientRect) {
-                const rect = this.lastSourceImgEl.getBoundingClientRect();
-                const viewportW = window.innerWidth;
-                const viewportH = window.innerHeight;
-
-                const deltaX = (rect.left + rect.width / 2) - (viewportW / 2);
-                const deltaY = (rect.top + rect.height / 2) - (viewportH / 2);
-                const exitScale = Math.min(rect.width / Math.min(viewportW * 0.9, 800), rect.height / Math.min(viewportH * 0.85, 600)) || 0.35;
-
-                img.style.transition = 'transform 0.2s var(--ease-out), opacity 0.18s var(--ease-out)';
-                img.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${exitScale})`;
-                img.style.opacity = '0';
-            } else {
-                img.style.transition = 'transform 0.18s var(--ease-out), opacity 0.16s var(--ease-out)';
-                img.style.transform = 'scale(0.88)';
-                img.style.opacity = '0';
-            }
-
-            setTimeout(() => {
-                lightbox.classList.add('hidden');
-                img.src = '';
-                img.style.transform = '';
-                img.style.transition = '';
-                this.lastSourceImgEl = null;
-            }, 200);
         },
 
         // --- Search & OCR Helpers ---
@@ -889,7 +811,33 @@
             this.showToast(`已為您篩選出 ${wrongCount} 道錯題，可檢閱詳解或點擊「重新作答」重試！`, 'info');
         },
 
-        // --- Option Strike-through (刪去法) ---
+        // --- Option Strike-through (刪去法: 電腦右鍵 / 手機長按 380ms) ---
+        longPressTimer: null,
+        longPressFired: false,
+
+        handleOptionTouchStart(e, uid, optionIndex) {
+            this.longPressFired = false;
+            clearTimeout(this.longPressTimer);
+            this.longPressTimer = setTimeout(() => {
+                this.longPressFired = true;
+                this.toggleStrikeThrough(uid, optionIndex);
+                if (typeof Quiz !== 'undefined' && Quiz.vibrate) Quiz.vibrate(18);
+            }, 380);
+        },
+
+        handleOptionTouchEnd(e) {
+            clearTimeout(this.longPressTimer);
+            if (this.longPressFired) {
+                // Prevent synthetic click from triggering answer selection
+                if (e && e.cancelable) e.preventDefault();
+                e.stopPropagation();
+            }
+        },
+
+        handleOptionTouchCancel() {
+            clearTimeout(this.longPressTimer);
+            this.longPressFired = false;
+        },
 
         handleOptionContextMenu(uid, optionIndex) {
             this.toggleStrikeThrough(uid, optionIndex);

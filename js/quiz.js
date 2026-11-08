@@ -35,6 +35,12 @@
          * @param {number} optionIndex - Visual index in currently rendered options (0-3)
          */
         handleOptionClick(uid, optionIndex) {
+            // Guard: If long press was just triggered on mobile, ignore the click event
+            if (typeof UI !== 'undefined' && UI.longPressFired) {
+                UI.longPressFired = false;
+                return;
+            }
+
             const mode = Store.mode;
             if (mode === 'study') return;
             if (mode === 'exam' && Store.examSubmitted) return;
