@@ -163,7 +163,7 @@
             }
 
             // Optional Wrong-Tab Action Bar: Retry wrong questions
-            if (Store.currentTab === 'wrong' && questions.length > 0 && Store.mode !== 'exam') {
+            if (Store.currentTab === 'wrong' && questions.length > 0) {
                 const retryBanner = document.createElement('div');
                 retryBanner.className = 'mb-3.5 p-3 bg-[#ffedea] border border-[#ffc9c2] rounded-md flex items-center justify-between text-xs sm:text-sm';
                 retryBanner.innerHTML = `
@@ -171,8 +171,9 @@
                         <i class="fas fa-redo-alt text-xs"></i>
                         <span>共有 ${questions.length} 道錯題需加強溫習</span>
                     </div>
-                    <button onclick="UI.retryWrongQuestions()" class="px-3 py-1.5 bg-[#c4242a] hover:bg-[#a61b20] text-white font-bold rounded-md transition-colors text-xs">
-                        重新作答錯題
+                    <button onclick="UI.retryWrongQuestions()" class="px-3 py-1.5 bg-[#c4242a] hover:bg-[#a61b20] text-white font-bold rounded-md transition-colors text-xs flex items-center gap-1.5 shadow-xs">
+                        <i class="fas fa-edit text-xs"></i>
+                        <span>重新作答錯題</span>
                     </button>
                 `;
                 container.appendChild(retryBanner);
@@ -200,7 +201,14 @@
          * Re-attempt all wrong questions in the current paper.
          */
         retryWrongQuestions() {
+            // If in exam mode, switch to practice mode so user can answer and receive instant feedback
+            if (Store.mode === 'exam') {
+                Store.mode = 'practice';
+                const modeSelect = document.getElementById('mode');
+                if (modeSelect) modeSelect.value = 'practice';
+            }
             const count = Store.resetWrongQuestions();
+            Quiz.startTimer();
             this.showToast(`已重設 ${count} 道錯題，請重新作答！`, 'info');
             this.renderAllQuestions();
         },
@@ -812,21 +820,16 @@
             this.toggleModal('result-modal', true);
         },
 
-        retryWrongQuestions() {
+        /**
+         * Review wrong questions after exam submission while keeping user's answers and mistakes intact.
+         */
+        reviewWrongQuestions() {
             this.toggleModal('result-modal', false);
-            // Switch to practice mode for learning
-            Store.mode = 'practice';
-            const modeSelect = document.getElementById('mode');
-            if (modeSelect) modeSelect.value = 'practice';
-
-            // Filter wrong questions tab
+            // Switch to wrong questions tab to filter and inspect mistakes
             this.setTab('wrong');
-            // Reset state for wrong questions so student can re-attempt
-            const resetCount = Store.resetWrongQuestions();
-            Quiz.startTimer();
-            this.renderAllQuestions();
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            this.showToast(`已為您載入 ${resetCount} 道錯題，祝重測全對！`, 'info');
+            const wrongCount = Store.getDisplayQuestions().length;
+            this.showToast(`已為您篩選出 ${wrongCount} 道錯題，可檢閱詳解或點擊「重新作答」重試！`, 'info');
         },
 
         // --- Option Strike-through (刪去法) ---
