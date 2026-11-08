@@ -11,10 +11,15 @@
         timerHandle: null,
 
         /**
-         * Haptic vibration feedback helper with defensive capability check.
+         * Refined Haptic Vibration Hierarchy:
+         * - light (8ms): tab switch, drawer toggle, small UI control
+         * - medium (12ms): exam option select, star/unstar, strike-through
+         * - success ([12, 28, 18]): double chirp pulse for correct answer
+         * - error ([36, 40, 36]): firm rejection pulse for wrong answer
+         * - submit ([24, 40, 24, 40, 32]): final exam submission fanfare
          * @param {number|number[]} pattern - Vibration duration in ms or pattern array
          */
-        vibrate(pattern = 100) {
+        vibrate(pattern = 10) {
             if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
                 try {
                     navigator.vibrate(pattern);
@@ -59,9 +64,22 @@
             if (mode === 'practice') {
                 if (isCorrect === true) {
                     Store.score++;
-                    this.vibrate([15, 30, 20]);
+                    Store.currentStreak++;
+                    if (Store.currentStreak > Store.maxStreak) {
+                        Store.maxStreak = Store.currentStreak;
+                    }
+                    this.vibrate([12, 28, 18]);
+                    // Streak celebration toasts
+                    if (Store.currentStreak === 3 && typeof UI !== 'undefined') {
+                        UI.showToast('🔥 連續答對 3 題！保持手感！', 'success');
+                    } else if (Store.currentStreak === 5 && typeof UI !== 'undefined') {
+                        UI.showToast('⚡ 5 連勝！實力勢不可擋！', 'success');
+                    } else if (Store.currentStreak === 10 && typeof UI !== 'undefined') {
+                        UI.showToast('👑 達成 10 連霸！簡直是神人！', 'success');
+                    }
                 } else if (isCorrect === false) {
-                    this.vibrate([35, 45, 35]);
+                    Store.currentStreak = 0;
+                    this.vibrate([36, 40, 36]);
                 }
                 if (typeof UI !== 'undefined' && UI.revealQuestionAnswer) {
                     UI.revealQuestionAnswer(question, optionIndex, false);
@@ -143,14 +161,40 @@
                 if (UI.showResultModal) UI.showResultModal(record, gradeInfo);
             }
 
-            // Confetti celebration on high score
-            if (accuracy >= 75 && typeof confetti === 'function') {
+            // Tier-based celebration confetti on submission
+            if (accuracy >= 65 && typeof confetti === 'function') {
                 try {
-                    confetti({
-                        particleCount: 120,
-                        spread: 80,
-                        origin: { y: 0.6 }
-                    });
+                    if (accuracy >= 87.5) {
+                        // Level 5** Master celebration (double burst from left and right)
+                        confetti({
+                            particleCount: 100,
+                            angle: 60,
+                            spread: 70,
+                            origin: { x: 0.1, y: 0.7 }
+                        });
+                        setTimeout(() => {
+                            confetti({
+                                particleCount: 100,
+                                angle: 120,
+                                spread: 70,
+                                origin: { x: 0.9, y: 0.7 }
+                            });
+                        }, 200);
+                    } else if (accuracy >= 75) {
+                        // Level 5* & 5 celebration
+                        confetti({
+                            particleCount: 120,
+                            spread: 80,
+                            origin: { y: 0.6 }
+                        });
+                    } else {
+                        // Level 4 solid pass celebration
+                        confetti({
+                            particleCount: 60,
+                            spread: 50,
+                            origin: { y: 0.6 }
+                        });
+                    }
                 } catch (e) {
                     // Ignore confetti rendering errors
                 }

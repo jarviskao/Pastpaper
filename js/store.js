@@ -93,6 +93,9 @@
         // Progress & Answers
         userAnswers: {},         // { [uid]: { visualIndex, selectedPart, isCorrect, answeredAt } }
         score: 0,
+        currentStreak: 0,        // Active consecutive correct answers streak
+        maxStreak: 0,            // Highest streak in current session
+        eliminatedOptions: {},   // { [uid]: Set<number> } Option indices crossed out by user (刪去法)
         examSubmitted: false,
         seconds: 0,
         timerStartTime: null,
@@ -379,11 +382,38 @@
         resetQuizState() {
             this.userAnswers = {};
             this.score = 0;
+            this.currentStreak = 0;
+            this.maxStreak = 0;
+            this.eliminatedOptions = {};
             this.examSubmitted = false;
             this.seconds = 0;
             this.timerStartTime = null;
             this.timerAccumulatedSeconds = 0;
             this.clearExamSession();
+        },
+
+        /**
+         * Toggle strike-through (elimination) state for an option.
+         * @param {string} uid - Question UID
+         * @param {number} optionIndex - Option visual index
+         * @returns {boolean} Whether option is now eliminated
+         */
+        toggleEliminateOption(uid, optionIndex) {
+            if (!this.eliminatedOptions[uid]) {
+                this.eliminatedOptions[uid] = new Set();
+            }
+            const set = this.eliminatedOptions[uid];
+            if (set.has(optionIndex)) {
+                set.delete(optionIndex);
+                return false;
+            } else {
+                set.add(optionIndex);
+                return true;
+            }
+        },
+
+        isOptionEliminated(uid, optionIndex) {
+            return this.eliminatedOptions[uid] ? this.eliminatedOptions[uid].has(optionIndex) : false;
         },
 
         /**

@@ -69,7 +69,14 @@
                 <h1 class="font-bold text-base sm:text-lg tracking-tight leading-none text-[#0a0a0a]">ICT 歷年 MC 試題庫</h1>
             </div>
 
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3 sm:gap-4">
+                <!-- Streak Badge -->
+                <div id="streak-badge-container" class="hidden items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-bold combo-badge shadow-xs">
+                    <span class="combo-flame text-sm">🔥</span>
+                    <span id="streak-count" class="num tracking-tight">0</span>
+                    <span class="text-[10px] uppercase font-bold text-amber-700 tracking-wider">連對</span>
+                </div>
+                
                 <div class="flex flex-col items-end mr-1">
                     <span class="text-xs text-[#525252] font-semibold tracking-wider">目前得分</span>
                     <div class="flex items-center gap-1.5 num">
@@ -176,7 +183,7 @@
                             <label for="search-input" class="text-xs font-semibold text-[#525252]">搜尋題號 / 關鍵字</label>
                             <label class="cursor-pointer inline-flex items-center gap-1 font-semibold text-xs text-[#525252] hover:text-[#0a0a0a] transition-colors">
                                 <input type="checkbox" id="search-scope-all" class="w-3.5 h-3.5 rounded text-[#141414] focus:ring-[#141414] cursor-pointer" onchange="UI.toggleSearchScope(this.checked)">
-                                <span id="search-scope-label">全庫搜尋 (835題)</span>
+                                <span id="search-scope-label">全庫搜尋</span>
                             </label>
                         </div>
                         <div class="relative">
@@ -328,28 +335,7 @@
                         <label class="text-xs font-bold text-[#0a0a0a]">2. 篩選課題</label>
                         <button onclick="UI.toggleAllCustomTopics()" class="text-xs font-semibold text-[#1d5fbf] hover:underline">全選 / 取消</button>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 p-1.5 border border-[#e6e6e6] rounded-md bg-[#f4f6f8] text-xs">
-                        <label class="flex items-center gap-2 p-1.5 rounded bg-white border border-[#e6e6e6] cursor-pointer hover:bg-[#fafafa]">
-                            <input type="checkbox" name="custom-topic" value="cit_1" class="w-3.5 h-3.5 rounded text-[#141414] focus:ring-[#141414]" checked>
-                            <span class="font-medium text-[#0a0a0a]">資訊處理 (262題)</span>
-                        </label>
-                        <label class="flex items-center gap-2 p-1.5 rounded bg-white border border-[#e6e6e6] cursor-pointer hover:bg-[#fafafa]">
-                            <input type="checkbox" name="custom-topic" value="cit_2" class="w-3.5 h-3.5 rounded text-[#141414] focus:ring-[#141414]" checked>
-                            <span class="font-medium text-[#0a0a0a]">電腦系統基礎 (146題)</span>
-                        </label>
-                        <label class="flex items-center gap-2 p-1.5 rounded bg-white border border-[#e6e6e6] cursor-pointer hover:bg-[#fafafa]">
-                            <input type="checkbox" name="custom-topic" value="cit_3" class="w-3.5 h-3.5 rounded text-[#141414] focus:ring-[#141414]" checked>
-                            <span class="font-medium text-[#0a0a0a]">互聯網及其應用 (175題)</span>
-                        </label>
-                        <label class="flex items-center gap-2 p-1.5 rounded bg-white border border-[#e6e6e6] cursor-pointer hover:bg-[#fafafa]">
-                            <input type="checkbox" name="custom-topic" value="cit_4" class="w-3.5 h-3.5 rounded text-[#141414] focus:ring-[#141414]" checked>
-                            <span class="font-medium text-[#0a0a0a]">計算思維與程式編寫 (151題)</span>
-                        </label>
-                        <label class="flex items-center gap-2 p-1.5 rounded bg-white border border-[#e6e6e6] cursor-pointer hover:bg-[#fafafa] sm:col-span-2">
-                            <input type="checkbox" name="custom-topic" value="cit_5" class="w-3.5 h-3.5 rounded text-[#141414] focus:ring-[#141414]" checked>
-                            <span class="font-medium text-[#0a0a0a]">資訊科技對社會影響 (101題)</span>
-                        </label>
-                    </div>
+                    <div id="custom-topic-list" class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 p-1.5 border border-[#e6e6e6] rounded-md bg-[#f4f6f8] text-xs"></div>
                 </div>
 
                 <!-- Step 3: Difficulty Filter Checkboxes -->
@@ -358,20 +344,7 @@
                         <label class="text-xs font-bold text-[#0a0a0a]">3. 篩選難度</label>
                         <button onclick="UI.toggleAllCustomDifficulties()" class="text-xs font-semibold text-[#1d5fbf] hover:underline">全選 / 取消</button>
                     </div>
-                    <div class="grid grid-cols-3 gap-1.5 p-1.5 border border-[#e6e6e6] rounded-md bg-[#f4f6f8] text-xs">
-                        <label class="flex items-center gap-2 p-1.5 rounded bg-white border border-[#e6e6e6] cursor-pointer hover:bg-[#fafafa]">
-                            <input type="checkbox" name="custom-difficulty" value="1" class="w-3.5 h-3.5 rounded text-[#141414] focus:ring-[#141414]" checked>
-                            <span class="font-medium text-[#0a0a0a]">容易 (255題)</span>
-                        </label>
-                        <label class="flex items-center gap-2 p-1.5 rounded bg-white border border-[#e6e6e6] cursor-pointer hover:bg-[#fafafa]">
-                            <input type="checkbox" name="custom-difficulty" value="2" class="w-3.5 h-3.5 rounded text-[#141414] focus:ring-[#141414]" checked>
-                            <span class="font-medium text-[#0a0a0a]">普通 (382題)</span>
-                        </label>
-                        <label class="flex items-center gap-2 p-1.5 rounded bg-white border border-[#e6e6e6] cursor-pointer hover:bg-[#fafafa]">
-                            <input type="checkbox" name="custom-difficulty" value="3" class="w-3.5 h-3.5 rounded text-[#141414] focus:ring-[#141414]" checked>
-                            <span class="font-medium text-[#0a0a0a]">困難 (198題)</span>
-                        </label>
-                    </div>
+                    <div id="custom-difficulty-list" class="grid grid-cols-3 gap-1.5 p-1.5 border border-[#e6e6e6] rounded-md bg-[#f4f6f8] text-xs"></div>
                 </div>
 
                 <!-- Step 4: Correct Rate Filter -->
@@ -452,13 +425,19 @@
                         <div class="text-xs text-[#04250e] font-semibold">準確率</div>
                     </div>
                 </div>
-                <div class="flex gap-2">
-                    <button onclick="UI.toggleModal('result-modal', false)" class="flex-1 bg-white border border-[#d4d4d4] text-[#0a0a0a] py-2 rounded-md font-bold text-xs hover:bg-[#f4f6f8] transition-colors">
-                        檢閱試卷
+                <div class="flex flex-col gap-2">
+                    <button id="modal-retry-wrong-btn" onclick="UI.retryWrongQuestions()" class="hidden w-full bg-[#831c1e] hover:bg-[#681416] text-white py-2.5 rounded-md font-bold text-xs transition-colors items-center justify-center gap-1.5 shadow-xs">
+                        <i class="fas fa-redo text-xs"></i>
+                        <span id="modal-retry-wrong-label">針對本次錯題重測</span>
                     </button>
-                    <button onclick="App.restartQuiz()" class="flex-1 bg-[#141414] hover:bg-[#262626] text-white py-2 rounded-md font-bold text-xs transition-colors">
-                        重新測驗
-                    </button>
+                    <div class="flex gap-2">
+                        <button onclick="UI.toggleModal('result-modal', false)" class="flex-1 bg-white border border-[#d4d4d4] text-[#0a0a0a] py-2 rounded-md font-bold text-xs hover:bg-[#f4f6f8] transition-colors">
+                            檢閱試卷
+                        </button>
+                        <button onclick="App.restartQuiz()" class="flex-1 bg-[#141414] hover:bg-[#262626] text-white py-2 rounded-md font-bold text-xs transition-colors">
+                            重新測驗
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

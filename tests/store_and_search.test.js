@@ -152,6 +152,19 @@ function run() {
     Store.resetFilters();
     assert.strictEqual(Store.getDisplayQuestions().length, 835);
     assert.strictEqual(Store.hasActiveFilters(), false);
+
+    // 8. Streak and Elimination (Strike-through) State
+    Store.resetQuizState();
+    assert.strictEqual(Store.currentStreak, 0);
+    assert.strictEqual(Store.maxStreak, 0);
+    assert.strictEqual(Store.isOptionEliminated('2024_q_01', 1), false);
+    const struck = Store.toggleEliminateOption('2024_q_01', 1);
+    assert.strictEqual(struck, true);
+    assert.strictEqual(Store.isOptionEliminated('2024_q_01', 1), true);
+    const unStruck = Store.toggleEliminateOption('2024_q_01', 1);
+    assert.strictEqual(unStruck, false);
+    assert.strictEqual(Store.isOptionEliminated('2024_q_01', 1), false);
+
     console.log('[Test: Store & Search] PASS: Search engine, question targeting, and state queries verified.');
 }
 

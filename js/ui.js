@@ -45,15 +45,14 @@
             if (!toast) {
                 toast = document.createElement('div');
                 toast.id = 'app-toast';
-                toast.className = 'fixed top-16 right-4 z-[120] max-w-sm px-4 py-3 rounded-md border text-xs font-semibold flex items-center gap-2.5 transition-opacity duration-200 opacity-0 pointer-events-none';
                 document.body.appendChild(toast);
             }
 
             const styles = {
-                info: 'bg-[#141414] text-white border-[#262626]',
-                success: 'bg-[#dcfae5] text-[#04250e] border-[#247b50]',
-                warning: 'bg-[#fffbeb] text-[#92400e] border-[#fde68a]',
-                error: 'bg-[#ffedea] text-[#831c1e] border-[#c4242a]'
+                info: 'bg-[#141414] text-white border-[#262626] shadow-lg',
+                success: 'bg-[#dcfae5] text-[#04250e] border-[#247b50] shadow-md',
+                warning: 'bg-[#fffbeb] text-[#92400e] border-[#fde68a] shadow-md',
+                error: 'bg-[#ffedea] text-[#831c1e] border-[#c4242a] shadow-md'
             };
 
             const icons = {
@@ -63,13 +62,17 @@
                 error: 'fas fa-times-circle text-[#c4242a]'
             };
 
-            toast.className = `fixed top-16 right-4 z-[120] max-w-sm px-4 py-3 rounded-md border text-xs font-semibold flex items-center gap-2.5 transition-opacity duration-200 opacity-100 ${styles[type] || styles.info}`;
+            toast.className = `fixed top-16 right-4 z-[120] max-w-sm px-4 py-2.5 rounded-lg border text-xs font-semibold flex items-center gap-2.5 ${styles[type] || styles.info}`;
             toast.innerHTML = `<i class="${icons[type] || icons.info}"></i> <span>${escapeHtml(message)}</span>`;
+
+            // Trigger smooth spring enter
+            requestAnimationFrame(() => {
+                toast.classList.add('toast-visible');
+            });
 
             clearTimeout(this.toastTimer);
             this.toastTimer = setTimeout(() => {
-                toast.classList.remove('opacity-100');
-                toast.classList.add('opacity-0');
+                toast.classList.remove('toast-visible');
             }, 3000);
         },
 
@@ -223,16 +226,28 @@
             // Build Options HTML
             let optionsHtml = '';
             q.options.forEach((opt, optIdx) => {
+                const isEliminated = Store.isOptionEliminated(q.uid, optIdx);
+                const optKeyHint = ['1', '2', '3', '4'][optIdx] || '';
+                const eliminatedClass = isEliminated ? 'opt-eliminated' : '';
+
                 optionsHtml += `
-                    <button id="btn_${q.uid}_${optIdx}" onclick="Quiz.handleOptionClick('${q.uid}', ${optIdx})" class="option-btn opt-default w-full text-left px-3.5 py-2.5 rounded-md border flex items-center justify-between group">
-                        <div class="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
-                            <div id="badge_${q.uid}_${optIdx}" class="w-6 h-6 sm:w-7 sm:h-7 rounded border border-[#d4d4d4] bg-[#f4f6f8] flex items-center justify-center text-xs font-bold text-[#0a0a0a] num shrink-0">
-                                ${escapeHtml(opt.letter)}
+                    <div class="relative group/opt">
+                        <button id="btn_${q.uid}_${optIdx}" onclick="Quiz.handleOptionClick('${q.uid}', ${optIdx})" oncontextmenu="event.preventDefault(); UI.handleOptionContextMenu('${q.uid}', ${optIdx});" class="option-btn opt-default ${eliminatedClass} w-full text-left px-3.5 py-2.5 rounded-md border flex items-center justify-between group">
+                            <div class="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
+                                <div id="badge_${q.uid}_${optIdx}" class="w-6 h-6 sm:w-7 sm:h-7 rounded border border-[#d4d4d4] bg-[#f4f6f8] flex items-center justify-center text-xs font-bold text-[#0a0a0a] num shrink-0 transition-colors">
+                                    ${escapeHtml(opt.letter)}
+                                </div>
+                                <img src="${opt.img}" alt="選項 ${opt.letter}" class="max-h-16 sm:max-h-20 object-contain pointer-events-none select-none" loading="lazy" onerror="this.alt='選項圖片載入失敗'">
                             </div>
-                            <img src="${opt.img}" alt="選項 ${opt.letter}" class="max-h-16 sm:max-h-20 object-contain pointer-events-none select-none" loading="lazy" onerror="this.alt='選項圖片載入失敗'">
-                        </div>
-                        <i id="icon_${q.uid}_${optIdx}" class="text-base ml-2 shrink-0"></i>
-                    </button>
+                            <div class="flex items-center gap-2 shrink-0">
+                                <span class="hidden sm:inline-block text-[11px] font-mono text-[#a3a3a3] opacity-60 group-hover:opacity-100 transition-opacity" title="鍵盤快捷鍵">[${optKeyHint}]</span>
+                                <i id="icon_${q.uid}_${optIdx}" class="text-base shrink-0"></i>
+                            </div>
+                        </button>
+                        <button type="button" onclick="event.stopPropagation(); UI.toggleStrikeThrough('${q.uid}', ${optIdx});" class="strike-toggle-btn absolute right-12 sm:right-14 top-1/2 -translate-y-1/2 z-10 w-6 h-6 rounded flex items-center justify-center text-[#737373] hover:text-[#c4242a] hover:bg-[#ffedea] transition-all" title="刪去法 (排除/還原此選項)" aria-label="刪去選項">
+                            <i class="fas fa-strikethrough text-xs"></i>
+                        </button>
+                    </div>
                 `;
             });
 
@@ -292,7 +307,7 @@
                 </div>
 
                 <!-- Explanation Box -->
-                <div id=\"exp_${q.uid}\" class=\"hidden mt-3.5 pt-3 border-t border-[#f0f0f0]\">
+                <div id=\"exp_${q.uid}\" class=\"hidden mt-3.5 pt-3 border-t border-[#f0f0f0] explanation-box\">
                     <div class=\"p-3.5 bg-[#f4f6f8] rounded-md border border-[#e6e6e6] flex flex-col gap-2.5\">
                         <!-- Metadata Pill Bar -->
                         <!-- Metadata Pill Bar -->
@@ -413,6 +428,20 @@
             if (headerScore) headerScore.textContent = Store.score;
             if (headerTotal) headerTotal.textContent = total;
 
+            // Streak combo badge in header
+            const streakContainer = document.getElementById('streak-badge-container');
+            const streakCountEl = document.getElementById('streak-count');
+            if (streakContainer && streakCountEl) {
+                if (Store.mode === 'practice' && Store.currentStreak >= 2) {
+                    streakContainer.classList.remove('hidden');
+                    streakContainer.classList.add('inline-flex');
+                    streakCountEl.textContent = Store.currentStreak;
+                } else {
+                    streakContainer.classList.add('hidden');
+                    streakContainer.classList.remove('inline-flex');
+                }
+            }
+
             // Sidebar stats
             const sideScore = document.getElementById('sidebar-score');
             const sideTotal = document.getElementById('sidebar-total');
@@ -464,7 +493,7 @@
                 const hasFilters = Store.hasActiveFilters();
                 if (hasFilters) {
                     const matchedCount = Store.getDisplayQuestions().length;
-                    const totalAllCount = Store.getAllQuestions().length || 835;
+                    const totalAllCount = Store.getAllQuestions().length || Store.data?.totalQuestions || 0;
                     const currentLabel = Store.isCustomMode ? '自訂試卷' : `${Store.currentYear} 試卷`;
                     const scopeName = Store.searchScope === 'all' ? `全體題庫 (${totalAllCount}題)` : currentLabel;
                     searchStats.textContent = `條件篩選/檢索: ${scopeName} 找到 ${matchedCount} 筆結果`;
@@ -551,7 +580,7 @@
         },
 
         toggleStar(uid) {
-            if (typeof Quiz !== 'undefined' && Quiz.vibrate) Quiz.vibrate(14);
+            if (typeof Quiz !== 'undefined' && Quiz.vibrate) Quiz.vibrate(12);
             const isStarred = Store.toggleStar(uid);
             const icon = document.getElementById(`star_${uid}`);
             if (icon) {
@@ -566,7 +595,7 @@
         },
 
         setTab(tab) {
-            if (typeof Quiz !== 'undefined' && Quiz.vibrate) Quiz.vibrate(10);
+            if (typeof Quiz !== 'undefined' && Quiz.vibrate) Quiz.vibrate(8);
             Store.currentTab = tab;
             ['all', 'wrong', 'starred'].forEach(t => {
                 const btn = document.getElementById(`tab-${t}`);
@@ -589,9 +618,11 @@
 
             img.src = src;
             lightbox.classList.remove('hidden');
-            setTimeout(() => {
+            // Trigger asymmetric snappy enter
+            requestAnimationFrame(() => {
                 lightbox.classList.remove('opacity-0');
-            }, 10);
+                lightbox.classList.add('active-zoom');
+            });
         },
 
         closeLightbox() {
@@ -599,11 +630,13 @@
             const img = document.getElementById('lightbox-img');
             if (!lightbox || !img) return;
 
+            // Snappy exit (140ms)
+            lightbox.classList.remove('active-zoom');
             lightbox.classList.add('opacity-0');
             setTimeout(() => {
                 lightbox.classList.add('hidden');
                 img.src = '';
-            }, 150);
+            }, 140);
         },
 
         // --- Search & OCR Helpers ---
@@ -678,7 +711,7 @@
         },
 
         toggleMobileNav(forceState) {
-            if (typeof Quiz !== 'undefined' && Quiz.vibrate) Quiz.vibrate(10);
+            if (typeof Quiz !== 'undefined' && Quiz.vibrate) Quiz.vibrate(8);
             const drawer = document.getElementById('mobile-nav-drawer');
             const content = document.getElementById('mobile-drawer-content');
             if (!drawer || !content) return;
@@ -687,14 +720,14 @@
 
             if (isOpening) {
                 drawer.classList.remove('hidden');
-                setTimeout(() => {
+                requestAnimationFrame(() => {
                     content.classList.remove('translate-x-full');
-                }, 10);
+                });
             } else {
                 content.classList.add('translate-x-full');
                 setTimeout(() => {
                     drawer.classList.add('hidden');
-                }, 200);
+                }, 220);
             }
         },
 
@@ -710,10 +743,33 @@
                     this.renderHistoryList();
                 } else if (modalId === 'custom-exam-modal') {
                     this.renderCustomExamYearList();
+                    this.renderCustomExamFilters();
                 }
             } else {
                 modal.classList.remove('active');
             }
+        },
+
+        /**
+         * Animated number counter from start to end value.
+         */
+        animateCountUp(element, endVal, duration = 600, suffix = '') {
+            if (!element) return;
+            const startVal = 0;
+            const startTime = performance.now();
+            const step = (currentTime) => {
+                const progress = Math.min((currentTime - startTime) / duration, 1);
+                // Ease out quad
+                const easeProgress = 1 - (1 - progress) * (1 - progress);
+                const currentVal = Math.round(startVal + (endVal - startVal) * easeProgress);
+                element.textContent = `${currentVal}${suffix}`;
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    element.textContent = `${endVal}${suffix}`;
+                }
+            };
+            requestAnimationFrame(step);
         },
 
         showResultModal(record, gradeInfo) {
@@ -723,10 +779,15 @@
             const gradeLevel = document.getElementById('grade-level');
             const gradeDesc = document.getElementById('grade-desc');
             const gradeCard = document.getElementById('grade-card');
+            const retryWrongBtn = document.getElementById('modal-retry-wrong-btn');
+            const retryWrongLabel = document.getElementById('modal-retry-wrong-label');
 
-            if (scoreEl) scoreEl.textContent = record.score;
-            if (wrongEl) wrongEl.textContent = record.total - record.score;
-            if (accEl) accEl.textContent = `${record.accuracy}%`;
+            const wrongCount = record.total - record.score;
+
+            // Animated score count-up
+            this.animateCountUp(scoreEl, record.score, 600);
+            this.animateCountUp(wrongEl, wrongCount, 600);
+            this.animateCountUp(accEl, record.accuracy, 750, '%');
 
             if (gradeLevel) gradeLevel.textContent = gradeInfo.level;
             if (gradeDesc) gradeDesc.textContent = gradeInfo.desc;
@@ -734,7 +795,58 @@
                 gradeCard.className = `p-3.5 rounded-md mb-3 text-center border border-[#e6e6e6] text-white ${gradeInfo.color || 'bg-[#141414]'}`;
             }
 
+            // Retry wrong questions button
+            if (retryWrongBtn) {
+                if (wrongCount > 0) {
+                    retryWrongBtn.classList.remove('hidden');
+                    retryWrongBtn.classList.add('flex');
+                    if (retryWrongLabel) {
+                        retryWrongLabel.textContent = `立即重溫本次錯題 (共 ${wrongCount} 題)`;
+                    }
+                } else {
+                    retryWrongBtn.classList.add('hidden');
+                    retryWrongBtn.classList.remove('flex');
+                }
+            }
+
             this.toggleModal('result-modal', true);
+        },
+
+        retryWrongQuestions() {
+            this.toggleModal('result-modal', false);
+            // Switch to practice mode for learning
+            Store.mode = 'practice';
+            const modeSelect = document.getElementById('mode');
+            if (modeSelect) modeSelect.value = 'practice';
+
+            // Filter wrong questions tab
+            this.setTab('wrong');
+            // Reset state for wrong questions so student can re-attempt
+            const resetCount = Store.resetWrongQuestions();
+            Quiz.startTimer();
+            this.renderAllQuestions();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            this.showToast(`已為您載入 ${resetCount} 道錯題，祝重測全對！`, 'info');
+        },
+
+        // --- Option Strike-through (刪去法) ---
+
+        handleOptionContextMenu(uid, optionIndex) {
+            this.toggleStrikeThrough(uid, optionIndex);
+        },
+
+        toggleStrikeThrough(uid, optionIndex) {
+            const isEliminated = Store.toggleEliminateOption(uid, optionIndex);
+            const btn = document.getElementById(`btn_${uid}_${optionIndex}`);
+            if (btn) {
+                if (isEliminated) {
+                    btn.classList.add('opt-eliminated');
+                    if (typeof Quiz !== 'undefined' && Quiz.vibrate) Quiz.vibrate(12);
+                } else {
+                    btn.classList.remove('opt-eliminated');
+                    if (typeof Quiz !== 'undefined' && Quiz.vibrate) Quiz.vibrate(10);
+                }
+            }
         },
 
         renderHistoryList() {
@@ -759,6 +871,43 @@
                     </div>
                 </div>
             `).join('');
+        },
+
+        renderCustomExamFilters() {
+            const topicContainer = document.getElementById('custom-topic-list');
+            const diffContainer = document.getElementById('custom-difficulty-list');
+
+            const topics = Store.data?.meta?.topics || [
+                { code: 'cit_1', nameZh: '資訊處理', count: 0 },
+                { code: 'cit_2', nameZh: '電腦系統基礎', count: 0 },
+                { code: 'cit_3', nameZh: '互聯網及其應用', count: 0 },
+                { code: 'cit_4', nameZh: '計算思維與程式編寫', count: 0 },
+                { code: 'cit_5', nameZh: '資訊及通訊科技對社會的影響', count: 0 }
+            ];
+
+            if (topicContainer) {
+                topicContainer.innerHTML = topics.map((t, idx) => `
+                    <label class="flex items-center gap-2 p-1.5 rounded bg-white border border-[#e6e6e6] cursor-pointer hover:bg-[#fafafa] ${idx === 4 ? 'sm:col-span-2' : ''}">
+                        <input type="checkbox" name="custom-topic" value="${escapeHtml(t.code)}" class="w-3.5 h-3.5 rounded text-[#141414] focus:ring-[#141414]" checked>
+                        <span class="font-medium text-[#0a0a0a]">${escapeHtml(t.nameZh)} (${t.count}題)</span>
+                    </label>
+                `).join('');
+            }
+
+            const diffs = Store.data?.meta?.difficulties || [
+                { code: 1, label: '容易', count: 0 },
+                { code: 2, label: '普通', count: 0 },
+                { code: 3, label: '困難', count: 0 }
+            ];
+
+            if (diffContainer) {
+                diffContainer.innerHTML = diffs.map(d => `
+                    <label class="flex items-center gap-2 p-1.5 rounded bg-white border border-[#e6e6e6] cursor-pointer hover:bg-[#fafafa]">
+                        <input type="checkbox" name="custom-difficulty" value="${escapeHtml(String(d.code))}" class="w-3.5 h-3.5 rounded text-[#141414] focus:ring-[#141414]" checked>
+                        <span class="font-medium text-[#0a0a0a]">${escapeHtml(d.label)} (${d.count}題)</span>
+                    </label>
+                `).join('');
+            }
         },
 
         renderCustomExamYearList() {

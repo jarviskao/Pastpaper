@@ -32,6 +32,10 @@
     --pad: 24px;
     --control-height: 36px;
     --font-sans: "Geist", "Noto Sans TC", system-ui, -apple-system, sans-serif;
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+    --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 /* Base & Typography */
@@ -139,20 +143,31 @@ button, select, input, .option-btn, .nav-pill {
 
 /* Option Buttons - Tactile, flat, crisp ledger borders */
 .option-btn {
-    transition: background-color 0.14s ease, border-color 0.14s ease, color 0.14s ease, transform 0.12s ease;
+    transition: background-color 0.16s var(--ease-out),
+                border-color 0.16s var(--ease-out),
+                color 0.16s var(--ease-out),
+                transform 0.14s var(--ease-out),
+                box-shadow 0.16s var(--ease-out),
+                opacity 0.2s var(--ease-out);
     touch-action: manipulation;
     border-width: 1px;
     border-radius: var(--radius-control);
     min-height: 48px;
+    position: relative;
+    overflow: hidden;
 }
 
-.option-btn:hover:not(:disabled) {
-    border-color: var(--data-hue);
-    background-color: #f8fafd;
+@media (hover: hover) and (pointer: fine) {
+    .option-btn:hover:not(:disabled):not(.opt-eliminated) {
+        border-color: var(--data-hue);
+        background-color: #f8fafd;
+        transform: translateY(-1px);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
 }
 
 .option-btn:active:not(:disabled) {
-    transform: scale(0.996);
+    transform: scale(0.98);
 }
 
 .option-btn:focus-visible {
@@ -177,16 +192,123 @@ button, select, input, .option-btn, .nav-pill {
     background-color: var(--pill-positive-bg);
     border-color: var(--positive);
     color: var(--pill-positive-ink);
+    animation: correctPop 0.36s var(--ease-spring);
 }
 
 .option-btn.opt-wrong {
     background-color: var(--pill-negative-bg);
     border-color: var(--negative);
     color: var(--pill-negative-ink);
+    animation: wrongShake 0.36s ease-in-out;
 }
 
 .option-btn.opt-dimmed {
-    opacity: 0.55;
+    opacity: 0.5;
+}
+
+/* Strike-through / Eliminated Option State (刪去法) */
+.option-btn.opt-eliminated {
+    opacity: 0.38 !important;
+    background-color: #f7f7f7 !important;
+    border-color: #e5e5e5 !important;
+    text-decoration: line-through;
+    filter: grayscale(0.85);
+}
+
+.option-btn.opt-eliminated::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: 50%;
+    height: 1.5px;
+    background-color: #737373;
+    pointer-events: none;
+    z-index: 5;
+    animation: strikeIn 0.18s var(--ease-out);
+}
+
+.option-btn.opt-eliminated .num {
+    text-decoration: line-through;
+}
+
+/* Strike toggle trigger button */
+.strike-toggle-btn {
+    opacity: 0;
+    transition: opacity 0.15s ease, transform 0.15s var(--ease-out), color 0.15s ease;
+}
+
+.option-btn:hover .strike-toggle-btn,
+.option-btn.opt-eliminated .strike-toggle-btn,
+.strike-toggle-btn:focus,
+.touch-active .strike-toggle-btn {
+    opacity: 1;
+}
+
+.strike-toggle-btn:hover {
+    transform: scale(1.15);
+}
+
+/* Animations & Keyframes */
+@keyframes correctPop {
+    0% { transform: scale(0.97); }
+    50% { transform: scale(1.025); }
+    100% { transform: scale(1); }
+}
+
+@keyframes wrongShake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    60% { transform: translateX(-3px); }
+    80% { transform: translateX(3px); }
+}
+
+@keyframes strikeIn {
+    0% { transform: scaleX(0); opacity: 0; }
+    100% { transform: scaleX(1); opacity: 1; }
+}
+
+@keyframes comboPulse {
+    0% { transform: scale(0.88); opacity: 0; }
+    60% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes floatUpFade {
+    0% { transform: translateY(8px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Streak Combo Badge */
+.combo-badge {
+    animation: comboPulse 0.3s var(--ease-spring);
+    transition: transform 0.2s var(--ease-out), background-color 0.2s ease;
+}
+
+.combo-flame {
+    display: inline-block;
+    filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.4));
+    animation: flameFlicker 1.5s infinite ease-in-out;
+}
+
+@keyframes flameFlicker {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.12) rotate(-3deg); }
+}
+
+/* Explanation Accordion smooth transition */
+.explanation-box {
+    animation: floatUpFade 0.24s var(--ease-out);
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 /* Navigator Grid Items */
@@ -204,11 +326,46 @@ button, select, input, .option-btn, .nav-pill {
     transform: scale(0.96);
 }
 
+/* Toast System (Spatial consistency & spring scale) */
+#app-toast {
+    transform: translateY(-12px) scale(0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.22s var(--ease-out), opacity 0.18s var(--ease-out);
+    will-change: transform, opacity;
+}
+
+#app-toast.toast-visible {
+    transform: translateY(0) scale(1) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* Lightbox Modal & Zoom Transition */
+#lightbox {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: opacity 0.2s var(--ease-out);
+}
+
+#lightbox-img {
+    transform: scale(0.94);
+    opacity: 0;
+    transition: transform 0.24s var(--ease-out), opacity 0.2s var(--ease-out);
+}
+
+#lightbox.active-zoom #lightbox-img {
+    transform: scale(1);
+    opacity: 1;
+}
+
 /* Modals */
 .modal-overlay {
     display: none;
     opacity: 0;
-    transition: opacity 0.18s ease-out;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: opacity 0.2s var(--ease-out);
 }
 
 .modal-overlay.active {
@@ -221,9 +378,16 @@ button, select, input, .option-btn, .nav-pill {
 }
 
 .modal-panel {
-    transform: scale(0.98) translateY(6px);
-    transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: scale(0.96) translateY(8px);
+    transition: transform 0.24s var(--ease-out);
     border-radius: var(--radius-card);
+    will-change: transform;
+}
+
+/* Mobile Drawer (iOS-like physics) */
+#mobile-drawer-content {
+    transition: transform 0.32s var(--ease-drawer);
+    will-change: transform;
 }
 
 /* Safe Area Insets for Mobile */
