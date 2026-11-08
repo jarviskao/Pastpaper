@@ -300,8 +300,8 @@
                 </div>
 
                 <!-- Question Image -->
-                <div class=\"mb-3.5 flex justify-start overflow-hidden rounded\">
-                    <img src=\"${q.questionImg}\" alt=\"題目 ${q.qNum}\" class=\"exam-img max-w-full h-auto cursor-zoom-in rounded\" loading=\"lazy\" onclick=\"UI.toggleInlineZoom(this)\" onerror=\"this.alt='題目圖片載入失敗'\">
+                <div class=\"mb-3.5 flex justify-start rounded\">
+                    <img src=\"${q.questionImg}\" alt=\"題目 ${q.qNum}\" class=\"exam-img max-w-full h-auto cursor-zoom-in rounded\" loading=\"lazy\" onclick=\"UI.zoomInPlace(this)\" onerror=\"this.alt='題目圖片載入失敗'\">
                 </div>
 
                 <!-- Options -->
@@ -612,17 +612,115 @@
             this.renderAllQuestions();
         },
 
-        // --- In-card Inline Smooth Image Zoom (原地放大/縮回) ---
+        // --- True In-Place Image Zoom Animation (鎖定原位無縫平滑放大) ---
+        activeZoomState: null,
 
-        toggleInlineZoom(imgEl) {
+        zoomInPlace(imgEl) {
             if (!imgEl) return;
-            const isZoomed = imgEl.classList.contains('img-zoomed');
-            if (isZoomed) {
-                imgEl.classList.remove('img-zoomed');
+            // If already zoomed, dismiss it
+            if (this.activeZoomState) {
+                this.dismissInPlaceZoom();
+                return;
+            }
+
+            const rect = imgEl.getBoundingClientRect();
+            if (!rect || rect.width <= 0) return;
+
+            const viewportW = window.innerWidth;
+            const viewportH = window.innerHeight;
+            const padding = 16;
+
+            // Target max width & height keeping aspect ratio
+            const maxAllowedW = viewportW - (padding * 2);
+            const maxAllowedH = viewportH - (padding * 2);
+            const naturalW = imgEl.naturalWidth || rect.width * 2;
+            const naturalH = imgEl.naturalHeight || rect.height * 2;
+
+            // Target zoom size: 1.8x original or up to natural size / viewport limit
+            const scaleCandidate = Math.min(1.85, maxAllowedW / rect.width, maxAllowedH / rect.height);
+            const targetW = Math.min(rect.width * scaleCandidate, maxAllowedW);
+            const targetH = rect.height * (targetW / rect.width);
+
+            // Anchor target position locked to original top-left coordinates, clamping to viewport
+            let targetL = rect.left;
+            let targetT = rect.top;
+
+            // If expanding exceeds right or bottom of viewport, shift minimally to stay on-screen
+            if (targetL + targetW > viewportW - padding) {
+                targetL = Math.max(padding, viewportW - padding - targetW);
+            }
+            if (targetT + targetH > viewportH - padding) {
+                targetT = Math.max(padding, viewportH - padding - targetH);
+            }
+
+            // Create Backdrop
+            const backdrop = document.createElement('div');
+            backdrop.className = 'img-zoom-backdrop';
+            backdrop.onclick = () => this.dismissInPlaceZoom();
+            document.body.appendChild(backdrop);
+
+            // Create Floating Clone exactly at original position and dimensions
+            const clone = imgEl.cloneNode(true);
+            clone.className = 'img-zoom-clone';
+            clone.style.left = `${rect.left}px`;
+            clone.style.top = `${rect.top}px`;
+            clone.style.width = `${rect.width}px`;
+            clone.style.height = `${rect.height}px`;
+            clone.onclick = () => this.dismissInPlaceZoom();
+            document.body.appendChild(clone);
+
+            // Keep original image as placeholder hidden from view
+            imgEl.style.visibility = 'hidden';
+
+            this.activeZoomState = {
+                originalEl: imgEl,
+                cloneEl: clone,
+                backdropEl: backdrop,
+                initialRect: rect
+            };
+
+            if (typeof Quiz !== 'undefined' && Quiz.vibrate) Quiz.vibrate(12);
+
+            // Trigger FLIP transition: smoothly expand from original rect to target in-place rect
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    backdrop.classList.add('active');
+                    clone.style.left = `${targetL}px`;
+                    clone.style.top = `${targetT}px`;
+                    clone.style.width = `${targetW}px`;
+                    clone.style.height = `${targetH}px`;
+                });
+            });
+        },
+
+        dismissInPlaceZoom() {
+            if (!this.activeZoomState) return;
+
+            const { originalEl, cloneEl, backdropEl } = this.activeZoomState;
+            this.activeZoomState = null;
+
+            if (backdropEl) backdropEl.classList.remove('active');
+
+            if (originalEl && cloneEl) {
+                const rect = originalEl.getBoundingClientRect();
+                // Smoothly retract back to original coordinates
+                cloneEl.style.left = `${rect.left}px`;
+                cloneEl.style.top = `${rect.top}px`;
+                cloneEl.style.width = `${rect.width}px`;
+                cloneEl.style.height = `${rect.height}px`;
+                cloneEl.style.boxShadow = 'none';
+
                 if (typeof Quiz !== 'undefined' && Quiz.vibrate) Quiz.vibrate(8);
+
+                setTimeout(() => {
+                    if (originalEl) originalEl.style.visibility = '';
+                    if (cloneEl && cloneEl.parentNode) cloneEl.parentNode.removeChild(cloneEl);
+                    if (backdropEl && backdropEl.parentNode) backdropEl.parentNode.removeChild(backdropEl);
+                }, 300);
             } else {
-                imgEl.classList.add('img-zoomed');
-                if (typeof Quiz !== 'undefined' && Quiz.vibrate) Quiz.vibrate(12);
+                if (backdropEl && backdropEl.parentNode) backdropEl.parentNode.removeChild(backdropEl);
+                if (cloneEl && cloneEl.parentNode) cloneEl.parentNode.removeChild(cloneEl);
+                if (originalEl) originalEl.style.visibility = '';
             }
         },
 

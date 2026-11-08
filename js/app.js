@@ -191,10 +191,11 @@
             // Ignore keydown events inside text input fields
             if (['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target?.tagName)) return;
 
-            // Escape key closes modals, drawers, and resets any inline-zoomed image
+            // Escape key closes modals, drawers, and active in-place zoom
             if (e.key === 'Escape') {
-                const zoomedImg = document.querySelector('.exam-img.img-zoomed');
-                if (zoomedImg) zoomedImg.classList.remove('img-zoomed');
+                if (typeof UI !== 'undefined' && UI.dismissInPlaceZoom) {
+                    UI.dismissInPlaceZoom();
+                }
                 UI.toggleModal('result-modal', false);
                 UI.toggleModal('history-modal', false);
                 UI.toggleModal('custom-exam-modal', false);

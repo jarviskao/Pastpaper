@@ -123,7 +123,7 @@ button, select, input, .option-btn, .nav-pill {
     border-radius: var(--radius-card);
 }
 
-/* Image Presentation */
+/* Image Presentation & In-place Zoom */
 .exam-img-container {
     background-color: transparent;
     border: none !important;
@@ -139,20 +139,43 @@ button, select, input, .option-btn, .nav-pill {
     cursor: zoom-in;
     user-select: none;
     -webkit-user-select: none;
-    transition: transform 0.28s var(--ease-out);
-    transform-origin: left top;
-    will-change: transform;
+    border-radius: var(--radius-control);
+    transition: box-shadow 0.2s var(--ease-out);
 }
 
-.exam-img.img-zoomed {
-    transform: scale(1.6);
+/* In-place Floating Zoom Clone */
+.img-zoom-clone {
+    position: fixed;
+    z-index: 1000;
     cursor: zoom-out;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    border-radius: var(--radius-control);
-    background-color: var(--surface);
-    position: relative;
-    z-index: 10;
+    user-select: none;
+    -webkit-user-select: none;
+    border-radius: var(--radius-card);
+    background-color: #ffffff;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    transition: left 0.3s var(--ease-out),
+                top 0.3s var(--ease-out),
+                width 0.3s var(--ease-out),
+                height 0.3s var(--ease-out),
+                box-shadow 0.3s var(--ease-out);
+    will-change: left, top, width, height;
+}
+
+/* Subtle backdrop dim behind in-place zoom */
+.img-zoom-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(10, 10, 10, 0.45);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.28s var(--ease-out);
+    cursor: zoom-out;
+}
+
+.img-zoom-backdrop.active {
+    opacity: 1;
 }
 
 /* Option Buttons - Tactile, flat, crisp ledger borders */
